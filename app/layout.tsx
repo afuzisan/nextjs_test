@@ -15,7 +15,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="ja">
+        <header>
+    <h1>ポートフォリオサイト</h1>
+    <nav>
+      <a href="#about">自己紹介</a>
+      <a href="#works">作品集</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+  </header>
       <body className={inter.className}>{children}</body>
     </html>
   )
