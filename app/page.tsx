@@ -1,9 +1,8 @@
-import Image from 'next/image'
-
-export default function Home() {
+const Home = () => {
   return (
-    <main className="class="bg-slate-100">
+    <main>
       test
     </main>
   )
 }
+ export default Home
