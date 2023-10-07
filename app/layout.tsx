@@ -1,5 +1,4 @@
 import './globals.css'
-import Home from "./page.tsx";
 // next/linkをインポートする
 import Link from 'next/link';
 
