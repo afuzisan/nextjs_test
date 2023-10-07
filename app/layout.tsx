@@ -1,4 +1,6 @@
+"use client"
 import './globals.css'
+
 // next/linkをインポートする
 import Link from 'next/link';
 
