@@ -15,8 +15,8 @@ const Home = () => {
   return (
     <main>
       <h1>test</h1>
-      <p>カウント: {count}</p> // countの値を表示
-      <button onClick={handleClick}>+1</button> // ボタンをクリックするとhandleClickが呼ばれる
+      <p>カウント: {count}</p> 
+      <button onClick={handleClick}>+1</button>
     </main>
   );
 };
