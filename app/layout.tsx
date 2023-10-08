@@ -1,7 +1,7 @@
-"use client"
 import './globals.css'
 // next/linkをインポートする
 import Link from 'next/link';
+
 export default function RootLayout({
   children,
 }: {
@@ -10,6 +10,7 @@ export default function RootLayout({
   return (
     
     <html lang="ja">
+      <body>
     <header>
     <h1>ポートフォリオサイト</h1>
     <nav>
@@ -31,6 +32,7 @@ export default function RootLayout({
       <footer>
     <p>&copy; 2023 山田太郎 All rights reserved.</p>
   </footer>
+  </body>
     </html>
 
   )
