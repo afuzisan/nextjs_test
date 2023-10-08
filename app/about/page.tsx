@@ -1,23 +1,14 @@
 "use client"
-import  React,{useEffect} from 'react';
-
-
+import Head from 'next/head';
 export default function About() {  
-
-  function a(){
-    const timerId = setInterval(()=>{ // setIntervalの返り値をtimerIdに代入
-      console.log('testessss')
-    }, 1000);
-    return timerId; // timerIdを返す
-  }
-
-  useEffect(()=>{
-    const timerId = a(); // a関数の返り値をtimerIdに代入
-    return () => clearInterval(timerId); // timerIdをclearIntervalの引数に渡す
-  },[a]) // 依存配列にa関数を追加する
     return (
       <div>
+        <Head>
+          <title>My page title</title>
+          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        </Head>
         <h1>About</h1>
       </div>
+      
     );
   }

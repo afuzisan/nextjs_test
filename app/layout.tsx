@@ -1,16 +1,14 @@
 "use client"
 import './globals.css'
-
 // next/linkをインポートする
 import Link from 'next/link';
-
-
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
+    
     <html lang="ja">
     <header>
     <h1>ポートフォリオサイト</h1>
@@ -26,6 +24,7 @@ export default function RootLayout({
   </Link>
     </nav>
   </header>
+  
 
       {children}
 
@@ -33,5 +32,6 @@ export default function RootLayout({
     <p>&copy; 2023 山田太郎 All rights reserved.</p>
   </footer>
     </html>
+
   )
 }
