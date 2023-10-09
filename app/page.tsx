@@ -14,9 +14,9 @@ const Home = () => {
 
   return (
     <main>
-      <h1>test</h1>
-      <p>カウント: {count}</p> 
-      <button onClick={handleClick}>+1</button>
+      <div id="main1">
+        <h1 className="logo">ポートフォリオ</h1>
+      </div>
     </main>
   );
 };
