@@ -2,6 +2,7 @@
 
 // Home.tsx
 import { useState } from "react"; // React Hooksを使うためにインポート
+import './main.css'
 
 const Home = () => {
   const [count, setCount] = useState(0); // countというstateを定義し、初期値を0に設定
@@ -14,8 +15,14 @@ const Home = () => {
 
   return (
     <main>
-      <div id="main1">
-        <h1 className="logo">ポートフォリオ</h1>
+      <div id="mainTOP">
+        <div className="logoParent">
+          <h1 className="logo">ポートフォリオ</h1>
+        </div>
+        <div className="logoDiscription">
+          説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明
+        </div>
+
       </div>
     </main>
   );

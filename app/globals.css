@@ -11,18 +11,19 @@
     }
     body{
       font-family: Togalite-Bold;
-      width:100vw;
       margin: auto;
     }
     /* ヘッダー部分 */
     header {
+      position: fixed;
       background-color: #333;
       color: white;
       height: 80px;
+      width: 100vw;
+      padding:20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 20px;
     }
     header h1 {
       font-size: 24px;
@@ -91,6 +92,7 @@
       justify-content: center;
     }
     footer p {
+      /* position: fixed; */
       font-size: 14px;
     }
     /* メディアクエリでレスポンシブデザインに対応する */
