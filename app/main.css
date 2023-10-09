@@ -6,6 +6,7 @@ main {
   }
   main #mainTOP{
     height: calc(100vh - 60px);
+
     
   }
   main #mainTOP .logoParent{
@@ -27,7 +28,6 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-
   }
   main h1 ::before{
     content: '';
