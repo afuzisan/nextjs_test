@@ -7,32 +7,34 @@ const Sketch = dynamic(import('react-p5'), {
 })
 
 export const SketchComponent = () => {
-    const preload = (p5: p5Types) => {
-      // 画像などのロードを行う
-    };
-  
-    const setup = (p5: p5Types, canvasParentRef: Element) => {
-        p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
-        p5.colorMode(p5.HSB, p5.width, p5.height, 100);
-        p5.noStroke();
-      };
+  const preload = (p5: p5Types) => {
+  };
 
-      const barWidth = 20;
-      let lastBar = -1;
-  
-      const draw = (p5: p5Types) => {
-        let whichBar = p5.mouseX / barWidth;
-        if (whichBar !== lastBar) {
-          let barX = whichBar * barWidth;
-          p5.fill(barX, p5.mouseY, 66);
-          p5.rect(barX, 0, barWidth, p5.height);
-          lastBar = whichBar;
-        }
-      };
-  
-      const windowResized = (p5: p5Types) => {
-        p5.resizeCanvas(p5.windowWidth, p5.windowHeight);
-      };
+  // 初期処理
+  const setup = (p5: p5Types, canvasParentRef: Element) => {
+      // 背景の大きさ設定
+      // 画面サイズに合わせるようにしている
+      p5.createCanvas(p5.windowWidth, p5.windowHeight);
+      
+      // 背景色設定
+      p5.background(0);
+      
+      // オブジェクトの設置
+      // キャンバス内の中心に100pxの丸を表示する
+      p5.ellipse(p5.windowWidth / 2, p5.windowHeight / 2, 100)
+
+      // オブジェクトの色設定
+      p5.fill(255, 255 , 0);
+  };
+
+  // 1フレームごとの処理
+  const draw = (p5: p5Types) => {
+  };
+
+  // コンポーネントのレスポンシブ化
+  const windowResized = (p5: p5Types) => {
+      p5.resizeCanvas(p5.windowWidth, p5.windowHeight);
+  };
   
     return (
       <Sketch

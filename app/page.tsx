@@ -6,13 +6,16 @@ import Sketch from './sketch'
 
 
 const Home = () => {
-
+  const p5element = Sketch()
+  console.log(p5element.props)
   return (
     <main>
       <div id="mainTOP">
         <div className="logoParent">
           <h1 className="logo">ポートフォリオ</h1>
-          <Sketch />
+    
+          {p5element}
+    
         </div>
         <div className="logoDiscription">
           説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明
