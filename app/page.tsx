@@ -1,16 +1,16 @@
 "use client"
 import './main.css'
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 import Sketch from "react-p5";
 import p5Types from 'p5'
 
 
 const Home = () => {
-  const [count, setCount] = useState(0);
-  function mouseClicked(p5: p5Types) {
-    // クリックしたときにカウントを増やす処理を書く
-    setCount(count + 1);
-  }
+  // const [count, setCount] = useState(0);
+  // function mouseClicked(p5: p5Types) {
+  //   // クリックしたときにカウントを増やす処理を書く
+  //   setCount(count + 1);
+  // }
 
   return (
     <main>
@@ -19,8 +19,8 @@ const Home = () => {
           <h1 className="logo">ポートフォリオ</h1>
         </div>
         <div className="logoDiscription">
-        <Sketch setup={setup} draw={draw} mouseClicked={mouseClicked} />
-        <p>カウント: {count}</p>
+        <Sketch setup={setup} draw={draw} />
+        {/* <p>カウント: {count}</p> */}
         </div>
       </div>
     </main>
