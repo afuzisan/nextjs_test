@@ -22,7 +22,7 @@ const Home = () => {
         </div>
         <div className="logoDiscription">
         {/* <Sketch setup={setup} draw={draw} /> */}
-        <Sketch setup={setup} draw={draw} mouseClicked={mouseClicked} /> */}
+        <Sketch setup={setup} draw={draw} mouseClicked={mouseClicked} /> 
         <p>カウント: {count}</p>
         </div>
       </div>
