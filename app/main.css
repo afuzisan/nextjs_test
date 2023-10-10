@@ -38,5 +38,7 @@ main {
     transform: rotate(45deg); */
   }
 
-  #mainTOP{
+  #defaultCanvas0{
+    position: fixed; /*canvasを固定*/
+    top: 100px; /*canvasを上に固定*/
   }
