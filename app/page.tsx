@@ -1,10 +1,19 @@
 "use client"
 import './main.css'
-import Sketch from "react-p5";
+// import React, { useState } from 'react';
 import p5Types from 'p5'
-
+import dynamic from 'next/dynamic';
+const Sketch = dynamic(() => import('react-p5').then((mod) => mod.default), {
+  ssr: false,
+});
 
 const Home = () => {
+  // const [count, setCount] = useState(0);
+  // function mouseClicked(p5: p5Types) {
+  //   // クリックしたときにカウントを増やす処理を書く
+  //   setCount(count + 1);
+  // }
+
   return (
     <main>
       <div id="mainTOP">
@@ -12,7 +21,9 @@ const Home = () => {
           <h1 className="logo">ポートフォリオ</h1>
         </div>
         <div className="logoDiscription">
-         <Sketch setup={setup} draw={draw} /> 
+        <Sketch setup={setup} draw={draw} />
+        {/* <Sketch setup={setup} draw={draw} mouseClicked={mouseClicked} /> */}
+        {/* <p>カウント: {count}</p> */}
         </div>
       </div>
     </main>
