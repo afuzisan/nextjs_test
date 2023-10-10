@@ -2,14 +2,16 @@
 import './main.css'
 import React, { useState } from 'react';
 import Sketch from "react-p5";
+import p5Types from 'p5'
 
 
 const Home = () => {
   const [count, setCount] = useState(0);
-
-  const handleClick = () => {
+  function mouseClicked(p5: p5Types) {
+    // クリックしたときにカウントを増やす処理を書く
     setCount(count + 1);
-  };
+  }
+
   return (
     <main>
       <div id="mainTOP">
@@ -17,20 +19,23 @@ const Home = () => {
           <h1 className="logo">ポートフォリオ</h1>
         </div>
         <div className="logoDiscription">
-        <Sketch setup={setup} draw={draw} mouseClicked={handleClick} />
+        <Sketch setup={setup} draw={draw} mouseClicked={mouseClicked} />
+        <p>カウント: {count}</p>
         </div>
       </div>
     </main>
   );
 };
 // 以下はp5.jsの関数です
-function setup(p5, canvasParentRef) {
+function setup(p5: p5Types, canvasParentRef: Element) {
   p5.createCanvas(400, 400).parent(canvasParentRef);
 }
 
-function draw(p5) {
+function draw(p5: p5Types) {
   p5.background(200);
   p5.ellipse(200, 200, 50, 50);
 }
+
+
 
 export default Home;
