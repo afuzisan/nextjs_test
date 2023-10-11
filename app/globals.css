@@ -24,7 +24,23 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      animation-name: headerFadeUpAnime;/*アニメーションの定義名*/
+      animation-duration:1s;/*アニメーション変化時間 ※デフォルト*/
+      animation-fill-mode:forwards;/*アニメーションの開始と終了時の状態を指定*/
+      opacity:0;
     }
+    /*アニメーションの開始から終了までを指定する*/
+    @keyframes headerFadeUpAnime{
+      from {
+        /* opacity: 0; */
+        transform: translateX(-100%);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
     header h1 {
       font-size: 24px;
     }
@@ -103,6 +119,21 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      animation-name: footerFadeUpAnime;/*アニメーションの定義名*/
+      animation-duration:1s;/*アニメーション変化時間 ※デフォルト*/
+      animation-fill-mode:forwards;/*アニメーションの開始と終了時の状態を指定*/
+      opacity:0;
+    }
+    /*アニメーションの開始から終了までを指定する*/
+    @keyframes footerFadeUpAnime{
+      from {
+        opacity: 0;
+        transform: translateX(100%);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
     footer p {
       /* position: fixed; */

@@ -42,5 +42,6 @@ main {
     position: fixed; /*canvasを固定*/
     top: 0px; /*canvasを上に固定*/
     left:0px;
+    z-index: -1;
     opacity: 0.2;
   }
