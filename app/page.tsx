@@ -2,14 +2,10 @@
 import './main.css'
 import p5Types from 'p5'
 import dynamic from 'next/dynamic';
-// import { useEffect,useRef } from 'react';
-
-
-
 
 const Home = () => {
-  let x = 0;
-  let noiseVariable = 0;
+  let color = 0;
+  let size = 20;
 
   const Sketch = dynamic(() => import('react-p5').then((mod) => mod.default), {
     ssr: false,
@@ -17,22 +13,31 @@ const Home = () => {
 
   const setup = (p5:p5Types) =>{
     p5.createCanvas(p5.windowWidth, p5.windowHeight);
-    // frameRate(3);
+    p5.noStroke();
   }
 
   const draw =(p5:p5Types)=>{
-    // random() 完全にランダム
-    let randomValue = p5.random(0, 100);
-    p5.point(x, 10000 + randomValue);
-    // console.log(randomValue);
-    // 0〜1を返す
-    let noiseValue = p5.noise(noiseVariable) * 100;
-    p5.point(x, 300 + noiseValue);
-    // noiseVariable += 0.01;
-    noiseVariable += 0.1;
-    // console.log(noiseValue);
-    x += 1;
-  }
+  p5.background(255);
+  p5.fill(50);
+  for (let i = 0; i < p5.windowWidth; i += size * 4) {
+    for (let j = 0; j < p5.windowHeight; j += size * 4) {
+      drawRect(i, j, p5);
+    }
+  }    
+}
+// rect
+function drawRect(x:number, y:number, p5:p5Types) {
+  p5.push();
+  p5.translate(x, y);
+  console.log(color)
+  color > 255 ? 
+  p5.fill(p5.color(255, 204, 0))&&(color = 0) : 
+  p5.fill(p5.color(255, 204, color+=0.003)) 
+  p5.ellipse(0, 0, size, size);
+  p5.pop();
+}
+
+
 
 
   return (
