@@ -6,8 +6,6 @@ main {
   }
   main #mainTOP{
     height: calc(100vh - 60px);
-
-    
   }
   main #mainTOP .logoParent{
     /* 80pxはヘッダー部分の高さ */

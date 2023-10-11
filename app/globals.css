@@ -24,16 +24,16 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      animation-name: headerFadeUpAnime;/*アニメーションの定義名*/
-      animation-duration:1s;/*アニメーション変化時間 ※デフォルト*/
-      animation-fill-mode:forwards;/*アニメーションの開始と終了時の状態を指定*/
+      animation-name: headerFadeUpAnime;
+      animation-duration:1s;
+      animation-fill-mode:forwards;
       opacity:0;
     }
     /*アニメーションの開始から終了までを指定する*/
     @keyframes headerFadeUpAnime{
       from {
         /* opacity: 0; */
-        transform: translateX(-100%);
+        transform: translateX(-90%);
       }
       to {
         opacity: 1;
@@ -119,20 +119,17 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      animation-name: footerFadeUpAnime;/*アニメーションの定義名*/
-      animation-duration:1s;/*アニメーション変化時間 ※デフォルト*/
-      animation-fill-mode:forwards;/*アニメーションの開始と終了時の状態を指定*/
-      opacity:0;
+      /* animation-name: footerFadeUpAnime; */
+      animation-duration:1s;
+      animation-fill-mode:forwards;
     }
     /*アニメーションの開始から終了までを指定する*/
     @keyframes footerFadeUpAnime{
-      from {
-        opacity: 0;
-        transform: translateX(100%);
+      0%{
+        transform: translateX(100%)
       }
-      to {
-        opacity: 1;
-        transform: translateX(0);
+      100% {
+        transform: translateX(0%)
       }
     }
     footer p {
@@ -166,5 +163,35 @@
       }
       main ul li a h3 {
         font-size: 16px;
+      }
+    }
+
+    #logo{
+      animation-name: logoTranslateAnime,logoRotateAnime;
+      animation-duration:2s;
+      animation-delay: 1s;
+      animation-fill-mode:forwards;
+      opacity:0;
+    }
+    /*アニメーションの開始から終了までを指定する*/
+    @keyframes logoTranslateAnime{
+      0% {
+        /* opacity: 0; */
+        transform: translateX(-1000px);
+        
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0px);
+        
+      }
+    }
+
+    @keyframes logoRotateAnime{
+      0%{
+        transform:rotate(0deg);
+      }
+      100%{
+        transform:rotate(360deg);
       }
     }

@@ -16,9 +16,9 @@ export default function RootLayout({
         <nav><ul><HeaderMenu /></ul></nav>
       </header>
       {children}
-      <footer>
+      {/* <footer>
         <p>&copy; 2023 山田太郎 All rights reserved.</p>
-      </footer>
+      </footer> */}
     </body>
   </html>
 
