@@ -2,8 +2,11 @@
 import './main.css'
 import p5Types from 'p5'
 import dynamic from 'next/dynamic';
+import { useState } from 'react';
 
 const Home = () => {
+  const [state,setState] = useState(true)
+
   let color = 0;
   let size = 20;
 
@@ -13,6 +16,7 @@ const Home = () => {
 
   const setup = (p5:p5Types) =>{
     p5.createCanvas(p5.windowWidth, p5.windowHeight);
+
     p5.noStroke();
   }
 
@@ -25,21 +29,21 @@ const Home = () => {
     }
   }    
 }
-// rect
 function drawRect(x:number, y:number, p5:p5Types) {
   p5.push();
   p5.translate(x, y);
   console.log(color)
+
   color > 255 ? 
   p5.fill(p5.color(255, 204, 0))&&(color = 0) : 
   p5.fill(p5.color(255, 204, color+=0.003)) 
-  p5.ellipse(0, 0, size, size);
+
+  color > 100 ? setState((prevState: boolean) =>!prevState) : state
+  console.log(state)
+  state === true ? p5.ellipse(0, 0, size, size) : p5.rect(0, 0, size, size);
+  
   p5.pop();
 }
-
-
-
-
   return (
     <main>
       <div id="mainTOP">

@@ -1,5 +1,3 @@
-import React from 'react'
-
 const headerMenuData = [
     {
         id:'0',
