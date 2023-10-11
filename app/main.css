@@ -40,5 +40,7 @@ main {
 
   #defaultCanvas0{
     position: fixed; /*canvasを固定*/
-    top: 100px; /*canvasを上に固定*/
+    top: 0px; /*canvasを上に固定*/
+    left:0px;
+    /* opacity: 0.1; */
   }
