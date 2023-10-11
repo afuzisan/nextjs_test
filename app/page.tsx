@@ -2,11 +2,9 @@
 import './main.css'
 import p5Types from 'p5'
 import dynamic from 'next/dynamic';
-import { useState } from 'react';
 
 const Home = () => {
-  const [state,setState] = useState(true)
-
+  let cFlag = true
   let color = 0;
   let size = 20;
 
@@ -17,7 +15,8 @@ const Home = () => {
   const setup = (p5:p5Types) =>{
     p5.createCanvas(p5.windowWidth, p5.windowHeight);
 
-    p5.noStroke();
+    p5.stroke(255, 102, 0);
+    
   }
 
   const draw =(p5:p5Types)=>{
@@ -32,15 +31,14 @@ const Home = () => {
 function drawRect(x:number, y:number, p5:p5Types) {
   p5.push();
   p5.translate(x, y);
-  console.log(color)
-
+  // console.log(color)
+  p5.translate(p5.sin(color), p5.sin(color));
+  color > 255 ? cFlag =! cFlag : cFlag;
   color > 255 ? 
   p5.fill(p5.color(255, 204, 0))&&(color = 0) : 
   p5.fill(p5.color(255, 204, color+=0.003)) 
 
-  color > 100 ? setState((prevState: boolean) =>!prevState) : state
-  console.log(state)
-  state === true ? p5.ellipse(0, 0, size, size) : p5.rect(0, 0, size, size);
+  cFlag === true ? p5.ellipse(0, 0, size, size) : p5.rect(0, 0, size, size);
   
   p5.pop();
 }
