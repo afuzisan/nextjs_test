@@ -1,0 +1,138 @@
+/* .wheelFlag1{
+    width:100vw;
+    height:100vh;
+    background-color: antiquewhite;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index:10;
+} */
+.wheelFlag1{
+    
+    width:100vw;
+    height:100vh;
+    /* background-color:aqua; */
+    position: fixed;
+    top:0;
+    left:0;
+    z-index:3;
+}
+.wheelFlag1 > .leftContentwheelFlag1{
+    width:50vw;
+    height:100vh;
+    background-color:rgb(14, 8, 121);
+    position: fixed;
+    top:0;
+    left:0;
+    z-index:4;
+    animation-name: leftContentwheelFlag1Anime;
+    animation-duration:1s;
+    animation-delay: 0.5s;
+    animation-fill-mode:forwards;
+    opacity:0;
+}
+@keyframes leftContentwheelFlag1Anime{
+    0% {
+      opacity: 0;
+      transform: translateX(-1000px);
+      
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0px);
+      
+    }
+}
+.wheelFlag1 > .rightContentwheelFlag1{
+    margin-left: 50vw;
+    width:50vw;
+    height:100vh;
+    background-color:rgb(34, 221, 9);
+    position: fixed;
+    top:0;
+    left:0;
+    z-index:4;
+    animation-name: rightContentwheelFlag1Anime;
+    animation-duration:1s;
+    animation-delay: 0s;
+    animation-fill-mode:forwards;
+    opacity:0;
+}
+@keyframes rightContentwheelFlag1Anime{
+    0% {
+      opacity: 0;
+      transform: translateX(-1000px);
+      
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0px);
+      
+    }
+}
+
+
+
+
+.wheelFlag2{
+    width:100vw;
+    height:100vh;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index:10;
+}
+
+.wheelFlag2 > .leftContentwheelFlag2{
+    width:100vw;
+    height:50vh;
+    background-color:rgb(196, 91, 21);
+    position: fixed;
+    top:0;
+    left:0;
+    z-index:4;
+    animation-name: leftContentwheelFlag2Anime;
+    animation-duration:1s;
+    animation-delay: 0.5s;
+    animation-fill-mode:forwards;
+    opacity:0;
+}
+@keyframes leftContentwheelFlag2Anime{
+    0% {
+      opacity: 0;
+      transform: translateY(-1000px);
+      
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+      
+    }
+}
+.wheelFlag2 > .rightContentwheelFlag2{
+    margin-top: 50vh;
+    width:100vw;
+    height:50vh;
+    background-color:rgb(16, 129, 190);
+    position: fixed;
+    top:0;
+    left:0;
+    z-index:4;
+    animation-name: rightContentwheelFlag2Anime;
+    animation-duration:1s;
+    animation-delay: 0s;
+    animation-fill-mode:forwards;
+    opacity:0;
+}
+@keyframes rightContentwheelFlag2Anime{
+    0% {
+      opacity: 0;
+      transform: translateX(-1000px);
+      
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0px);
+      
+    }
+}
