@@ -1,7 +1,7 @@
 import{useEffect,useState} from 'react'
 import './mouseWheel.css'
 
-const mouseWheel = () => {
+const mouseWheelDown = () => {
     let deltaTotal:number = 0
     useEffect(()=>{
         let wheelFlag = 1
@@ -31,7 +31,7 @@ const mouseWheel = () => {
     },[])
 }
 
-export default mouseWheel
+export default mouseWheelDown
 
 //flag変更とエレメント変更関数
 function wheelFlagloop(deleteFlag,flagAfterEl){
@@ -50,11 +50,7 @@ function wheelFlagloop(deleteFlag,flagAfterEl){
                     element[i-1].remove()
                 });
             }
-        }catch{
-
-        }
-
-        
+        }catch{}
     },1500)
     let FlagElement = document.createElement('div')
     FlagElement.classList.add(flagAfterEl);
