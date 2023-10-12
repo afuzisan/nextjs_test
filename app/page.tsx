@@ -2,6 +2,8 @@
 import './main.css'
 import p5Types from 'p5'
 import dynamic from 'next/dynamic';
+import LoadingEl from './loadingEl'
+
 
 const Home = () => {
   let cFlag = true
@@ -40,7 +42,8 @@ function drawRect(x:number, y:number, p5:p5Types) {
 }
   return (
     <main>
-      <Sketch setup={setup} draw={draw}/> 
+      <Sketch setup={setup} draw={draw}/>
+      <LoadingEl />
       <div id="mainTOP">
         <div className="logoParent">
           <h1 className="logo">ポートフォリオ</h1>
