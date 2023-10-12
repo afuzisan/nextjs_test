@@ -1,45 +1,55 @@
 import{useEffect,useState} from 'react'
 import './mouseWheel.css'
+import { before } from 'node:test'
 
 const mouseWheel = () => {
     let deltaTotal:number = 0
+    let scrollDirection = true
+    let deltaTotalBefore = 0
+    let beforeScrollDirection = true
     useEffect(()=>{
         let wheelFlag = 1
         window.addEventListener('wheel', updateScroll, { passive: false });
         function updateScroll(e:any){
-            console.log(deltaTotal,wheelFlag)
             e.preventDefault()
-            deltaTotal >= 500 || deltaTotal <= -500 ? deltaTotal = 0 : deltaTotal += e.deltaY
-            if (deltaTotal === 500 && wheelFlag==1) {
+            if(deltaTotal <= 400 || deltaTotal >= -400){
+                deltaTotalBefore = deltaTotal
+                deltaTotal += e.deltaY 
+            }
+            beforeScrollDirection = scrollDirection
+            deltaTotal >= deltaTotalBefore ? scrollDirection = false : scrollDirection = true
+            beforeScrollDirection !== scrollDirection ? deltaTotal = 0 : deltaTotal
+
+            if (deltaTotal === 400 && wheelFlag==1) {
                 wheelFlagloop('wheelFlag3','wheelFlag1')
                 rightANDleftContentCreate('wheelFlag1')
                 deltaTotal = 0
                 wheelFlag = 2
                 
 
-            } else if(deltaTotal === 500 && wheelFlag==2){
+            } else if(deltaTotal === 400 && wheelFlag==2){
                 wheelFlagloop('wheelFlag1','wheelFlag2')
                 rightANDleftContentCreate('wheelFlag2')
                 deltaTotal = 0
                 wheelFlag = 3
 
-            }else if(deltaTotal === 500 && wheelFlag==3){
+            }else if(deltaTotal === 400 && wheelFlag==3){
                 wheelFlagloopEND('wheelFlag2')
                 deltaTotal = 0
                 wheelFlag = 1
-            }else if(deltaTotal === -500 && wheelFlag==1){
+            }else if(deltaTotal === -400 && wheelFlag==1){
                 wheelFlagloop('wheelFlag1','wheelFlag2')
                 rightANDleftContentCreate('wheelFlag2')
                 deltaTotal = 0
                 wheelFlag = 3
             }
-            else if(deltaTotal === -500 && wheelFlag==3){
+            else if(deltaTotal === -400 && wheelFlag==3){
                 wheelFlagloop('wheelFlag2','wheelFlag1')
                 rightANDleftContentCreate('wheelFlag1')
                 deltaTotal = 0
                 wheelFlag = 2
             }
-            else if(deltaTotal === -500 && wheelFlag==2){
+            else if(deltaTotal === -400 && wheelFlag==2){
                 wheelFlagloopEND('wheelFlag1')
                 deltaTotal = 0
                 wheelFlag = 1
