@@ -1,12 +1,13 @@
 import{useEffect,useState} from 'react'
 import './mouseWheel.css'
 
-const mouseWheelDown = () => {
+const mouseWheel = () => {
     let deltaTotal:number = 0
     useEffect(()=>{
         let wheelFlag = 1
         window.addEventListener('wheel', updateScroll, { passive: false });
         function updateScroll(e:any){
+            console.log(deltaTotal,wheelFlag)
             e.preventDefault()
             deltaTotal >= 500 ? deltaTotal = 500 : deltaTotal += e.deltaY
             if (deltaTotal === 500 && wheelFlag==1) {
@@ -22,8 +23,24 @@ const mouseWheelDown = () => {
                 deltaTotal = 0
                 wheelFlag = 3
 
-            }else if(deltaTotal ===500 && wheelFlag==3){
+            }else if(deltaTotal === 500 && wheelFlag==3){
                 wheelFlagloopEND('wheelFlag2')
+                deltaTotal = 0
+                wheelFlag = 1
+            }else if(deltaTotal === -500 && wheelFlag==1){
+                wheelFlagloop('wheelFlag1','wheelFlag2')
+                rightANDleftContentCreate('wheelFlag2')
+                deltaTotal = 0
+                wheelFlag = 3
+            }
+            else if(deltaTotal === -500 && wheelFlag==3){
+                wheelFlagloop('wheelFlag2','wheelFlag1')
+                rightANDleftContentCreate('wheelFlag1')
+                deltaTotal = 0
+                wheelFlag = 2
+            }
+            else if(deltaTotal === -500 && wheelFlag==2){
+                wheelFlagloopEND('wheelFlag1')
                 deltaTotal = 0
                 wheelFlag = 1
             }
@@ -31,13 +48,19 @@ const mouseWheelDown = () => {
     },[])
 }
 
-export default mouseWheelDown
 
 //flag変更とエレメント変更関数
 function wheelFlagloop(deleteFlag,flagAfterEl){
     let mainTOP: Element | null = document.querySelector('body')
     let result1 = document.querySelectorAll('.'+flagAfterEl)
     let result2 = document.querySelectorAll('.'+deleteFlag)
+    result1.forEach(element => {
+        element.style.zIndex = 4;
+    });
+    result2.forEach(element => {
+        element.style.zIndex = 3;
+    });
+    
     setTimeout(()=>{
         try{
             if(result2 !== null && result2 !== undefined) {
@@ -73,3 +96,5 @@ function rightANDleftContentCreate(flagEl){
         wheelFlagElement.appendChild(leftContentParent)
     }
 }
+
+export {mouseWheel}
