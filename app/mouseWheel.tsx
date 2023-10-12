@@ -9,7 +9,7 @@ const mouseWheel = () => {
         function updateScroll(e:any){
             console.log(deltaTotal,wheelFlag)
             e.preventDefault()
-            deltaTotal >= 500 ? deltaTotal = 500 : deltaTotal += e.deltaY
+            deltaTotal >= 500 || deltaTotal <= -500 ? deltaTotal = 0 : deltaTotal += e.deltaY
             if (deltaTotal === 500 && wheelFlag==1) {
                 wheelFlagloop('wheelFlag3','wheelFlag1')
                 rightANDleftContentCreate('wheelFlag1')
