@@ -3,9 +3,11 @@ import './main.css'
 import p5Types from 'p5'
 import dynamic from 'next/dynamic';
 import LoadingEl from './loadingEl'
+import MouseWheel from './mouseWheel';
 
 
 const Home = () => {
+  MouseWheel()
   let cFlag = true
   let color = 0;
   let size = 180;
@@ -40,10 +42,11 @@ function drawRect(x:number, y:number, p5:p5Types) {
   p5.ellipse(0, 0, size, size)
   p5.pop();
 }
+
   return (
     <main>
       <Sketch setup={setup} draw={draw}/>
-      <LoadingEl />
+      {/* <LoadingEl /> */}
       <div id="mainTOP">
         <div className="logoParent">
           <h1 className="logo">ポートフォリオ</h1>
