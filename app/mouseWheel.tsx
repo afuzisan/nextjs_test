@@ -1,8 +1,10 @@
 import{useEffect,useState} from 'react'
 import './mouseWheel.css'
 import { before } from 'node:test'
+import { stat } from 'fs'
 
 const mouseWheel = () => {
+    // let [state , setState] = useState(1)
     let deltaTotal:number = 0
     let scrollDirection = true
     let deltaTotalBefore = 0
@@ -10,8 +12,8 @@ const mouseWheel = () => {
     let first_flag = false
     
     useEffect(()=>{
-        wheelMapCreate()
         let wheelFlag = 1
+        wheelMapCreate()
         window.addEventListener('wheel', updateScroll, { passive: false });
         function updateScroll(e:any){
             e.preventDefault()
@@ -29,7 +31,7 @@ const mouseWheel = () => {
             }
             first_flag = true
             wheelNumber(deltaTotal,scrollDirection)
-
+            
             if (deltaTotal === 600 && wheelFlag==1) {
                 wheelFlagloop('wheelFlag3','wheelFlag1')
                 rightANDleftContentCreate('wheelFlag1')
@@ -115,7 +117,7 @@ function removeEl(){
 
     }else if(wheelAfterRotate && wheelMapRotate){
         wheelAfterRotate.remove()
-        wheelAfterRotate.remove()
+        wheelMapRotate.remove()
         let main = document.querySelector('#mainTOP')
         let  wheelMapElement = document.createElement('div')
         let  wheelMapElementSpan = document.createElement('span')
@@ -125,8 +127,8 @@ function removeEl(){
         let wheelMap = document.querySelector('.wheelMap')
         wheelMap.appendChild(wheelMapElementSpan)
     }
-    
 }
+
 
 //flag変更とエレメント変更関数
 function wheelFlagloop(deleteFlag,flagAfterEl){

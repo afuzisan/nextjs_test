@@ -155,6 +155,7 @@
   position: fixed;
   top: 100px;
   right: 20px;
+  transition: height 0.2s linear;
 }
 
 #mainTOP .wheelMapRotate{
@@ -177,4 +178,5 @@
   position: fixed;
   top: 0px;
   right: 0px;
+  transition: height 0.2s linear;
 }
