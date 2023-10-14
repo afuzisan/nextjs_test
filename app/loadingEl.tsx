@@ -1,7 +1,7 @@
 import './loading.css'
 import {useEffect, useState } from 'react';
 
-const loadingEl = () => {
+const LoadingEl = () => {
   useEffect(()=>{
     window.setTimeout(()=>{
         document.querySelector('#loading')?.remove()
@@ -12,4 +12,4 @@ const loadingEl = () => {
   )
 }
 
-export default loadingEl
+export default LoadingEl

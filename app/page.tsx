@@ -3,12 +3,12 @@ import './main.css'
 import p5Types from 'p5'
 import dynamic from 'next/dynamic';
 // import LoadingEl from './loadingEl'
-import {mouseWheel} from './mouseWheel';
+import {MouseWheel} from './mouseWheel';
 
 
 
 const Home = () => {
-  mouseWheel()
+  MouseWheel()
   let cFlag = true
   let color = 0;
   let size = 180;

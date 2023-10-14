@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import './mouseWheel.css'
 import {WContent_1_right,WContent_1_left,WContent_2_right,WContent_2_left} from './wContent'
 
-const mouseWheel = () => {
+const MouseWheel = () => {
     // let [state , setState] = useState(1)
     let deltaTotal:number = 0
     let scrollDirection = true
@@ -189,4 +189,4 @@ function rightANDleftContentCreate(flagEl,RightContent,LeftContent){
     }
 }
 
-export {mouseWheel}
+export {MouseWheel}
