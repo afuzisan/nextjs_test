@@ -1,7 +1,7 @@
-import{useEffect,useState} from 'react'
+import React,{useEffect,useState} from 'react'
+import { createRoot } from 'react-dom/client';
 import './mouseWheel.css'
-import { before } from 'node:test'
-import { stat } from 'fs'
+import {WContent_1_right,WContent_1_left,WContent_2_right,WContent_2_left} from './wContent'
 
 const mouseWheel = () => {
     // let [state , setState] = useState(1)
@@ -34,14 +34,14 @@ const mouseWheel = () => {
             
             if (deltaTotal === 600 && wheelFlag==1) {
                 wheelFlagloop('wheelFlag3','wheelFlag1')
-                rightANDleftContentCreate('wheelFlag1')
+                rightANDleftContentCreate('wheelFlag1',WContent_1_right,WContent_1_left)
                 deltaTotal = 0
                 wheelFlag = 2
                 
 
             } else if(deltaTotal === 600 && wheelFlag==2){
                 wheelFlagloop('wheelFlag1','wheelFlag2')
-                rightANDleftContentCreate('wheelFlag2')
+                rightANDleftContentCreate('wheelFlag2',WContent_2_right,WContent_2_left)
                 deltaTotal = 0
                 wheelFlag = 3
 
@@ -51,13 +51,13 @@ const mouseWheel = () => {
                 wheelFlag = 1
             }else if(deltaTotal === -600 && wheelFlag==1){
                 wheelFlagloop('wheelFlag1','wheelFlag2')
-                rightANDleftContentCreate('wheelFlag2')
+                rightANDleftContentCreate('wheelFlag2',WContent_2_right,WContent_2_left)
                 deltaTotal = 0
                 wheelFlag = 3
             }
             else if(deltaTotal === -600 && wheelFlag==3){
                 wheelFlagloop('wheelFlag2','wheelFlag1')
-                rightANDleftContentCreate('wheelFlag1')
+                rightANDleftContentCreate('wheelFlag1',WContent_1_right,WContent_1_left)
                 deltaTotal = 0
                 wheelFlag = 2
             }
@@ -130,6 +130,7 @@ function removeEl(){
 }
 
 
+
 //flag変更とエレメント変更関数
 function wheelFlagloop(deleteFlag,flagAfterEl){
     let mainTOP: Element | null = document.querySelector('body')
@@ -166,7 +167,7 @@ function wheelFlagloopEND(deleteFlag){
     if(result !== null) result.remove()
 }
 
-function rightANDleftContentCreate(flagEl){
+function rightANDleftContentCreate(flagEl,RightContent,LeftContent){
     let wheelFlagElement = document.querySelector('.'+flagEl)
     let rightContentParent = document.createElement('div')
     rightContentParent.classList.add('rightContent'+flagEl);
@@ -175,6 +176,16 @@ function rightANDleftContentCreate(flagEl){
     if(wheelFlagElement !== null){
         wheelFlagElement.appendChild(rightContentParent)
         wheelFlagElement.appendChild(leftContentParent)
+        if(RightContent !== null && RightContent !== undefined){
+            let rightParent = document.querySelector('.rightContent'+flagEl)
+            const root = createRoot(rightParent);
+            root.render(<RightContent />); 
+        }
+        if(LeftContent !== null && RightContent !== undefined){
+            let leftParent = document.querySelector('.leftContent'+flagEl)
+            const root = createRoot(leftParent);
+            root.render(<LeftContent />); 
+        }   
     }
 }
 

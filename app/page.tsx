@@ -6,6 +6,7 @@ import dynamic from 'next/dynamic';
 import {mouseWheel} from './mouseWheel';
 
 
+
 const Home = () => {
   mouseWheel()
   let cFlag = true
