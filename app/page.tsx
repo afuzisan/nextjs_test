@@ -2,7 +2,7 @@
 import './main.css'
 import p5Types from 'p5'
 import dynamic from 'next/dynamic';
-import LoadingEl from './loadingEl'
+// import LoadingEl from './loadingEl'
 import {mouseWheel} from './mouseWheel';
 
 
@@ -46,7 +46,7 @@ function drawRect(x:number, y:number, p5:p5Types) {
   return (
     <main>
       <Sketch setup={setup} draw={draw}/>
-      <LoadingEl />
+      {/* <LoadingEl /> */}
       <div id="mainTOP">
         <div className="logoParent">
           <h1 className="logo">ポートフォリオ</h1>
