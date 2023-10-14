@@ -76,9 +76,9 @@ function wheelMapCreate(){
     wheelMapElement.classList.add('wheelMap');
     wheelMapElementSpan.classList.add('wheelAfter');
 
-    main.appendChild(wheelMapElement)
+    if(main !== null)main.appendChild(wheelMapElement)
     let wheelMap = document.querySelector('.wheelMap')
-    wheelMap.appendChild(wheelMapElementSpan)
+    if(wheelMap !== null)wheelMap.appendChild(wheelMapElementSpan)
 }
 
 function wheelNumber(deltaTotal:number,scrollDirection:boolean){
@@ -89,11 +89,11 @@ function wheelNumber(deltaTotal:number,scrollDirection:boolean){
     
     if(deltaTotal > 0){
         let deltaTotalborder = deltaTotal / 3
-        wheelAfter.style.height = deltaTotalborder+'px'
+        if(wheelAfter !== null)wheelAfter.style.height = deltaTotalborder+'px'
         console.log(deltaTotal)
     }else if(deltaTotal < 0){
         let deltaTotalborder = deltaTotal*-1 / 3
-        wheelAfterRotate.style.height = deltaTotalborder+'px'
+        if(wheelAfterRotate !== null)wheelAfterRotate.style.height = deltaTotalborder+'px'
         console.log(deltaTotal)
     }
 }
@@ -111,9 +111,9 @@ function removeEl(){
         let  wheelMapElementSpan = document.createElement('span')
         wheelMapElementRotate.classList.add('wheelMapRotate');
         wheelMapElementSpan.classList.add('wheelAfterRotate');
-        main.appendChild(wheelMapElementRotate)
+        if(main !== null)main.appendChild(wheelMapElementRotate)
         let wheelMapRotate = document.querySelector('.wheelMapRotate')
-        wheelMapRotate.appendChild(wheelMapElementSpan)
+        if(wheelMapRotate !== null)wheelMapRotate.appendChild(wheelMapElementSpan)
 
     }else if(wheelAfterRotate && wheelMapRotate){
         wheelAfterRotate.remove()
@@ -123,9 +123,9 @@ function removeEl(){
         let  wheelMapElementSpan = document.createElement('span')
         wheelMapElement.classList.add('wheelMap');
         wheelMapElementSpan.classList.add('wheelAfter');
-        main.appendChild(wheelMapElement)
+        if(main !== null)main.appendChild(wheelMapElement)
         let wheelMap = document.querySelector('.wheelMap')
-        wheelMap.appendChild(wheelMapElementSpan)
+        if(wheelMap !== null)wheelMap.appendChild(wheelMapElementSpan)
     }
 }
 
@@ -159,7 +159,7 @@ function wheelFlagloop(deleteFlag,flagAfterEl){
     },1500)
     let FlagElement = document.createElement('div')
     FlagElement.classList.add(flagAfterEl);
-    mainTOP.appendChild(FlagElement)
+    if(mainTOP !== null)mainTOP.appendChild(FlagElement)
 }
 
 function wheelFlagloopEND(deleteFlag){
