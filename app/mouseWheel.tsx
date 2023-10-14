@@ -88,12 +88,14 @@ function wheelNumber(deltaTotal:number,scrollDirection:boolean){
     let wheelMapRotate = document.querySelector('.wheelMapRotate')
     
     if(deltaTotal > 0){
+        let wheelAfterElement = wheelAfter as HTMLElement;
         let deltaTotalborder = deltaTotal / 3
-        if(wheelAfter !== null)wheelAfter.style.height = deltaTotalborder+'px'
+        if(wheelAfter !== null)wheelAfterElement.style.height = deltaTotalborder+'px'
         console.log(deltaTotal)
     }else if(deltaTotal < 0){
+        let wheelAfterRotateElement = wheelAfterRotate as HTMLElement;
         let deltaTotalborder = deltaTotal*-1 / 3
-        if(wheelAfterRotate !== null)wheelAfterRotate.style.height = deltaTotalborder+'px'
+        if(wheelAfterRotate !== null)wheelAfterRotateElement.style.height = deltaTotalborder+'px'
         console.log(deltaTotal)
     }
 }
@@ -137,10 +139,12 @@ function wheelFlagloop(deleteFlag,flagAfterEl){
     let result1 = document.querySelectorAll('.'+flagAfterEl)
     let result2 = document.querySelectorAll('.'+deleteFlag)
     result1.forEach(element => {
-        element.style.zIndex = 4;
+        let asElement = element as HTMLElement;
+        asElement.style.zIndex = '4';
     });
     result2.forEach(element => {
-        element.style.zIndex = 3;
+        let asElement = element as HTMLElement;
+        asElement.style.zIndex = '3';
     });
     
     setTimeout(()=>{
@@ -178,13 +182,17 @@ function rightANDleftContentCreate(flagEl,RightContent,LeftContent){
         wheelFlagElement.appendChild(leftContentParent)
         if(RightContent !== null && RightContent !== undefined){
             let rightParent = document.querySelector('.rightContent'+flagEl)
-            const root = createRoot(rightParent);
-            root.render(<RightContent />); 
+            if (rightParent !== null) {
+                const root = createRoot(rightParent);
+                root.render(<RightContent />); 
+            }
         }
         if(LeftContent !== null && RightContent !== undefined){
             let leftParent = document.querySelector('.leftContent'+flagEl)
-            const root = createRoot(leftParent);
-            root.render(<LeftContent />); 
+            if (leftParent !== null) {
+                const root = createRoot(leftParent);
+                root.render(<LeftContent />); 
+            }
         }   
     }
 }
