@@ -173,7 +173,7 @@ function wheelFlagloopEND(deleteFlag:string){
     if(result !== null) result.remove()
 }
 
-function rightANDleftContentCreate(flagEl:string,RightContent,LeftContent){
+function rightANDleftContentCreate(flagEl:string,RightContent: () => JSX.Element,LeftContent: () => JSX.Element){
     let wheelFlagElement = document.querySelector('.'+flagEl)
     let rightContentParent = document.createElement('div')
     rightContentParent.classList.add('rightContent'+flagEl);
