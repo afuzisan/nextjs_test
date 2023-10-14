@@ -7,7 +7,7 @@
     }
     @font-face{
       font-family: Togalite-Bold;
-      src:url(../font/Togalite-Black.otf)
+      src:url(../font/NotoSerifJP-Black.otf)
     }
     body{
       font-family: Togalite-Bold;
@@ -15,7 +15,7 @@
     }
     /* ヘッダー部分 */
     header {
-      position: fixed;
+      /* position: fixed;
       background-color: #333;
       color: white;
       height: 80px;
@@ -27,7 +27,7 @@
       animation-name: headerFadeUpAnime;
       animation-duration:1s;
       animation-fill-mode:forwards;
-      opacity:0;
+      opacity:0; */
     }
     /*アニメーションの開始から終了までを指定する*/
     @keyframes headerFadeUpAnime{
@@ -65,52 +65,7 @@
       flex-basis: auto;
       list-style: none;
     }
-    /* メイン部分 */
-    
-    main h2 {
-      font-size: 20px;
-      margin-bottom: 20px;
-    }
-    main p {
-      font-size: 16px;
-      line-height: 1.5;
-      text-align: center;
-      max-width: 600px;
-    }
-    main img {
-      width: 300px;
-      height: 300px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin-top: 20px;
-    }
-    main ul {
-      display: flex;
-      flex-wrap: wrap;
-      list-style: none;
-      margin-top: 40px;
-    }
-    main ul li {
-      width: 300px;
-      height: 200px;
-      margin: 10px;
-    }
-    main ul li a {
-      display: block;
-      width: 100%;
-      height: 100%;
-      text-decoration: none;
-      color: black;
-    }
-    main ul li a img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-    }
-    main ul li a h3 {
-      font-size: 18px;
-      margin-top: 10px;
-    }
+
     /* フッター部分 */
     footer {
       background-color: #333;

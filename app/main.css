@@ -1,45 +1,12 @@
 main {
-    --mainFontSize: 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  main #mainTOP{
-    height: calc(100vh - 60px);
-  }
-  main #mainTOP .logoParent{
-    /* 80pxはヘッダー部分の高さ */
-    height: calc(300px + 80px);
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100vw;
+  height:100vh;
+}
 
-  }
-  main #mainTOP h1.logo{
-    font-size: 60px;
-    color: #142;
-  }
-  main #mainTOP .logoDiscription{
-    font-size: var(--mainFontSize);
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  main h1 ::before{
-    content: '';
-  /* position: absolute; */
-    height: 2px;
-    /* bottom: 0.5em;
-    background: #333;
-    transform: rotate(45deg); */
-  }
-
-  #defaultCanvas0{
-    position: fixed; /*canvasを固定*/
-    top: 0px; /*canvasを上に固定*/
-    left:0px;
-    z-index: -1;
-    opacity: 0.2;
-  }
+.top{
+  width: 100vw;
+  height:100vh;
+  font-size:25rem;
+  line-height : 25rem;  
+  text-align: center;
+}
