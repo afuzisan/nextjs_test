@@ -4,7 +4,7 @@
 //     )
 // }
 
-const WContent_1_right = () => {
+const WContent_1_right = () =>  {
     return (
         <p className="right">WContent_1_right</p>
     )

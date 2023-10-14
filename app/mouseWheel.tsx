@@ -134,7 +134,7 @@ function removeEl(){
 
 
 //flag変更とエレメント変更関数
-function wheelFlagloop(deleteFlag,flagAfterEl){
+function wheelFlagloop(deleteFlag:string,flagAfterEl:string){
     let mainTOP: Element | null = document.querySelector('body')
     let result1 = document.querySelectorAll('.'+flagAfterEl)
     let result2 = document.querySelectorAll('.'+deleteFlag)
@@ -156,7 +156,9 @@ function wheelFlagloop(deleteFlag,flagAfterEl){
             }
             if(result1 !== null && result1 !== undefined && result1.length > 1) {
                 result1.forEach((element,i) => {
-                    element[i-1].remove()
+                    let elementAsUnknown = element as unknown;
+                    let elementAsCollection = elementAsUnknown as HTMLCollectionOf<Element>;
+                    elementAsCollection[i-1].remove()
                 });
             }
         }catch{}
@@ -166,12 +168,12 @@ function wheelFlagloop(deleteFlag,flagAfterEl){
     if(mainTOP !== null)mainTOP.appendChild(FlagElement)
 }
 
-function wheelFlagloopEND(deleteFlag){
+function wheelFlagloopEND(deleteFlag:string){
     let result = document.querySelector('.'+deleteFlag)
     if(result !== null) result.remove()
 }
 
-function rightANDleftContentCreate(flagEl,RightContent,LeftContent){
+function rightANDleftContentCreate(flagEl:string,RightContent,LeftContent){
     let wheelFlagElement = document.querySelector('.'+flagEl)
     let rightContentParent = document.createElement('div')
     rightContentParent.classList.add('rightContent'+flagEl);
