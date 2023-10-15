@@ -1,0 +1,76 @@
+.wheelFlag1 > .rightContentwheelFlag1 > .right{
+    position: relative;
+    padding: 140px 40px 40px 40px ;
+}
+.wheelFlag1 > .rightContentwheelFlag1 > .right >.rightHeader{
+    position: absolute;
+    width:100vw;
+    height: 100px;
+    top: 0px;
+    left:0px;
+    padding: 30px;
+    font-size: 30px;
+    color: #003351;
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    /* background-color: bisque; */
+    
+}
+.wheelFlag1 > .rightContentwheelFlag1 > .right >.rightHeader::after{
+    content:"";
+    
+    z-index:1;
+  }
+
+.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid{
+    display:flex;
+    flex-wrap:wrap;
+    gap: 20px 20px;
+}
+.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .gridChildren{
+    width: 150px;
+    height: 150px;
+    text-align:center;
+    border-radius: 3%;
+    
+}
+.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .html{
+    background-color: rgb(50,217,187);
+    
+
+}
+.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .css{
+    background-color: rgb(130,17,187);
+}
+.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .js{
+    background-color: rgb(30,117,187);
+}
+.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .ts{
+    background-color: rgb(30,117,187);
+}
+.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .next{
+    background-color: rgb(30,117,187);
+}
+.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .node{
+    background-color: rgb(30,117,187);
+}
+.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .jquery{
+    background-color: rgb(30,117,187);
+}
+.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .linux{
+    background-color: rgb(30,117,187);
+}
+.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .playCanvas{
+    background-color: rgb(30,117,187);
+}
+.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .wordpress{
+    background-color: rgb(30,117,187);
+}
+.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .docker{
+    background-color: rgb(30,117,187);
+}
+.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .postgresql{
+    background-color: rgb(30,117,187);
+}
+
