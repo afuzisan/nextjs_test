@@ -1,0 +1,14 @@
+.wheelFlag1 > .leftContentwheelFlag1 > .left {
+    position: relative;
+}
+.wheelFlag1 > .leftContentwheelFlag1 > .left > .photo{
+    width:50vw;
+    height: 100vh;
+    border: 1px solid #000;
+}
+.wheelFlag1 > .leftContentwheelFlag1 > .left > .photoDiscribe{
+    width:500px;
+    height: 300px;
+    border: 1px solid #000;
+    z-index:2;
+}
