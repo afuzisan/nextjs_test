@@ -160,6 +160,7 @@ function wheelFlagloop(deleteFlag: string, flagAfterEl: string) {
                     let elementAsUnknown = element as unknown;
                     let elementAsCollection = elementAsUnknown as HTMLCollectionOf<Element>;
                     elementAsCollection[i - 1].remove()
+
                 });
             }
         } catch { }

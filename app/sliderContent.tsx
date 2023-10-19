@@ -1,11 +1,12 @@
 import Image from 'next/image'
+import SliderContentWcontent_2_right from './sliderContentWcontent_2_right'
 import './icon.css'
 import './photo.css'
 import './wContent_1_left.css'
-import Slider from './swiper';
+
 import { useEffect, useState, useRef } from 'react'
 
-
+export const revalidate = 10;
 const WContent_1_right = () => {
 
     return (
@@ -220,8 +221,10 @@ const WContent_1_left = () => {
 }
 const WContent_2_right = () => {
     return (
-        <p className="right">WContent_2_right</p>
+        <SliderContentWcontent_2_right />
     )
+
+
 }
 const WContent_2_left = () => {
     return (
