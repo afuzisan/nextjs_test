@@ -81,33 +81,47 @@ function wheelMapCreate() {
     if (wheelMap !== null) wheelMap.appendChild(wheelMapElementSpan)
 }
 
+function wheelMapCreateRotate() {
+    let main = document.querySelector('#mainTOP')
+    let wheelMapElementRotate = document.createElement('div')
+    let wheelMapElementSpan = document.createElement('span')
+    wheelMapElementRotate.classList.add('wheelMapRotate');
+    wheelMapElementSpan.classList.add('wheelAfterRotate');
+
+    if (main !== null) main.appendChild(wheelMapElementRotate)
+    let wheelMap = document.querySelector('.wheelMap')
+    if (wheelMap !== null) wheelMap.appendChild(wheelMapElementSpan)
+}
+
 function wheelNumber(deltaTotal: number, scrollDirection: boolean) {
     let wheelAfter = document.querySelector('.wheelAfter')
     let wheelMap = document.querySelector('.wheelMap')
+
     let wheelAfterRotate = document.querySelector('.wheelAfterRotate')
     let wheelMapRotate = document.querySelector('.wheelMapRotate')
 
-    if (deltaTotal > 0) {
+    if (deltaTotal >= 0) {
         let wheelAfterElement = wheelAfter as HTMLElement;
+
         let deltaTotalborder = deltaTotal / 3
         if (wheelAfter !== null) wheelAfterElement.style.height = deltaTotalborder + 'px'
 
         console.log(deltaTotal)
-    } else if (deltaTotal < 0) {
+    } else if (deltaTotal <= 0) {
         let wheelAfterRotateElement = wheelAfterRotate as HTMLElement;
+        wheelAfterRotateElement !== null ? wheelAfterRotateElement : removeEl()
+        // console.log(wheelAfterRotateElement)
         let deltaTotalborder = deltaTotal * -1 / 3
         if (wheelAfterRotate !== null) wheelAfterRotateElement.style.height = deltaTotalborder + 'px'
-        console.log(deltaTotal)
+        // console.log(deltaTotal)
     }
 }
 
 function removeEl() {
-    let wheelAfter = document.querySelector('.wheelAfter')
     let wheelMap = document.querySelector('.wheelMap')
-    let wheelAfterRotate = document.querySelector('.wheelAfterRotate')
     let wheelMapRotate = document.querySelector('.wheelMapRotate')
-    if (wheelAfter && wheelMap) {
-        wheelAfter.remove()
+    if (wheelMap) {
+        // wheelAfter.remove()
         wheelMap.remove()
         let main = document.querySelector('#mainTOP')
         let wheelMapElementRotate = document.createElement('div')
@@ -118,8 +132,8 @@ function removeEl() {
         let wheelMapRotate = document.querySelector('.wheelMapRotate')
         if (wheelMapRotate !== null) wheelMapRotate.appendChild(wheelMapElementSpan)
 
-    } else if (wheelAfterRotate && wheelMapRotate) {
-        wheelAfterRotate.remove()
+    } else if (wheelMapRotate) {
+        // wheelAfterRotate.remove()
         wheelMapRotate.remove()
         let main = document.querySelector('#mainTOP')
         let wheelMapElement = document.createElement('div')

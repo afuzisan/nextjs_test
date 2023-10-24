@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import SliderContentWcontent_2_right from './sliderContentWcontent_2_right'
+import SliderContentWcontent_2_right from './twoSlides'
 import './icon.css'
 import './photo.css'
 import './wContent_1_left.css'
@@ -11,7 +11,7 @@ const WContent_1_right = () => {
 
     return (
         <div className="right">
-            <div className="rightHeader"><span>S</span><span>K</span><span>I</span><span>L</span><span>L</span></div>
+            <div className="rightHeader"><span>M</span><span>Y</span><span> </span><span>S</span><span>K</span><span>I</span><span>L</span><span>L</span></div>
             <div className="rightIconGrid">
                 <div className='css gridChildren'>
                     <p className="p">CSS3</p>
