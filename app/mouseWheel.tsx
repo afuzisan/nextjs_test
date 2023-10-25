@@ -94,26 +94,36 @@ function wheelMapCreateRotate() {
 }
 
 function wheelNumber(deltaTotal: number, scrollDirection: boolean) {
+
     let wheelAfter = document.querySelector('.wheelAfter')
-    let wheelMap = document.querySelector('.wheelMap')
+    // let wheelMap = document.querySelector('.wheelMap')
 
     let wheelAfterRotate = document.querySelector('.wheelAfterRotate')
-    let wheelMapRotate = document.querySelector('.wheelMapRotate')
+    // let wheelMapRotate = document.querySelector('.wheelMapRotate')
 
     if (deltaTotal >= 0) {
         let wheelAfterElement = wheelAfter as HTMLElement;
-
-        let deltaTotalborder = deltaTotal / 3
+        console.log(deltaTotal)
+        let deltaTotalborder = deltaTotal
+        let backColor = Math.trunc(deltaTotal / 6 / 2)
+        let rgb = `rgb(${backColor}%,${backColor}%,${backColor}%)`
+        console.log(rgb)
+        deltaTotalborder === 600 ? deltaTotalborder = 0 : deltaTotalborder
         if (wheelAfter !== null) wheelAfterElement.style.height = deltaTotalborder + 'px'
+        if (wheelAfter !== null) wheelAfterElement.style.background = rgb
 
         console.log(deltaTotal)
     } else if (deltaTotal <= 0) {
         let wheelAfterRotateElement = wheelAfterRotate as HTMLElement;
         wheelAfterRotateElement !== null ? wheelAfterRotateElement : removeEl()
-        // console.log(wheelAfterRotateElement)
-        let deltaTotalborder = deltaTotal * -1 / 3
+        let deltaTotalborder = deltaTotal * -1
+        let backColor = Math.trunc(deltaTotal / 6 / 2 * -1)
+        let rgb = `rgb(${backColor}%,${backColor}%,${backColor}%)`
+        console.log(rgb)
+        deltaTotalborder === 600 ? deltaTotalborder = 0 : deltaTotalborder
         if (wheelAfterRotate !== null) wheelAfterRotateElement.style.height = deltaTotalborder + 'px'
-        // console.log(deltaTotal)
+        if (wheelAfterRotate !== null) wheelAfterRotateElement.style.background = rgb
+
     }
 }
 
