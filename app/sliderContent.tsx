@@ -3,7 +3,6 @@ import SliderContentWcontent_2_right from './twoSlides'
 import './icon.css'
 import './photo.css'
 import './wContent_1_left.css'
-
 import { useEffect, useState, useRef } from 'react'
 
 export const revalidate = 10;
@@ -184,13 +183,47 @@ const WContent_1_right = () => {
     )
 }
 const WContent_1_left = () => {
+    const [up, setUp] = useState(100)
+    const [beforeUp, beforeSetUp] = useState(up - 100)
+    const ref = useRef<HTMLDivElement>(null)
+    function handleClickUp() {
+        ref.current !== null ? ref.current.style.top = `${up}px` : null
+        up <= 100 ? setUp((pre: number) => pre = 100) : setUp((pre: number) => pre + 100)
+        beforeUp <= 0 ? beforeSetUp((pre: number) => pre = 0) : beforeSetUp((pre: number) => pre = up)
+
+        console.log(up + 'up', beforeUp + 'beforeUp')
+
+
+        const keyframes = [
+            { top: `${beforeUp}px` }, // 開始時の状態
+            { top: `${up}px` } // 終了時の状態
+        ];
+
+        // アニメーションの詳細を定義
+        const options = {
+            easing: "ease",
+            duration: 1000
+        };
+
+        // アニメーションを実行
+        ref.current.animate(keyframes, options);
+
+    }
+    function handleClickDown() {
+
+
+
+    }
     useEffect(() => {
 
     }, [])
     return (
         <div className="left">
-            <h1>WEB制作年表</h1>
-            <dl>
+            <h1 className="leftH1Title">WEB制作年表</h1>
+            <div className="upArrow">
+                <button className="dli-chevron-up" onClick={handleClickUp} ></button>
+            </div>
+            <dl className="timeline" ref={ref}>
                 <dt>2012年12月</dt>
                 <dd>
                     <h2>初めてのWEBサイト制作</h2>
@@ -227,6 +260,9 @@ const WContent_1_left = () => {
                     <p>この時は毎月10万ぐらいずつ広告収入が増えていきました。</p>
                 </dd>
             </dl>
+            <div className="downArrow">
+                <button className="dli-chevron-down" onClick={handleClickDown} ></button>
+            </div>
             {/* <Slider /> */}
         </div>
     )
