@@ -1,6 +1,7 @@
 .left{
 	height: 100%;
 	position:relative;
+	overflow: hidden;
 }
 .leftH1Title{
 	display: flex;
@@ -46,10 +47,10 @@ dl dd h2 {
 
 .timeline{
 	position: absolute;
-	top:100px;
+	top:50px;
 	width:100%;
 	height: calc(100% - 100px);
-	overflow:hidden;
+	/* overflow:hidden; */
 	animation-name: fadeInAnime;/*1で解説*/
 	animation-timing-function:ease;/*5で解説*/
 	animation-delay: 0.5s;/*6で解説*/

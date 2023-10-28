@@ -183,88 +183,101 @@ const WContent_1_right = () => {
     )
 }
 const WContent_1_left = () => {
-    const [up, setUp] = useState(100)
-    const [beforeUp, beforeSetUp] = useState(up - 100)
+    const [up, setUp] = useState(50)
+    const [beforeUp, beforeSetUp] = useState(up - 50)
     const ref = useRef<HTMLDivElement>(null)
+
     function handleClickUp() {
         ref.current !== null ? ref.current.style.top = `${up}px` : null
-        up <= 100 ? setUp((pre: number) => pre = 100) : setUp((pre: number) => pre + 100)
+        up <= 100 ? setUp((pre: number) => pre = 50) : setUp((pre: number) => pre + 100)
         beforeUp <= 0 ? beforeSetUp((pre: number) => pre = 0) : beforeSetUp((pre: number) => pre = up)
-
         console.log(up + 'up', beforeUp + 'beforeUp')
-
-
         const keyframes = [
             { top: `${beforeUp}px` }, // 開始時の状態
             { top: `${up}px` } // 終了時の状態
         ];
-
         // アニメーションの詳細を定義
         const options = {
             easing: "ease",
             duration: 1000
         };
-
         // アニメーションを実行
-        ref.current.animate(keyframes, options);
-
+        ref.current !== null ? ref.current.animate(keyframes, options) : null
     }
+
     function handleClickDown() {
-
-
+        console.log('downClick')
+        ref.current !== null ? ref.current.style.top = `${up}px` : null
+        up >= 100 ? setUp((pre: number) => pre = 50) : setUp((pre: number) => pre - 100)
+        beforeUp >= 0 ? beforeSetUp((pre: number) => pre = 0) : beforeSetUp((pre: number) => pre = up)
+        console.log(up + 'up', beforeUp + 'beforeUp')
+        const keyframes = [
+            { top: `${beforeUp}px` }, // 開始時の状態
+            { top: `${up}px` } // 終了時の状態
+        ];
+        // アニメーションの詳細を定義
+        const options = {
+            easing: "ease",
+            duration: 1000
+        };
+        // アニメーションを実行
+        ref.current !== null ? ref.current.animate(keyframes, options) : null
 
     }
     useEffect(() => {
 
     }, [])
     return (
-        <div className="left">
+        <>
+
             <h1 className="leftH1Title">WEB制作年表</h1>
             <div className="upArrow">
                 <button className="dli-chevron-up" onClick={handleClickUp} ></button>
             </div>
-            <dl className="timeline" ref={ref}>
-                <dt>2012年12月</dt>
-                <dd>
-                    <h2>初めてのWEBサイト制作</h2>
-                    <p>自社のWEBサイトをHTMLとCSSで友達と二人で作りました。</p>
-                    <p><small>制作期間は3ヶ月</small></p>
-                    <a href="https://www.dropbox.com/home/%E8%87%AA%E4%BD%9C%E3%82%B5%E3%82%A4%E3%83%88/CMS?di=left_nav_browse" target="_blank">DropBoxにファイルが残ってました</a>
-                </dd>
-                <dt>2013年1月</dt>
-                <dd>
-                    <h2>初めてのWEBサービス制作</h2>
-                    <p>HTMLとCSSだけで、無料ディレクトリ登録サイトのポータルサイトを作りました。</p>
-                    <p>動的な処理は出来なかったのでメールでやり取りしてました。</p>
-                </dd>
-                <dt>2013年4月</dt>
-                <dd>
-                    <h2>WordPressを使いだす</h2>
-                    <p>WordPressのテンプレートを少しだけ改修する</p>
-                    <p>WordPressのカスタマイズをどうしてもしたかったため</p>
-                    <p>PHPを意味も分からず弄り、何度も動かなくなり絶望しながら作りました。</p>
-                </dd>
-                <dt>2013年8月</dt>
-                <dd>
-                    <h2>JavaScriptを使って横断検索サイトを作る</h2>
-                    <p>一部始終という横断検索サイトを作りました。</p>
-                    <a href="https://www.dropbox.com/home/%E3%82%AB%E3%83%A1%E3%83%A9%E3%80%81%E7%94%BB%E5%83%8F/img?preview=urligainomozi.png" target="_blank">画像だけ残ってました。</a>
-
-                </dd><dt>2014年1月</dt>
-                <dd>
-                    <h2>2chまとめサイトの量産を始める</h2>
-                    <p>当時スマホゲームの勢いがあったので、日本でリリースされるスマホゲームをピックアップして</p>
-                    <p>出来るだけ多くの2chまとめブログを作ってました。</p>
-                    <p>1日３～５サイト作り、記事の更新は全自動まとめツールでした。</p>
-                    <p>沢山作ってた理由は、何がヒットするゲームになるのか予想するのが難しかった為です。</p>
-                    <p>この時は毎月10万ぐらいずつ広告収入が増えていきました。</p>
-                </dd>
-            </dl>
             <div className="downArrow">
                 <button className="dli-chevron-down" onClick={handleClickDown} ></button>
             </div>
-            {/* <Slider /> */}
-        </div>
+            <div className="left">
+                <dl className="timeline" ref={ref}>
+                    <dt>2012年12月</dt>
+                    <dd>
+                        <h2>初めてのWEBサイト制作</h2>
+                        <p>自社のWEBサイトをHTMLとCSSで友達と二人で作りました。</p>
+                        <p><small>制作期間は3ヶ月</small></p>
+                        <a href="https://www.dropbox.com/home/%E8%87%AA%E4%BD%9C%E3%82%B5%E3%82%A4%E3%83%88/CMS?di=left_nav_browse" target="_blank">DropBoxにファイルが残ってました</a>
+                    </dd>
+                    <dt>2013年1月</dt>
+                    <dd>
+                        <h2>初めてのWEBサービス制作</h2>
+                        <p>HTMLとCSSだけで、無料ディレクトリ登録サイトのポータルサイトを作りました。</p>
+                        <p>動的な処理は出来なかったのでメールでやり取りしてました。</p>
+                    </dd>
+                    <dt>2013年4月</dt>
+                    <dd>
+                        <h2>WordPressを使いだす</h2>
+                        <p>WordPressのテンプレートを少しだけ改修する</p>
+                        <p>WordPressのカスタマイズをどうしてもしたかったため</p>
+                        <p>PHPを意味も分からず弄り、何度も動かなくなり絶望しながら作りました。</p>
+                    </dd>
+                    <dt>2013年8月</dt>
+                    <dd>
+                        <h2>JavaScriptを使って横断検索サイトを作る</h2>
+                        <p>一部始終という横断検索サイトを作りました。</p>
+                        <a href="https://www.dropbox.com/home/%E3%82%AB%E3%83%A1%E3%83%A9%E3%80%81%E7%94%BB%E5%83%8F/img?preview=urligainomozi.png" target="_blank">画像だけ残ってました。</a>
+
+                    </dd><dt>2014年1月</dt>
+                    <dd>
+                        <h2>2chまとめサイトの量産を始める</h2>
+                        <p>当時スマホゲームの勢いがあったので、日本でリリースされるスマホゲームをピックアップして</p>
+                        <p>出来るだけ多くの2chまとめブログを作ってました。</p>
+                        <p>1日３～５サイト作り、記事の更新は全自動まとめツールでした。</p>
+                        <p>沢山作ってた理由は、何がヒットするゲームになるのか予想するのが難しかった為です。</p>
+                        <p>この時は毎月10万ぐらいずつ広告収入が増えていきました。</p>
+                    </dd>
+                </dl>
+                {/* <Slider /> */}
+            </div>
+        </>
     )
 }
 const WContent_2_right = () => {

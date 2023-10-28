@@ -1,16 +1,16 @@
 .wheelFlag1 > .rightContentwheelFlag1 > .right{
-    position: relative;
     padding: 140px 40px 40px 40px ;
+    position: relative;
 }
 .wheelFlag1 > .rightContentwheelFlag1 > .right >.rightHeader{
-    position: absolute;
-    width:100vw;
+    color: #003351;
+    font-size: 30px;
     height: 100px;
-    top: 0px;
     left:0px;
     padding: 30px 30px 30px 45px;
-    font-size: 30px;
-    color: #003351;
+    position: absolute;
+    top: 0px;
+    width:100vw;
     /* top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); */
@@ -22,17 +22,17 @@
     flex-wrap:wrap;
     gap: 20px 20px;
 }
-.p{ 
-    margin-bottom:5px;
+.p{
     border-bottom: 1px solid gray;
+    color: gray; 
+    margin-bottom:5px;
     padding:5px;
-    color: gray;
 }
 .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .gridChildren{
-    width: 150px;
+    border-radius: 3%;
     height: 150px;
     text-align:center;
-    border-radius: 3%;
+    width: 150px;
     
 }
 .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .html{

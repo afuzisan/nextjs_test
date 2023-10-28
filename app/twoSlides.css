@@ -1,33 +1,33 @@
 #twoSliderParent{
-    display: grid;
-    grid-template-rows: 30px;
-    grid-template-columns: 300px;
-    justify-content: center;
     align-items: center;
+    display: grid;
+    grid-template-columns: 300px;
+    grid-template-rows: 30px;
+    justify-content: center;
     
     
 }
 
 #twoCards{
-    font-size: clamp(0.8rem, 1vw, 1rem);
-    padding:10px;
-    display: grid; 
-    grid-template-rows: 50px 1fr 100px; 
-    grid-template-columns: 300px 300px 300px ; 
-    justify-content: center;
     align-items: center;
-    gap:10px;
+    display: grid;
+    font-size: clamp(0.8rem, 1vw, 1rem);
+    gap:10px; 
+    grid-template-columns: 300px 300px 300px ; 
+    grid-template-rows: 50px 1fr 100px; 
+    justify-content: center;
+    padding:10px;
     
 }
 
 .twoCard{
+    align-items: center;
     /* border:  1px solid #000; */
     background-color: #f2f2f2;
     display: grid;
-    grid-template-rows: subgrid;
     grid-row: span 3;
+    grid-template-rows: subgrid;
     justify-content: center;
-    align-items: center;
   
 }
 .twoCardTitle{
