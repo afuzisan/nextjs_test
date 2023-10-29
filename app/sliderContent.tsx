@@ -186,7 +186,7 @@ const WContent_1_left = () => {
     console.log('レンダリング')
     let scrollVolume = 50
     let scrollDuration = 100
-    const [up, setUp] = useState(50)
+    const [up, setUp] = useState(scrollVolume)
     const [beforeUp, beforeSetUp] = useState(up - scrollVolume)
     const [down, setDown] = useState(0)
     const [beforeDown, beforeSetDown] = useState(down + scrollVolume)
