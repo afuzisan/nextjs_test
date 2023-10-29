@@ -183,15 +183,24 @@ const WContent_1_right = () => {
     )
 }
 const WContent_1_left = () => {
+    console.log('レンダリング')
     const [up, setUp] = useState(50)
     const [beforeUp, beforeSetUp] = useState(up - 50)
+    const [down, setDown] = useState(0)
+    const [beforeDown, beforeSetDown] = useState(down + 50)
     const ref = useRef<HTMLDivElement>(null)
 
     function handleClickUp() {
+
         ref.current !== null ? ref.current.style.top = `${up}px` : null
-        up <= 100 ? setUp((pre: number) => pre = 50) : setUp((pre: number) => pre + 100)
-        beforeUp <= 0 ? beforeSetUp((pre: number) => pre = 0) : beforeSetUp((pre: number) => pre = up)
-        console.log(up + 'up', beforeUp + 'beforeUp')
+        console.log(up, '', beforeUp)
+
+        up >= 0 ? setUp((pre: number) => pre) : setUp((pre: number) => pre + 50)
+        up >= 0 ? beforeSetUp((pre: number) => pre = up) : beforeSetUp((pre: number) => pre = up)
+
+        setDown((pre: number) => up - 50)
+        beforeSetDown((pre: number) => pre = up)
+        console.log(up + ' ', 'UP', ' ' + beforeUp, ' ' + 'beforeUP')
         const keyframes = [
             { top: `${beforeUp}px` }, // 開始時の状態
             { top: `${up}px` } // 終了時の状態
@@ -199,29 +208,37 @@ const WContent_1_left = () => {
         // アニメーションの詳細を定義
         const options = {
             easing: "ease",
-            duration: 1000
+            duration: 100
         };
         // アニメーションを実行
         ref.current !== null ? ref.current.animate(keyframes, options) : null
+
+
     }
 
     function handleClickDown() {
-        console.log('downClick')
-        ref.current !== null ? ref.current.style.top = `${up}px` : null
-        up >= 100 ? setUp((pre: number) => pre = 50) : setUp((pre: number) => pre - 100)
-        beforeUp >= 0 ? beforeSetUp((pre: number) => pre = 0) : beforeSetUp((pre: number) => pre = up)
-        console.log(up + 'up', beforeUp + 'beforeUp')
+
+        ref.current !== null ? ref.current.style.top = `${down}px` : null
+        setDown((pre: number) => pre - 50)
+        beforeSetDown((pre: number) => pre = down)
+
+        setUp((pre: number) => down + 50)
+        beforeSetUp((pre: number) => pre = down)
+
+        console.log(down + ' ', 'down', ' ', beforeDown + ' ' + 'beforeDown')
         const keyframes = [
-            { top: `${beforeUp}px` }, // 開始時の状態
-            { top: `${up}px` } // 終了時の状態
+            { top: `${beforeDown}px` }, // 開始時の状態
+            { top: `${down}px` } // 終了時の状態
         ];
         // アニメーションの詳細を定義
         const options = {
             easing: "ease",
-            duration: 1000
+            duration: 100
         };
         // アニメーションを実行
         ref.current !== null ? ref.current.animate(keyframes, options) : null
+
+
 
     }
     useEffect(() => {
