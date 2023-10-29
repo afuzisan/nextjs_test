@@ -187,9 +187,9 @@ const WContent_1_left = () => {
     let scrollVolume = 50
     let scrollDuration = 100
     const [up, setUp] = useState(50)
-    const [beforeUp, beforeSetUp] = useState(up - 50)
+    const [beforeUp, beforeSetUp] = useState(up - scrollVolume)
     const [down, setDown] = useState(0)
-    const [beforeDown, beforeSetDown] = useState(down + 50)
+    const [beforeDown, beforeSetDown] = useState(down + scrollVolume)
     const ref = useRef<HTMLDListElement>(null)
 
     function handleClickUp() {
