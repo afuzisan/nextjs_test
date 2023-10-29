@@ -188,7 +188,7 @@ const WContent_1_left = () => {
     const [beforeUp, beforeSetUp] = useState(up - 50)
     const [down, setDown] = useState(0)
     const [beforeDown, beforeSetDown] = useState(down + 50)
-    const ref = useRef<HTMLDivElement>(null)
+    const ref = useRef<HTMLDListElement>(null)
 
     function handleClickUp() {
 
