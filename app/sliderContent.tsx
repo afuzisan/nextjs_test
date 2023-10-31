@@ -191,21 +191,40 @@ const WContent_1_left = () => {
     const [down, setDown] = useState(0)
     const [beforeDown, beforeSetDown] = useState(down + scrollVolume)
     const ref = useRef<HTMLDListElement>(null)
+    let timerId: number;
+    let a: number = 0
+    useEffect(() => {
+        let leftContentwheelFlag1El = document.querySelector('.leftContentwheelFlag1')
+        console.log(leftContentwheelFlag1El)
+        leftContentwheelFlag1El?.addEventListener('mousedown', (event) => {
+            timerId = window.setInterval(() => {
+
+                a -= 10
+                setDown(prev => prev - 1)
+                console.log('down', down)
+                ref.current !== null ? ref.current.style.top = `${a}px` : null
+                console.log(a)
+            }, 100)
+        })
+        leftContentwheelFlag1El?.addEventListener('mouseup', (event) => {
+            console.log('up')
+            clearInterval(timerId);
+        })
+    }, [])
 
     function handleClickUp() {
 
-        ref.current !== null ? ref.current.style.top = `${up}px` : null
-        console.log(up, '', beforeUp)
+        ref.current !== null ? ref.current.style.top = `${down}px` : null
+        setDown((pre: number) => pre - scrollVolume)
+        beforeSetDown((pre: number) => pre = down)
 
-        up >= 0 ? setUp((pre: number) => pre) : setUp((pre: number) => pre + scrollVolume)
-        up >= 0 ? beforeSetUp((pre: number) => pre = up) : beforeSetUp((pre: number) => pre = up)
+        setUp((pre: number) => down + scrollVolume)
+        beforeSetUp((pre: number) => pre = down)
 
-        setDown((pre: number) => up - scrollVolume)
-        beforeSetDown((pre: number) => pre = up)
-        console.log(up + ' ', 'UP', ' ' + beforeUp, ' ' + 'beforeUP')
+        console.log(down + ' ', 'down', ' ', beforeDown + ' ' + 'beforeDown')
         const keyframes = [
-            { top: `${beforeUp}px` }, // 開始時の状態
-            { top: `${up}px` } // 終了時の状態
+            { top: `${beforeDown}px` }, // 開始時の状態
+            { top: `${down}px` } // 終了時の状態
         ];
         // アニメーションの詳細を定義
         const options = {
