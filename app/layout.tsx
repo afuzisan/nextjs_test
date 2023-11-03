@@ -1,6 +1,5 @@
 import './globals.css'
-import HeaderMenu from './headerMenu'
-import Link from 'next/link'
+
 
 export const metadata = {
   title: 'test',
