@@ -1,14 +1,14 @@
 import './loading.css'
-import {useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 const LoadingEl = () => {
-  useEffect(()=>{
-    window.setTimeout(()=>{
-        document.querySelector('#loading')?.remove()
-    },3000)
-  },[])
+  useEffect(() => {
+    window.setTimeout(() => {
+      document.querySelector('#loading')?.remove()
+    }, 3000)
+  }, [])
   return (
-    <div id="loading"></div> 
+    <div id="loading"></div>
   )
 }
 

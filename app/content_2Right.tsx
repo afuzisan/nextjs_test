@@ -2,9 +2,8 @@
 import React, { useState, useEffect } from 'react'
 import Link from "next/link";
 import Image from 'next/image'
-import axios from "axios"
-import Slider from "./swiper"
-import './twoSlides.css'
+import axios, { AxiosRequestConfig, AxiosResponse, AxiosError } from "axios"
+import './content_2Right.css'
 
 const sliderContentWcontent_2_right = () => {
     const [Content, setContent] = useState<string[]>([])

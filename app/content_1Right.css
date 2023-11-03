@@ -1,3 +1,20 @@
+.wheelFlag1 > .leftContentwheelFlag1 > .left {
+    position: relative;
+}
+.wheelFlag1 > .leftContentwheelFlag1 > .left > .photo{
+    border: 1px solid #000;
+    height: 100vh;
+    width:50vw;
+}
+.wheelFlag1 > .leftContentwheelFlag1 > .left > .photoDiscribe{
+    border: 1px solid #000;
+    height: 300px;
+    width:500px;
+    z-index:2;
+}
+
+
+
 .wheelFlag1 > .rightContentwheelFlag1 > .right{
     padding: 140px 40px 40px 40px ;
     position: relative;
@@ -11,10 +28,7 @@
     position: absolute;
     top: 0px;
     width:100vw;
-    /* top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
-    /* background-color: bisque; */
+
     
 }
 .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid{

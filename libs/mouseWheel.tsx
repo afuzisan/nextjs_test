@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { createRoot } from 'react-dom/client';
 import './mouseWheel.css'
-import { WContent_1_right, WContent_1_left, WContent_2_right, WContent_2_left } from './sliderContent'
+import { WContent_1_right, WContent_1_left, WContent_2_right, WContent_2_left } from '../app/sliderMainContent'
 
 const MouseWheel = () => {
-    // let [state , setState] = useState(1)
     let deltaTotal: number = 0
     let scrollDirection = true
     let deltaTotalBefore = 0
