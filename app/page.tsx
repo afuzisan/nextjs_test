@@ -1,7 +1,8 @@
 "use client"
-import './main.css'
 import { MouseWheel } from '../libs/mouseWheel';
+import { setup, draw } from '../libs/p5';
 import dynamic from 'next/dynamic';
+import LoadingEl from './loadingEl';
 
 
 const Home = () => {
@@ -13,7 +14,7 @@ const Home = () => {
 
   return (
     <main>
-      {/* <Sketch setup={setup} draw={draw}/> */}
+      {/* <Sketch setup={setup} draw={draw} /> */}
       {/* <LoadingEl /> */}
       <div id="mainTOP">
         <div className="top">OKADA AKIYA</div>
