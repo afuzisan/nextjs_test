@@ -4,6 +4,12 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      backface-visibility: hidden;/* animation時のにじみ防止 */
+      -webkit-backface-visibility: hidden;/* animation時のにじみ防止 */
+      -webkit-font-smoothing: antialiased/* animation時の文字にじみ防止 */
+
+
+      
     }
     @font-face{
       font-family: Togalite-Bold;
