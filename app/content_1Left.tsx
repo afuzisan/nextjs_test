@@ -15,7 +15,7 @@ const Content_1Left = () => {
     function handleClickUp(event: any) {
         event.preventDefault();
         ref.current !== null ? ref.current.style.top = `${up}${unit}` : null
-        up >= 0 ? setUp((pre: number) => pre) : setUp((pre: number) => pre + scrollVolume + 10)
+        up >= 0 ? setUp((pre: number) => pre) : setUp((pre: number) => pre + scrollVolume + 6)
         beforeUp >= 0 ? beforeSetUp(up) : beforeSetUp((pre: number) => pre = up)
 
         setDown((pre: number) => up - scrollVolume)
@@ -37,7 +37,7 @@ const Content_1Left = () => {
         console.log(`${down}${unit}`)
         ref.current !== null ? ref.current.style.top = `${down}${unit}` : null
 
-        setDown((pre: number) => pre - scrollVolume - 10)
+        setDown((pre: number) => pre - scrollVolume - 6)
         beforeSetDown((pre: number) => pre = down)
 
         setUp((pre: number) => down + scrollVolume)
@@ -67,7 +67,7 @@ const Content_1Left = () => {
         if (leftEl !== null) {
             leftEl.addEventListener('mouseout', () => {
                 // element.classList.remove('aaaa')
-                console.log('out')
+                // console.log('out')
             });
         }
     }
@@ -90,11 +90,10 @@ const Content_1Left = () => {
             if (leftEl !== null) {
                 leftEl.addEventListener('mouseout', () => {
                     element.classList.remove(addClassName)
-                    console.log('out')
+                    // console.log('out')
                 });
             }
         });
-
     }
     useEffect(() => {
         mouseOver()

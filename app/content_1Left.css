@@ -1,9 +1,42 @@
 .days{
 	height: 50vh;
 	justify-content:center;
-	margin-top:100px;
+	margin-top:50px;
+	margin-left:30px;
 	background-color: #fff;
+
+}
+.toolTips{
+	box-sizing: border-box;
+	box-shadow: 1em -1em #eee, -1em 1em #eee, 1em 1em #ccc, -1em -1em #ccc;
+	-webkit-animation:blink 1.5s ease-in-out infinite alternate;
+    -moz-animation:blink 1.5s ease-in-out infinite alternate;
+    animation:blink 1.5s ease-in-out infinite alternate;
 	
+}
+@-webkit-keyframes blink{
+    0% {
+		box-shadow: 1em -1em #eee, -1em 1em #eee, 1em 1em #ccc, -1em -1em #ccc;
+	}
+    100% {
+		box-shadow: 1em -1em #ccc, -1em 1em #ccc, 1em 1em #eee, -1em -1em #eee;
+	}
+}
+@-moz-keyframes blink{
+    0% {
+		box-shadow: 1em -1em #eee, -1em 1em #eee, 1em 1em #ccc, -1em -1em #ccc;
+	}
+    100% {
+		box-shadow: 1em -1em #ccc, -1em 1em #ccc, 1em 1em #eee, -1em -1em #eee;
+	}
+}
+@keyframes blink{
+    0% {
+		box-shadow: 1em -1em #eee, -1em 1em #eee, 1em 1em #ccc, -1em -1em #ccc;
+	}
+    100% {
+		box-shadow: 1em -1em #ccc, -1em 1em #ccc, 1em 1em #eee, -1em -1em #eee;
+	}
 }
 
 .left{
@@ -12,8 +45,9 @@
 	overflow: hidden;
 	-webkit-user-select: none;
 	-moz-user-select: none;
-	 -ms-user-select: none;
-		 user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+		 
 }
 .leftH1Title{
 	display: flex;
@@ -21,6 +55,11 @@
 	align-items: center;
 	width: 200px;
 	font-size: 20px;
+	margin-left:30px;
+	margin-top:10px;
+	margin-bottom:10px;
+	padding:5px;
+	background-color: #fff;
 }
 dl {
 	/* background-color: #333; */
@@ -63,7 +102,7 @@ dl dd h2 {
 	position: absolute;
 	top:0px;
 	width:100%;
-	height: calc(100% - 100px);
+	height: calc(0% - 100px);
 	animation-name: fadeInAnime;
 	animation-timing-function:ease;
 	animation-delay: 0.5s;
