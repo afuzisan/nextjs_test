@@ -36,6 +36,5 @@
   
     .stalker{
       z-index: 10000;
-      border: 1px solid #000;
       position: fixed;
     }

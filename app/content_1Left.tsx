@@ -105,7 +105,7 @@ const Content_1Left = () => {
             <h1 className="leftH1Title">WEB制作年表</h1>
             <div className="left">
                 <dl className="timeline" ref={ref} onClick={handleClickDown} onContextMenu={handleClickUp}>
-                    <dl className="days">
+                    <dl className="days 201212">
                         <dt>2012年12月</dt>
                         <dd>
                             <h2>初めてのWEBサイト制作</h2>
