@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from 'react'
 
 const Content_1Left = () => {
     console.log('レンダリング')
-    let scrollVolume = 50
+    let scrollVolume = 44
     let scrollDuration = 100
     const unit = 'vh'
     const [up, setUp] = useState(0)
@@ -114,7 +114,7 @@ const Content_1Left = () => {
                             <a href="https://www.dropbox.com/home/%E8%87%AA%E4%BD%9C%E3%82%B5%E3%82%A4%E3%83%88/CMS?di=left_nav_browse" target="_blank">DropBoxにファイルが残ってました</a>
                         </dd>
                     </dl>
-                    <dl className="days">
+                    <dl className="days 201301">
                         <dt>2013年1月</dt>
                         <dd>
                             <h2>初めてのWEBサービス制作</h2>
@@ -122,7 +122,7 @@ const Content_1Left = () => {
                             <p>動的な処理は出来なかったのでメールでやり取りしてました。</p>
                         </dd>
                     </dl>
-                    <dl className="days">
+                    <dl className="days 201304">
                         <dt>2013年4月</dt>
                         <dd>
                             <h2>WordPressを使いだす</h2>
@@ -131,7 +131,7 @@ const Content_1Left = () => {
                             <p>PHPを意味も分からず弄り、何度も動かなくなり絶望しながら作りました。</p>
                         </dd>
                     </dl>
-                    <dl className="days">
+                    <dl className="days 201308">
                         <dt>2013年8月</dt>
                         <dd>
                             <h2>JavaScriptを使って横断検索サイトを作る</h2>
@@ -140,7 +140,7 @@ const Content_1Left = () => {
 
                         </dd>
                     </dl>
-                    <dl className="days">
+                    <dl className="days 201401">
                         <dt>2014年1月</dt>
                         <dd>
                             <h2>2chまとめサイトの量産を始める</h2>

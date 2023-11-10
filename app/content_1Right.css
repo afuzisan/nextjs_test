@@ -20,6 +20,7 @@
 
 .wheelFlag1 > .rightContentwheelFlag1 > .right{
     padding: 140px 40px 40px 40px ;
+    height: 100vh;
     position: relative;
 }
 .wheelFlag1 > .rightContentwheelFlag1 > .right >.rightHeader{

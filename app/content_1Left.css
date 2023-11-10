@@ -1,9 +1,10 @@
 .days{
 	height: 50vh;
 	justify-content:center;
-	margin-top:50px;
-	margin-left:30px;
-	background-color: #fff;
+	/* margin-top:5px; */
+	/* margin-left:30px;
+	background-color: #fff; */
+	width: 100%;
 
 }
 .toolTips{
