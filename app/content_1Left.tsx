@@ -1,5 +1,6 @@
 import './content_1left.css'
 import { useState, useRef, useEffect } from 'react'
+import timelineData from './content_1left_data';
 
 const Content_1Left = () => {
     console.log('レンダリング')
@@ -98,6 +99,7 @@ const Content_1Left = () => {
     useEffect(() => {
         mouseOver()
         onmouseout()
+        console.log(timelineData)
     }, [])
 
     return (
@@ -105,52 +107,20 @@ const Content_1Left = () => {
             <h1 className="leftH1Title">WEB制作年表</h1>
             <div className="left">
                 <dl className="timeline" ref={ref} onClick={handleClickDown} onContextMenu={handleClickUp}>
-                    <dl className="days 201212">
-                        <dt>2012年12月</dt>
-                        <dd>
-                            <h2>初めてのWEBサイト制作</h2>
-                            <p>自社のWEBサイトをHTMLとCSSで友達と二人で作りました。</p>
-                            <p><small>制作期間は3ヶ月</small></p>
-                            <a href="https://www.dropbox.com/home/%E8%87%AA%E4%BD%9C%E3%82%B5%E3%82%A4%E3%83%88/CMS?di=left_nav_browse" target="_blank">DropBoxにファイルが残ってました</a>
-                        </dd>
-                    </dl>
-                    <dl className="days 201301">
-                        <dt>2013年1月</dt>
-                        <dd>
-                            <h2>初めてのWEBサービス制作</h2>
-                            <p>HTMLとCSSだけで、無料ディレクトリ登録サイトのポータルサイトを作りました。</p>
-                            <p>動的な処理は出来なかったのでメールでやり取りしてました。</p>
-                        </dd>
-                    </dl>
-                    <dl className="days 201304">
-                        <dt>2013年4月</dt>
-                        <dd>
-                            <h2>WordPressを使いだす</h2>
-                            <p>WordPressのテンプレートを少しだけ改修する</p>
-                            <p>WordPressのカスタマイズをどうしてもしたかったため</p>
-                            <p>PHPを意味も分からず弄り、何度も動かなくなり絶望しながら作りました。</p>
-                        </dd>
-                    </dl>
-                    <dl className="days 201308">
-                        <dt>2013年8月</dt>
-                        <dd>
-                            <h2>JavaScriptを使って横断検索サイトを作る</h2>
-                            <p>一部始終という横断検索サイトを作りました。</p>
-                            <a href="https://www.dropbox.com/home/%E3%82%AB%E3%83%A1%E3%83%A9%E3%80%81%E7%94%BB%E5%83%8F/img?preview=urligainomozi.png" target="_blank">画像だけ残ってました。</a>
-
-                        </dd>
-                    </dl>
-                    <dl className="days 201401">
-                        <dt>2014年1月</dt>
-                        <dd>
-                            <h2>2chまとめサイトの量産を始める</h2>
-                            <p>当時スマホゲームの勢いがあったので、日本でリリースされるスマホゲームをピックアップして</p>
-                            <p>出来るだけ多くの2chまとめブログを作ってました。</p>
-                            <p>1日３～５サイト作り、記事の更新は全自動まとめツールでした。</p>
-                            <p>沢山作ってた理由は、何がヒットするゲームになるのか予想するのが難しかった為です。</p>
-                            <p>この時は毎月10万ぐらいずつ広告収入が増えていきました。</p>
-                        </dd>
-                    </dl>
+                    {timelineData.map((data, index) => (
+                        <dl className={`days ${data.class}`} key={index}>
+                            <dt>{data.date}</dt>
+                            {data.events.map((event, eventIndex) => (
+                                <dd key={eventIndex}>
+                                    <h2>{event.title}</h2>
+                                    {event.description.map((desc, descIndex) => (
+                                        <p key={descIndex}>{desc}</p>
+                                    ))}
+                                    {('link' in event) && <a href={event.link} target="_blank">{event.linkDescription}</a>}
+                                </dd>
+                            ))}
+                        </dl>
+                    ))}
                 </dl>
             </div>
         </>
@@ -158,3 +128,4 @@ const Content_1Left = () => {
 }
 
 export default Content_1Left 
+
