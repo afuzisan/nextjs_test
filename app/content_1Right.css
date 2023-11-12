@@ -23,23 +23,13 @@
     height: 100vh;
     position: relative;
 }
-.wheelFlag1 > .rightContentwheelFlag1 > .right >.rightHeader{
-    color: #003351;
-    font-size: 30px;
-    height: 100px;
-    left:0px;
-    padding: 30px 30px 30px 45px;
-    position: absolute;
-    top: 0px;
-    width:100vw;
 
-    
-}
 .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid{
     display:flex;
     flex-wrap:wrap;
     gap: 20px 20px;
 }
+
 .p{
     border-bottom: 1px solid gray;
     color: gray; 

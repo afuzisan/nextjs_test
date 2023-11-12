@@ -11,12 +11,12 @@
 
       
     }
-    @font-face{
+    /* @font-face{
       font-family: Togalite-Bold;
       src:url(../font/NotoSerifJP-Black.otf)
-    }
+    } */
     body{
-      font-family: Togalite-Bold;
+      /* font-family: Togalite-Bold; */
       margin: auto;
     }
 

@@ -1,44 +1,18 @@
 .days{
 	height: 50vh;
 	justify-content:center;
-	/* margin-top:5px; */
-	/* margin-left:30px;
-	background-color: #fff; */
 	width: 100%;
 
+
 }
-.toolTips{
-	box-sizing: border-box;
-	box-shadow: 1em -1em #eee, -1em 1em #eee, 1em 1em #eee, -1em -1em #eee;
-	-webkit-animation:blink 1.5s ease-in-out infinite alternate;
-    -moz-animation:blink 1.5s ease-in-out infinite alternate;
-    animation:blink 1.5s ease-in-out infinite alternate;
-	
+.days:hover{
+	background-color: #fff;
+	border: 50px solid #ccc; 
+	border-radius: 25px;
+	cursor: pointer;
+   transition-duration: .5s;
 }
-@-webkit-keyframes blink{
-    0% {
-		box-shadow: 1em -1em #ccc, -1em 1em #ccc, 1em 1em #ccc, -1em -1em #ccc;
-	}
-    100% {
-		box-shadow: 1em -1em #ccc, -1em 1em #ccc, 1em 1em #ccc, -1em -1em #ccc;
-	}
-}
-@-moz-keyframes blink{
-    0% {
-		box-shadow: 1em -1em #ccc, -1em 1em #ccc, 1em 1em #ccc, -1em -1em #ccc;
-	}
-    100% {
-		box-shadow: 1em -1em #ccc, -1em 1em #ccc, 1em 1em #ccc, -1em -1em #ccc;
-	}
-}
-@keyframes blink{
-    0% {
-		box-shadow: 1em -1em #ccc, -1em 1em #ccc, 1em 1em #ccc, -1em -1em #ccc;
-	}
-    100% {
-		box-shadow: 1em -1em #ccc, -1em 1em #ccc, 1em 1em #ccc, -1em -1em #ccc;
-	}
-}
+
 
 .left{
 	height: 100%;

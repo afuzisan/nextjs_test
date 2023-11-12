@@ -2,6 +2,7 @@ import './content_1left.css'
 import { useState, useRef, useEffect } from 'react'
 import timelineData from './content_1left_data';
 
+// コンテンツ1の左側を表示するコンポーネント
 const Content_1Left = () => {
     console.log('レンダリング')
     let scrollVolume = 44
@@ -13,6 +14,7 @@ const Content_1Left = () => {
     const [beforeDown, beforeSetDown] = useState(down + scrollVolume)
     const ref = useRef<HTMLDListElement>(null)
 
+    // 上にスクロールするためのハンドラ
     function handleClickUp(event: any) {
         event.preventDefault();
         ref.current !== null ? ref.current.style.top = `${up}${unit}` : null
@@ -33,6 +35,7 @@ const Content_1Left = () => {
 
     }
 
+    // 下にスクロールするためのハンドラ
     function handleClickDown(event: any) {
         event.preventDefault();
         console.log(`${down}${unit}`)
@@ -54,6 +57,7 @@ const Content_1Left = () => {
         // アニメーションを実行
         ref.current !== null ? ref.current.animate(keyframes, options) : null
     }
+    // アニメーションのオプションを定義する関数
     function animationOption() {
         // アニメーションの詳細を定義
         return ({
@@ -62,28 +66,31 @@ const Content_1Left = () => {
         })
     }
 
+    // マウスが要素から離れたときのハンドラ
     function onmouseout() {
         let leftEl = document.querySelector('.left')
         console.log(leftEl)
         if (leftEl !== null) {
             leftEl.addEventListener('mouseout', () => {
-                // element.classList.remove('aaaa')
-                // console.log('out')
             });
         }
     }
 
+    // マウスが要素に乗ったときのハンドラ
     function mouseOver() {
         let addClassName = 'toolTips'
+        let addClassNameRight = 'toolTipsRight'
         let daysEl = document.querySelectorAll('.days')
         daysEl.forEach(element => {
             element.addEventListener('mouseover', () => {
                 let daysEl = document.querySelectorAll('.days')
+                let rightContentwheelFlag1El = document.querySelector('.rightContentwheelFlag1')
                 daysEl.forEach((element, index) => {
                     if (element !== null) {
                         element.classList.remove(addClassName)
                     }
                 });
+                rightContentwheelFlag1El?.classList.add(addClassNameRight)
                 element.classList.add(addClassName)
             })
             let leftEl = document.querySelector('.left')
@@ -91,15 +98,16 @@ const Content_1Left = () => {
             if (leftEl !== null) {
                 leftEl.addEventListener('mouseout', () => {
                     element.classList.remove(addClassName)
-                    // console.log('out')
+                    let rightContentwheelFlag1El = document.querySelector('.rightContentwheelFlag1')
+                    rightContentwheelFlag1El?.classList.remove(addClassNameRight)
                 });
             }
         });
     }
+    // コンポーネントがマウントされたときにハンドラを設定
     useEffect(() => {
         mouseOver()
         onmouseout()
-        console.log(timelineData)
     }, [])
 
     return (

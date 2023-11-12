@@ -4,7 +4,6 @@ import './content_1Right.css'
 const content_1Right = () => {
     return (
         <div className="right">
-            <div className="rightHeader"><span>M</span><span>Y</span><span> </span><span>S</span><span>K</span><span>I</span><span>L</span><span>L</span></div>
             <div className="rightIconGrid">
                 <div className='css gridChildren'>
                     <p className="p">CSS3</p>

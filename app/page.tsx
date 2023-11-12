@@ -91,25 +91,29 @@ const Home = () => {
     let github = document.querySelector('.github') as HTMLElement
 
 
-    switch (className) {
-      case hasClassNames(element, '201212'):
-        initBorder()
-        css.style.animation = "fadein 0.5s, blink 1s infinite";
-        html.style.animation = "fadein 0.5s, blink 1s infinite";
+    const boxShadowStyle = "1em -1em #ccc, -1em 1em #ccc, 1em 1em #ccc, -1em -1em #ccc";
+    const boxShadowDuration = "0.5s";
+    function applyBoxShadow(element: HTMLElement | null){
+      if (element) {
+        element.style.boxShadow = boxShadowStyle;
+        element.style.transitionDuration = boxShadowDuration;
+      }
+    };
 
-        break;
-      case hasClassNames(element, '201301'):
-        initBorder()
-        html.style.animation = "fadein 0.5s, blink 1s infinite";
-        break;
+    if (hasClassNames(element, '201212')) {
+      initBorder();
+      applyBoxShadow(css);
+      applyBoxShadow(html);
+    } else if (hasClassNames(element, '201301')) {
+      initBorder();
+      applyBoxShadow(html);
     }
   }
 
   function initBorder() {
     let gridChildren = document.querySelectorAll<HTMLElement>('.gridChildren')
     gridChildren.forEach((element) => {
-      element.style.outline = "";
-      element.style.animation="";
+      element.style.boxShadow = "";
     });
 
   }
