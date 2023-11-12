@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react'
 import Link from "next/link";
 import Image from 'next/image'
@@ -10,10 +9,10 @@ const sliderContentWcontent_2_right = () => {
     const [Images, setImage] = useState<string[] | any[]>([])
     const [Categorys, setcategory] = useState<string[] | any[]>([])
     useEffect(() => {
-        axios.get('http://localhost:3000/api/route').then((res) => {
-            const contentsAf = res.data.map(element => element.content);
-            const ImagesAf = res.data.map(element => element.eyecatch)
-            const categoryAf = res.data.map(element => element.category.name)
+        axios.get('http://localhost:3000/api/route').then((res: AxiosResponse<any[]>) => {
+            const contentsAf = res.data.map((element: { content: string; eyecatch: string; category: { name: string } }) => element.content);
+            const ImagesAf = res.data.map((element: { content: string; eyecatch: string; category: { name: string } }) => element.eyecatch)
+            const categoryAf = res.data.map((element: { content: string; eyecatch: string; category: { name: string } }) => element.category.name)
             setContent(contentsAf)
             setImage(ImagesAf)
             setcategory(categoryAf)
