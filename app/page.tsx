@@ -17,35 +17,62 @@ const Home = () => {
     const toolTipTexts = {
       timeLineToolTip: `<div id="timeLineToolTip"><p>左クリックで進む</p><p>右クリックで戻る</p></div>`,
       rightToolTip: `<div id="rightToolTip"><p>オカダのスキルセット</p><p>私が勉強してきたスキルをアイコンで表示しています。</p></div>`,
-      leftToolTip: `<div id="leftToolTip"><p>2012年から2023年にかけて制作した</p><p>WEBサイトを年表で、まとめました。</p></div>`
+      leftToolTip: `<div id="leftToolTip"><p>2012年から2023年にかけて制作した</p><p>WEBサイトを年表で、まとめました。</p></div>`,
+      cssToolTip: `<div id="cssToolTip"><p>CSSは2012年から始めました。</p></div>`
     };
     const classNames = ['201212', '201301'];
     document.addEventListener('mousemove', function (e) {
       if (stalker !== null) {
         const { clientX: x, clientY: y } = e;
-        stalker.style.transform = `translate(${x + 40}px, ${y}px)`;
+        const windowWidth = window.innerWidth;
+        let translateX = x + 10;
+        if (translateX + stalker.offsetWidth > windowWidth) {
+          translateX = windowWidth - stalker.offsetWidth - 20;
+        }
+        stalker.style.transform = `translate(${translateX}px, ${y}px)`;
+
         const elements = document.elementsFromPoint(x, y);
         
+        //マウスをホバーした時、表示するテキストを変更
         elements.some((element) => {
           if (element?.matches("dl.toolTips")) {
             initBorder();
             const toolTips = document.querySelector('dl.toolTips') as Element;
             classNames.forEach(className => classSwitch(toolTips, className));
+            stalkerInit(stalker)
             stalker.innerHTML = toolTipTexts.timeLineToolTip;
             return true;
           } else if (element?.matches("div.right")) {
             initBorder();
+            stalkerInit(stalker)
             stalker.innerHTML = toolTipTexts.rightToolTip;
             return true;
           } else if (element?.matches("div.left")) {
             initBorder();
+            stalkerInit(stalker)
             stalker.innerHTML = toolTipTexts.leftToolTip;
             return true;
+          }else if (element?.matches("div.css")) {
+            initBorder();
+            stalkerInit(stalker)
+            stalker.innerHTML = toolTipTexts.cssToolTip;
+            return true;
+          }else{
+            initBorder();
+            stalker.innerHTML = '';
+            stalker.style.border = "";
+            stalker.style.backgroundColor = "";
+            stalker.style.padding = "";
           }
           return false;
         });
       }
     });
+  }
+  function stalkerInit(stalker:HTMLElement){
+    stalker.style.border = "1px solid #000";
+    stalker.style.backgroundColor = "#fff";
+    stalker.style.padding = "5px";
   }
   function hasClassNames(element: Element, className: string) {
     return (element) ? element.className.split(' ').find(element => element === className) : [];
@@ -78,6 +105,7 @@ const Home = () => {
       }
     };
 
+    //マウスホバー時にアイコンにCSSを適用
     if (hasClassNames(element, '201212')) {
       initBorder();
       applyBoxShadow(css);

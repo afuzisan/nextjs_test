@@ -7,8 +7,6 @@
 }
 .days:hover{
 	background-color: #fff;
-	border: 50px solid #ccc; 
-	border-radius: 25px;
 	cursor: pointer;
    transition-duration: .5s;
 }

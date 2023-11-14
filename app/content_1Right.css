@@ -1,8 +1,5 @@
 .wheelFlag1 > .leftContentwheelFlag1 > .left {
     position: relative;
-    /* transform: skew(-20deg, 5deg); */
-    /* backface-visibility: hidden; */
-    /* -webkit-backface-visibility: hidden; */
 }
 .wheelFlag1 > .leftContentwheelFlag1 > .left > .photo{
     border: 1px solid #000;
