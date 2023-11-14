@@ -26,10 +26,11 @@ const Home = () => {
         const { clientX: x, clientY: y } = e;
         const windowWidth = window.innerWidth;
         let translateX = x + 10;
+        let translateY = y + 20;
         if (translateX + stalker.offsetWidth > windowWidth) {
           translateX = windowWidth - stalker.offsetWidth - 20;
         }
-        stalker.style.transform = `translate(${translateX}px, ${y}px)`;
+        stalker.style.transform = `translate(${translateX}px, ${translateY}px)`;
 
         const elements = document.elementsFromPoint(x, y);
         

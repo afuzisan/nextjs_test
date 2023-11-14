@@ -19,7 +19,7 @@
     opacity: 1;
 }
 .wheelFlag1 > .leftContentwheelFlag1{
-    width:50vw;
+    width:65vw;
     height:100vh;
     background-color:#F2F2F2;
     position: fixed;
@@ -45,8 +45,8 @@
     }
 }
 .wheelFlag1 > .rightContentwheelFlag1{
-    margin-left: 50vw;
-    width:50vw;
+    margin-left: 65vw;
+    width:35vw;
     height:100vh;
     background-color:rgb(255, 255, 255);
     position: fixed;

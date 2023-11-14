@@ -1,5 +1,5 @@
 .days{
-	height: 50vh;
+	height: 150px;
 	justify-content:center;
 	width: 100%;
 
@@ -11,6 +11,9 @@
    transition-duration: .5s;
 }
 
+.days dt{
+	font-weight: 600;
+}
 
 .left{
 	height: 100%;
@@ -56,6 +59,8 @@ dl dt::after {
 	font-size: 22px;
 	color: green;
 }
+
+
 
 dl dd {
 	width: calc(100% - 8.5em);
