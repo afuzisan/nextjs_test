@@ -12,60 +12,38 @@ const Home = () => {
     ssr: false,
   });
   MouseWheel()
-  function mousemove() {
-    //マウスストーカー用のdivを取得
+  const mousemove = () => {
     const stalker = document.querySelector('.stalker') as HTMLElement;
-
-    // マウスの動きに追従するイベントリスナーを追加
+    const toolTipTexts = {
+      timeLineToolTip: `<div id="timeLineToolTip"><p>左クリックで進む</p><p>右クリックで戻る</p></div>`,
+      rightToolTip: `<div id="rightToolTip"><p>オカダのスキルセット</p><p>私が勉強してきたスキルをアイコンで表示しています。</p></div>`,
+      leftToolTip: `<div id="leftToolTip"><p>2012年から2023年にかけて制作した</p><p>WEBサイトを年表で、まとめました。</p></div>`
+    };
+    const classNames = ['201212', '201301'];
     document.addEventListener('mousemove', function (e) {
-
-      // ストーカーがnullでない場合のみ処理を行う
       if (stalker !== null) {
-        let x = e.clientX
-        let y = e.clientY
-        // ストーカーの位置をマウスの位置に追従させる
-        stalker.style.transform = 'translate(' + (x + 40) + 'px, ' + y + 'px)';
-        // マウスの現在位置にある要素を取得
-        var elements = document.elementsFromPoint(x, y);
-        // 取得した要素をループで処理
-        for (let i = 0; i < elements.length; i++) {
-          // 要素が"dl.toolTips"にマッチする場合の処理
-          if (elements[i]?.matches("dl.toolTips")) {
-            initBorder()
-            let toolTips = document.querySelector('dl.toolTips') as Element
-            // クラススイッチの処理を行う
-            classSwitch(toolTips, '201212')
-            classSwitch(toolTips, '201301')
-
-            // ツールチップのテキストを設定
-            let text =
-              `<div id="timeLineToolTip"><p>左クリックで進む</p><p>右クリックで戻る</p></div>`
-            stalker.innerHTML = text
-
-            break
-          } 
-          // 要素が"div.right"にマッチする場合の処理
-          else if (elements[i]?.matches("div.right")) {
-            initBorder()
-            // ツールチップのテキストを設定
-            let text =
-              `<div id="rightToolTip"><p>オカダのスキルセット</p><p>私が勉強してきたスキルをアイコンで表示しています。</p></div>`
-            stalker.innerHTML = text
-
-            break
+        const { clientX: x, clientY: y } = e;
+        stalker.style.transform = `translate(${x + 40}px, ${y}px)`;
+        const elements = document.elementsFromPoint(x, y);
+        
+        elements.some((element) => {
+          if (element?.matches("dl.toolTips")) {
+            initBorder();
+            const toolTips = document.querySelector('dl.toolTips') as Element;
+            classNames.forEach(className => classSwitch(toolTips, className));
+            stalker.innerHTML = toolTipTexts.timeLineToolTip;
+            return true;
+          } else if (element?.matches("div.right")) {
+            initBorder();
+            stalker.innerHTML = toolTipTexts.rightToolTip;
+            return true;
+          } else if (element?.matches("div.left")) {
+            initBorder();
+            stalker.innerHTML = toolTipTexts.leftToolTip;
+            return true;
           }
-          // 要素が"div.left"にマッチする場合の処理
-          else if (elements[i]?.matches("div.left")) {
-            initBorder()
-            // ツールチップのテキストを設定
-            let text =
-              `<div id="leftToolTip">
-              <p>2012年から2023年にかけて制作した</p>
-              <p>WEBサイトを年表で、まとめました。</p></div>`
-            stalker.innerHTML = text
-            break
-          }
-        };
+          return false;
+        });
       }
     });
   }

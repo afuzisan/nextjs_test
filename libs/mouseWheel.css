@@ -16,7 +16,7 @@
     top:0;
     left:0;
     z-index:3;
-    opacity: 0.99;
+    opacity: 1;
 }
 .wheelFlag1 > .leftContentwheelFlag1{
     width:50vw;
@@ -57,7 +57,7 @@
     animation-duration:1s;
     animation-delay: 0s;
     animation-fill-mode:forwards;
-    opacity: 0.5;
+    /* opacity: 0.5; */
 }
 @keyframes rightContentwheelFlag1Anime{
     0% {
