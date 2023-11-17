@@ -26,20 +26,18 @@ const content_1Right = () => {
     function hasClassNames(element: Element, className: string) {
         return (element) ? element.className.split(' ').find(element => element === className) : [];
     };
-    function cc(){
+    function detailsView(){
         const firstNone = document.querySelectorAll('.firstNone')
         firstNone.forEach(element => {
             if (element instanceof HTMLElement) {
                 element.style.display = 'none';
             }   
-        });
- 
+        })
         const gridChildren = document.querySelectorAll('.gridChildren')
         console.log(gridChildren)
         gridChildren.forEach(element => {        
         element?.addEventListener('click',(e)=>{
          const targetElement = e.target as HTMLElement;
-         const contentId = targetElement.dataset.nimg;
          document.startViewTransition(() => {
             let elementName = element.className.split(' ')
            const viewIndex = document.querySelector(`.${elementName[0]}-details`); 
@@ -61,9 +59,34 @@ const content_1Right = () => {
     });
     }
 
+    function detailsNone(){
+        const firstNone = document.querySelectorAll('.firstNone')
+        const gridChildren = document.querySelectorAll('.gridChildren')
+        firstNone.forEach(element => {
+            element.addEventListener('click',(e)=>{
+                console.log(e)
+                const rightIconGrid = document.querySelector('.rightIconGrid') as HTMLElement;
+                const right = document.querySelector('.right') as HTMLElement;
+                rightIconGrid ? (rightIconGrid.style.padding = '50px 60px 60px 60px', rightIconGrid.style.margin = '0') : null;
+                right ? (right.style.backgroundColor = '#fff') : null;
+                document.startViewTransition(() => {
+                firstNone.forEach(element=>{
+                    (element as HTMLElement).style.display = 'none';
+                })
+                gridChildren.forEach(element => {
+                    (element as HTMLElement).style.display = 'block';
+                });
+                
+            })
+        })
+        });
+        
+    }
+
 
     useEffect(()=>{
-        cc()
+        detailsView()
+        detailsNone()
     },[])
     return (
         <div className="right">
@@ -82,7 +105,7 @@ const content_1Right = () => {
                 </div>
                 <div className='html gridChildren' >
                     <p className="p">HTML5</p>
-                    <Image
+                    <Image className="htmlImage"
                         src="/logoPacks/html-1.svg"
                         alt="Image"
                         width={100}
@@ -236,7 +259,7 @@ const content_1Right = () => {
                 </div>
             </div>
                     <div className="css-details firstNone">
-                        <div className='css-detailsChildren gridChildren'>
+                        <div className='css-detailsChildren'>
                             <div className="cssImage"
                                 style={{
                                     backgroundImage: `url("/logoPacks/css-3.svg")`,
@@ -260,7 +283,7 @@ const content_1Right = () => {
 
 
                     <div className="html-details firstNone">
-                        <div className='html-detailsChildren gridChildren'>
+                        <div className='html-detailsChildren'>
                             <div className="htmlImage"
                                 style={{
                                     backgroundImage: `url("/logoPacks/html-1.svg")`,

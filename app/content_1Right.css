@@ -1,9 +1,9 @@
 .cssImage {
-    view-transition-name: css-1;
+    view-transition-name: css;
     contain: paint;
 }
 .htmlImage {
-    view-transition-name: html-2;
+    view-transition-name: html;
     contain: paint;
 }
 
