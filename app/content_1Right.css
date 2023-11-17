@@ -2,9 +2,11 @@
     view-transition-name: css-1;
     contain: paint;
 }
-/* .i-desc{
-    padding:50px;
-} */
+.htmlImage {
+    view-transition-name: html-2;
+    contain: paint;
+}
+
 
 
 .wheelFlag1 > .leftContentwheelFlag1 > .left {

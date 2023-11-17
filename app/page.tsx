@@ -77,7 +77,6 @@ const Home = () => {
   }
   function hasClassNames(element: Element, className: string) {
     return (element) ? element.className.split(' ').find(element => element === className) : [];
-
   };
   function classSwitch(element: Element, className: string) {
     let css = document.querySelector('.css') as HTMLElement
