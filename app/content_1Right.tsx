@@ -1,14 +1,57 @@
 import Image from 'next/image'
 import './content_1Right.css'
+import { useEffect } from 'react'
 
 const content_1Right = () => {
+    const textStyle: React.CSSProperties = {
+        position: 'absolute',
+        top: 10,
+        left: 10,
+        color: 'white',
+        background: 'rgba(0, 0, 0, 0.5)',
+        padding: '50px'
+    }
+    function cc(){
+        const cssDetails = document.querySelector('.css-details')
+        if (cssDetails instanceof HTMLElement) {
+            cssDetails.style.display = 'none';
+        }
+        let css = document.querySelector('.css')
+        console.log(css)
+        css?.addEventListener('click',(e)=>{
+         const targetElement = e.target as HTMLElement;
+         const contentId = targetElement.dataset.nimg;
+         document.startViewTransition(() => {
+           const viewIndex = document.querySelector(".css-details");
+           const viewDetails = document.querySelectorAll(".gridChildren");   
+           const right = document.querySelector('.right') as HTMLElement;
+           const rightIconGrid = document.querySelector('.rightIconGrid') as HTMLElement;
+           rightIconGrid ? (rightIconGrid.style.padding = '0px', rightIconGrid.style.margin = '0 auto') : null;
+           right ? (right.style.backgroundColor = '#131212') : null;
+           viewDetails.forEach((element: any) => {
+               let htmlElement = element as HTMLElement;
+               htmlElement ? (htmlElement.style.display = 'none') : null;
+           });
+           if (viewIndex) {
+            const css = document.querySelector(".css-detailsChildren");
+            (viewIndex as HTMLElement).style.display = 'block';
+            (css as HTMLElement).style.display = 'block';
+            }
+         })
+        })
+    }
+
+
+    useEffect(()=>{
+        cc()
+    },[])
     return (
         <div className="right">
             <div className="rightIconGrid">
                 <div className='css gridChildren'>
                     <p className="p">CSS3</p>
 
-                    <Image
+                    <Image className="cssImage"
                         src="/logoPacks/css-3.svg"
                         alt="Image"
                         width={100}
@@ -172,6 +215,27 @@ const content_1Right = () => {
                     />
                 </div>
             </div>
+                    <div className="css-details" data-nimg="1">
+                        <div className='css-detailsChildren gridChildren'>
+                            <div className="cssImage"
+                                style={{
+                                    backgroundImage: `url("/logoPacks/css-3.svg")`,
+                                    width: '100%',
+                                    height: '100vh',
+                                    backgroundSize: 'cover',
+                                    backgroundPosition: 'center',
+                                    position: 'relative',
+                                    filter: 'brightness(50%)',
+                                    opacity:'0.5'
+                                }}
+                            >
+                            </div>
+                        </div>
+                        <p className="i-desc" style={textStyle}>
+                            グリフィス天文台は、ロサンゼルスのグリフィス公園内にある天文台です。アールデコ調の外観と、ダウンタウンをふくめ市内を一望できます。<br />
+                            2006年に、4年に渡る大規模な改築工事が完成し、展示場やシアター、カフェなどが加えられた。また敷地内には映画「理由なき反抗」のロケ地として使用され、天文台の知名度を向上させた功績から、同作品で主演を務めたジェームズ・ディーンの銅像が建てられている。
+                        </p>
+                    </div>
         </div>
     )
 }
