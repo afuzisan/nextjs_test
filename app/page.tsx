@@ -74,6 +74,8 @@ const Home = () => {
     stalker.style.border = "1px solid #000";
     stalker.style.backgroundColor = "#fff";
     stalker.style.padding = "5px";
+    stalker.style.opacity = "0.9";
+    stalker.style.fontWeight ="800"
   }
   function hasClassNames(element: Element, className: string) {
     return (element) ? element.className.split(' ').find(element => element === className) : [];
@@ -96,7 +98,7 @@ const Home = () => {
     let github = document.querySelector('.github') as HTMLElement
 
 
-    const boxShadowStyle = "1em -1em #ccc, -1em 1em #ccc, 1em 1em #ccc, -1em -1em #ccc";
+    const boxShadowStyle = "0.2em -0.2em lightcoral, -0.2em 0.2em lightcoral, 0.2em 0.2em lightcoral, -0.2em -0.2em lightcoral";
     const boxShadowDuration = "0.5s";
     function applyBoxShadow(element: HTMLElement | null){
       if (element) {
@@ -106,11 +108,11 @@ const Home = () => {
     };
 
     //マウスホバー時にアイコンにCSSを適用
-    if (hasClassNames(element, '201212')) {
+    if (hasClassNames(element, 'day201212')) {
       initBorder();
       applyBoxShadow(css);
       applyBoxShadow(html);
-    } else if (hasClassNames(element, '201301')) {
+    } else if (hasClassNames(element, 'day201301')) {
       initBorder();
       applyBoxShadow(html);
     }

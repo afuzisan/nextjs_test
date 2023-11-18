@@ -2,7 +2,11 @@
     background-color: #fff;
 }
 
-div.css:hover, div.right:hover{
+
+.gridChildren:hover{
+    cursor: pointer;
     box-shadow: 0 8px 4px #787a75;
-    /* transform: scale(1.1); */
+    transition-duration: .5s;
 }
+
+

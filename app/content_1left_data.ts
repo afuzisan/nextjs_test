@@ -1,7 +1,7 @@
 const timelineData = [
     {
         date: "2012年12月",
-        class: "201212",
+        class: "day201212",
         events: [
             {
                 title: "初めてのWEBサイト制作",
@@ -18,7 +18,7 @@ const timelineData = [
     },
     {
         date: "2013年1月",
-        class: "201301",
+        class: "day201301",
         events: [
             {
                 title: "初めてのWEBサービス制作",
@@ -35,7 +35,7 @@ const timelineData = [
     },
     {
         date: "2013年4月",
-        class: "201304",
+        class: "day201304",
         events: [
             {
                 title: "WordPressを使いだす",
@@ -53,7 +53,7 @@ const timelineData = [
     },
     {
         date: "2013年8月",
-        class: "201308",
+        class: "day201308",
         events: [
             {
                 title: "JavaScriptを使って横断検索サイトを作る",
@@ -69,7 +69,7 @@ const timelineData = [
     },
     {
         date: "2014年1月",
-        class: "201401",
+        class: "day201401",
         events: [
             {
                 title: "2chまとめサイトの量産を始める",
@@ -89,7 +89,7 @@ const timelineData = [
     },
     {
         date: "2015年1月",
-        class: "201501",
+        class: "day201501",
         events: [
             {
                 title: "test",

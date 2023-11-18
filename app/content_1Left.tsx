@@ -81,6 +81,8 @@ const Content_1Left = () => {
         let addClassName = 'toolTips'
         let addClassNameRight = 'toolTipsRight'
         let daysEl = document.querySelectorAll('.days')
+
+
         daysEl.forEach(element => {
             element.addEventListener('mouseover', () => {
                 let daysEl = document.querySelectorAll('.days')
@@ -92,6 +94,8 @@ const Content_1Left = () => {
                 });
                 rightContentwheelFlag1El?.classList.add(addClassNameRight)
                 element.classList.add(addClassName)
+
+
             })
             let leftEl = document.querySelector('.left')
             console.log(leftEl)
@@ -100,6 +104,7 @@ const Content_1Left = () => {
                     element.classList.remove(addClassName)
                     let rightContentwheelFlag1El = document.querySelector('.rightContentwheelFlag1')
                     rightContentwheelFlag1El?.classList.remove(addClassNameRight)
+
                 });
             }
         });
@@ -119,7 +124,7 @@ const Content_1Left = () => {
                         <dl className={`days ${data.class}`} key={index}>
                             <dt>{data.date}</dt>
                             {data.events.map((event, eventIndex) => (
-                                <dd key={eventIndex}>
+                                <dd className="dd" key={eventIndex}>
                                     <h2>{event.title}</h2>
                                     {event.description.map((desc, descIndex) => (
                                         <p key={descIndex}>{desc}</p>
@@ -136,4 +141,3 @@ const Content_1Left = () => {
 }
 
 export default Content_1Left 
-
