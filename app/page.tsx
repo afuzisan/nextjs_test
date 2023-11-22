@@ -16,10 +16,10 @@ const Home = () => {
   const mousemove = () => {
     const stalker = document.querySelector('.stalker') as HTMLElement;
     const toolTipTexts = {
-      timeLineToolTip: `<div id="timeLineToolTip"><p>左クリックで進む</p><p>右クリックで戻る</p></div>`,
-      rightToolTip: `<div id="rightToolTip"><p>オカダのスキルセット</p><p>私が勉強してきたスキルをアイコンで表示しています。</p></div>`,
-      leftToolTip: `<div id="leftToolTip"><p>2012年から2023年にかけて制作した</p><p>WEBサイトを年表で、まとめました。</p></div>`,
-      cssToolTip: `<div id="cssToolTip"><p>CSSは2012年から始めました。</p></div>`
+      "dl.toolTips": `<div id="timeLineToolTip"><p>左クリックで進む</p><p>右クリックで戻る</p></div>`,
+      "div.right": `<div id="rightToolTip"><p>オカダのスキルセット</p><p>私が勉強してきたスキルをアイコンで表示しています。</p></div>`,
+      "div.left": `<div id="leftToolTip"><p>2012年から2023年にかけて制作した</p><p>WEBサイトを年表で、まとめました。</p></div>`,
+      "div.css": `<div id="cssToolTip"><p>CSSは2012年から始めました。</p></div>`
     };
     const classNames = ['201212', '201301'];
     document.addEventListener('mousemove', function (e) {
@@ -34,30 +34,21 @@ const Home = () => {
         stalker.style.transform = `translate(${translateX}px, ${translateY}px)`;
 
         const elements = document.elementsFromPoint(x, y);
-        
         //マウスをホバーした時、表示するテキストを変更
         elements.some((element) => {
           if (element?.matches("dl.toolTips")) {
-            initBorder();
-            const toolTips = document.querySelector('dl.toolTips') as Element;
-            classNames.forEach(className => classSwitch(toolTips, className));
-            stalkerInit(stalker)
-            stalker.innerHTML = toolTipTexts.timeLineToolTip;
+            matche(stalker,toolTipTexts,"dl.toolTips")
+            const toolTips = document.querySelector("dl.toolTips") as Element;
+            classSwitch(toolTips);
             return true;
           } else if (element?.matches("div.right")) {
-            initBorder();
-            stalkerInit(stalker)
-            stalker.innerHTML = toolTipTexts.rightToolTip;
+            matche(stalker,toolTipTexts,"div.right")
             return true;
           } else if (element?.matches("div.left")) {
-            initBorder();
-            stalkerInit(stalker)
-            stalker.innerHTML = toolTipTexts.leftToolTip;
+            matche(stalker,toolTipTexts,"div.left")
             return true;
           }else if (element?.matches("div.css")) {
-            initBorder();
-            stalkerInit(stalker)
-            stalker.innerHTML = toolTipTexts.cssToolTip;
+            matche(stalker,toolTipTexts,"div.css")
             return true;
           }else{
             initBorder();
@@ -71,6 +62,12 @@ const Home = () => {
       }
     });
   }
+  function matche(stalker: HTMLElement, toolTipTexts: {[key: string]: string}, text: string) {
+    initBorder();
+    stalkerInit(stalker)
+    stalker.innerHTML = toolTipTexts[text];
+    return true;
+  }
   function stalkerInit(stalker:HTMLElement){
     stalker.style.border = "1px solid #000";
     stalker.style.backgroundColor = "#fff";
@@ -81,7 +78,7 @@ const Home = () => {
   function hasClassNames(element: Element, className: string) {
     return (element) ? element.className.split(' ').includes(className) : false;
   };
-  function classSwitch(element: Element, className: string) {
+  function classSwitch(element: Element) {
     let css = document.querySelector('.css') as HTMLElement
     let html = document.querySelector('.html ') as HTMLElement
     let js = document.querySelector('.js') as HTMLElement
