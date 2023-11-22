@@ -22,7 +22,23 @@ const content_1Right = () => {
         textAlign:'center',
         fontSize:'20px',
     }
-    
+    const items = [
+        {
+            name: 'css',
+            imagePath: '/logoPacks/css-3.svg',
+            text: 'グリフィス天文台は、ロサンゼルスのグリフィス公園内にある天文台です。アールデコ調の外観と、ダウンタウンをふくめ市内を一望できます。<br />2006年に、4年に渡る大規模な改築工事が完成し、展示場やシアター、カフェなどが加えられた。また敷地内には映画「理由なき反抗」のロケ地として使用され、天文台の知名度を向上させた功績から、同作品で主演を務めたジェームズ・ディーンの銅像が建てられている。'
+        },
+        {
+            name: 'html',
+            imagePath: '/logoPacks/html-1.svg',
+            text: 'グリフィス天文台は、ロサンゼルスのグリフィス公園内にある天文台です。ス公園内にある天文台です。ス公園内にある天文台です。'
+        },
+        {
+            name: 'js',
+            imagePath: '/logoPacks/javascript-1.svg',
+            text: 'グリフィス天文台は、ロサンゼルスのグリフィス公園内にある天文台です。'
+        },
+    ];
     function hasClassNames(element: Element, className: string) {
         return (element) ? element.className.split(' ').find(element => element === className) : [];
     };
@@ -116,7 +132,7 @@ const content_1Right = () => {
                 </div>
                 <div className='js gridChildren'>
                     <p className="p">JavaScript</p>
-                    <Image
+                    <Image className="jsImage"
                         src="/logoPacks/javascript-1.svg"
                         alt="Image"
                         width={100}
@@ -258,52 +274,30 @@ const content_1Right = () => {
                     />
                 </div>
             </div>
-                    <div className="css-details firstNone">
-                        <div className='css-detailsChildren'>
-                            <div className="cssImage"
-                                style={{
-                                    backgroundImage: `url("/logoPacks/css-3.svg")`,
-                                    width: '100%',
-                                    height: '100vh',
-                                    backgroundSize: 'cover',
-                                    backgroundPosition: 'center',
-                                    position: 'relative',
-                                    filter: 'brightness(50%)',
-                                    opacity:'0.5'
-                                }}
-                            >
-                            </div>
-                        </div>
-                        <p className="i-title" style={iTitleStyle}>CSS</p>
-                        <p className="i-desc" style={detailContentsStyle}>
-                            グリフィス天文台は、ロサンゼルスのグリフィス公園内にある天文台です。アールデコ調の外観と、ダウンタウンをふくめ市内を一望できます。<br />
-                            2006年に、4年に渡る大規模な改築工事が完成し、展示場やシアター、カフェなどが加えられた。また敷地内には映画「理由なき反抗」のロケ地として使用され、天文台の知名度を向上させた功績から、同作品で主演を務めたジェームズ・ディーンの銅像が建てられている。
-                        </p>
-                    </div>
+            {items.map((item) => {
+            const imageStyle: React.CSSProperties = {
+                backgroundImage: `url("${item.imagePath}")`,
+                width: '100%',
+                height: '100vh',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                position: 'relative',
+                filter: 'brightness(50%)',
+                opacity:'0.5'
+            };
 
-
-                    <div className="html-details firstNone">
-                        <div className='html-detailsChildren'>
-                            <div className="htmlImage"
-                                style={{
-                                    backgroundImage: `url("/logoPacks/html-1.svg")`,
-                                    width: '100%',
-                                    height: '100vh',
-                                    backgroundSize: 'cover',
-                                    backgroundPosition: 'center',
-                                    position: 'relative',
-                                    filter: 'brightness(50%)',
-                                    opacity:'0.5'
-                                }}
-                            >
-                            </div>
-                        </div>
-                        <p className="i-title" style={iTitleStyle}>html</p>
-                        <p className="i-desc" style={detailContentsStyle}>
-                            グリフィス天文台は、ロサンゼルスのグリフィス公園内にある天文台です。アールデコ調の外観と、ダウンタウンをふくめ市内を一望できます。<br />
-                            2006年に、4年に渡る大規模な改築工事が完成し、展示場やシアター、カフェなどが加えられた。また敷地内には映画「理由なき反抗」のロケ地として使用され、天文台の知名度を向上させた功績から、同作品で主演を務めたジェームズ・ディーンの銅像が建てられている。
-                        </p>
+            return (
+                <div className={`${item.name}-details firstNone`}>
+                    <div className={`${item.name}-detailsChildren`}>
+                        <div className={`${item.name}Image`} style={imageStyle}></div>
                     </div>
+                    <p className="i-title" style={iTitleStyle}>{item.name.toUpperCase()}</p>
+                    <p className="i-desc" style={detailContentsStyle}>
+                        {item.text}
+                    </p>
+                </div>
+            );
+        })}
         </div>
     )
 }

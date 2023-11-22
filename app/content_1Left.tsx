@@ -117,7 +117,7 @@ const Content_1Left = () => {
 
     return (
         <>
-            <h1 className="leftH1Title">WEB制作年表</h1>
+            <h1 className="leftH1Title">勉強年表</h1>
             <div className="left">
                 <dl className="timeline" ref={ref} onClick={handleClickDown} onContextMenu={handleClickUp}>
                     {timelineData.map((data, index) => (

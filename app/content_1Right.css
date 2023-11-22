@@ -6,6 +6,10 @@
     view-transition-name: html;
     contain: paint;
 }
+.jsImage {
+    view-transition-name: js;
+    contain: paint;
+}
 
 
 

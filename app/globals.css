@@ -38,3 +38,9 @@
       z-index: 10000;
       position: fixed;
     }
+    .dt:hover{
+      background-color: #fff;
+    }
+  .day202312kara .dd:hover{
+  background-color: #fff;
+}
