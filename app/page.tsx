@@ -287,6 +287,7 @@ const Home = () => {
           applyBoxShadow(next)
           applyBoxShadow(react)
           applyBoxShadow(github)
+          applyBoxShadow(ts)
           break;
         case hasClassNames(element, 'day202312kara'):
             // 'day202312kara' クラスを持つ要素に対する操作

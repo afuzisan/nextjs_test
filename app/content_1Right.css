@@ -10,6 +10,55 @@
     view-transition-name: js;
     contain: paint;
 }
+.tsImage {
+    view-transition-name: ts;
+    contain: paint;
+}
+.nextImage {
+    view-transition-name: next;
+    contain: paint;
+}
+.reactImage {
+    view-transition-name: react;
+    contain: paint;
+}
+.nodeImage {
+    view-transition-name: node;
+    contain: paint;
+}
+.jqueryImage {
+    view-transition-name: jquery;
+    contain: paint;
+}
+.linuxImage {
+    view-transition-name: linux;
+    contain: paint;
+}
+.playCanvasImage {
+    view-transition-name: playCanvas;
+    contain: paint;
+}
+.wordpressImage {
+    view-transition-name: wordpress;
+    contain: paint;
+}
+.gasImage {
+    view-transition-name: gas;
+    contain: paint;
+}
+.dockerImage {
+    view-transition-name: docker;
+    contain: paint;
+}
+.postgresqlImage {
+    view-transition-name: postgresql;
+    contain: paint;
+}
+.githubImage {
+    view-transition-name: github;
+    contain: paint;
+}
+
 
 
 

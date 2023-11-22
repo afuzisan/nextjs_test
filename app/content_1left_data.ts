@@ -486,7 +486,7 @@ const timelineData = [
         class: "day202310",
         events: [
             {
-                title: "playcanvasでゲームを作りました。",
+                title: "playCanvasでゲームを作りました。",
                 description: [
                     "テスト的に作ったものが、残っていたのでリンクを貼っておきます。",
                     "非常にしょぼいですが。基本システムは網羅して作りました。",
