@@ -6,6 +6,7 @@ import LoadingEl from './loadingEl';
 import { createFactory, useEffect } from 'react';
 import './toolTips.css';
 import { type } from 'os';
+import toolTipTexts from './toolTipTextdata'
 
 
 const Home = () => {
@@ -15,13 +16,6 @@ const Home = () => {
   MouseWheel()
   const mousemove = () => {
     const stalker = document.querySelector('.stalker') as HTMLElement;
-    const toolTipTexts = {
-      "dl.toolTips": `<div id="timeLineToolTip"><p>左クリックで進む</p><p>右クリックで戻る</p></div>`,
-      "div.right": `<div id="rightToolTip"><p>オカダのスキルセット</p><p>私が勉強してきたスキルをアイコンで表示しています。</p></div>`,
-      "div.left": `<div id="leftToolTip"><p>2012年から2023年にかけて制作した</p><p>WEBサイトを年表で、まとめました。</p></div>`,
-      "div.css": `<div id="cssToolTip"><p>CSSは2012年から始めました。</p></div>`
-    };
-    const classNames = ['201212', '201301'];
     document.addEventListener('mousemove', function (e) {
       if (stalker !== null) {
         const { clientX: x, clientY: y } = e;
@@ -49,6 +43,48 @@ const Home = () => {
             return true;
           }else if (element?.matches("div.css")) {
             matche(stalker,toolTipTexts,"div.css")
+            return true;
+          }else if (element?.matches("div.html")) {
+            matche(stalker,toolTipTexts,"div.html")
+            return true;
+          }else if (element?.matches("div.js")) {
+            matche(stalker,toolTipTexts,"div.js")
+            return true;
+          }else if (element?.matches("div.ts")) {
+            matche(stalker,toolTipTexts,"div.ts")
+            return true;
+          }else if (element?.matches("div.next")) {
+            matche(stalker,toolTipTexts,"div.next")
+            return true;
+          }else if (element?.matches("div.react")) {
+            matche(stalker,toolTipTexts,"div.react")
+            return true;
+          }else if (element?.matches("div.node")) {
+            matche(stalker,toolTipTexts,"div.node")
+            return true;
+          }else if (element?.matches("div.jquery")) {
+            matche(stalker,toolTipTexts,"div.jquery")
+            return true;
+          }else if (element?.matches("div.linux")) {
+            matche(stalker,toolTipTexts,"div.linux")
+            return true;
+          }else if (element?.matches("div.playCanvas")) {
+            matche(stalker,toolTipTexts,"div.playCanvas")
+            return true;
+          }else if (element?.matches("div.wordpress")) {
+            matche(stalker,toolTipTexts,"div.wordpress")
+            return true;
+          }else if (element?.matches("div.gas")) {
+            matche(stalker,toolTipTexts,"div.gas")
+            return true;
+          }else if (element?.matches("div.docker")) {
+            matche(stalker,toolTipTexts,"div.docker")
+            return true;
+          }else if (element?.matches("div.postgresql")) {
+            matche(stalker,toolTipTexts,"div.postgresql")
+            return true;
+          }else if (element?.matches("div.github")) {
+            matche(stalker,toolTipTexts,"div.github")
             return true;
           }else{
             initBorder();
@@ -237,10 +273,10 @@ const Home = () => {
           // 'day202102' クラスを持つ要素に対する操作
           applyBoxShadow(playCanvas)
           break;
-          case hasClassNames(element, 'day202311'):
+      case hasClassNames(element, 'day202311'):
             // 'day202102' クラスを持つ要素に対する操作
-            applyBoxShadow(ts)
-            break;
+          applyBoxShadow(ts)
+          break;
       case hasClassNames(element, 'day202312'):
           // 'day202103' クラスを持つ要素に対する操作
           applyBoxShadow(html)

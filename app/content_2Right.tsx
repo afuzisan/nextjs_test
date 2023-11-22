@@ -19,7 +19,7 @@ const sliderContentWcontent_2_right = () => {
             // console.log(res)
         })
     }, [])
-    console.log(Content, Images, Categorys)
+    // console.log(Content, Images, Categorys)
     return (
         <>
             <div id="twoSliderParent">
@@ -27,7 +27,7 @@ const sliderContentWcontent_2_right = () => {
                 <div id="twoCards">
 
                     {Content.map((element, index) => {
-                        console.log(element, index, Categorys[index])
+                        // console.log(element, index, Categorys[index])
                         return (
                             Categorys[index] === '作品集' ?
                                 <div className="twoCard" >

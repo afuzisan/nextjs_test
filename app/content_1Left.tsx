@@ -38,7 +38,7 @@ const Content_1Left = () => {
     // 下にスクロールするためのハンドラ
     function handleClickDown(event: any) {
         event.preventDefault();
-        console.log(`${down}${unit}`)
+        // console.log(`${down}${unit}`)
         ref.current !== null ? ref.current.style.top = `${down}${unit}` : null
 
         setDown((pre: number) => pre - scrollVolume - 6)
@@ -69,7 +69,7 @@ const Content_1Left = () => {
     // マウスが要素から離れたときのハンドラ
     function onmouseout() {
         let leftEl = document.querySelector('.left')
-        console.log(leftEl)
+        // console.log(leftEl)
         if (leftEl !== null) {
             leftEl.addEventListener('mouseout', () => {
             });
@@ -98,7 +98,7 @@ const Content_1Left = () => {
 
             })
             let leftEl = document.querySelector('.left')
-            console.log(leftEl)
+            // console.log(leftEl)
             if (leftEl !== null) {
                 leftEl.addEventListener('mouseout', () => {
                     element.classList.remove(addClassName)
