@@ -2,6 +2,7 @@ import './content_1left.css'
 import { useState, useRef, useEffect } from 'react'
 import timelineData from './content_1left_data';
 
+
 // コンテンツ1の左側を表示するコンポーネント
 const Content_1Left = () => {
     console.log('レンダリング')
@@ -109,6 +110,7 @@ const Content_1Left = () => {
             }
         });
     }
+    
     // コンポーネントがマウントされたときにハンドラを設定
     useEffect(() => {
         mouseOver()
@@ -121,7 +123,7 @@ const Content_1Left = () => {
             <div className="left">
                 <dl className="timeline" ref={ref} onClick={handleClickDown} onContextMenu={handleClickUp}>
                     {timelineData.map((data, index) => (
-                        <dl className={`days ${data.class}`} key={index}>
+                        <dl className={`days ${data.class}`}  key={index}>
                             <dt>{data.date}</dt>
                             {data.events.map((event, eventIndex) => (
                                 <dd className="dd" key={eventIndex}>
