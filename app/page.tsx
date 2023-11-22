@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic';
 import LoadingEl from './loadingEl';
 import { createFactory, useEffect } from 'react';
 import './toolTips.css';
+import { type } from 'os';
 
 
 const Home = () => {
@@ -78,7 +79,7 @@ const Home = () => {
     stalker.style.fontWeight ="800"
   }
   function hasClassNames(element: Element, className: string) {
-    return (element) ? element.className.split(' ').find(element => element === className) : [];
+    return (element) ? element.className.split(' ').includes(className) : false;
   };
   function classSwitch(element: Element, className: string) {
     let css = document.querySelector('.css') as HTMLElement
@@ -98,6 +99,7 @@ const Home = () => {
     let github = document.querySelector('.github') as HTMLElement
 
 
+
     const boxShadowStyle = "0.2em -0.2em lightcoral, -0.2em 0.2em lightcoral, 0.2em 0.2em lightcoral, -0.2em -0.2em lightcoral";
     const boxShadowDuration = "0.5s";
     function applyBoxShadow(element: HTMLElement | null){
@@ -108,13 +110,157 @@ const Home = () => {
     };
 
     //マウスホバー時にアイコンにCSSを適用
-    if (hasClassNames(element, 'day201212')) {
-      initBorder();
-      applyBoxShadow(css);
-      applyBoxShadow(html);
-    } else if (hasClassNames(element, 'day201301')) {
-      initBorder();
-      applyBoxShadow(html);
+    switch (true) {
+      case hasClassNames(element, 'day201211'):
+        initBorder();
+        applyBoxShadow(html);
+        applyBoxShadow(css);
+        break;
+      case hasClassNames(element, 'day201212'):
+          initBorder();
+          applyBoxShadow(html);
+          applyBoxShadow(css);
+          break;
+      case hasClassNames(element, 'day201301'):
+          initBorder();
+          applyBoxShadow(html);
+          applyBoxShadow(css);
+          break;
+      case hasClassNames(element, 'day201303'):
+          // 'day201303' クラスを持つ要素に対する操作
+          applyBoxShadow(wordpress);
+          break;
+      case hasClassNames(element, 'day201304'):
+          // 'day201304' クラスを持つ要素に対する操作
+          applyBoxShadow(html);
+          applyBoxShadow(css);
+          applyBoxShadow(wordpress);
+          break;
+      case hasClassNames(element, 'day201305'):
+          // 'day201308' クラスを持つ要素に対する操作
+          applyBoxShadow(js);
+          break;
+
+      case hasClassNames(element, 'day201401'):
+          // 'day201401' クラスを持つ要素に対する操作
+          applyBoxShadow(html);
+          applyBoxShadow(css);
+          applyBoxShadow(js);
+          break;
+        case hasClassNames(element, 'day201402'):
+            // 'day201401' クラスを持つ要素に対する操作
+            applyBoxShadow(html);
+            applyBoxShadow(css);
+            applyBoxShadow(js);
+            applyBoxShadow(wordpress);
+            break;
+      case hasClassNames(element, 'day201501'):
+          // 'day201501' クラスを持つ要素に対する操作
+          break;
+      case hasClassNames(element, 'day201801'):
+          // 'day201801' クラスを持つ要素に対する操作
+          applyBoxShadow(html);
+          applyBoxShadow(css);
+          applyBoxShadow(js);
+          applyBoxShadow(wordpress);
+          break;
+      case hasClassNames(element, 'day201807'):
+          // 'day201807' クラスを持つ要素に対する操作
+          applyBoxShadow(html);
+          applyBoxShadow(css);
+          applyBoxShadow(js);
+          break;
+      case hasClassNames(element, 'day201808'):
+          // 'day201808' クラスを持つ要素に対する操作
+          applyBoxShadow(html);
+          applyBoxShadow(css);
+          applyBoxShadow(js);
+          break;
+      case hasClassNames(element, 'day201809'):
+          // 'day201809' クラスを持つ要素に対する操作
+          applyBoxShadow(html);
+          applyBoxShadow(css);
+          applyBoxShadow(jquery);
+          break;
+      case hasClassNames(element, 'day201909'):
+          // 'day201909' クラスを持つ要素に対する操作
+          applyBoxShadow(html);
+          applyBoxShadow(css);
+          applyBoxShadow(js);
+          break;
+      case hasClassNames(element, 'day202007'):
+          // 'day202001' クラスを持つ要素に対する操作
+          applyBoxShadow(gas);
+          break;
+      case hasClassNames(element, 'day202111'):
+          // 'day202002' クラスを持つ要素に対する操作
+          applyBoxShadow(github);
+          break;
+      case hasClassNames(element, 'day202112'):
+          // 'day202003' クラスを持つ要素に対する操作
+          applyBoxShadow(node);
+          break;
+      case hasClassNames(element, 'day202203'):
+          // 'day202004' クラスを持つ要素に対する操作
+          applyBoxShadow(node);
+          break;
+      case hasClassNames(element, 'day202205'):
+          // 'day202005' クラスを持つ要素に対する操作
+          applyBoxShadow(linux);
+          break;
+      case hasClassNames(element, 'day202207'):
+          // 'day202007' クラスを持つ要素に対する操作
+          applyBoxShadow(postgresql);
+          break;
+      case hasClassNames(element, 'day202210'):
+          // 'day202008' クラスを持つ要素に対する操作
+          applyBoxShadow(react)
+          break;
+      case hasClassNames(element, 'day202211'):
+          // 'day202009' クラスを持つ要素に対する操作
+          applyBoxShadow(next)
+          break;
+      case hasClassNames(element, 'day202212'):
+          // 'day202010' クラスを持つ要素に対する操作
+          applyBoxShadow(js)
+          break;
+      case hasClassNames(element, 'day202307'):
+          // 'day202011' クラスを持つ要素に対する操作
+          applyBoxShadow(docker)
+          break;
+      case hasClassNames(element, 'day202308'):
+          // 'day202012' クラスを持つ要素に対する操作
+          applyBoxShadow(postgresql)
+          break;
+      case hasClassNames(element, 'day202309'):
+          // 'day202101' クラスを持つ要素に対する操作
+          applyBoxShadow(playCanvas)
+          break;
+      case hasClassNames(element, 'day202310'):
+          // 'day202102' クラスを持つ要素に対する操作
+          applyBoxShadow(playCanvas)
+          break;
+          case hasClassNames(element, 'day202311'):
+            // 'day202102' クラスを持つ要素に対する操作
+            applyBoxShadow(ts)
+            break;
+      case hasClassNames(element, 'day202312'):
+          // 'day202103' クラスを持つ要素に対する操作
+          applyBoxShadow(html)
+          applyBoxShadow(css)
+          applyBoxShadow(js)
+          applyBoxShadow(playCanvas)
+          applyBoxShadow(docker)
+          applyBoxShadow(next)
+          applyBoxShadow(react)
+          applyBoxShadow(github)
+          break;
+        case hasClassNames(element, 'day202312kara'):
+            // 'day202312kara' クラスを持つ要素に対する操作
+            break;
+        default:
+            // どのクラス名も一致しない場合の操作
+            break;
     }
   }
 
@@ -142,8 +288,3 @@ const Home = () => {
   );
 };
 export default Home;
-
-
-
-
-

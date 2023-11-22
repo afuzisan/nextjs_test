@@ -89,7 +89,7 @@ const timelineData = [
     },
     {
         date: "2013年5月",
-        class: "day201304",
+        class: "day201305",
         events: [
             {
                 title: "JavaScriptの勉強を始める",
@@ -107,7 +107,7 @@ const timelineData = [
     },
     {
         date: "2014年1月",
-        class: "day201308",
+        class: "day201401",
         events: [
             {
                 title: "JavaScriptを使って横断検索サイトを作る",
@@ -125,8 +125,8 @@ const timelineData = [
         ]
     },
     {
-        date: "2014年1月",
-        class: "day201401",
+        date: "2014年2月",
+        class: "day201402",
         events: [
             {
                 title: "2chまとめサイトの量産を始める",
@@ -177,7 +177,383 @@ const timelineData = [
                 imageDescription: ""
             }
         ]
-    }
+    },
+    {
+        date: "2018年7月",
+        class: "day201807",
+        events: [
+            {
+                title: "Chrome拡張機能を作り始める",
+                description: [
+                    
+                    "SNSやブログ等のサイトや2chなどからの被リンクの獲得を目指して",
+                    "投資系の拡張機能を作り始めました。",
+                    "自身のブランディング目的もあります。",
+                ],
+                link: "",
+                linkDescription: "",
+                image: "",
+                imageDescription: ""
+            }
+        ]
+    },
+    {
+        date: "2018年8月",
+        class: "day201808",
+        events: [
+            {
+                title: "株探3分割というChrome拡張機能を作る",
+                description: [
+                    "株探3分割incollという拡張機能を作りました。",
+                    "制作期間１日"
+                ],
+                link: "",
+                linkDescription: "",
+                image: "",
+                imageDescription: ""
+            }
+        ]
+    },
+    {
+        date: "2018年9月",
+        class: "day201809",
+        events: [
+            {
+                title: "incollという拡張機能というChrome拡張機能を作る",
+                description: [
+                    "incollという拡張機能を作りました。",
+                    "制作期間７日"
+                ],
+                link: "",
+                linkDescription: "",
+                image: "",
+                imageDescription: ""
+            }
+        ]
+    },
+    {
+        date: "2019年9月",
+        class: "day201909",
+        events: [
+            {
+                title: "トレーディングビューカスタマーというChrome拡張機能を作る",
+                description: [
+                    "トレーディングビューカスタマーという拡張機能を作りました。",
+                    "制作期間2日"
+                ],
+                link: "",
+                linkDescription: "",
+                image: "",
+                imageDescription: ""
+            }
+        ]
+    },
+    {
+        date: "2020年7月",
+        class: "day202007",
+        events: [
+            {
+                title: "GoogleAppScriptの勉強を始める",
+                description: [
+                    "投資データのスクレイピングをしてデータ分析をする為にGASの勉強を始めました。",
+                ],
+                link: "",
+                linkDescription: "",
+                image: "",
+                imageDescription: ""
+            }
+        ]
+    },
+    {
+        date: "2021年11月",
+        class: "day202111",
+        events: [
+            {
+                title: "Gitの勉強を始める",
+                description: [
+                    "保管してるコードが多くなりすぎて、管理しきれなくなりコード保管のサービスを探した所GitHubに出会いました。",
+                    "この頃は、GitHubに直接コードをアップロードしてました。",
+                ],
+                link: "",
+                linkDescription: "",
+                image: "",
+                imageDescription: ""
+            }
+        ]
+    },
+    {
+        date: "2021年12月",
+        class: "day202112",
+        events: [
+            {
+                title: "node.jsの勉強を始める",
+                description: [
+                    "作成済みスプレッドシートが１万個を超えて、１スプレッドシートの行数が３万を超え始めた頃にGASの制約が厳しく、",
+                    "スプレッドシートも動作が重すぎて限界を感じてました。",
+                    "その為、代替手段を探した結果、node.jsに行き着きました。Qiitaの記事に触発された結果です。",
+                ],
+                link: "",
+                linkDescription: "",
+                image: "",
+                imageDescription: ""
+            }
+        ]
+    },
+    {
+        date: "2022年3月",
+        class: "day202203",
+        events: [
+            {
+                title: "node.jsでスクレイピングソフトを作る",
+                description: [
+                    "node.jsでスクレイピングをして、スプレッドシートに書き込むツールを作りました。",
+                    "制作期間7日"
+                ],
+                link: "",
+                linkDescription: "",
+                image: "",
+                imageDescription: ""
+            }
+        ]
+    },
+    {
+        date: "2022年5月",
+        class: "day202205",
+        events: [
+            {
+                title: "Linuxの勉強を始める",
+                description: [
+                    "node.jsを使っていくうちに、Linuxの知識が足りなく、苦戦することが多かったので、",
+                    "Linuxの勉強を始めました。"
+                ],
+                link: "",
+                linkDescription: "",
+                image: "",
+                imageDescription: ""
+            }
+        ]
+    },
+    {
+        date: "2022年6月",
+        class: "day202206",
+        events: [
+            {
+                title: "MongoDBの勉強を始める",
+                description: [
+                    "データの保存場所をスプレッドシートではなく、",
+                    "リレーショナルデータべースかNoSQL系のデータベースにデータを保存したいと思うようになり、MongoDBの勉強を始めました。",
+                ],
+                link: "",
+                linkDescription: "",
+                image: "",
+                imageDescription: ""
+            }
+        ]
+    },
+    {
+        date: "2022年7月",
+        class: "day202207",
+        events: [
+            {
+                title: "MongoDBのAtlasにデータを保存してみる",
+                description: [
+                    "MongoDBのAtlasというのがリリースされたと聞きデータの保存をしてみるも、お金がかかりすぎる事で断念しました。",
+                    "今まで、スプレッドシートを使い無料でデータ保存していたので、",
+                    "データ保存するだけでお金がガッツリかかる事のギャップに耐えられませんでした。"
+                ],
+                link: "",
+                linkDescription: "",
+                image: "",
+                imageDescription: ""
+            }
+        ]
+    },
+    {
+        date: "2022年7月",
+        class: "day202207",
+        events: [
+            {
+                title: "SQLの勉強を始める",
+                description: [
+                    "MongoDBは諦めて、MySQLの勉強を始めました。",
+                    "当時はMongoDBはAtlasしかないと思っていたので、お金がかからないMySQLに興味を持ちました。",
+                ],
+                link: "",
+                linkDescription: "",
+                image: "",
+                imageDescription: ""
+            }
+        ]
+    },
+    {
+        date: "2022年10月",
+        class: "day202210",
+        events: [
+            {
+                title: "Reactの勉強を始める",
+                description: [
+                    "ReactのSPAを体験した時に、ヌルヌル動く仕組みが不思議に感じReactの勉強を始めました。",
+                    "この頃からフロントエンドやWEBデザインに興味を持ち始めます。",
+                ],
+                link: "",
+                linkDescription: "",
+                image: "",
+                imageDescription: ""
+            }
+        ]
+    },{
+        date: "2022年11月",
+        class: "day202211",
+        events: [
+            {
+                title: "NEXT.jsの勉強を始める",
+                description: [
+                    "ReactといえばNEXT.jsというイメージがあったので、Reactと同時に勉強してました。",
+                ],
+                link: "",
+                linkDescription: "",
+                image: "",
+                imageDescription: ""
+            }
+        ]
+    },{
+        date: "2022年12月",
+        class: "day202212",
+        events: [
+            {
+                title: "クリエイティブコーディングの勉強を始めました",
+                description: [
+                    "P5.jsというライブラリを知り、クリエイティブコーディングに興味を持ちました。",
+                    "JavaScriptのcanvasの勉強や色々な作品を見るようになりました。",
+                ],
+                link: "",
+                linkDescription: "",
+                image: "",
+                imageDescription: ""
+            }
+        ]
+    },{
+        date: "2023年7月",
+        class: "day202307",
+        events: [
+            {
+                title: "Dockerの勉強を始めました。",
+                description: [
+                    "転職を意識してDockerの勉強を始めました。",
+                ],
+                link: "",
+                linkDescription: "",
+                image: "",
+                imageDescription: ""
+            }
+        ]
+    },
+    {
+        date: "2023年8月",
+        class: "day202308",
+        events: [
+            {
+                title: "supabaseの勉強を始めました",
+                description: [
+                    "PostgreSQLを使える、FireBaseという触れ込みに興味がそそられ",
+                    "supabaseを弄りだしました。",
+                ],
+                link: "",
+                linkDescription: "",
+                image: "",
+                imageDescription: ""
+            }
+        ]
+    },{
+        date: "2023年9月",
+        class: "day202309",
+        events: [
+            {
+                title: "playcanvasの勉強を始めました",
+                description: [
+                    "Unity価格改変問題が話題になっていて、",
+                    "そういえば、ゲームエンジンを弄ったことがなかったと思い",
+                    "ブラウザとJavaScriptで使えるゲームエンジンを探して辿り着きました。",
+                ],
+                link: "",
+                linkDescription: "",
+                image: "",
+                imageDescription: ""
+            }
+        ]
+    },{
+        date: "2023年10月",
+        class: "day202310",
+        events: [
+            {
+                title: "playcanvasでゲームを作りました。",
+                description: [
+                    "テスト的に作ったものが、残っていたのでリンクを貼っておきます。",
+                    "非常にしょぼいですが。基本システムは網羅して作りました。",
+                ],
+                link: "",
+                linkDescription: "",
+                image: "",
+                imageDescription: ""
+            }
+        ]
+    },,{
+        date: "2023年11月",
+        class: "day202311",
+        events: [
+            {
+                title: "TypeScriptの勉強を始めました。",
+                description: [
+                    "転職を意識してTypeScriptの勉強を始めました。",
+                    
+                ],
+                link: "",
+                linkDescription: "",
+                image: "",
+                imageDescription: ""
+            }
+        ]
+    },{
+        date: "2023年12月",
+        class: "day202312",
+        events: [
+            {
+                title: "Next,React,playCanvasでポートフォリオサイトを作る",
+                description: [
+                    "NextやReactはテスト的に作る事はしていたのですが、サービスやサイトを作りたいものがなく",
+                    "作っていませんでしたが、転職するに当たり、NEXTとReactとPlayCanvasでポートフォリオを作りました。",
+                    
+                ],
+                link: "",
+                linkDescription: "",
+                image: "",
+                imageDescription: ""
+            }
+        ]
+    },,{
+        date: "2023年12月から",
+        class: "day202312kara",
+        events: [
+            {
+                title: "これから勉強したい事",
+                description: [
+                    "大きく分けてデザインとモダン技術の習得とバックエンドの3種類に分けてそれぞれ強化したいと考えてます。",
+                    "具体的には、デザインはフォトショップやイラストレーター、Blenderを勉強したいです。",
+                    "デザインツール以外では、クリエイティブコーディングやシェーダー言語のGLSLを使いカスタムシェーダーを作りたいです。",
+                    "WebGLの習得は必ずしたいと考えてます。",
+                    "モダン技術は、引き続きReact,Nextの深掘りが必要だと感じています。",
+                    "レンダリング周りやキャッシュ周りやHooksの使い所など多数課題を感じてるので克服したいです。",
+                    "バックエンドは、何かバックエンドを使った個人開発のサービスをリリースしたいと思ってます。",
+                    "node.js以外のバックエンド技術の学習をしたいです。PHP及びLaravelが一応候補で考えてます。",
+                    "これらの課題は２年以内でクリアするつもりで勉強を続けていきます。"
+                ],
+                link: "",
+                linkDescription: "",
+                image: "",
+                imageDescription: ""
+            }
+        ]
+    },
 ];
 
 export default timelineData;
