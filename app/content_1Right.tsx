@@ -25,10 +25,6 @@ const content_1Right = () => {
         fontSize:'20px',
     }
 
-
-    function hasClassNames(element: Element, className: string) {
-        return (element) ? element.className.split(' ').find(element => element === className) : [];
-    };
     function detailsView(){
         const firstNone = document.querySelectorAll('.firstNone')
         firstNone.forEach(element => {
@@ -37,7 +33,6 @@ const content_1Right = () => {
             }   
         })
         const gridChildren = document.querySelectorAll('.gridChildren')
-        console.log(gridChildren)
         gridChildren.forEach(element => {        
         element?.addEventListener('click',(e)=>{
          const targetElement = e.target as HTMLElement;
@@ -67,7 +62,6 @@ const content_1Right = () => {
         const gridChildren = document.querySelectorAll('.gridChildren')
         firstNone.forEach(element => {
             element.addEventListener('click',(e)=>{
-                console.log(e)
                 const rightIconGrid = document.querySelector('.rightIconGrid') as HTMLElement;
                 const right = document.querySelector('.right') as HTMLElement;
                 rightIconGrid ? (rightIconGrid.style.padding = '50px 60px 60px 60px', rightIconGrid.style.margin = '0') : null;
