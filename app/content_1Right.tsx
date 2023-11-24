@@ -12,6 +12,9 @@ const content_1Right = () => {
         color: 'white',
         background: 'rgba(0, 0, 0, 0.5)',
         padding: '50px',
+        width:'100%',
+        lineHeight: '1.6',
+        
     }
     const iTitleStyle: React.CSSProperties = {
         position: 'absolute',
@@ -122,9 +125,11 @@ const content_1Right = () => {
                         <div className={`${item.name}Image`} style={imageStyle}></div>
                     </div>
                     <p className="i-title" style={iTitleStyle}>{item.name.toUpperCase()}</p>
-                    <p className="i-desc" style={detailContentsStyle}>
-                        {item.text}
-                    </p>
+                    <div className="TransitionContent" style={detailContentsStyle}>
+                        {Array.isArray(item.text) && item.text.map((desc, descIndex) => {
+                            return <p key={descIndex} className="i-desc" >{desc}</p>
+                        })}
+                    </div>
                 </div>
             );
         })}
