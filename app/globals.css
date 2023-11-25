@@ -6,7 +6,8 @@
       padding: 0;
       backface-visibility: hidden;/* animation時のにじみ防止 */
       -webkit-backface-visibility: hidden;/* animation時のにじみ防止 */
-      -webkit-font-smoothing: antialiased/* animation時の文字にじみ防止 */
+      -webkit-font-smoothing: antialiased;/* animation時の文字にじみ防止 */
+      
 
 
       
@@ -44,3 +45,27 @@
   .day202312kara .dd:hover{
   background-color: #fff;
 }
+#mainTOP{
+  width:fit-content;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+}
+#mainTOP .iframeCanvasTreeD{
+  width: 100vw;
+  height: 100vh;
+  border: none;
+}
+
+#mainCover{
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  overflow: hidden;
+  opacity: 1;
+  position: absolute;
+}
+

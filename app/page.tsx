@@ -311,18 +311,15 @@ const Home = () => {
   useEffect(() => {
     mousemove()
   }, [])
-
-  return (
-    <main>
-
-      {/* <Sketch setup={setup} draw={draw} /> */}
-      {/* <LoadingEl /> */}
-      <div id="mainTOP">
-        <iframe src="http://127.0.0.1:5501/playcanvas/index.html" width="560" height="315"></iframe>
-      </div>
-
-
-    </main >
-  );
-};
-export default Home;
+  
+    return (
+      <main>
+        <div id="mainCover"></div>
+        <div id='mainTOP'>
+          <iframe src="http://127.0.0.1:5501/libs/playcanvas/index.html" className="iframeCanvasTreeD" frameborder="0"></iframe>
+        </div>
+      </main>
+    );
+  };
+  
+  export default Home;

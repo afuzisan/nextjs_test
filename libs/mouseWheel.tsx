@@ -15,6 +15,7 @@ const MouseWheel = () => {
         wheelMapCreate()
         window.addEventListener('wheel', updateScroll, { passive: false });
         function updateScroll(e: any) {
+            
             e.preventDefault()
             if (deltaTotal <= 600 || deltaTotal >= -600) {
                 deltaTotalBefore = deltaTotal
@@ -102,23 +103,23 @@ function wheelNumber(deltaTotal: number, scrollDirection: boolean) {
 
     if (deltaTotal >= 0) {
         let wheelAfterElement = wheelAfter as HTMLElement;
-        console.log(deltaTotal)
+        // console.log(deltaTotal)
         let deltaTotalborder = deltaTotal
         let backColor = Math.trunc(deltaTotal / 6 / 2)
         let rgb = `rgb(${backColor}%,${backColor}%,${backColor}%)`
-        console.log(rgb)
+        // console.log(rgb)
         deltaTotalborder === 600 ? deltaTotalborder = 0 : deltaTotalborder
         if (wheelAfter !== null) wheelAfterElement.style.height = deltaTotalborder + 'px'
         if (wheelAfter !== null) wheelAfterElement.style.background = rgb
 
-        console.log(deltaTotal)
+        // console.log(deltaTotal)
     } else if (deltaTotal <= 0) {
         let wheelAfterRotateElement = wheelAfterRotate as HTMLElement;
         wheelAfterRotateElement !== null ? wheelAfterRotateElement : removeEl()
         let deltaTotalborder = deltaTotal * -1
         let backColor = Math.trunc(deltaTotal / 6 / 2 * -1)
         let rgb = `rgb(${backColor}%,${backColor}%,${backColor}%)`
-        console.log(rgb)
+        
         deltaTotalborder === 600 ? deltaTotalborder = 0 : deltaTotalborder
         if (wheelAfterRotate !== null) wheelAfterRotateElement.style.height = deltaTotalborder + 'px'
         if (wheelAfterRotate !== null) wheelAfterRotateElement.style.background = rgb
