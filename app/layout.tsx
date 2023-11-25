@@ -14,6 +14,7 @@ export default function RootLayout({
   return (
 
     <html lang="ja">
+
       <body>
         <div className="stalker">aaaa</div>
         {children}
