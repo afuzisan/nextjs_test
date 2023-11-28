@@ -1,4 +1,4 @@
-(function startPlayCanvas () {
+(function () {
     // Shared Lib
     var CANVAS_ID = 'application-canvas';
 

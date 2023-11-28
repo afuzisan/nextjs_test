@@ -8,7 +8,6 @@ const HomeLayout: FC<Props> = ({ children }) => {
   return (
     <div className="tt"
       style={{
-        padding: '20px',
         background: '#ddd',
       }}
     >
