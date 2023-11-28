@@ -8,15 +8,18 @@ const sliderContentWcontent_2_right = () => {
     const [Content, setContent] = useState<string[]>([])
     const [Images, setImage] = useState<string[] | any[]>([])
     const [Categorys, setcategory] = useState<string[] | any[]>([])
+    const [Ids, setid] = useState<string[] | any[]>([])
     useEffect(() => {
         axios.get('http://localhost:3000/api/route').then((res: AxiosResponse<any[]>) => {
-            const contentsAf = res.data.map((element: { content: string; eyecatch: string; category: { name: string } }) => element.content);
-            const ImagesAf = res.data.map((element: { content: string; eyecatch: string; category: { name: string } }) => element.eyecatch)
-            const categoryAf = res.data.map((element: { content: string; eyecatch: string; category: { name: string } }) => element.category.name)
+            const contentsAf = res.data.map((element: { content: string; eyecatch: string; category: { name: string }; id:string;}) => element.content);
+            const ImagesAf = res.data.map((element: { content: string; eyecatch: string; category: { name: string }; id:string;}) => element.eyecatch)
+            const categoryAf = res.data.map((element: { content: string; eyecatch: string; category: { name: string }; id:string;  }) => element.category.name)
+            const IdAf = res.data.map((element: { content: string; eyecatch: string; category: { name: string }; id:string;  }) => element.id)
             setContent(contentsAf)
             setImage(ImagesAf)
             setcategory(categoryAf)
-            // console.log(res)
+            setid(IdAf)
+          
         })
     }, [])
     // console.log(Content, Images, Categorys)
@@ -30,6 +33,7 @@ const sliderContentWcontent_2_right = () => {
                         // console.log(element, index, Categorys[index])
                         return (
                             Categorys[index] === '作品集' ?
+                                   
                                 <div className="twoCard" >
                                     <div className="twoCardTitle">aaa</div>
                                     <div className="imageEl">
@@ -42,12 +46,14 @@ const sliderContentWcontent_2_right = () => {
                                             objectPosition="top right"
                                         />
                                     </div>
+                                    <Link href={`/blog/${Ids[index]}`}>   
                                     <div className="discribeEl">
                                         {element}
                                     </div>
+                                    </Link>
                                 </div>
+                           
                                 : null
-
                         )
                     })}
                 </div>

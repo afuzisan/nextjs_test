@@ -16,7 +16,7 @@ export default async function StaticPage() {
       <ul>
         {contents.map((post) => {
           return (
-            <li key={post.id}>
+            <li key={post.id} >
               <img
                 src={post.eyecatch !== undefined ? post.eyecatch.url : '../../logoPacks/css-3.svg'}
                 sizes="100vw"
