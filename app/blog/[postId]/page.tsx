@@ -2,6 +2,7 @@
 import { notFound } from "next/navigation";
 import parse from "html-react-parser";
 import { getDetail, getList } from "../../../libs/microcms";
+import { relative } from "path";
 
 export const revalidate = 5;
 
@@ -59,6 +60,7 @@ export default async function StaticDetailPage({
               backgroundColor: "white",
               borderRadius:'12px',
               padding: '40px 40px',
+              
             }}>
               <div>
                 <div>{parse(post.content)}</div>
@@ -66,9 +68,16 @@ export default async function StaticDetailPage({
               <div id="sidebar" style={{
                 backgroundColor: "white",
                 borderRadius:'12px',
-                // padding: '40px 40px',
+                position:'relative',
+                top:'0px',
               }}>
-                サイドバー
+                <div className="fixed" style={{
+                  position:'absolute',
+                  top:'0px',
+                }}>
+                  サイドバー
+                </div>
+                
               </div>
             </div>
             <div style={{ 
