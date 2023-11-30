@@ -47,7 +47,7 @@ export default async function StaticDetailPage({
             alignItems: 'center', 
             height: '310px' 
           }}>
-            <img src="logo.png" alt="ロゴ" />
+            {/* <img src="logo.png" alt="ロゴ" /> */}
             <h1>{post.title}</h1>
           </div>
    
@@ -63,7 +63,7 @@ export default async function StaticDetailPage({
               
             }}>
               <div>
-                <div>{parse(post.content)}</div>
+                <div>{typeof post.content === 'string' ? parse(post.content) : ''}</div>
               </div>
               <div id="sidebar" style={{
                 backgroundColor: "white",

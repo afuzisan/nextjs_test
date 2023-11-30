@@ -16,7 +16,7 @@ export default function RootLayout({
     <html lang="ja">
 
       <body>
-        <div className="stalker">aaaa</div>
+        <div className="stalker"></div>
         {children}
       </body>
     </html>

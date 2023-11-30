@@ -9,29 +9,65 @@
 }
 
 #twoCards{
-    align-items: center;
+    align-items: stretch;
     display: grid;
-    gap:10px; 
-    grid-template-columns: 300px 300px 300px ; 
-    grid-template-rows: 50px 1fr 100px; 
+    gap:20px; 
+    grid-template-columns: 1fr 1fr 1fr 1fr ; 
+    grid-template-rows: 67px 1fr 69px; 
     justify-content: center;
     padding:10px;
-    
 }
+#twoCards a{
+    text-decoration: none;
+    color: #000;
+} 
+
+#twoCards .twoCard:hover a{
+    text-decoration:dotted;
+    color: #bd1919;
+    opacity: 0.9;
+    transition-duration: .5s;
+} 
 
 .twoCard{
-    align-items: center;
-    /* border:  1px solid #000; */
+    align-items: end;
+    border-radius: 3px;
     background-color: #f2f2f2;
     display: grid;
     grid-row: span 3;
     grid-template-rows: subgrid;
     justify-content: center;
+    justify-items: center
   
 }
+.twoCard:hover{
+    box-shadow: 0 8px 4px #787a75;
+    transition-duration: .5s;
+
+}
 .twoCardTitle{
-    padding:10px;
+    padding:22px;
+    width: 300px;
+    height: 65px;
+    border-bottom: 1px solid #000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 .discribeEl{
-    padding:10px;
+    padding:0px 22px;
+    height: 68px;
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+}
+.imageEl{
+    height: 200px;
+    width: 300px;
+    
+}
+.twoSliderTitle{
+    text-align: center;
+    height: 35px;
 }

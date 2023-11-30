@@ -12,12 +12,12 @@
 
       
     }
-    /* @font-face{
-      font-family: Togalite-Bold;
-      src:url(../font/NotoSerifJP-Black.otf)
-    } */
+    @font-face{
+      font-family: Meiryo;
+      src:url(../font/NotoSansJP-Medium.ttf)
+    }
     body{
-      /* font-family: Togalite-Bold; */
+      font-family: Meiryo;
       margin: auto;
     }
 

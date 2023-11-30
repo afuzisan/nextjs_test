@@ -30,7 +30,7 @@ const MouseWheel = () => {
                 beforeScrollDirection !== scrollDirection ? removeEl() : null
             }
             first_flag = true
-            wheelNumber(deltaTotal, scrollDirection)
+            wheelNumber(deltaTotal)
 
             if (deltaTotal === 600 && wheelFlag == 1) {
                 wheelFlagloop('wheelFlag3', 'wheelFlag1')
@@ -93,7 +93,7 @@ function wheelMapCreateRotate() {
     if (wheelMap !== null) wheelMap.appendChild(wheelMapElementSpan)
 }
 
-function wheelNumber(deltaTotal: number, scrollDirection: boolean) {
+function wheelNumber(deltaTotal: number) {
 
     let wheelAfter = document.querySelector('.wheelAfter')
     // let wheelMap = document.querySelector('.wheelMap')

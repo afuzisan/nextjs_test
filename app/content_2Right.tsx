@@ -9,16 +9,23 @@ const sliderContentWcontent_2_right = () => {
     const [Images, setImage] = useState<string[] | any[]>([])
     const [Categorys, setcategory] = useState<string[] | any[]>([])
     const [Ids, setid] = useState<string[] | any[]>([])
+    const [discribe, setdiscribe] = useState<string[] | any[]>([])
+    const [title, setTitle] = useState<string[] | any[]>([])
     useEffect(() => {
         axios.get('http://localhost:3000/api/route').then((res: AxiosResponse<any[]>) => {
-            const contentsAf = res.data.map((element: { content: string; eyecatch: string; category: { name: string }; id:string;}) => element.content);
-            const ImagesAf = res.data.map((element: { content: string; eyecatch: string; category: { name: string }; id:string;}) => element.eyecatch)
-            const categoryAf = res.data.map((element: { content: string; eyecatch: string; category: { name: string }; id:string;  }) => element.category.name)
-            const IdAf = res.data.map((element: { content: string; eyecatch: string; category: { name: string }; id:string;  }) => element.id)
+            console.log(res)
+            const contentsAf = res.data.map((element: { content: string; eyecatch: string; category: { name: string }; id:string; discribe:string; title:string}) => element.content);
+            const ImagesAf = res.data.map((element: { content: string; eyecatch: string; category: { name: string }; id:string;discribe:string; title:string}) => element.eyecatch)
+            const categoryAf = res.data.map((element: { content: string; eyecatch: string; category: { name: string }; id:string; discribe:string; title:string }) => element.category.name)
+            const IdAf = res.data.map((element: { content: string; eyecatch: string; category: { name: string }; id:string; discribe:string; title:string }) => element.id)
+            const discribeAf = res.data.map((element: { content: string; eyecatch: string; category: { name: string }; id:string; discribe:string; title:string }) => element.discribe)
+            const titleAf = res.data.map((element: { content: string; eyecatch: string; category: { name: string }; id:string; discribe:string; title:string }) => element.title)
             setContent(contentsAf)
             setImage(ImagesAf)
             setcategory(categoryAf)
             setid(IdAf)
+            setdiscribe(discribeAf)
+            setTitle(titleAf)
           
         })
     }, [])
@@ -30,12 +37,16 @@ const sliderContentWcontent_2_right = () => {
                 <div id="twoCards">
 
                     {Content.map((element, index) => {
+
                         // console.log(element, index, Categorys[index])
                         return (
                             Categorys[index] === '作品集' ?
                                    
                                 <div className="twoCard" >
-                                    <div className="twoCardTitle">aaa</div>
+                                    <Link href={`/blog/${Ids[index]}`}> 
+                                    <div className="twoCardTitle">{title[index]}</div>
+                                    </Link>
+                                    <Link href={`/blog/${Ids[index]}`}> 
                                     <div className="imageEl">
                                         <Image
                                             src={Images[index] !== undefined ? Images[index].url : '/logoPacks/typescript.svg'}
@@ -46,9 +57,10 @@ const sliderContentWcontent_2_right = () => {
                                             objectPosition="top right"
                                         />
                                     </div>
+                                    </Link>
                                     <Link href={`/blog/${Ids[index]}`}>   
                                     <div className="discribeEl">
-                                        {element}
+                                        {discribe[index]}
                                     </div>
                                     </Link>
                                 </div>
