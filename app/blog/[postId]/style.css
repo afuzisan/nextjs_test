@@ -1,0 +1,40 @@
+.ddClass::before {
+    content: '●';
+    position: absolute;
+    font-size: 10px;
+    left: -5px; 
+    top: 5px;
+}
+
+.ddClass {
+    position: relative;
+    padding-left: 15px;
+    margin-bottom: 10px;
+    list-style: none;
+}
+
+.active {
+   color:red;
+}
+.noactive{
+    /* opacity: 0.5; */
+}
+
+/* .contentActive{
+    color:blue;
+    transition: color 1s ease-in-out;
+}
+
+.contentNoActive{
+    color:blue;
+    transition: color 1s ease-in-out;
+} */
+
+.ddClass a{
+    text-decoration: none;
+    color: black;
+}
+
+html {
+    scroll-behavior: smooth;
+}

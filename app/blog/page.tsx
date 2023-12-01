@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { getList } from "../../libs/microcms";
 
+
 export const revalidate = 5;
 
 export default async function StaticPage() {

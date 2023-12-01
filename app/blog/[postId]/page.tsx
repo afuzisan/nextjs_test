@@ -1,8 +1,11 @@
-// static/[postId]/page.tsx
+// app/blog/[postId]/page.tsx
 import { notFound } from "next/navigation";
 import parse from "html-react-parser";
 import { getDetail, getList } from "../../../libs/microcms";
 import { relative } from "path";
+import Sidebar from './Sidebar.client';
+import MainContents from "./mainContents";
+import Header from "./header"
 
 export const revalidate = 5;
 
@@ -31,62 +34,55 @@ export default async function StaticDetailPage({
   notFound();
  }
 
+
+
+ const titleStyle = {
+   display: 'flex', 
+   flexDirection: 'column' as 'column',
+   justifyContent: 'center', 
+   alignItems: 'center', 
+   height: '310px' 
+ };
+
+ const mainStyle = {
+   display: 'grid', 
+   gridTemplateColumns: '708px 300px', 
+   gap: '30px',
+   margin: 'auto',
+   maxWidth: '1120px', 
+   backgroundColor: "white",
+   borderRadius:'12px',
+   padding: '40px 40px',
+ };
+
+ const footerStyle = {
+   width: '100%', 
+   height: '62px', 
+   backgroundColor: '#ddd',
+ };
+
  return (
-        <div>
-          <div style={{ 
-            width: '100vw', 
-            height: '62px', 
-            backgroundColor: 'white',
-          }}>
-            ヘッダー
-          </div>
-          <div style={{ 
-            display: 'flex', 
-            flexDirection: 'column',
-            justifyContent: 'center', 
-            alignItems: 'center', 
-            height: '310px' 
-          }}>
-            {/* <img src="logo.png" alt="ロゴ" /> */}
+        <>
+          
+          <Header />
+          
+
+          {/* タイトル */}
+          <div style={titleStyle}>
             <h1>{post.title}</h1>
           </div>
-   
-            <div id="main" style={{ 
-              display: 'grid', 
-              gridTemplateColumns: '665px 270px', 
-              gap: '30px',
-              margin: 'auto',
-              maxWidth: '1045px', 
-              backgroundColor: "white",
-              borderRadius:'12px',
-              padding: '40px 40px',
-              
-            }}>
-              <div>
-                <div>{typeof post.content === 'string' ? parse(post.content) : ''}</div>
-              </div>
-              <div id="sidebar" style={{
-                backgroundColor: "white",
-                borderRadius:'12px',
-                position:'relative',
-                top:'0px',
-              }}>
-                <div className="fixed" style={{
-                  position:'absolute',
-                  top:'0px',
-                }}>
-                  サイドバー
-                </div>
-                
-              </div>
+          
+          <div id="main" style={mainStyle} >
+            <div>
+              <div id="contents">{typeof post.content === 'string' ? parse(post.content) : ''}</div>
             </div>
-            <div style={{ 
-    width: '100vw', 
-    height: '62px', 
-    backgroundColor: '#ddd',
-  }}>
-    フッター
-  </div>
-        </div>
+            <Sidebar />
+          </div>
+          
+          {/* フッター */}
+          <div style={footerStyle}>
+            フッター
+          </div>
+        </>
       );
     }
