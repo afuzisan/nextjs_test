@@ -12,7 +12,7 @@ pc.script.createLoadingScreen(function (app) {
         splash.style.display = 'none';
 
         var logo = document.createElement('img');
-        logo.src = ASSET_PREFIX + 'logo.png';
+        logo.src = 'https://playcanvas.com/static-assets/images/play_text_252_white.png';
         splash.appendChild(logo);
         logo.onload = function () {
             splash.style.display = 'block';
@@ -35,57 +35,68 @@ pc.script.createLoadingScreen(function (app) {
 
     var setProgress = function (value) {
         var bar = document.getElementById('progress-bar');
-        if (bar) {
+        var bar2 = document.getElementById('progress-bar-container');
+        var div11 = document.createElement('div');
+        div11.id = 'application-splash-div';
+        bar2.appendChild(div11);
+        if(bar) {
             value = Math.min(1, Math.max(0, value));
             bar.style.width = value * 100 + '%';
+            div11.textContent = 'はじめまして。おかだです。'
+            
+            
         }
     };
 
     var createCss = function () {
         var css = [
             'body {',
-            '    background-color: #283538;',
+            '    background-color: #ccc;',
             '}',
-
+            '',
             '#application-splash-wrapper {',
             '    position: absolute;',
             '    top: 0;',
             '    left: 0;',
             '    height: 100%;',
             '    width: 100%;',
-            '    background-color: #283538;',
+            '    background-color: #ccc;',
+            
             '}',
-
+            '',
             '#application-splash {',
             '    position: absolute;',
             '    top: calc(50% - 28px);',
-            '    width: 264px;',
+            '    width: 250px;',
             '    left: calc(50% - 132px);',
             '}',
-
+            '',
             '#application-splash img {',
-            '    width: 100%;',
+            '    width: 0%;',
             '}',
-
+            '#application-splash-div{ position:absolute; top:-50px; left:30px;}',
+            '',
             '#progress-bar-container {',
             '    margin: 20px auto 0 auto;',
             '    height: 2px;',
             '    width: 100%;',
             '    background-color: #1d292c;',
+            
             '}',
-
+            '',
             '#progress-bar {',
             '    width: 0%;',
             '    height: 100%;',
             '    background-color: #f60;',
+            'position:relative;',
             '}',
+            '',
             '@media (max-width: 480px) {',
             '    #application-splash {',
             '        width: 170px;',
             '        left: calc(50% - 85px);',
             '    }',
             '}'
-
         ].join('\n');
 
         var style = document.createElement('style');
@@ -99,9 +110,7 @@ pc.script.createLoadingScreen(function (app) {
         document.head.appendChild(style);
     };
 
-
     createCss();
-
     showSplash();
 
     app.on('preload:end', function () {

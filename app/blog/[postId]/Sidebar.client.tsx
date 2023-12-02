@@ -3,6 +3,13 @@
 import React,{useEffect,useState} from 'react'
 import './style.css'
 
+const ddStyle = {
+  position: 'relative',
+  paddingLeft: '15px',
+  marginBottom: '10px',
+  listStyle: 'none'
+};
+
 const sidebar = () => {
   
   const sidebarStyle = {
@@ -86,3 +93,4 @@ const sidebar = () => {
 }
 
 export default sidebar
+
