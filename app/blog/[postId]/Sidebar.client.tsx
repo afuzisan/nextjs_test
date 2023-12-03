@@ -34,27 +34,22 @@ const sidebar = () => {
     parentElement.style.borderLeft = '1px solid black'; // 親要素にborder-leftを追加
 
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+      for (let i = 0; i < entries.length; i++) {
+        const entry = entries[i];
         const ddElement = document.querySelector(`.ddClass a[href="#${entry.target.id}"]`) as HTMLElement;
-        const contentElement = document.getElementById(entry.target.id);
-        if (ddElement) {
-          if (entry.isIntersecting) {
-            ddElement.parentElement?.classList.remove('noactive');
-            ddElement.parentElement?.classList.add('active');
-            if (contentElement) {
-              contentElement.classList.remove('contentNoActive');
-              contentElement.classList.add('contentActive');
-            }
-          } else {
-            ddElement.parentElement?.classList.remove('active');
-            ddElement.parentElement?.classList.add('noactive');
-            if (contentElement) {
-              contentElement.classList.remove('contentActive');
-              contentElement.classList.add('contentNoActive');
-            }
+        const ddElementAll = document.querySelectorAll(`.ddClass a`);
+        // console.log(ddElement)
+        if (entry.isIntersecting) {
+          for(i=1;i<ddElementAll.length;i++){
+            ddElementAll[i].parentElement?.classList.remove('active');
           }
-        }
-      });
+          ddElement.parentElement?.classList.add('active');
+        } 
+        
+        if (entry && entry.isIntersecting && !ddElement.parentElement?.classList.contains('green')) {
+          ddElement.parentElement?.classList.add('green');
+        } 
+      }
     }, {
       rootMargin: '0px 0px 0% 0px', // 画面内に21%入った時に発火
       threshold: [0.3, 0.21, 0.3] // スクロールを下から上に上がった時にも21%で発火
@@ -93,4 +88,3 @@ const sidebar = () => {
 }
 
 export default sidebar
-
