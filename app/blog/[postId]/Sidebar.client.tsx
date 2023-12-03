@@ -27,8 +27,40 @@ const sidebar = () => {
     top:'24px',
     padding:'20px 20px 25px',
   };
-
-  function el(){
+  function ddClassFn(){
+    const ddClassEl = document.querySelectorAll('.ddClass')
+    ddClassEl.forEach(element => {
+      element.addEventListener('click',(e)=>{
+        const parentElement = (e.target as HTMLElement).parentElement;
+        if (parentElement) {
+          const href = parentElement.querySelector('a')?.getAttribute('href');
+          if (href !== undefined && href !== null && href.startsWith('#') && href.length > 1) {
+            const idElement = document.querySelector(href);
+            if (idElement) {
+              (idElement as HTMLElement).style.transition = 'all 1s ease-in-out';
+              (idElement as HTMLElement).style.textDecoration = 'underline';
+              (idElement as HTMLElement).style.textDecorationColor = 'red';
+              (idElement as HTMLElement).style.textDecorationThickness = '4px';
+              (idElement as HTMLElement).style.textDecorationSkipInk = 'none';
+            }
+            setTimeout(() => {
+              if (href) {
+                const idElement = document.querySelector(href);
+                if (idElement) {
+                  (idElement as HTMLElement).style.transform = '';
+                  (idElement as HTMLElement).style.textDecoration = '';
+                  (idElement as HTMLElement).style.textDecorationColor = '';
+                  (idElement as HTMLElement).style.textDecorationThickness = '';
+                  (idElement as HTMLElement).style.textDecorationSkipInk = '';
+                }
+              }
+            }, 1300);    
+          }
+        }
+      })
+    });
+  }
+  async function el(){
     const contents = Array.from(document.querySelectorAll('h1, h2, h3, h4, h5')).map(el => ({id: el.id, content: el.textContent}));
     const parentElement = document.createElement('div'); // 親要素を作成
     parentElement.style.borderLeft = '1px solid black'; // 親要素にborder-leftを追加
@@ -48,9 +80,7 @@ const sidebar = () => {
         
         if (entry && entry.isIntersecting && !ddElement.parentElement?.classList.contains('green') ) {
           ddElement.parentElement?.classList.add('green');
-          
-        } 
-        
+        }         
       }
     }, {
       rootMargin: '0% 0px -100px 0px', 
@@ -76,11 +106,10 @@ const sidebar = () => {
     });
     
     document.querySelector('.fixed')?.appendChild(parentElement); // 親要素を.fixedに追加
-
+    await ddClassFn();
   }
   useEffect(()=>{
     el()
-    // ddClassFn()
   },[])
   return (
     <div id="sidebar" style={sidebarStyle}>
