@@ -38,21 +38,23 @@ const sidebar = () => {
         const entry = entries[i];
         const ddElement = document.querySelector(`.ddClass a[href="#${entry.target.id}"]`) as HTMLElement;
         const ddElementAll = document.querySelectorAll(`.ddClass a`);
-        // console.log(ddElement)
         if (entry.isIntersecting) {
           for(i=1;i<ddElementAll.length;i++){
             ddElementAll[i].parentElement?.classList.remove('active');
+            
           }
           ddElement.parentElement?.classList.add('active');
         } 
         
-        if (entry && entry.isIntersecting && !ddElement.parentElement?.classList.contains('green')) {
+        if (entry && entry.isIntersecting && !ddElement.parentElement?.classList.contains('green') ) {
           ddElement.parentElement?.classList.add('green');
+          
         } 
+        
       }
     }, {
-      rootMargin: '0px 0px 0% 0px', // 画面内に21%入った時に発火
-      threshold: [0.3, 0.21, 0.3] // スクロールを下から上に上がった時にも21%で発火
+      rootMargin: '0% 0px -100px 0px', 
+      threshold: [1] 
     });
 
     contents.forEach((content, index) => {
@@ -72,11 +74,13 @@ const sidebar = () => {
         observer.observe(element); // 見出し要素を監視対象に追加
       }
     });
-
+    
     document.querySelector('.fixed')?.appendChild(parentElement); // 親要素を.fixedに追加
+
   }
   useEffect(()=>{
     el()
+    // ddClassFn()
   },[])
   return (
     <div id="sidebar" style={sidebarStyle}>

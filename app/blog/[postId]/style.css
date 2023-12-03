@@ -18,6 +18,9 @@
 .active {
    color:red;
 }
+.activeClick{
+    color:red;
+}
 
 .noactive{
     /* opacity: 0.5; */
