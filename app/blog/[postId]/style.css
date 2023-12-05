@@ -26,15 +26,9 @@
     /* opacity: 0.5; */
 }
 
-/* .contentActive{
-    color:blue;
-    transition: color 1s ease-in-out;
+.activeYellow{
+    color: yellow;
 }
-
-.contentNoActive{
-    color:blue;
-    transition: color 1s ease-in-out;
-} */
 
 .ddClass a{
     text-decoration: none;
@@ -42,7 +36,6 @@
 }
 
 html {
+    scroll-padding-top: 30px;
     scroll-behavior: smooth;
-    position: relative;
-    top: -50px;
 }

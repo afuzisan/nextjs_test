@@ -38,8 +38,11 @@ const sidebar = () => {
     idElementStyle.textDecorationColor = 'red';
     idElementStyle.textDecorationThickness = '4px';
     idElementStyle.textDecorationSkipInk = 'none';
+    const ddElement = document.querySelector(`.ddClass a[href="#${idElement.id}"]`) as HTMLElement;
+    ddElement.parentElement?.classList.add('activeYellow');
     
     idElement.addEventListener('transitionend', () => {
+      ddElement.parentElement?.classList.remove('activeYellow');
       setContents(Array.from(document.querySelectorAll('h1, h2, h3, h4, h5')).map(el => ({id: el.id, content: el.textContent || ''})));
       idElementStyle.transform = '';
       idElementStyle.textDecoration = '';
@@ -69,7 +72,6 @@ const sidebar = () => {
       parentElement = document.createElement('div') as HTMLElement; // 親要素を作成
       parentElement.classList.add('parentElement'); // parentElementにclass aをつける
       parentElement.style.borderLeft = '1px solid black'; // 親要素にborder-leftを追加
-      console.log('作成した')
     }
 
     const observer = new IntersectionObserver((entries) => {
