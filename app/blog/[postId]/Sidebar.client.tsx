@@ -27,7 +27,10 @@ const sidebar = () => {
     if (!parentElement) return;
     
     const href = parentElement.querySelector('a')?.getAttribute('href');
-    if (!href || !href.startsWith('#') || href.length <= 1) return;
+    if (!href || !href.startsWith('#') || href.length <= 1) {
+      setContents(Array.from(document.querySelectorAll('h1, h2, h3, h4, h5')).map(el => ({id: el.id, content: el.textContent || ''})));
+      return
+    };
     
     const idElement = document.querySelector(href);
     if (!idElement) return;
