@@ -47,11 +47,14 @@ const sidebar = () => {
     idElement.addEventListener('transitionend', () => {
       ddElement.parentElement?.classList.remove('activeYellow');
       setContents(Array.from(document.querySelectorAll('h1, h2, h3, h4, h5')).map(el => ({id: el.id, content: el.textContent || ''})));
-      idElementStyle.transform = '';
-      idElementStyle.textDecoration = '';
-      idElementStyle.textDecorationColor = '';
-      idElementStyle.textDecorationThickness = '';
-      idElementStyle.textDecorationSkipInk = '';
+      setTimeout(()=>{
+        idElementStyle.transform = '';
+        idElementStyle.textDecoration = '';
+        idElementStyle.textDecorationColor = '';
+        idElementStyle.textDecorationThickness = '';
+        idElementStyle.textDecorationSkipInk = '';
+      },1000)
+
     });
   };
 
