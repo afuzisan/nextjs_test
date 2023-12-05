@@ -43,4 +43,6 @@
 
 html {
     scroll-behavior: smooth;
+    position: relative;
+    top: -50px;
 }

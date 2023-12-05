@@ -3,15 +3,8 @@
 import React,{useEffect,useState} from 'react'
 import './style.css'
 
-const ddStyle = {
-  position: 'relative',
-  paddingLeft: '15px',
-  marginBottom: '10px',
-  listStyle: 'none'
-};
-
 const sidebar = () => {
-  
+  const [flag, setFlag] = useState(false);
   const sidebarStyle = {
     backgroundColor: "white",
     borderRadius:'12px',
@@ -28,7 +21,8 @@ const sidebar = () => {
     padding:'20px 20px 25px',
   };
 
-  let clickHandler = (e: Event) => {
+  let clickHandler = (e: Event,observer: IntersectionObserver) => {
+    observer.disconnect();
     const parentElement = (e.target as HTMLElement).parentElement;
     if (!parentElement) return;
     
@@ -45,20 +39,23 @@ const sidebar = () => {
     idElementStyle.textDecorationThickness = '4px';
     idElementStyle.textDecorationSkipInk = 'none';
     
-    setTimeout(() => {
+    idElement.addEventListener('transitionend', () => {
+      setContents(Array.from(document.querySelectorAll('h1, h2, h3, h4, h5')).map(el => ({id: el.id, content: el.textContent || ''})));
       idElementStyle.transform = '';
       idElementStyle.textDecoration = '';
       idElementStyle.textDecorationColor = '';
       idElementStyle.textDecorationThickness = '';
       idElementStyle.textDecorationSkipInk = '';
-    }, 1300);    
+    });
   };
-  function ddClassFn(){
+
+  function ddClassFn(observer: IntersectionObserver) {
     const ddClassEl = document.querySelectorAll('.ddClass')
     ddClassEl.forEach(element => {
-      element.addEventListener('click',clickHandler)
+      element.addEventListener('click', (e) => clickHandler(e, observer));
     });
   }
+
   const [contents, setContents] = React.useState<Array<{id: string, content: string}>>([]);
 
   useEffect(() => {
@@ -66,8 +63,14 @@ const sidebar = () => {
   }, []);
 
   useEffect(() => {
-    const parentElement = document.createElement('div'); // 親要素を作成
-    parentElement.style.borderLeft = '1px solid black'; // 親要素にborder-leftを追加
+    let parentElement = document.querySelector('.fixed div') as HTMLElement; // 親要素を取得
+    
+    if (!parentElement) { // 親要素が存在しない場合のみ作成
+      parentElement = document.createElement('div') as HTMLElement; // 親要素を作成
+      parentElement.classList.add('parentElement'); // parentElementにclass aをつける
+      parentElement.style.borderLeft = '1px solid black'; // 親要素にborder-leftを追加
+      console.log('作成した')
+    }
 
     const observer = new IntersectionObserver((entries) => {
       for (let i = 0; i < entries.length; i++) {
@@ -90,27 +93,31 @@ const sidebar = () => {
       rootMargin: '0% 0px -100px 0px', 
       threshold: [1] 
     });
+      contents.forEach((content, index) => {
+        if(!flag){
+        const dt = document.createElement('dt');
+        const dd = document.createElement('dd');
+        dd.className = 'ddClass'; // Added class name
 
-    contents.forEach((content, index) => {
-      const dt = document.createElement('dt');
-      const dd = document.createElement('dd');
-      dd.className = 'ddClass'; // Added class name
+        const link = document.createElement('a');
+        link.href = `#${content.id}`;
+        link.textContent = index === 0 ? 'トップへ戻る' : content.content;
+        
+          setFlag(true);
+          dd.appendChild(link);
+          dt.appendChild(dd);
+          parentElement.appendChild(dt); // dtを親要素に追加
+        }
+        
 
-      const link = document.createElement('a');
-      link.href = `#${content.id}`;
-      link.textContent = index === 0 ? 'トップへ戻る' : content.content;
-      dd.appendChild(link);
-      dt.appendChild(dd);
-      parentElement.appendChild(dt); // dtを親要素に追加
-
-      const element = document.getElementById(content.id);
-      if (element) {
-        observer.observe(element); // 見出し要素を監視対象に追加
-      }
-    });
+        const element = document.getElementById(content.id);
+        if (element) {
+          observer.observe(element); // 見出し要素を監視対象に追加
+        }
+      });
+      document.querySelector('.fixed')?.appendChild(parentElement); // 親要素を.fixedに追加
     
-    document.querySelector('.fixed')?.appendChild(parentElement); // 親要素を.fixedに追加
-    ddClassFn();
+    ddClassFn(observer);
     return () => {
       observer.disconnect();
     };
@@ -126,3 +133,5 @@ const sidebar = () => {
 }
 
 export default sidebar
+
+
