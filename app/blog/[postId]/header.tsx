@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 const headerStyle = {
     width: '100%', 
     height: '62px', 
@@ -21,7 +22,10 @@ const header = () => {
   return (
     <div style={headerStyle}>
         <div style={headerContent}>
-            ヘッダー
+            <Link href="/">トップ</Link>
+            <Link href="/">Twitter</Link>
+            <Link href="/">GitHub</Link>
+            <Link href="/">Youtube</Link>
         </div>
   </div>
   )

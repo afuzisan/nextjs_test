@@ -22,46 +22,50 @@ const sidebar = () => {
   const fixedStyle = {
     width:'300px',
     borderRadius: '12px',
-    backgroundColor:'#ddd',
+    backgroundColor:'#fff',
     position:'sticky' as 'sticky',
     top:'24px',
     padding:'20px 20px 25px',
   };
+
+  let clickHandler = (e: Event) => {
+    const parentElement = (e.target as HTMLElement).parentElement;
+    if (!parentElement) return;
+    
+    const href = parentElement.querySelector('a')?.getAttribute('href');
+    if (!href || !href.startsWith('#') || href.length <= 1) return;
+    
+    const idElement = document.querySelector(href);
+    if (!idElement) return;
+    
+    const idElementStyle = (idElement as HTMLElement).style;
+    idElementStyle.transition = 'all 1s ease-in-out';
+    idElementStyle.textDecoration = 'underline';
+    idElementStyle.textDecorationColor = 'red';
+    idElementStyle.textDecorationThickness = '4px';
+    idElementStyle.textDecorationSkipInk = 'none';
+    
+    setTimeout(() => {
+      idElementStyle.transform = '';
+      idElementStyle.textDecoration = '';
+      idElementStyle.textDecorationColor = '';
+      idElementStyle.textDecorationThickness = '';
+      idElementStyle.textDecorationSkipInk = '';
+    }, 1300);    
+  };
   function ddClassFn(){
     const ddClassEl = document.querySelectorAll('.ddClass')
     ddClassEl.forEach(element => {
-      element.addEventListener('click',(e)=>{
-        const parentElement = (e.target as HTMLElement).parentElement;
-        if (parentElement) {
-          const href = parentElement.querySelector('a')?.getAttribute('href');
-          if (href !== undefined && href !== null && href.startsWith('#') && href.length > 1) {
-            const idElement = document.querySelector(href);
-            if (idElement) {
-              (idElement as HTMLElement).style.transition = 'all 1s ease-in-out';
-              (idElement as HTMLElement).style.textDecoration = 'underline';
-              (idElement as HTMLElement).style.textDecorationColor = 'red';
-              (idElement as HTMLElement).style.textDecorationThickness = '4px';
-              (idElement as HTMLElement).style.textDecorationSkipInk = 'none';
-            }
-            setTimeout(() => {
-              if (href) {
-                const idElement = document.querySelector(href);
-                if (idElement) {
-                  (idElement as HTMLElement).style.transform = '';
-                  (idElement as HTMLElement).style.textDecoration = '';
-                  (idElement as HTMLElement).style.textDecorationColor = '';
-                  (idElement as HTMLElement).style.textDecorationThickness = '';
-                  (idElement as HTMLElement).style.textDecorationSkipInk = '';
-                }
-              }
-            }, 1300);    
-          }
-        }
-      })
+      element.addEventListener('click',clickHandler)
     });
   }
-  async function el(){
-    const contents = Array.from(document.querySelectorAll('h1, h2, h3, h4, h5')).map(el => ({id: el.id, content: el.textContent}));
+  const [contents, setContents] = React.useState<Array<{id: string, content: string}>>([]);
+
+  useEffect(() => {
+    setContents(Array.from(document.querySelectorAll('h1, h2, h3, h4, h5')).map(el => ({id: el.id, content: el.textContent || ''})));
+  }, []);
+
+  useEffect(() => {
     const parentElement = document.createElement('div'); // 親要素を作成
     parentElement.style.borderLeft = '1px solid black'; // 親要素にborder-leftを追加
 
@@ -94,7 +98,7 @@ const sidebar = () => {
 
       const link = document.createElement('a');
       link.href = `#${content.id}`;
-      link.textContent = index === 0 ? 'Topへ戻る' : content.content;
+      link.textContent = index === 0 ? 'トップへ戻る' : content.content;
       dd.appendChild(link);
       dt.appendChild(dd);
       parentElement.appendChild(dt); // dtを親要素に追加
@@ -106,11 +110,12 @@ const sidebar = () => {
     });
     
     document.querySelector('.fixed')?.appendChild(parentElement); // 親要素を.fixedに追加
-    await ddClassFn();
-  }
-  useEffect(()=>{
-    el()
-  },[])
+    ddClassFn();
+    return () => {
+      observer.disconnect();
+    };
+  }, [contents]);
+
   return (
     <div id="sidebar" style={sidebarStyle}>
       <div className="fixed" style={fixedStyle}>

@@ -81,7 +81,7 @@ export default async function StaticDetailPage({
           
           {/* フッター */}
           <div style={footerStyle}>
-            フッター
+            
           </div>
         </>
       );
