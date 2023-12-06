@@ -2,19 +2,23 @@ import React, { useEffect } from 'react'
 import { createRoot } from 'react-dom/client';
 import './mouseWheel.css'
 import { WContent_1_right, WContent_1_left, WContent_2_right, WContent_2_left } from '../app/sliderMainContent'
-
+let wheelFlag = 1
+let deltaTotal: number = 0
 const MouseWheel = () => {
-    let deltaTotal: number = 0
+    
     let scrollDirection = true
     let deltaTotalBefore = 0
     let beforeScrollDirection = true
     let first_flag = false
+    
 
     useEffect(() => {
         localStorage.setItem('number', '1');
         const number = localStorage.getItem('number');
         console.log(number);
-        let wheelFlag = 1
+
+        initSlider(0,3)
+
         wheelMapCreate()
         window.addEventListener('wheel', updateScroll, { passive: false });
         function updateScroll(e: any) {
@@ -71,6 +75,13 @@ const MouseWheel = () => {
             }
         }
     }, [])
+}
+function initSlider(deltaTotalNumber:number,wheelFlagNumber:number){
+    wheelFlagloop('wheelFlag1', 'wheelFlag2')
+    rightANDleftContentCreate('wheelFlag2', WContent_2_right, WContent_2_left)
+    deltaTotal = deltaTotalNumber
+    wheelFlag = wheelFlagNumber
+
 }
 function wheelMapCreate() {
     let main = document.querySelector('#mainTOP')
