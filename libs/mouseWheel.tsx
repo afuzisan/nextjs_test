@@ -13,12 +13,7 @@ const MouseWheel = () => {
     
 
     useEffect(() => {
-        localStorage.setItem('number', '1');
-        const number = localStorage.getItem('number');
-        console.log(number);
-
-        initSlider(0,3)
-
+        initSlider()
         wheelMapCreate()
         window.addEventListener('wheel', updateScroll, { passive: false });
         function updateScroll(e: any) {
@@ -44,6 +39,7 @@ const MouseWheel = () => {
                 rightANDleftContentCreate('wheelFlag1', WContent_1_right, WContent_1_left)
                 deltaTotal = 0
                 wheelFlag = 2
+                setSlider(deltaTotal,wheelFlag)
 
 
             } else if (deltaTotal === 600 && wheelFlag == 2) {
@@ -51,36 +47,70 @@ const MouseWheel = () => {
                 rightANDleftContentCreate('wheelFlag2', WContent_2_right, WContent_2_left)
                 deltaTotal = 0
                 wheelFlag = 3
+                setSlider(deltaTotal,wheelFlag)
 
             } else if (deltaTotal === 600 && wheelFlag == 3) {
                 wheelFlagloopEND('wheelFlag2')
                 deltaTotal = 0
                 wheelFlag = 1
+                setSlider(deltaTotal,wheelFlag)
+
             } else if (deltaTotal === -600 && wheelFlag == 1) {
                 wheelFlagloop('wheelFlag1', 'wheelFlag2')
                 rightANDleftContentCreate('wheelFlag2', WContent_2_right, WContent_2_left)
                 deltaTotal = 0
                 wheelFlag = 3
+                setSlider(deltaTotal,wheelFlag)
+
             }
             else if (deltaTotal === -600 && wheelFlag == 3) {
                 wheelFlagloop('wheelFlag2', 'wheelFlag1')
                 rightANDleftContentCreate('wheelFlag1', WContent_1_right, WContent_1_left)
                 deltaTotal = 0
                 wheelFlag = 2
+                setSlider(deltaTotal,wheelFlag)
+
             }
             else if (deltaTotal === -600 && wheelFlag == 2) {
                 wheelFlagloopEND('wheelFlag1')
                 deltaTotal = 0
                 wheelFlag = 1
+                setSlider(deltaTotal,wheelFlag)
             }
         }
     }, [])
 }
-function initSlider(deltaTotalNumber:number,wheelFlagNumber:number){
-    wheelFlagloop('wheelFlag1', 'wheelFlag2')
-    rightANDleftContentCreate('wheelFlag2', WContent_2_right, WContent_2_left)
-    deltaTotal = deltaTotalNumber
-    wheelFlag = wheelFlagNumber
+
+function setSlider(deltaTotalNumber:number,wheelFlagNumber:number){
+    localStorage.setItem('scrollData', JSON.stringify({ wheelFlag: wheelFlagNumber, deltaTotal: deltaTotalNumber }));
+}
+function initSlider(){
+    const scrollData = JSON.parse(localStorage.getItem('scrollData') || '{}');
+    deltaTotal = scrollData.deltaTotal
+    wheelFlag = scrollData.wheelFlag
+    if (wheelFlag == 2) {
+        wheelFlagloop('wheelFlag3', 'wheelFlag1')
+        rightANDleftContentCreate('wheelFlag1', WContent_1_right, WContent_1_left)
+        deltaTotal = 0
+        wheelFlag = 2
+
+
+
+    } else if (wheelFlag == 3) {
+        wheelFlagloop('wheelFlag1', 'wheelFlag2')
+        rightANDleftContentCreate('wheelFlag2', WContent_2_right, WContent_2_left)
+        deltaTotal = 0
+        wheelFlag = 3
+
+
+    } else if (wheelFlag == 1) {
+        wheelFlagloopEND('wheelFlag2')
+        deltaTotal = 0
+        wheelFlag = 1
+
+
+    }
+
 
 }
 function wheelMapCreate() {
