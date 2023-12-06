@@ -11,6 +11,9 @@ const MouseWheel = () => {
     let first_flag = false
 
     useEffect(() => {
+        localStorage.setItem('number', '1');
+        const number = localStorage.getItem('number');
+        console.log(number);
         let wheelFlag = 1
         wheelMapCreate()
         window.addEventListener('wheel', updateScroll, { passive: false });

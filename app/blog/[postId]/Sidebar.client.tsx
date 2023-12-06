@@ -53,7 +53,9 @@ const sidebar = () => {
         idElementStyle.textDecorationColor = '';
         idElementStyle.textDecorationThickness = '';
         idElementStyle.textDecorationSkipInk = '';
-      },1000)
+      },1000
+      
+      )
 
     });
   };
