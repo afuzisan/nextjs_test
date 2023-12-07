@@ -321,7 +321,7 @@ const Home = () => {
       <main>
         <div id="mainCover"></div>
         <div id='mainTOP'>
-          <iframe src="http://127.0.0.1:5501/libs/playcanvas/index.html" className="iframeCanvasTreeD" frameborder="0"></iframe>
+          <iframe src="http://127.0.0.1:5501/libs/playcanvas/index.html" className="iframeCanvasTreeD" frameBorder="0"></iframe>
         </div>
       </main>
     );
