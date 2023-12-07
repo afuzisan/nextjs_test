@@ -92,8 +92,8 @@ const Content_1Right = () => {
     return (
         <div className="right">
         <div className="rightIconGrid">
-          {items.map((item) => (
-            <div className={`${item.name} gridChildren`}>
+          {items.map((item, index) => (
+            <div key={index} className={`${item.name} gridChildren`}>
               <p className="p">{item.title}</p>
               <Image
                 className={`${item.name}Image`}

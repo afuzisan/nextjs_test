@@ -15,6 +15,7 @@ const Home = () => {
     ssr: false,
   });
   MouseWheel()
+
   const mousemove = () => {
     const stalker = document.querySelector('.stalker') as HTMLElement;
     document.addEventListener('mousemove', function (e) {
@@ -99,6 +100,10 @@ const Home = () => {
       }
     });
   }
+  useEffect(() => {
+    mousemove();
+  }, [mousemove]);
+
   function matche(stalker: HTMLElement, toolTipTexts: { [key: string]: string }, text: string) {
     initBorder();
     stalkerInit(stalker)
