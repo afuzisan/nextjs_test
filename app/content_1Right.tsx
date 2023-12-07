@@ -120,7 +120,7 @@ const Content_1Right = () => {
             };
 
             return (
-                <div className={`${item.name}-details firstNone`} key={item.name}>
+                <div className={`${item.name}-details firstNone`} key= {item.name}>
                     <div className={`${item.name}-detailsChildren`}>
                         <div className={`${item.name}Image`} style={imageStyle}></div>
                     </div>
