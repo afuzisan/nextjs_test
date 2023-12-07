@@ -57,7 +57,7 @@ const Content_1Right = () => {
             }
         //  })
         })
-    });　
+    });
     }
 
     function detailsNone(){
