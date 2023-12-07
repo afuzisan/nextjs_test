@@ -3,7 +3,7 @@
 import React,{useEffect,useState} from 'react'
 import './style.css'
 
-const sidebar = () => {
+const Sidebar = () => {
   const [flag, setFlag] = useState(false);
   const sidebarStyle = {
     backgroundColor: "white",
@@ -142,6 +142,6 @@ const sidebar = () => {
   )
 }
 
-export default sidebar
+export default Sidebar
 
 
