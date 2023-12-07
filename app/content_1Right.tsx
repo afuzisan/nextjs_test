@@ -53,11 +53,11 @@ const Content_1Right = () => {
            if (viewIndex) {
             const elementNameChildren = document.querySelector(`.${elementName[0]}-detailsChildren`);
             (viewIndex as HTMLElement).style.display = 'block';
-            (elementNameChildren as HTMLElement).style.display = 'block';
+            (elementNameChildren as HTMLElement).style.display = 'block' ;
             }
         //  })
         })
-    });
+    });　
     }
 
     function detailsNone(){
