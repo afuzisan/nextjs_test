@@ -39,7 +39,7 @@ const Content_1Right = () => {
         gridChildren.forEach(element => {        
         element?.addEventListener('click',(e)=>{
          const targetElement = e.target as HTMLElement;
-         document.startViewTransition(() => {
+        //  document.startViewTransition(() => {
             let elementName = element.className.split(' ')
            const viewIndex = document.querySelector(`.${elementName[0]}-details`); 
            const right = document.querySelector('.right') as HTMLElement;
@@ -55,7 +55,7 @@ const Content_1Right = () => {
             (viewIndex as HTMLElement).style.display = 'block';
             (elementNameChildren as HTMLElement).style.display = 'block';
             }
-         })
+        //  })
         })
     });
     }
@@ -69,7 +69,7 @@ const Content_1Right = () => {
                 const right = document.querySelector('.right') as HTMLElement;
                 rightIconGrid ? (rightIconGrid.style.padding = '50px 60px 60px 60px', rightIconGrid.style.margin = '0') : null;
                 right ? (right.style.backgroundColor = '#fff') : null;
-                document.startViewTransition(() => {
+                // document.startViewTransition(() => {
                 firstNone.forEach(element=>{
                     (element as HTMLElement).style.display = 'none';
                 })
@@ -77,7 +77,7 @@ const Content_1Right = () => {
                     (element as HTMLElement).style.display = 'block';
                 });
                 
-            })
+            // })
         })
         });
         

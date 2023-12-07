@@ -14,7 +14,9 @@ export default function RootLayout({
   return (
 
     <html lang="ja">
-
+      <head>
+        <meta name="view-transition" content="same-origin" />
+      </head>
       <body>
         <div className="stalker"></div>
         {children}
