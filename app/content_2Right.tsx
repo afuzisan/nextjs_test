@@ -4,7 +4,7 @@ import Image from 'next/image'
 import axios, { AxiosRequestConfig, AxiosResponse, AxiosError } from "axios"
 import './content_2Right.css'
 
-const sliderContentWcontent_2_right = () => {
+const SliderContentWcontent_2_right = () => {
     const [Content, setContent] = useState<string[]>([])
     const [Images, setImage] = useState<string[] | any[]>([])
     const [Categorys, setcategory] = useState<string[] | any[]>([])

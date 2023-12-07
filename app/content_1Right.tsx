@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 import {items} from './content_1Right_data'
 
 
-const content_1Right = () => {
+const Content_1Right = () => {
     const detailContentsStyle: React.CSSProperties = {
         position: 'absolute',
         top: '30%',
@@ -137,4 +137,4 @@ const content_1Right = () => {
     )
 }
 
-export default content_1Right
+export default Content_1Right
