@@ -75,4 +75,4 @@ const SliderContentWcontent_2_right = () => {
     )
 }
 
-export default sliderContentWcontent_2_right
+export default SliderContentWcontent_2_right
