@@ -8,7 +8,7 @@ const LoadingEl = () => {
     }, 3000)
   }, [])
   return (
-    <div id="loading"></div>
+    <div id="loading "></div>
   )
 }
 
