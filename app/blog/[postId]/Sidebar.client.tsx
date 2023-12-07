@@ -1,6 +1,6 @@
 "use client";
 
-import React,{useEffect,useState} from 'react'
+import React,{useEffect,useState, useCallback} from 'react'
 import './style.css'
 
 const Sidebar = () => {
@@ -60,12 +60,12 @@ const Sidebar = () => {
     });
   };
 
-  function ddClassFn(observer: IntersectionObserver) {
+  const ddClassFn = useCallback((observer: IntersectionObserver) => {
     const ddClassEl = document.querySelectorAll('.ddClass')
     ddClassEl.forEach(element => {
       element.addEventListener('click', (e) => clickHandler(e, observer));
     });
-  }
+  }, []);
 
   const [contents, setContents] = React.useState<Array<{id: string, content: string}>>([]);
 
@@ -131,7 +131,7 @@ const Sidebar = () => {
     return () => {
       observer.disconnect();
     };
-  }, [contents]);
+  }, [contents, ddClassFn, flag]);
 
   return (
     <div id="sidebar" style={sidebarStyle}>
@@ -143,5 +143,3 @@ const Sidebar = () => {
 }
 
 export default Sidebar
-
-
