@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import timelineData from './content_1left_data';
-import './content1Left.css';
+import './content_1left.css';
 
 
 // コンテンツ1の左側を表示するコンポーネント
