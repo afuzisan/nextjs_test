@@ -4,7 +4,6 @@ import parse from "html-react-parser";
 import { getDetail, getList } from "../../../libs/microcms";
 import { relative } from "path";
 import Sidebar from './Sidebar.client';
-import MainContents from "./mainContents";
 import Header from "./header"
 
 export const revalidate = 5;
@@ -41,7 +40,9 @@ export default async function StaticDetailPage({
    flexDirection: 'column' as 'column',
    justifyContent: 'center', 
    alignItems: 'center', 
-   height: '310px' 
+   height: '310px',
+   
+
  };
 
  const mainStyle = {

@@ -85,7 +85,7 @@ function setSlider(deltaTotalNumber:number,wheelFlagNumber:number){
     localStorage.setItem('scrollData', JSON.stringify({ wheelFlag: wheelFlagNumber, deltaTotal: deltaTotalNumber }));
 }
 function initSlider(){
-    const scrollData = JSON.parse(localStorage.getItem('scrollData') || '{}');
+    const scrollData = JSON.parse(localStorage.getItem('scrollData') || '{"wheelFlag":1,"deltaTotal":0}');
     deltaTotal = scrollData.deltaTotal
     wheelFlag = scrollData.wheelFlag
     if (wheelFlag == 2) {
@@ -93,25 +93,16 @@ function initSlider(){
         rightANDleftContentCreate('wheelFlag1', WContent_1_right, WContent_1_left)
         deltaTotal = 0
         wheelFlag = 2
-
-
-
     } else if (wheelFlag == 3) {
         wheelFlagloop('wheelFlag1', 'wheelFlag2')
         rightANDleftContentCreate('wheelFlag2', WContent_2_right, WContent_2_left)
         deltaTotal = 0
         wheelFlag = 3
-
-
     } else if (wheelFlag == 1) {
         wheelFlagloopEND('wheelFlag2')
         deltaTotal = 0
         wheelFlag = 1
-
-
     }
-
-
 }
 function wheelMapCreate() {
     let main = document.querySelector('#mainTOP')
@@ -121,18 +112,6 @@ function wheelMapCreate() {
     wheelMapElementSpan.classList.add('wheelAfter');
 
     if (main !== null) main.appendChild(wheelMapElement)
-    let wheelMap = document.querySelector('.wheelMap')
-    if (wheelMap !== null) wheelMap.appendChild(wheelMapElementSpan)
-}
-
-function wheelMapCreateRotate() {
-    let main = document.querySelector('#mainTOP')
-    let wheelMapElementRotate = document.createElement('div')
-    let wheelMapElementSpan = document.createElement('span')
-    wheelMapElementRotate.classList.add('wheelMapRotate');
-    wheelMapElementSpan.classList.add('wheelAfterRotate');
-
-    if (main !== null) main.appendChild(wheelMapElementRotate)
     let wheelMap = document.querySelector('.wheelMap')
     if (wheelMap !== null) wheelMap.appendChild(wheelMapElementSpan)
 }

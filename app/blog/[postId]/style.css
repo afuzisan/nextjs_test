@@ -1,3 +1,19 @@
+.headerContent a{
+    text-decoration: none;
+    color:black;
+}
+.headerContent a:hover{
+    text-decoration: underline;
+    animation: underlineAnimation 1s ease-in-out infinite;
+    font-weight: bold;
+}
+
+@keyframes underlineAnimation {
+    0% { text-decoration-color: transparent; }
+    50% { text-decoration-color: inherit; }
+    100% { text-decoration-color: transparent; }
+}
+
 .ddClass::before {
     content: '●';
     position: absolute;
@@ -12,6 +28,7 @@
     margin-bottom: 10px;
     list-style: none;
 }
+
 .green {
     color:green
  }
@@ -22,10 +39,6 @@
     color:yellow;
 }
 
-.noactive{
-    /* opacity: 0.5; */
-}
-
 .activeYellow{
     color: yellow;
 }
@@ -34,6 +47,12 @@
     text-decoration: none;
     color: black;
 }
+.ddClass a:hover{
+    text-decoration: underline ;
+    animation: underlineAnimation 1s ease-in-out infinite;
+    font-weight: bold;
+}
+
 
 html {
     scroll-padding-top: 30px;
