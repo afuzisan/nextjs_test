@@ -12,8 +12,8 @@ const SliderContentWcontent_2_right = () => {
     const [discribe, setdiscribe] = useState<string[] | any[]>([])
     const [title, setTitle] = useState<string[] | any[]>([])
     useEffect(() => {
-        const hostname = window.location.hostname === 'localhost' ? 'http://localhost:3000' : 'https://nextjs-test-afuzisan.vercel.app';
-        axios.get(`${hostname}/api/route`).then((res: AxiosResponse<any[]>) => {
+        // const hostname = window.location.hostname === 'localhost' ? 'http://localhost:3000' : 'https://nextjs-test-afuzisan.vercel.app';
+        axios.get(`${window.location.href}/api/route`).then((res: AxiosResponse<any[]>) => {
             console.log(res)
             const contentsAf = res.data.map((element: { content: string; eyecatch: string; category: { name: string }; id:string; discribe:string; title:string}) => element.content);
             const ImagesAf = res.data.map((element: { content: string; eyecatch: string; category: { name: string }; id:string;discribe:string; title:string}) => element.eyecatch)
