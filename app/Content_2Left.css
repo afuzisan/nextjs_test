@@ -1,0 +1,15 @@
+.headerContent a{
+    text-decoration: none;
+    color:black;
+}
+.headerContent a:hover{
+    text-decoration: underline;
+    animation: underlineAnimation 1s ease-in-out infinite;
+    font-weight: bold;
+}
+
+@keyframes underlineAnimation {
+    0% { text-decoration-color: transparent; }
+    50% { text-decoration-color: inherit; }
+    100% { text-decoration-color: transparent; }
+}

@@ -117,25 +117,31 @@ const Content_1Left = () => {
         onmouseout()
     }, [])
 
+    const filteredData = timelineData.filter((data): data is typeof timelineData[0] => data !== undefined);
+
     return (
         <>
             <h1 className="leftH1Title">勉強年表</h1>
             <div className="left">
                 <dl className="timeline" ref={ref} onClick={handleClickDown} onContextMenu={handleClickUp}>
-                    {timelineData.map((data, index) => (
-                        <dl className={`days ${data.class}`}  key={index}>
-                            <dt>{data.date}</dt>
-                            {data.events.map((event, eventIndex) => (
-                                <dd className="dd" key={eventIndex}>
-                                    <h2>{event.title}</h2>
-                                    {event.description.map((desc, descIndex) => (
-                                        <p key={descIndex}>{desc}</p>
+                    {filteredData.map((data, index) => {
+                        if (data) {
+                            return (
+                                <dl className={`days ${data.class}`}  key={index}>
+                                    <dt>{data.date}</dt>
+                                    {data.events.map((event, eventIndex) => (
+                                        <dd className="dd" key={eventIndex}>
+                                            <h2>{event.title}</h2>
+                                            {event.description.map((desc, descIndex) => (
+                                                <p key={descIndex}>{desc}</p>
+                                            ))}
+                                            {('link' in event) && <a href={event.link} target="_blank">{event.linkDescription}</a>}
+                                        </dd>
                                     ))}
-                                    {('link' in event) && <a href={event.link} target="_blank">{event.linkDescription}</a>}
-                                </dd>
-                            ))}
-                        </dl>
-                    ))}
+                                </dl>
+                            )
+                        }
+                    })}
                 </dl>
             </div>
         </>
