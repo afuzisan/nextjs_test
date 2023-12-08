@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import './content_2Left.css'
+import './Content_2Left.css'
 const headerStyle = {
     width: '100%', 
     height: '62px', 
