@@ -86,10 +86,12 @@
 }
 
 .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid{
-    display:flex;
-    flex-wrap:wrap;
-    gap: 20px 20px;
-    padding: 50px 60px 60px 60px ;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 50px ;
+    justify-content: center;
+    align-items: center;
 }
 
 .p{
