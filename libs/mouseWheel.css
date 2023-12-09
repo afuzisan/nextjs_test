@@ -140,6 +140,12 @@
       
     }
 }
+@media screen and (max-width:600px) {
+  .wheelFlag2 > .rightContentwheelFlag2{
+    align-items: start;
+    overflow-y: scroll;
+  }
+}
 
 #mainTOP .wheelMap{
   width: 10px;
