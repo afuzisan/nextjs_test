@@ -8,6 +8,7 @@ import './toolTips.css';
 import mousemove from '../libs/mouseMove';
 import './Content_2Left.css'
 import HeaderLink from '../components/app/HeaderLink'
+import SwipeComponent from '../libs/tap'
 const Home = () => {
 
   const Sketch = dynamic(() => import('react-p5').then((mod) => mod.default), {
@@ -18,12 +19,14 @@ const Home = () => {
 
 
   useEffect(() => {
+    
     mousemove();
   }, [mousemove]);
 
 
 
   useEffect(() => {
+    SwipeComponent()
     mousemove()
   }, [])
   
