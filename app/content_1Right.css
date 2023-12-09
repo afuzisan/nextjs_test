@@ -85,6 +85,7 @@
     position: relative;
 }
 
+
 .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -152,5 +153,23 @@
 }
 .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .github{
     background-color: #F2F2F2;
+}
+
+
+@media screen and (max-width:600px){
+    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .wheelFlag1 > .rightContentwheelFlag1 > .right{
+        width: 100vw;
+        overflow-y: scroll;
+    }
+
+    .wheelFlag1 > .rightContentwheelFlag1 {
+        width: 100vw;
+        z-index: 6;
+        margin: 0px;    
+    }
+
 }
 
