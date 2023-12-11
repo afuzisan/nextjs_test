@@ -46,12 +46,12 @@ const SwipeComponent = () => {
 
                 } else if( 0 > (end.x - start.x) && distanceY < minimumDistance) {
                     console.log('左にスワイプ');
-                    let [newDeltaTotal, newWheelFlag] = upSwipe(wheelFlag,deltaTotal)
+                    let [newDeltaTotal, newWheelFlag] = upSwipe(wheelFlag,deltaTotal,'left')
                     deltaTotal = newDeltaTotal;
                     wheelFlag = newWheelFlag;
                 } else if( 0 < (end.x - start.x) && distanceY < minimumDistance) {
                     console.log('右にスワイプ');
-                    let [newDeltaTotal, newWheelFlag] = downSwipe(wheelFlag, deltaTotal);
+                    let [newDeltaTotal, newWheelFlag] = downSwipe(wheelFlag, deltaTotal,'right');
                     deltaTotal = newDeltaTotal;
                     wheelFlag = newWheelFlag;
                 }
@@ -66,59 +66,180 @@ const SwipeComponent = () => {
         <></>
     )
 }
+function swipeAnimeLeft(){
+    console.log('swipeLfet実行')
+    const style = document.createElement('style');
+    style.id = 'swipeAnimeLeftStyle';
+    style.innerHTML = `
+      @keyframes leftContentwheelFlag2Anime {
+        0% {
+          opacity: 0;
+          transform: translateX(1000px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0px);
+        }
+      }
+      @keyframes rightContentwheelFlag2Anime {
+        0% {
+          opacity: 0;
+          transform: translateX(1000px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0px);
+        }
+      }
+      @keyframes leftContentwheelFlag1Anime {
+        0% {
+          opacity: 0;
+          transform: translateX(1000px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0px);
+        }
+      }
+      @keyframes rightContentwheelFlag1Anime {
+        0% {
+          opacity: 0;
+          transform: translateX(1000px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0px);
+        }
+      }
+    `;
 
+    document.head.appendChild(style);
+}
+function swipeAnimeRight(){
+    console.log('swipeRight実行')
+    const style = document.createElement('style');
+    style.id = 'swipeAnimeRightStyle';
+    style.innerHTML = `
+      @keyframes leftContentwheelFlag2Anime {
+        0% {
+          opacity: 0;
+          transform: translateX(-1000px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0px);
+        }
+      }
+      @keyframes rightContentwheelFlag2Anime {
+        0% {
+          opacity: 0;
+          transform: translateX(-1000px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0px);
+        }
+      }
+      @keyframes leftContentwheelFlag1Anime {
+        0% {
+          opacity: 0;
+          transform: translateX(-1000px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0px);
+        }
+      }
+      @keyframes rightContentwheelFlag1Anime {
+        0% {
+          opacity: 0;
+          transform: translateX(-1000px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0px);
+        }
+      }
+    `;
+
+    
+
+    document.head.appendChild(style);
+}
+function removeAnime(){
+    const styleRight = document.querySelector('#swipeAnimeRightStyle');
+    const styleLeft = document.querySelector('#swipeAnimeLeftStyle');
+    if (styleRight) {
+        document.head.removeChild(styleRight);
+    }
+    if (styleLeft) {
+        document.head.removeChild(styleLeft);
+    }
+}
 function setSlider(deltaTotalNumber:number,wheelFlagNumber:number){
     localStorage.setItem('scrollData', JSON.stringify({ wheelFlag: wheelFlagNumber, deltaTotal: deltaTotalNumber }));
 }
-function upSwipe(wheelFlag:number,deltaTotal:number){
+function upSwipe(wheelFlag:number,deltaTotal:number,swipeDirection:string){
+
+    console.log(swipeDirection)
     if (wheelFlag == 1) {
         wheelFlagloop('wheelFlag1', 'wheelFlag2')
         rightANDleftContentCreate('wheelFlag2', WContent_2_right, WContent_2_left)
+        swipeDirection==='left' ?  swipeAnimeLeft() : swipeAnimeRight()
         deltaTotal = 0
         wheelFlag = 3
-
-        
         setSlider(deltaTotal,wheelFlag)
+        setTimeout(removeAnime,1000)
 
     }
     else if (wheelFlag == 3) {
         wheelFlagloop('wheelFlag2', 'wheelFlag1')
         rightANDleftContentCreate('wheelFlag1', WContent_1_right, WContent_1_left)
+        swipeDirection==='left' ?  swipeAnimeLeft() : swipeAnimeRight()
         deltaTotal = 0
         wheelFlag = 2
         setSlider(deltaTotal,wheelFlag)
+        setTimeout(removeAnime,1000)
 
     }
     else if (wheelFlag == 2) {
         wheelFlagloopEND('wheelFlag1')
+        swipeDirection==='left' ?  swipeAnimeLeft() : swipeAnimeRight()
         deltaTotal = 0
         wheelFlag = 1
         setSlider(deltaTotal,wheelFlag)
+        setTimeout(removeAnime,1000)
     }
     return [deltaTotal,wheelFlag]
 }
 
-function downSwipe(wheelFlag:number,deltaTotal:number): [number, number] {
+function downSwipe(wheelFlag:number,deltaTotal:number,swipeDirection:string): [number, number] {
+    console.log(swipeDirection)
     if (wheelFlag == 1) {
         wheelFlagloop('wheelFlag3', 'wheelFlag1')
         rightANDleftContentCreate('wheelFlag1', WContent_1_right, WContent_1_left)
+        swipeDirection==='left' ?  swipeAnimeLeft() : swipeAnimeRight()
         deltaTotal = 0
         wheelFlag = 2
         setSlider(deltaTotal,wheelFlag)
-
+        setTimeout(removeAnime,550)
 
     } else if (wheelFlag == 2) {
         wheelFlagloop('wheelFlag1', 'wheelFlag2')
         rightANDleftContentCreate('wheelFlag2', WContent_2_right, WContent_2_left)
+        swipeDirection==='left' ?  swipeAnimeLeft() : swipeAnimeRight()
         deltaTotal = 0
         wheelFlag = 3
         setSlider(deltaTotal,wheelFlag)
+        setTimeout(removeAnime,550)
 
     } else if (wheelFlag == 3) {
         wheelFlagloopEND('wheelFlag2')
+        swipeDirection==='left' ?  swipeAnimeLeft() : swipeAnimeRight()
         deltaTotal = 0
         wheelFlag = 1
         setSlider(deltaTotal,wheelFlag)
+        setTimeout(removeAnime,550)
     } 
     return [deltaTotal, wheelFlag];
 }
@@ -177,8 +298,9 @@ function rightANDleftContentCreate(flagEl: string, RightContent: () => JSX.Eleme
         if (LeftContent !== null && RightContent !== undefined) {
             let leftParent = document.querySelector('.leftContent' + flagEl)
             if (leftParent !== null) {
-                const root = createRoot(leftParent);
-                root.render(<LeftContent />);
+
+                const root = createRoot(leftParent as HTMLElement);
+                root.render(<LeftContent />);    
             }
         }
     }
@@ -190,4 +312,3 @@ function wheelFlagloopEND(deleteFlag: string) {
 }
 
 export default SwipeComponent
-
