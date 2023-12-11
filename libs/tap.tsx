@@ -55,13 +55,14 @@ const SwipeComponent = () => {
 
                 } else if( 0 > (end.x - start.x) && distanceY < minimumDistance) {
                     console.log('左にスワイプ');
-                    let [newDeltaTotal, newWheelFlag] = upSwipe(wheelFlag,deltaTotal,'left')
-                    console.log(newWheelFlag)
+                    let [newDeltaTotal, newWheelFlag] = downSwipe(wheelFlag, deltaTotal,'right');
                     deltaTotal = newDeltaTotal;
                     wheelFlag = newWheelFlag;
+
                 } else if( 0 < (end.x - start.x) && distanceY < minimumDistance) {
                     console.log('右にスワイプ');
-                    let [newDeltaTotal, newWheelFlag] = downSwipe(wheelFlag, deltaTotal,'right');
+                    let [newDeltaTotal, newWheelFlag] = upSwipe(wheelFlag,deltaTotal,'left')
+                    console.log(newWheelFlag)
                     deltaTotal = newDeltaTotal;
                     wheelFlag = newWheelFlag;
                 }
