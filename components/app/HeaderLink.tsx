@@ -39,7 +39,8 @@ const HeaderLink:FC<HeaderLinkProps>  = (props) => {
     return (
         <div style={props.page === 'page' ? headerStylePage : headerStyle}>
             <div style={headerContent} className="headerContent">
-                <Link href="/" className="leftHeader topHeader">トップ</Link>
+                {/* <Link href="/" className="leftHeader topHeader">トップ</Link> */}
+                <a href="/">トップ</a>
                 <Link href="https://twitter.com/aisansansansan" className="rightHeader twitterHeader" style={rightHeader} target="_blank" rel="noopener noreferrer">Twitter</Link>
                 <a href="https://github.com/afuzisan" className="rightHeader githubHeader" target="_blank" rel="noopener noreferrer">GitHub</a>
                 <Link href="https://www.youtube.com/channel/UCOKUn_HxQQTfvhNBBtB404w" className="rightHeader youtubeHeader" target="_blank" rel="noopener noreferrer">Youtube</Link>

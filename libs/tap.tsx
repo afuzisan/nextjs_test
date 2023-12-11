@@ -1,14 +1,20 @@
 import { WContent_1_right, WContent_1_left, WContent_2_right, WContent_2_left } from '../app/sliderMainContent'
 import { createRoot } from 'react-dom/client';
-let wheelFlag = 1
-let deltaTotal = 0
+import React, { useEffect } from 'react'
+import { initSlider } from './mouseWheel';
+
 const SwipeComponent = () => {
+    // let wheelFlaginit = initSlider()
+    // let wheelFlag = wheelFlaginit
+    let wheelFlag = 1
+    console.log(wheelFlag)
+    let deltaTotal = 0
     let start: {x: number, y: number} | null = null;
     let end: {x: number, y: number} | null = null;
     const minimumDistance = 100; // 最小幅を設定
 
     
-    window.addEventListener('load', function(){
+   
         // スワイプ／フリック
         const content1 = document.querySelector("body");
         if(content1){
@@ -20,7 +26,7 @@ const SwipeComponent = () => {
             // タッチ終了
             content1.addEventListener('touchend', logSwipeEnd, false);
         }
-    });
+    
     
     function logSwipeStart(event: TouchEvent) {
         // event.preventDefault();
@@ -36,6 +42,9 @@ const SwipeComponent = () => {
     function logSwipeEnd(event: TouchEvent) {
         // event.preventDefault();
         if(end !== null && start !== null){
+            const scrollData = JSON.parse(localStorage.getItem('scrollData') || '{"wheelFlag":1,"deltaTotal":0}');
+            deltaTotal = scrollData.deltaTotal
+            wheelFlag = scrollData.wheelFlag
             const distanceX = Math.abs(end.x - start.x); // X軸の移動距離を計算
             const distanceY = Math.abs(end.y - start.y); // Y軸の移動距離を計算
     
@@ -47,6 +56,7 @@ const SwipeComponent = () => {
                 } else if( 0 > (end.x - start.x) && distanceY < minimumDistance) {
                     console.log('左にスワイプ');
                     let [newDeltaTotal, newWheelFlag] = upSwipe(wheelFlag,deltaTotal,'left')
+                    console.log(newWheelFlag)
                     deltaTotal = newDeltaTotal;
                     wheelFlag = newWheelFlag;
                 } else if( 0 < (end.x - start.x) && distanceY < minimumDistance) {
@@ -182,6 +192,7 @@ function setSlider(deltaTotalNumber:number,wheelFlagNumber:number){
 function upSwipe(wheelFlag:number,deltaTotal:number,swipeDirection:string){
 
     console.log(swipeDirection)
+    console.log(wheelFlag)
     if (wheelFlag == 1) {
         wheelFlagloop('wheelFlag1', 'wheelFlag2')
         rightANDleftContentCreate('wheelFlag2', WContent_2_right, WContent_2_left)

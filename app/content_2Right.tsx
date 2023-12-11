@@ -43,7 +43,7 @@ const SliderContentWcontent_2_right = () => {
                         return (
                             Categorys[index] === '作品集' ?
                                    
-                                <div className="twoCard" >
+                                <div className="twoCard" key={index}>
                                     <Link href={`/blog/${Ids[index]}`}> 
                                     <div className="twoCardTitle">{title[index]}</div>
                                     </Link>

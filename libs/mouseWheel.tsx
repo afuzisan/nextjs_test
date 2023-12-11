@@ -84,7 +84,8 @@ const MouseWheel = () => {
 function setSlider(deltaTotalNumber:number,wheelFlagNumber:number){
     localStorage.setItem('scrollData', JSON.stringify({ wheelFlag: wheelFlagNumber, deltaTotal: deltaTotalNumber }));
 }
-function initSlider(){
+const initSlider = () => {
+    
     const scrollData = JSON.parse(localStorage.getItem('scrollData') || '{"wheelFlag":1,"deltaTotal":0}');
     deltaTotal = scrollData.deltaTotal
     wheelFlag = scrollData.wheelFlag
@@ -103,6 +104,7 @@ function initSlider(){
         deltaTotal = 0
         wheelFlag = 1
     }
+    return wheelFlag
 }
 function wheelMapCreate() {
     let main = document.querySelector('#mainTOP')
@@ -248,4 +250,4 @@ function rightANDleftContentCreate(flagEl: string, RightContent: () => JSX.Eleme
     }
 }
 
-export { MouseWheel }
+export { MouseWheel, initSlider}
