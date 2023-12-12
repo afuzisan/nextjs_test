@@ -72,10 +72,35 @@
 #container > #footer{
   display: none;
 }
+.landscape{
+  display: none;
+}
 
 @media screen and (min-width:600px){
   #swipeGuide{
     display: none;
     z-index: 1000;
+  }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape){
+  #mainCover{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+  }
+  .landscape{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    position: fixed;
+    background-color: #fff;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    
+  }
+  body{
+    overflow: hidden;
   }
 }

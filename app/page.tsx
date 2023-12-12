@@ -33,6 +33,7 @@ const Home = () => {
   
     return (
       <main>
+        <div className="landscape">縦画面で見てください。</div>
         <div id="mainCover">
           <HeaderLink page="page" />
           <SwipeGuide />

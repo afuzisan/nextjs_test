@@ -38,15 +38,12 @@ export default async function StaticDetailPage({
 
  return (
         <>
-          
+          <div className="landscape">縦画面で見てください。</div>
           <Header />
           
-
-          {/* タイトル */}
           <div id="title">
             <h1>{post.title}</h1>
           </div>
-          {/* <div className="sidebarButton">Menu</div> */}
           <SidebarButton />
           <div id="main" >
             <div>
@@ -54,8 +51,6 @@ export default async function StaticDetailPage({
             </div>
             <Sidebar />
           </div>
-          
-          {/* フッター */}
           <div id="footer">
             
           </div>
