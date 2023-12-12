@@ -72,3 +72,10 @@
 #container > #footer{
   display: none;
 }
+
+@media screen and (min-width:600px){
+  #swipeGuide{
+    display: none;
+    z-index: 1000;
+  }
+}

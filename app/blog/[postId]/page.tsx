@@ -5,6 +5,7 @@ import { getDetail, getList } from "../../../libs/microcms";
 import { relative } from "path";
 import Sidebar from './Sidebar.client';
 import Header from "./header"
+import './style.css'
 
 export const revalidate = 5;
 
@@ -69,11 +70,11 @@ export default async function StaticDetailPage({
           
 
           {/* タイトル */}
-          <div style={titleStyle}>
+          <div id="title">
             <h1>{post.title}</h1>
           </div>
           
-          <div id="main" style={mainStyle} >
+          <div id="main" >
             <div>
               <div id="contents">{typeof post.content === 'string' ? parse(post.content) : ''}</div>
             </div>
@@ -81,7 +82,7 @@ export default async function StaticDetailPage({
           </div>
           
           {/* フッター */}
-          <div style={footerStyle}>
+          <div id="footer">
             
           </div>
         </>

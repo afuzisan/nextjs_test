@@ -1,5 +1,6 @@
 import React from 'react'
 import HeaderLink from '@/components/app/HeaderLink';
+import './style.css'
 
 
 const header = () => {

@@ -29,6 +29,10 @@ const SwipeComponent = () => {
     
     
     function logSwipeStart(event: TouchEvent) {
+      let swipeGuideEl = document.querySelector('#swipeGuide')
+      if(swipeGuideEl !== null) {
+        (swipeGuideEl as HTMLElement).style.display = 'none';
+      }
         // event.preventDefault();
         start = {x: event.touches[0].pageX, y: event.touches[0].pageY};
         end = {x: event.touches[0].pageX, y: event.touches[0].pageY};
@@ -55,13 +59,13 @@ const SwipeComponent = () => {
 
                 } else if( 0 > (end.x - start.x) && distanceY < minimumDistance) {
                     console.log('左にスワイプ');
-                    let [newDeltaTotal, newWheelFlag] = downSwipe(wheelFlag, deltaTotal,'left');
+                    let [newDeltaTotal, newWheelFlag] = leftSwipe(wheelFlag, deltaTotal,'left');
                     deltaTotal = newDeltaTotal;
                     wheelFlag = newWheelFlag;
 
                 } else if( 0 < (end.x - start.x) && distanceY < minimumDistance) {
                     console.log('右にスワイプ');
-                    let [newDeltaTotal, newWheelFlag] = upSwipe(wheelFlag,deltaTotal,'right')
+                    let [newDeltaTotal, newWheelFlag] = rightSwipe(wheelFlag,deltaTotal,'right')
                     console.log(newWheelFlag)
                     deltaTotal = newDeltaTotal;
                     wheelFlag = newWheelFlag;
@@ -190,7 +194,7 @@ function removeAnime(){
 function setSlider(deltaTotalNumber:number,wheelFlagNumber:number){
     localStorage.setItem('scrollData', JSON.stringify({ wheelFlag: wheelFlagNumber, deltaTotal: deltaTotalNumber }));
 }
-function upSwipe(wheelFlag:number,deltaTotal:number,swipeDirection:string){
+function rightSwipe(wheelFlag:number,deltaTotal:number,swipeDirection:string){
 
     console.log(swipeDirection)
     console.log(wheelFlag)
@@ -225,7 +229,7 @@ function upSwipe(wheelFlag:number,deltaTotal:number,swipeDirection:string){
     return [deltaTotal,wheelFlag]
 }
 
-function downSwipe(wheelFlag:number,deltaTotal:number,swipeDirection:string): [number, number] {
+function leftSwipe(wheelFlag:number,deltaTotal:number,swipeDirection:string): [number, number] {
     console.log(swipeDirection)
     if (wheelFlag == 1) {
         wheelFlagloop('wheelFlag3', 'wheelFlag1')

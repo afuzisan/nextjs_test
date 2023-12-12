@@ -5,21 +5,21 @@ import './style.css'
 
 const Sidebar = () => {
   const [flag, setFlag] = useState(false);
-  const sidebarStyle = {
-    backgroundColor: "white",
-    borderRadius:'12px',
-    position:'relative' as 'relative',
-    top:'0px',
-  };
+  // const sidebarStyle = {
+  //   backgroundColor: "white",
+  //   borderRadius:'12px',
+  //   position:'relative' as 'relative',
+  //   top:'0px',
+  // };
 
-  const fixedStyle = {
-    width:'300px',
-    borderRadius: '12px',
-    backgroundColor:'#fff',
-    position:'sticky' as 'sticky',
-    top:'24px',
-    padding:'20px 20px 25px',
-  };
+  // const fixedStyle = {
+  //   width:'300px',
+  //   borderRadius: '12px',
+  //   backgroundColor:'#fff',
+  //   position:'sticky' as 'sticky',
+  //   top:'24px',
+  //   padding:'20px 20px 25px',
+  // };
 
   let clickHandler = (e: Event,observer: IntersectionObserver) => {
     observer.disconnect();
@@ -134,8 +134,9 @@ const Sidebar = () => {
   }, [contents, ddClassFn, flag]);
 
   return (
-    <div id="sidebar" style={sidebarStyle}>
-      <div className="fixed" style={fixedStyle}>
+    <div id="sidebar" >
+      <div className="remove">✕</div>
+      <div className="fixed" >
         目次
       </div>
     </div>

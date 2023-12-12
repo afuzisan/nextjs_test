@@ -9,6 +9,7 @@ import mousemove from '../libs/mouseMove';
 import './Content_2Left.css'
 import HeaderLink from '../components/app/HeaderLink'
 import SwipeComponent from '../libs/tap'
+import SwipeGuide from './swipeGuide'
 const Home = () => {
 
   const Sketch = dynamic(() => import('react-p5').then((mod) => mod.default), {
@@ -34,6 +35,7 @@ const Home = () => {
       <main>
         <div id="mainCover">
           <HeaderLink page="page" />
+          <SwipeGuide />
         </div>
         <div id='mainTOP'>
           <iframe src="https://playcanv.as/b/bc103796" className="iframeCanvasTreeD" frameBorder="0"></iframe>
