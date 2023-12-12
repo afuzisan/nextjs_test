@@ -16,8 +16,9 @@ const SidebarButton = () =>{
     <div 
       className="sidebarButton" 
       onClick={() => setSidebarDisplay(sidebarDisplay === 'block' ? 'none' : 'block')}
+      style={{ fontSize: sidebarDisplay === 'block' ? '25px' : '14px' }}
     >
-      Menu
+      {sidebarDisplay === 'block' ? '✕' : 'Menu'}
     </div>
   );
 }
