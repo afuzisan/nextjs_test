@@ -6,6 +6,8 @@ import { relative } from "path";
 import Sidebar from './Sidebar.client';
 import Header from "./header"
 import './style.css'
+import SidebarButton from './sidebarButton.client'
+
 
 export const revalidate = 5;
 
@@ -34,35 +36,6 @@ export default async function StaticDetailPage({
   notFound();
  }
 
-
-
- const titleStyle = {
-   display: 'flex', 
-   flexDirection: 'column' as 'column',
-   justifyContent: 'center', 
-   alignItems: 'center', 
-   height: '310px',
-   
-
- };
-
- const mainStyle = {
-   display: 'grid', 
-   gridTemplateColumns: '708px 300px', 
-   gap: '30px',
-   margin: 'auto',
-   maxWidth: '1120px', 
-   backgroundColor: "white",
-   borderRadius:'12px',
-   padding: '40px 40px',
- };
-
- const footerStyle = {
-   width: '100%', 
-   height: '62px', 
-   backgroundColor: '#ddd',
- };
-
  return (
         <>
           
@@ -73,7 +46,8 @@ export default async function StaticDetailPage({
           <div id="title">
             <h1>{post.title}</h1>
           </div>
-          
+          {/* <div className="sidebarButton">Menu</div> */}
+          <SidebarButton />
           <div id="main" >
             <div>
               <div id="contents">{typeof post.content === 'string' ? parse(post.content) : ''}</div>
