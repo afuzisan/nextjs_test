@@ -1,12 +1,3 @@
-/* .wheelFlag1{
-    width:100vw;
-    height:100vh;
-    background-color: antiquewhite;
-    position: fixed;
-    top:0;
-    left:0;
-    z-index:10;
-} */
 .wheelFlag1{
     
     width:100vw;
@@ -26,24 +17,13 @@
     top:0;
     left:0;
     z-index:4;
-    animation-name: leftContentwheelFlag1Anime;
+    animation-name: translateXminus;
     animation-duration:0.5s;
     animation-delay: 0.5s;
     animation-fill-mode:forwards;
     opacity:0;
 }
-@keyframes leftContentwheelFlag1Anime{
-    0% {
-      opacity: 0;
-      transform: translateX(-1000px);
-      
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0px);
-      
-    }
-}
+
 .wheelFlag1 > .rightContentwheelFlag1{
     margin-left: 65vw;
     width:35vw;
@@ -53,26 +33,12 @@
     top:0;
     left:0;
     z-index:4;
-    animation-name: rightContentwheelFlag1Anime;
+    animation-name: translateXminus;
     animation-duration:0.5s;
     animation-delay: 0s;
     animation-fill-mode:forwards;
     /* opacity: 0.5; */
 }
-@keyframes rightContentwheelFlag1Anime{
-    0% {
-      opacity: 0;
-      transform: translateX(-1000px);
-      
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0px);
-      
-    }
-}
-
-
 
 
 .wheelFlag2{
@@ -92,36 +58,14 @@
     top:0;
     left:0;
     z-index:4;
-    animation-name: leftContentwheelFlag2Anime;
+    animation-name: translateXminus;
     animation-duration:0.5s;
     animation-delay: 0s;
     animation-fill-mode:forwards;
     opacity:0;
 }
-@keyframes leftContentwheelFlag2Anime{
-    0% {
-      opacity: 0;
-      transform: translateX(-1000px);
-      
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0px);
-      
-    }
-}
-@keyframes leftContentwheelFlag2Anime2{
-  0% {
-    opacity: 0;
-    transform: translateX(1000px);
-    
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0px);
-    
-  }
-}
+
+
 .wheelFlag2 > .rightContentwheelFlag2{
     margin-top: 62px;
     width:100vw;
@@ -131,7 +75,7 @@
     top:0;
     left:0;
     z-index:4;
-    animation-name: rightContentwheelFlag2Anime;
+    animation-name: translateXminus;
     animation-duration:0.5s;
     animation-delay: 0s;
     animation-fill-mode:forwards;
@@ -140,18 +84,7 @@
     justify-content: center;
     align-items: center;
 }
-@keyframes rightContentwheelFlag2Anime{
-    0% {
-      opacity: 0;
-      transform: translateX(-1000px);
-      
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0px);
-      
-    }
-}
+
 @media screen and (max-width:600px) {
   .wheelFlag2 > .rightContentwheelFlag2{
     align-items: start;
@@ -160,7 +93,6 @@
   .wheelFlag1 > .leftContentwheelFlag1{
     display: none;
   }
-
 }
 
 
@@ -201,7 +133,6 @@
   width: 9px;
   height:0px;
   z-index:100;
-  /* background-color:  #000; */
   position: fixed;
   top: 0px;
   right: 0px;

@@ -1,0 +1,29 @@
+@keyframes underlineAnimation {
+    0% { text-decoration-color: transparent; }
+    50% { text-decoration-color: inherit; }
+    100% { text-decoration-color: transparent; }
+}
+@keyframes translateXPlus{
+    0% {
+      opacity: 0;
+      transform: translateX(1000px);
+      
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0px);
+      
+    }
+  }
+  @keyframes translateXminus{
+    0% {
+      opacity: 0;
+      transform: translateX(-1000px);
+      
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0px);
+      
+    }
+  }

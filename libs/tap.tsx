@@ -2,6 +2,7 @@ import { WContent_1_right, WContent_1_left, WContent_2_right, WContent_2_left } 
 import { createRoot } from 'react-dom/client';
 import React, { useEffect, useState } from 'react'
 import { initSlider } from './mouseWheel';
+import '../components/app/keyframs.css'
 
 const SwipeComponent = () => {
     // let wheelFlaginit = initSlider()
@@ -59,131 +60,24 @@ const SwipeComponent = () => {
                 } else if( 0 < (end.y - start.y) && distanceX < minimumDistance ) {
 
                 } else if( 0 > (end.x - start.x) && distanceY < minimumDistance) {
-                    console.log('左にスワイプ');
+
                     let [newDeltaTotal, newWheelFlag] = leftSwipe(wheelFlag, deltaTotal,'left',timeLine);
                     deltaTotal = newDeltaTotal;
                     wheelFlag = newWheelFlag;
 
                 } else if( 0 < (end.x - start.x) && distanceY < minimumDistance) {
-                    console.log('右にスワイプ');
+
                     let [newDeltaTotal, newWheelFlag] = rightSwipe(wheelFlag,deltaTotal,'right',timeLine)
-                    console.log(newWheelFlag)
+
                     deltaTotal = newDeltaTotal;
                     wheelFlag = newWheelFlag;
                 }
             }else{
                 
-                console.log('tap')
+           
             }
         }
     }
-    function swipeAnimeLeft(){
-      console.log('swipeLfet実行')
-      const style = document.createElement('style');
-      style.id = 'swipeAnimeLeftStyle';
-      style.innerHTML = `
-        @keyframes leftContentwheelFlag2Anime {
-          0% {
-            opacity: 0;
-            transform: translateX(1000px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateX(0px);
-          }
-        }
-        @keyframes rightContentwheelFlag2Anime {
-          0% {
-            opacity: 0;
-            transform: translateX(1000px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateX(0px);
-          }
-        }
-        @keyframes leftContentwheelFlag1Anime {
-          0% {
-            opacity: 0;
-            transform: translateX(1000px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateX(0px);
-          }
-        }
-        @keyframes rightContentwheelFlag1Anime {
-          0% {
-            opacity: 0;
-            transform: translateX(1000px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateX(0px);
-          }
-        }
-      `;
-  
-      document.head.appendChild(style);
-  }
-  function swipeAnimeRight(){
-      console.log('swipeRight実行')
-      const style = document.createElement('style');
-      style.id = 'swipeAnimeRightStyle';
-      style.innerHTML = `
-        @keyframes leftContentwheelFlag2Anime {
-          0% {
-            opacity: 0;
-            transform: translateX(-1000px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateX(0px);
-          }
-        }
-        @keyframes rightContentwheelFlag2Anime {
-          0% {
-            opacity: 0;
-            transform: translateX(-1000px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateX(0px);
-          }
-        }
-        @keyframes leftContentwheelFlag1Anime {
-          0% {
-            opacity: 0;
-            transform: translateX(-1000px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateX(0px);
-          }
-        }
-        @keyframes rightContentwheelFlag1Anime {
-          0% {
-            opacity: 0;
-            transform: translateX(-1000px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateX(0px);
-          }
-        }
-      `;
-      document.head.appendChild(style);
-  }
-  function removeAnime(){
-      const styleRight = document.querySelector('#swipeAnimeRightStyle');
-      const styleLeft = document.querySelector('#swipeAnimeLeftStyle');
-      if (styleRight) {
-          document.head.removeChild(styleRight);
-      }
-      if (styleLeft) {
-          document.head.removeChild(styleLeft);
-      }
-  }
   function setSlider(deltaTotalNumber:number,wheelFlagNumber:number){
       localStorage.setItem('scrollData', JSON.stringify({ wheelFlag: wheelFlagNumber, deltaTotal: deltaTotalNumber }));
   }
@@ -191,90 +85,66 @@ const SwipeComponent = () => {
       if (wheelFlag == 1) {
           wheelFlagloop('wheelFlag1', 'wheelFlag2')
           rightANDleftContentCreate('wheelFlag2', WContent_2_right, WContent_2_left)
-          swipeDirection==='left' ?  swipeAnimeLeft() : swipeAnimeRight()
-          deltaTotal = 0
           wheelFlag = 3
           setSlider(deltaTotal,wheelFlag)
-          setTimeout(removeAnime,550)
   
       }
       else if (wheelFlag == 3) {
           wheelFlagloop('wheelFlag2', 'wheelFlag1')
           rightANDleftContentCreate('wheelFlag1', WContent_1_right, WContent_1_left)
-          swipeDirection==='left' ?  swipeAnimeLeft() : swipeAnimeRight()
-          deltaTotal = 0
           wheelFlag = 2
           setSlider(deltaTotal,wheelFlag)
-          setTimeout(removeAnime,550)
   
       }
       else if (wheelFlag == 2) {
         let timeLineResult = timeLineSwitcher(timeLine,'right')
         if(timeLineResult){
-          console.log(swipeDirection)
           wheelFlagloopEND('wheelFlag1')
-          swipeDirection==='left' ?  swipeAnimeLeft() : swipeAnimeRight()
-          deltaTotal = 0
           wheelFlag = 1
           setSlider(deltaTotal,wheelFlag)
-          setTimeout(removeAnime,550)
         }else{
-          console.log(swipeDirection)
           let element = document.querySelector('.leftContentwheelFlag1') as HTMLElement;
           element.style.display = 'block'
           element.style.zIndex = '100';
-          
-          
-          swipeDirection==='left' ?  swipeAnimeLeft() : swipeAnimeRight()
-          setTimeout(removeAnime,550)
         }
       }
       return [deltaTotal,wheelFlag]
   }
   
   function leftSwipe(wheelFlag:number,deltaTotal:number,swipeDirection:string,timeLine:boolean): [number, number] {
-      console.log(swipeDirection)
+      
       if (wheelFlag == 1) {
           wheelFlagloop('wheelFlag3', 'wheelFlag1')
           rightANDleftContentCreate('wheelFlag1', WContent_1_right, WContent_1_left)
-          console.log(swipeDirection==='left')
-          swipeDirection==='left' ?  swipeAnimeLeft() : swipeAnimeRight()
-          deltaTotal = 0
+          let element = document.querySelector('.rightContentwheelFlag1') as HTMLElement;
+          element.style.animationName = 'translateXPlus' 
           wheelFlag = 2
           setSlider(deltaTotal,wheelFlag)
-          setTimeout(removeAnime,550)
       } else if (wheelFlag == 2) {
         let timeLineResult = timeLineSwitcher(timeLine,'left')
         if(timeLineResult){
-          console.log(swipeDirection)
-          let element = document.querySelector('.leftContentwheelFlag1') as HTMLElement;
-          element.style.zIndex = '0';
           wheelFlagloop('wheelFlag1', 'wheelFlag2')
           rightANDleftContentCreate('wheelFlag2', WContent_2_right, WContent_2_left)
-          console.log(swipeDirection==='left')
-          swipeDirection==='left' ?  swipeAnimeLeft() : swipeAnimeRight()
-          deltaTotal = 0
+          let rightContentwheelFlag2 = document.querySelector('.rightContentwheelFlag2') as HTMLElement;
+          let leftContentwheelFlag2 = document.querySelector('.leftContentwheelFlag2') as HTMLElement;
+          rightContentwheelFlag2.style.zIndex = '0';
+          leftContentwheelFlag2.style.animationName = 'translateXPlus'
+          rightContentwheelFlag2.style.animationName = 'translateXPlus'
           wheelFlag = 3
           setSlider(deltaTotal,wheelFlag)
-          setTimeout(removeAnime,550)
         }else{
-          swipeDirection==='left' ?  swipeAnimeLeft() : swipeAnimeRight()
           let element = document.querySelector('.leftContentwheelFlag1') as HTMLElement;
-          console.log(swipeDirection==='left')
+          element.style.animationName = 'translateXPlus' 
           element.style.display = 'block'
           element.style.zIndex = '100';
-          element.style.width = '100vw'
-          element.style.animationName = 'leftContentwheelFlag2Anime2';
-          setTimeout(removeAnime,550)
         }
       } else if (wheelFlag == 3) {
+        let element = document.querySelector('.rightContentwheelFlag2') as HTMLElement;
+        console.log(element)
+          element.style.animationName = 'translateXPlus' 
           wheelFlagloopEND('wheelFlag2')
-          console.log(swipeDirection==='left')
-          swipeDirection==='left' ?  swipeAnimeLeft() : swipeAnimeRight()
-          deltaTotal = 0
           wheelFlag = 1
           setSlider(deltaTotal,wheelFlag)
-          setTimeout(removeAnime,550)
       } 
       return [deltaTotal, wheelFlag];
   }
