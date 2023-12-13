@@ -198,7 +198,7 @@ const SwipeComponent = () => {
           deltaTotal = 0
           wheelFlag = 3
           setSlider(deltaTotal,wheelFlag)
-          setTimeout(removeAnime,1000)
+          setTimeout(removeAnime,550)
   
       }
       else if (wheelFlag == 3) {
@@ -208,16 +208,28 @@ const SwipeComponent = () => {
           deltaTotal = 0
           wheelFlag = 2
           setSlider(deltaTotal,wheelFlag)
-          setTimeout(removeAnime,1000)
+          setTimeout(removeAnime,550)
   
       }
       else if (wheelFlag == 2) {
+        let timeLineResult = timeLineSwitcher(timeLine,'right')
+        if(timeLineResult){
+          console.log(swipeDirection)
           wheelFlagloopEND('wheelFlag1')
           swipeDirection==='left' ?  swipeAnimeLeft() : swipeAnimeRight()
           deltaTotal = 0
           wheelFlag = 1
           setSlider(deltaTotal,wheelFlag)
-          setTimeout(removeAnime,1000)
+          setTimeout(removeAnime,550)
+        }else{
+          console.log(swipeDirection)
+          let element = document.querySelector('.leftContentwheelFlag1') as HTMLElement;
+          element.style.display = 'block'
+          element.style.zIndex = '100';
+          element.style.width = '100vw'
+          swipeDirection==='left' ?  swipeAnimeLeft() : swipeAnimeRight()
+          setTimeout(removeAnime,550)
+        }
       }
       return [deltaTotal,wheelFlag]
   }
@@ -227,6 +239,7 @@ const SwipeComponent = () => {
       if (wheelFlag == 1) {
           wheelFlagloop('wheelFlag3', 'wheelFlag1')
           rightANDleftContentCreate('wheelFlag1', WContent_1_right, WContent_1_left)
+          console.log(swipeDirection==='left')
           swipeDirection==='left' ?  swipeAnimeLeft() : swipeAnimeRight()
           deltaTotal = 0
           wheelFlag = 2
@@ -235,38 +248,43 @@ const SwipeComponent = () => {
       } else if (wheelFlag == 2) {
         let timeLineResult = timeLineSwitcher(timeLine,'left')
         if(timeLineResult){
+          console.log(swipeDirection)
           let element = document.querySelector('.leftContentwheelFlag1') as HTMLElement;
           element.style.zIndex = '0';
           wheelFlagloop('wheelFlag1', 'wheelFlag2')
           rightANDleftContentCreate('wheelFlag2', WContent_2_right, WContent_2_left)
+          console.log(swipeDirection==='left')
           swipeDirection==='left' ?  swipeAnimeLeft() : swipeAnimeRight()
           deltaTotal = 0
           wheelFlag = 3
           setSlider(deltaTotal,wheelFlag)
-          setTimeout(removeAnime,1000)
+          setTimeout(removeAnime,550)
         }else{
+          console.log(swipeDirection +'   ' +'ojop@jp@j')
           let element = document.querySelector('.leftContentwheelFlag1') as HTMLElement;
           element.style.display = 'block'
           element.style.zIndex = '100';
           element.style.width = '100vw'
+          console.log(swipeDirection==='left')
           swipeDirection==='left' ?  swipeAnimeLeft() : swipeAnimeRight()
-          setTimeout(removeAnime,1000)
+          setTimeout(removeAnime,550)
         }
       } else if (wheelFlag == 3) {
           wheelFlagloopEND('wheelFlag2')
+          console.log(swipeDirection==='left')
           swipeDirection==='left' ?  swipeAnimeLeft() : swipeAnimeRight()
           deltaTotal = 0
           wheelFlag = 1
           setSlider(deltaTotal,wheelFlag)
-          setTimeout(removeAnime,1000)
+          setTimeout(removeAnime,550)
       } 
       return [deltaTotal, wheelFlag];
   }
   function timeLineSwitcher(switcher:boolean,left:string){
-    if(left === 'left'){
+    // if(left === 'left'){
       timeLine = !switcher
       return timeLine
-    }
+    // }
   }
   
   
