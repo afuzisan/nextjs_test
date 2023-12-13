@@ -213,7 +213,7 @@ function wheelFlagloop(deleteFlag: string, flagAfterEl: string) {
                 });
             }
         } catch { }
-    }, 1500)
+    }, 50)
     let FlagElement = document.createElement('div')
     FlagElement.classList.add(flagAfterEl);
     if (mainTOP !== null) mainTOP.appendChild(FlagElement)

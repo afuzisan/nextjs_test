@@ -172,9 +172,6 @@ const SwipeComponent = () => {
           }
         }
       `;
-  
-      
-  
       document.head.appendChild(style);
   }
   function removeAnime(){
@@ -260,13 +257,12 @@ const SwipeComponent = () => {
           setSlider(deltaTotal,wheelFlag)
           setTimeout(removeAnime,550)
         }else{
-          console.log(swipeDirection +'   ' +'ojop@jp@j')
+          swipeDirection==='left' ?  swipeAnimeLeft() : swipeAnimeRight()
           let element = document.querySelector('.leftContentwheelFlag1') as HTMLElement;
+          console.log(swipeDirection==='left')
           element.style.display = 'block'
           element.style.zIndex = '100';
           element.style.width = '100vw'
-          console.log(swipeDirection==='left')
-          swipeDirection==='left' ?  swipeAnimeLeft() : swipeAnimeRight()
           setTimeout(removeAnime,550)
         }
       } else if (wheelFlag == 3) {
