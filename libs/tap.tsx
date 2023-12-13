@@ -6,7 +6,7 @@ import { initSlider } from './mouseWheel';
 const SwipeComponent = () => {
     // let wheelFlaginit = initSlider()
     // let wheelFlag = wheelFlaginit
-    let timeLine = true
+    let switcherFlag = true
     let wheelFlag = 1
     let deltaTotal = 0
     let start: {x: number, y: number} | null = null;
@@ -60,13 +60,13 @@ const SwipeComponent = () => {
 
                 } else if( 0 > (end.x - start.x) && distanceY < minimumDistance) {
                     console.log('左にスワイプ');
-                    let [newDeltaTotal, newWheelFlag] = leftSwipe(wheelFlag, deltaTotal,'left',timeLine);
+                    let [newDeltaTotal, newWheelFlag] = leftSwipe(wheelFlag, deltaTotal,'left',switcherFlag);
                     deltaTotal = newDeltaTotal;
                     wheelFlag = newWheelFlag;
 
                 } else if( 0 < (end.x - start.x) && distanceY < minimumDistance) {
                     console.log('右にスワイプ');
-                    let [newDeltaTotal, newWheelFlag] = rightSwipe(wheelFlag,deltaTotal,'right',timeLine)
+                    let [newDeltaTotal, newWheelFlag] = rightSwipe(wheelFlag,deltaTotal,'right',switcherFlag)
                     console.log(newWheelFlag)
                     deltaTotal = newDeltaTotal;
                     wheelFlag = newWheelFlag;
@@ -78,7 +78,7 @@ const SwipeComponent = () => {
         }
     }
     function swipeAnimeLeft(){
-      console.log('swipeLfet実行')
+      // console.log('swipeLfet実行')
       const style = document.createElement('style');
       style.id = 'swipeAnimeLeftStyle';
       style.innerHTML = `
@@ -127,7 +127,7 @@ const SwipeComponent = () => {
       document.head.appendChild(style);
   }
   function swipeAnimeRight(){
-      console.log('swipeRight実行')
+      // console.log('swipeRight実行')
       const style = document.createElement('style');
       style.id = 'swipeAnimeRightStyle';
       style.innerHTML = `
@@ -202,6 +202,7 @@ const SwipeComponent = () => {
   
       }
       else if (wheelFlag == 3) {
+        
           wheelFlagloop('wheelFlag2', 'wheelFlag1')
           rightANDleftContentCreate('wheelFlag1', WContent_1_right, WContent_1_left)
           swipeDirection==='left' ?  swipeAnimeLeft() : swipeAnimeRight()
@@ -212,18 +213,31 @@ const SwipeComponent = () => {
   
       }
       else if (wheelFlag == 2) {
+        if(switcherFlag){
+          let switcherFlagResult = timeLineSwitcher('right',switcherFlag)
+          switcherFlag = switcherFlagResult !== undefined ? switcherFlagResult : switcherFlag;
+          wheelFlagloopEND('wheelFlag1')
+          swipeDirection==='left' ?  swipeAnimeLeft() : swipeAnimeRight()
+          deltaTotal = 0
+          wheelFlag = 2
+          setSlider(deltaTotal,wheelFlag)
+          setTimeout(removeAnime,1000)
+        }else{
+          let switcherFlagResult = timeLineSwitcher('right',switcherFlag)
+          switcherFlag = switcherFlagResult !== undefined ? switcherFlagResult : switcherFlag;
           wheelFlagloopEND('wheelFlag1')
           swipeDirection==='left' ?  swipeAnimeLeft() : swipeAnimeRight()
           deltaTotal = 0
           wheelFlag = 1
           setSlider(deltaTotal,wheelFlag)
           setTimeout(removeAnime,1000)
+          
+        }
       }
       return [deltaTotal,wheelFlag]
   }
   
-  function leftSwipe(wheelFlag:number,deltaTotal:number,swipeDirection:string,timeLine:boolean): [number, number] {
-      console.log(swipeDirection)
+  function leftSwipe(wheelFlag:number,deltaTotal:number,swipeDirection:string,switcherFlag:boolean){
       if (wheelFlag == 1) {
           wheelFlagloop('wheelFlag3', 'wheelFlag1')
           rightANDleftContentCreate('wheelFlag1', WContent_1_right, WContent_1_left)
@@ -233,10 +247,7 @@ const SwipeComponent = () => {
           setSlider(deltaTotal,wheelFlag)
           setTimeout(removeAnime,550)
       } else if (wheelFlag == 2) {
-        let timeLineResult = timeLineSwitcher(timeLine,'left')
-        if(timeLineResult){
-          let element = document.querySelector('.leftContentwheelFlag1') as HTMLElement;
-          element.style.zIndex = '0';
+          timeLineSwitcher('left',switcherFlag) 
           wheelFlagloop('wheelFlag1', 'wheelFlag2')
           rightANDleftContentCreate('wheelFlag2', WContent_2_right, WContent_2_left)
           swipeDirection==='left' ?  swipeAnimeLeft() : swipeAnimeRight()
@@ -244,15 +255,7 @@ const SwipeComponent = () => {
           wheelFlag = 3
           setSlider(deltaTotal,wheelFlag)
           setTimeout(removeAnime,1000)
-        }else{
-          let element = document.querySelector('.leftContentwheelFlag1') as HTMLElement;
-          element.style.display = 'block'
-          element.style.zIndex = '100';
-          element.style.width = '100vw'
-          swipeDirection==='left' ?  swipeAnimeLeft() : swipeAnimeRight()
-          setTimeout(removeAnime,1000)
-        }
-      } else if (wheelFlag == 3) {
+        } else if (wheelFlag == 3) {
           wheelFlagloopEND('wheelFlag2')
           swipeDirection==='left' ?  swipeAnimeLeft() : swipeAnimeRight()
           deltaTotal = 0
@@ -260,12 +263,53 @@ const SwipeComponent = () => {
           setSlider(deltaTotal,wheelFlag)
           setTimeout(removeAnime,1000)
       } 
+    
       return [deltaTotal, wheelFlag];
   }
-  function timeLineSwitcher(switcher:boolean,left:string){
-    if(left === 'left'){
-      timeLine = !switcher
-      return timeLine
+  function timeLineSwitcher(switcher:string,flag:boolean){
+    let leftContentwheelFlag1 = document.querySelector('.leftContentwheelFlag1') as HTMLElement;
+    let rightContentwheelFlag1 = document.querySelector('.rightContentwheelFlag1') as HTMLElement;
+    let flagResult
+    if(switcher === 'left'){
+      if(flag){
+        // rightContentwheelFlag1.style.display = 'none'
+        // rightContentwheelFlag1.style.zIndex = '0';
+  
+        // leftContentwheelFlag1.style.display = 'block'
+        // leftContentwheelFlag1.style.zIndex = '100';
+        // leftContentwheelFlag1.style.width = '100vw'
+      }else{
+        // leftContentwheelFlag1.style.display = 'none'
+        // leftContentwheelFlag1.style.zIndex = '0';
+        // leftContentwheelFlag1.style.width = '100vw'
+  
+        // rightContentwheelFlag1.style.display = 'block'
+        // rightContentwheelFlag1.style.zIndex = '100';
+      }
+
+    }else{
+      if(flag === true){
+        console.log('rightを実行','if',flag)
+        rightContentwheelFlag1.style.display = 'block'
+        rightContentwheelFlag1.style.zIndex = '100';
+         flagResult = !flag
+         console.log(flagResult)
+         return flagResult
+        // leftContentwheelFlag1.style.zIndex = '100';
+        // leftContentwheelFlag1.style.width = '100vw'
+      }else{
+        console.log('rightを実行','else')
+        // leftContentwheelFlag1.style.display = 'none'
+        // leftContentwheelFlag1.style.zIndex = '0';
+        // leftContentwheelFlag1.style.width = '100vw'
+  
+        rightContentwheelFlag1.style.display = 'block'
+        rightContentwheelFlag1.style.zIndex = '100';
+        flagResult = !flag
+        console.log(flagResult)
+        return flagResult
+      }
+
     }
   }
   
@@ -339,8 +383,7 @@ const SwipeComponent = () => {
 
     return(
         <></>
-    )
+    );
 }
 
-
-export default SwipeComponent
+export default SwipeComponent;

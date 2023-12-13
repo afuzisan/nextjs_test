@@ -151,6 +151,9 @@
   .wheelFlag1 > .leftContentwheelFlag1{
     display: none;
   }
+  .wheelFlag1 > .rightContentwheelFlag1{
+    display: none;
+  }
 }
 
 #mainTOP .wheelMap{
