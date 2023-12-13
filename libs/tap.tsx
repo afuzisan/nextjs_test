@@ -223,7 +223,8 @@ const SwipeComponent = () => {
           let element = document.querySelector('.leftContentwheelFlag1') as HTMLElement;
           element.style.display = 'block'
           element.style.zIndex = '100';
-          element.style.width = '100vw'
+          
+          
           swipeDirection==='left' ?  swipeAnimeLeft() : swipeAnimeRight()
           setTimeout(removeAnime,550)
         }
@@ -263,6 +264,7 @@ const SwipeComponent = () => {
           element.style.display = 'block'
           element.style.zIndex = '100';
           element.style.width = '100vw'
+          element.style.animationName = 'leftContentwheelFlag2Anime2';
           setTimeout(removeAnime,550)
         }
       } else if (wheelFlag == 3) {

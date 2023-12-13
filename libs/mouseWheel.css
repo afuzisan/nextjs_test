@@ -110,6 +110,18 @@
       
     }
 }
+@keyframes leftContentwheelFlag2Anime2{
+  0% {
+    opacity: 0;
+    transform: translateX(1000px);
+    
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+    
+  }
+}
 .wheelFlag2 > .rightContentwheelFlag2{
     margin-top: 62px;
     width:100vw;
@@ -150,6 +162,7 @@
   }
 
 }
+
 
 #mainTOP .wheelMap{
   width: 10px;

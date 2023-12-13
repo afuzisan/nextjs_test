@@ -226,6 +226,7 @@ dl dd h2 {
 	.wheelFlag1 > .leftContentwheelFlag1{
 		background-color: #fff;
 		display: none;
+		width: 100%;
 	}
 	.left{
 		overflow-y: scroll;
