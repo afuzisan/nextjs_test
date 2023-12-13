@@ -1,5 +1,5 @@
 .days{
-	height: 150px;
+	/* height: 150px; */
 	justify-content:center;
 	width: 100%;
 	position: relative;
@@ -152,6 +152,9 @@ dl dd h2 {
 	font-weight: bold;
 	margin: 0 0 5px;
 }
+.day202312kara dd{
+	height: 100%;
+}
 .timeline{
 	position: absolute;
 	top:0px;
@@ -208,4 +211,23 @@ dl dd h2 {
 	height: 20px;
 	display: flex;
 	justify-content: center;
+}
+@media screen and (max-width:600px) {
+	.days dt{
+		width: 100%;
+		text-align: left;
+	}
+	dl dt::after{
+		content:'';
+	}
+	dl dd{
+		width: 100%;
+	}
+	.wheelFlag1 > .leftContentwheelFlag1{
+		background-color: #fff;
+	}
+	.left{
+		overflow-y: scroll;
+	}
+
 }
