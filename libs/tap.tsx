@@ -191,9 +191,6 @@ const SwipeComponent = () => {
       localStorage.setItem('scrollData', JSON.stringify({ wheelFlag: wheelFlagNumber, deltaTotal: deltaTotalNumber }));
   }
   function rightSwipe(wheelFlag:number,deltaTotal:number,swipeDirection:string,timeLine:boolean){
-  
-      // console.log(swipeDirection)
-      // console.log(wheelFlag)
       if (wheelFlag == 1) {
           wheelFlagloop('wheelFlag1', 'wheelFlag2')
           rightANDleftContentCreate('wheelFlag2', WContent_2_right, WContent_2_left)
@@ -239,32 +236,29 @@ const SwipeComponent = () => {
         let timeLineResult = timeLineSwitcher(timeLine,'left')
         if(timeLineResult){
           let element = document.querySelector('.leftContentwheelFlag1') as HTMLElement;
-          setTimeout(()=>{
-            element.style.zIndex = '0';
-          },500)
-
+          element.style.zIndex = '0';
           wheelFlagloop('wheelFlag1', 'wheelFlag2')
           rightANDleftContentCreate('wheelFlag2', WContent_2_right, WContent_2_left)
           swipeDirection==='left' ?  swipeAnimeLeft() : swipeAnimeRight()
           deltaTotal = 0
           wheelFlag = 3
           setSlider(deltaTotal,wheelFlag)
-          setTimeout(removeAnime,550)
+          setTimeout(removeAnime,1000)
         }else{
-          console.log('Switcher')
           let element = document.querySelector('.leftContentwheelFlag1') as HTMLElement;
+          element.style.display = 'block'
           element.style.zIndex = '100';
           element.style.width = '100vw'
-          element.style.display = 'block'
+          swipeDirection==='left' ?  swipeAnimeLeft() : swipeAnimeRight()
+          setTimeout(removeAnime,1000)
         }
-  
       } else if (wheelFlag == 3) {
           wheelFlagloopEND('wheelFlag2')
           swipeDirection==='left' ?  swipeAnimeLeft() : swipeAnimeRight()
           deltaTotal = 0
           wheelFlag = 1
           setSlider(deltaTotal,wheelFlag)
-          setTimeout(removeAnime,550)
+          setTimeout(removeAnime,1000)
       } 
       return [deltaTotal, wheelFlag];
   }
