@@ -2,6 +2,7 @@ import Image from 'next/image'
 import './content_1Right.css'
 import { useEffect } from 'react'
 import {items} from './content_1Right_data'
+import HeaderLink from '../components/app/HeaderLink'
 
 
 const Content_1Right = () => {
@@ -90,6 +91,8 @@ const Content_1Right = () => {
     },[])
 
     return (
+        <>
+        <span className="displayView"><HeaderLink page="page"/></span>
         <div className="right">
         <div className="rightIconGrid">
           {items.map((item, index) => (
@@ -120,20 +123,24 @@ const Content_1Right = () => {
             };
 
             return (
-                <div className={`${item.name}-details firstNone`} key= {item.name}>
-                    <div className={`${item.name}-detailsChildren`}>
-                        <div className={`${item.name}Image`} style={imageStyle}></div>
+                <>
+                    <div className={`${item.name}-details firstNone`} key= {item.name}>
+                        <div className={`${item.name}-detailsChildren`}>
+                            <div className={`${item.name}Image`} style={imageStyle}></div>
+                        </div>
+                        <p className="i-title" style={iTitleStyle}>{item.name.toUpperCase()}</p>
+                        <div className="TransitionContent" style={detailContentsStyle}>
+                            {Array.isArray(item.text) && item.text.map((desc, descIndex) => {
+                                return <p key={descIndex} className="i-desc" >{desc}</p>
+                            })}
+                        </div>
                     </div>
-                    <p className="i-title" style={iTitleStyle}>{item.name.toUpperCase()}</p>
-                    <div className="TransitionContent" style={detailContentsStyle}>
-                        {Array.isArray(item.text) && item.text.map((desc, descIndex) => {
-                            return <p key={descIndex} className="i-desc" >{desc}</p>
-                        })}
-                    </div>
-                </div>
+                </>
             );
         })}
       </div>
+        
+        </>
     )
 }
 

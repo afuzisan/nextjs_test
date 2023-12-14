@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import timelineData from './content_1left_data';
 import './content_1Left.css';
+import HeaderLink from '../components/app/HeaderLink'
 
 
 // コンテンツ1の左側を表示するコンポーネント
@@ -121,6 +122,7 @@ const Content_1Left = () => {
 
     return (
         <>
+            <span className="displayView"><HeaderLink page="page"/></span>
             <h1 className="leftH1Title">勉強年表</h1>
             <div className="left">
                 <dl className="timeline" ref={ref} onClick={handleClickDown} onContextMenu={handleClickUp}>

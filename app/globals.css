@@ -46,7 +46,7 @@
   background-color: #fff;
 }
 #mainTOP{
-  width:fit-content;
+  /* width:fit-content; */
   width: 100vw;
   height: 100vh;
   display: block;

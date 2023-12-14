@@ -35,6 +35,7 @@ const headerContent = {
     paddingRight:'20px',
 }
 
+
 const HeaderLink:FC<HeaderLinkProps>  = (props) => {
     return (
         <div style={props.page === 'page' ? headerStylePage : headerStyle}>
