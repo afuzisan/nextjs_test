@@ -10,6 +10,7 @@ import './Content_2Left.css'
 import HeaderLink from '../components/app/HeaderLink'
 import SwipeComponent from '../libs/tap'
 import SwipeGuide from './swipeGuide'
+
 const Home = () => {
 
   const Sketch = dynamic(() => import('react-p5').then((mod) => mod.default), {
@@ -32,6 +33,8 @@ const Home = () => {
   }, [])
   
     return (
+      <>
+      
       <main>
         <div className="landscape">縦画面で見てください。</div>
         <div id="mainCover">
@@ -42,6 +45,8 @@ const Home = () => {
           <iframe src="https://playcanv.as/b/bc103796" className="iframeCanvasTreeD" frameBorder="0"></iframe>
         </div>
       </main>
+      </>
+      
     );
   };
   
