@@ -10,18 +10,17 @@ import SidebarButton from './sidebarButton.client'
 import { Metadata } from 'next'
 import SeoComponent from './metadata'
 
-export async function generateMetadata(): Promise<Metadata> {
-  const response = await fetch('https://jsonplaceholder.typicode.com/todos/1');
-  const json = await response.json();
-  console.log(json);
-  const title = json.title
+export async function generateMetadata(url: { params: { postId: string } } ): Promise<Metadata> {
+
+  const response = await getDetail(url.params.postId);
+  const title = await response.title
+
   return SeoComponent({
     title: title,
     description: title,
   }
   )
 }
-
 
 export const revalidate = 5;
 
@@ -53,5 +52,3 @@ export default async function StaticDetailPage({params: { postId }}: {params: { 
         </>
   );
 }
-    
-

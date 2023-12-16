@@ -6,12 +6,6 @@ export async function middleware(req: NextRequest, ev: NextFetchEvent) {
     // ランダムな数値を生成
     const { contents } = await getList();
 
-    // JSONファイルの内容を作成
-    const data = {
-        id: "Hello, Next.js!",
-        number: 1
-    };
-
     // JSONファイルのレスポンスを返す
     return NextResponse.json(contents);
 }
