@@ -1,7 +1,7 @@
 interface SEOProps {
   title: string;
   description: string;
-
+  keywords: string[]; 
 }
 
 interface Metadata {
@@ -11,13 +11,14 @@ interface Metadata {
 }
 
 export default function SeoComponent(Info:SEOProps):Metadata {
+  const { title, description, keywords } = Info
 
-  const { title,description } = Info
+
   const metadata:Metadata = {
       title: title,
       description: description,
-      keywords: ["UtakataKyosui","泡沫京水","Portfolio","ポートフォリオ"],
-
+      keywords: keywords
   }
+
   return metadata
 }

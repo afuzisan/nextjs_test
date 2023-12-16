@@ -10,14 +10,22 @@ import SidebarButton from './sidebarButton.client'
 import { Metadata } from 'next'
 import SeoComponent from './metadata'
 
+type KeywordItem = {
+  keyword: string;
+};
 export async function generateMetadata(url: { params: { postId: string } } ): Promise<Metadata> {
 
   const response = await getDetail(url.params.postId);
   const title = await response.title
+  const description = await response.description
+  const keywordArray  = await response.keywordADD
+
+  const keywords = keywordArray.map((item: KeywordItem) => item.keyword);
 
   return SeoComponent({
     title: title,
-    description: title,
+    description: description,
+    keywords: keywords
   }
   )
 }
@@ -52,3 +60,4 @@ export default async function StaticDetailPage({params: { postId }}: {params: { 
         </>
   );
 }
+

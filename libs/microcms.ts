@@ -5,12 +5,17 @@ import type {
     MicroCMSImage,
     MicroCMSDate,
 } from "microcms-js-sdk";
-
+export type KeywordItem = {
+    fieldId: string;
+    keyword: string;
+}
 //ブログの型定義
 export type Blog = {
     id: string;
     title: string;
     content: string;
+    description: string; // この行を追加
+    keywordADD:KeywordItem[];
     eyecatch?: MicroCMSImage;
 } & MicroCMSDate;
 
