@@ -1,18 +1,18 @@
 import './globals.css'
-export const metadata = {
-  title: '岡田明也ポートフォリオ',
-  description: '岡田明也のポートフォリオをまとめたサイトになります。',
-  keywords: 'ポートフォリオ, 岡田明也',
-  ogTags: {
-    ogTitle: '岡田明也ポートフォリオ',
-    ogDescription: '岡田明也のポートフォリオをまとめたサイトになります。',
-    // ogImage: 'OG Image URL',
+// export const metadata = {
+//   title: '岡田明也ポートフォリオ',
+//   description: '岡田明也のポートフォリオをまとめたサイトになります。',
+//   keywords: 'ポートフォリオ, 岡田明也',
+//   ogTags: {
+//     ogTitle: '岡田明也ポートフォリオ',
+//     ogDescription: '岡田明也のポートフォリオをまとめたサイトになります。',
+//     // ogImage: 'OG Image URL',
 
     
-    ogUrl: 'https://nextjs-test-sigma-ebon.vercel.app/',
-  },
-  robots: 'noindex, nofollow',
-};
+//     ogUrl: 'https://nextjs-test-sigma-ebon.vercel.app/',
+//   },
+//   robots: 'noindex, nofollow',
+// };
 
 export default function RootLayout({
   children,

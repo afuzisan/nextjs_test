@@ -1,6 +1,9 @@
 
 import Link from "next/link";
 import { getList } from "../../libs/microcms";
+import { Metadata } from 'next'
+import SeoComponent from '../../libs/metadata'
+
 
 
 export const revalidate = 5;

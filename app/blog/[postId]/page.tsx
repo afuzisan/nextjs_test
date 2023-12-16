@@ -7,30 +7,27 @@ import Sidebar from './Sidebar.client';
 import Header from "./header"
 import './style.css'
 import SidebarButton from './sidebarButton.client'
+import { Metadata } from 'next'
+import SeoComponent from './metadata'
+
+export async function generateMetadata(): Promise<Metadata> {
+  const response = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+  const json = await response.json();
+  console.log(json);
+  const title = json.title
+  return SeoComponent({
+    title: title,
+    description: title,
+  }
+  )
+}
 
 
 export const revalidate = 5;
 
-export async function generateStaticParams() {
- const { contents } = await getList();
-
- const paths = contents.map((post) => {
-  return {
-   postId: post.id,
-  };
- });
-
- return [...paths];
-}
-
-export default async function StaticDetailPage({
- params: { postId },
-}: {
- params: { postId: string };
-}) {
-
+export default async function StaticDetailPage({params: { postId }}: {params: { postId: string };}) 
+{
  const post = await getDetail(postId);
-
 
  if (!post) {
   notFound();
@@ -40,7 +37,6 @@ export default async function StaticDetailPage({
         <>
           <div className="landscape">縦画面で見てください。</div>
           <Header />
-          
           <div id="title">
             <h1>{post.title}</h1>
           </div>
@@ -55,5 +51,7 @@ export default async function StaticDetailPage({
             
           </div>
         </>
-      );
-    }
+  );
+}
+    
+
