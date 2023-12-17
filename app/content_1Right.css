@@ -194,6 +194,31 @@
     .headerContent{
         font-size: 16px;
     }
+    .wheelFlag1 > .leftContentwheelFlag1 {
+        display: none;
+    }
+    .left{
+        width: 100vw;
+        background-color: #fff;
+        font-size: 30px;
+    }
+    .left h2{
+        font-size: 40px;
+    }
+    dl dt {
+        padding: 25px 1em 0.5em 0.5em;
+        position: relative;
+        text-align: right;
+        width: 8.5em;
+    }
+    dl dt::after {
+        color: green;
+        content: '●';
+        font-size: 30px;
+        position: absolute;
+        right: -0.55em;
+        top: 25px;
+    }
 }
 
 /* ipad */
