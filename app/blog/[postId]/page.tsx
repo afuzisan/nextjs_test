@@ -19,15 +19,12 @@ export async function generateMetadata(url: { params: { postId: string } } ): Pr
   const title = await response.title
   const description = await response.description
   const keywordArray  = await response.keywordADD
-
-  const keywords = keywordArray.map((item: KeywordItem) => item.keyword);
-
+  const keywords = keywordArray !== null ? keywordArray.map((item: KeywordItem) => item.keyword) : [];
   return SeoComponent({
     title: title,
     description: description,
     keywords: keywords
-  }
-  )
+  })
 }
 
 export const revalidate = 5;
