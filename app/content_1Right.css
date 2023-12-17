@@ -81,7 +81,7 @@
 
 .wheelFlag1 > .rightContentwheelFlag1 > .right{
     
-    height: 100vh;
+    height: calc(100vh - 100px);
     position: relative;
 }
 
@@ -94,6 +94,7 @@
     justify-content: center;
     align-items: center;
     justify-items: center;
+    height: 100%;
 }
 
 .p{
@@ -104,10 +105,21 @@
 }
 .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .gridChildren{
     border-radius: 3%;
-    height: 150px;
+    height: calc(100%);
     text-align:center;
-    width: 150px;
-    
+    width: calc(100%);
+    max-height: 200px;
+    max-width: 200px;
+    min-width: 150px;
+    min-height: 150px;
+}
+.gridChildren img {
+    height: calc(75%);
+    max-height: 110px;
+    max-width: 110px;
+    min-height: 110px;
+    min-width: 100px;
+    width: calc(75%);
 }
 .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .html{
     background-color: #F2F2F2;
@@ -192,6 +204,24 @@
     .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
         grid-template-columns: repeat(3, 1fr);
     }
+    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .gridChildren{
+        border-radius: 3%;
+        height: calc(100%);
+        text-align:center;
+        width: calc(100%);
+        max-height: 200px;
+        max-width: 200px;
+        min-width: 150px;
+        min-height: 150px;
+    }
+    .gridChildren img{
+        width: calc(75%);
+        height: calc(75%);
+        min-width: 100px;
+        min-height: 100px;
+        max-height: 100px;
+        max-width: 100px;
+    }
 }
 @media screen and (min-width:600px) and (max-width:1024px) {
 	.right{
@@ -224,6 +254,34 @@
         position: absolute;
         right: -0.55em;
         top: 25px;
+    }
+    .gridChildren img{
+        width: calc(75%);
+        height: calc(75%);
+        min-width: 130px;
+        min-height: 130px;
+        max-height: 100px;
+        max-width: 100px;
+    }
+}
+@media screen and (max-width:600px) {
+        .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .gridChildren{
+        border-radius: 3%;
+        height: calc(100%);
+        text-align:center;
+        width: calc(100%);
+        max-height: 200px;
+        max-width: 200px;
+        min-width: 150px;
+        min-height: 150px;
+    }
+    .gridChildren img{
+        width: calc(75%);
+        height: calc(75%);
+        min-width: 100px;
+        min-height: 100px;
+        max-height: 100px;
+        max-width: 100px;
     }
 }
 
@@ -356,6 +414,7 @@
         gap:8px;
         padding:100px;
     }
+
 }
 
 /* Galaxy Fold */
