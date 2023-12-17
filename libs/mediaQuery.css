@@ -1,0 +1,162 @@
+@media screen and (max-width:600px) {
+	.days dt{
+		width: 100%;
+		text-align: left;
+	}
+	dl dt::after{
+		content:'';
+	}
+	dl dd{
+		width: 100%;
+	}
+	.wheelFlag1 > .leftContentwheelFlag1{
+		background-color: #fff;
+		display: none;
+		width: 100%;
+	}
+	.left{
+		overflow-y: scroll;
+	}
+	.displayView{
+		display: block;
+	}
+	.leftH1Title{
+		display: none;
+	}
+
+}
+
+@media screen and (min-width:600px) and (max-width:1280px) {
+	.right{
+		overflow-y: scroll;
+	}
+	.wheelFlag1 > .rightContentwheelFlag1 {
+		margin-left: 0vw;
+		width: 100vw;
+	}
+
+	.gridChildren {
+		width: 240px !important;
+		height: 240px !important;
+	}
+	.gridChildren img{
+		width: 160px;
+		height: 160px;
+	}
+	.p{
+		font-size: 30px;
+		height: 60px;
+	}
+	.stalker{
+		display: none;
+	}
+	.TransitionContent{
+		font-size: 30px;
+	}
+    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .wheelFlag1 > .rightContentwheelFlag1 > .right{
+        width: 100vw;
+        overflow-y: scroll;
+    }
+
+    .wheelFlag1 > .rightContentwheelFlag1 {
+        width: 100vw;
+        z-index: 6;
+        margin: 0px;    
+    }
+    .stalker{
+        display: none;
+    }
+    .displayView{
+		display: block;
+	}
+    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid{
+        padding-top:0px;
+    }
+    .wheelFlag1 > .leftContentwheelFlag1{
+		display: none;
+		width: 100%;
+		
+	}
+	.left{
+		overflow-y: scroll;
+	}
+
+	.leftH1Title{
+		display: none;
+	}
+    .leftContentwheelFlag1{
+        font-size: 30px;
+    }
+    .leftContentwheelFlag1 h2{
+        font-size: 40px;
+    }
+    dl dt{
+        padding: 22px 1em 0.5em 0.5em;
+    }
+    dl dt::after{
+        font-size: 30px;
+        top:22px !important;
+    }
+    
+}
+
+@media screen and (max-width:280px){
+    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .headerContent{
+        display: none;
+    }
+}
+
+@media screen and (max-width:540px){
+    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width:1280px) {
+    #twoCards{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .rightContentwheelFlag2{
+        overflow-y: scroll;
+        
+    }
+    .wheelFlag2 > .rightContentwheelFlag2 {
+        align-items: flex-start
+    }
+}
+@media screen and (max-width:912px) {
+    #twoCards{
+        grid-template-columns: 1fr 1fr;
+    }
+    .rightContentwheelFlag2{
+        overflow-y: scroll;
+        
+    }
+    .wheelFlag2 > .rightContentwheelFlag2 {
+        align-items: flex-start
+    }
+}
+@media screen and (max-width:768px) {
+    #twoCards{
+        grid-template-columns: 1fr 1fr;
+    }
+    .rightContentwheelFlag2{
+        overflow-y: scroll;
+        
+    }
+    .wheelFlag2 > .rightContentwheelFlag2 {
+        align-items: flex-start
+    }
+}
+@media screen and (max-width:600px) {
+    #twoCards{
+        grid-template-columns: 1fr; 
+
+    }
+}

@@ -4,6 +4,7 @@ import './content_1Left.css';
 import HeaderLink from '../components/app/HeaderLink'
 
 
+
 // コンテンツ1の左側を表示するコンポーネント
 const Content_1Left = () => {
     console.log('レンダリング')

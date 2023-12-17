@@ -17,12 +17,7 @@
     justify-content: center;
     padding:10px;
 }
-@media screen and (max-width:600px) {
-    #twoCards{
-        grid-template-columns: 1fr; 
 
-    }
-}
 #twoCards a{
     text-decoration: none;
     color: #000;
@@ -76,4 +71,48 @@
 .twoSliderTitle{
     text-align: center;
     height: 35px;
+}
+
+
+@media screen and (max-width:1280px) {
+    #twoCards{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .rightContentwheelFlag2{
+        overflow-y: scroll;
+        
+    }
+    .wheelFlag2 > .rightContentwheelFlag2 {
+        align-items: flex-start
+    }
+}
+@media screen and (max-width:912px) {
+    #twoCards{
+        grid-template-columns: 1fr 1fr;
+    }
+    .rightContentwheelFlag2{
+        overflow-y: scroll;
+        
+    }
+    .wheelFlag2 > .rightContentwheelFlag2 {
+        align-items: flex-start
+    }
+}
+@media screen and (max-width:768px) {
+    #twoCards{
+        grid-template-columns: 1fr 1fr;
+    }
+    .rightContentwheelFlag2{
+        overflow-y: scroll;
+        
+    }
+    .wheelFlag2 > .rightContentwheelFlag2 {
+        align-items: flex-start
+    }
+}
+@media screen and (max-width:600px) {
+    #twoCards{
+        grid-template-columns: 1fr; 
+
+    }
 }

@@ -1,4 +1,5 @@
 import './globals.css'
+
 export const metadata = {
   title: '岡田明也ポートフォリオ',
   description: '岡田明也のポートフォリオをまとめたサイトになります。',

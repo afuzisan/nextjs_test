@@ -5,6 +5,7 @@ import {items} from './content_1Right_data'
 import HeaderLink from '../components/app/HeaderLink'
 
 
+
 const Content_1Right = () => {
     const detailContentsStyle: React.CSSProperties = {
         position: 'absolute',

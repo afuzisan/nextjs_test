@@ -154,9 +154,40 @@ html {
     }
 
 }
+@media screen and (max-width:1280px){
+    #main{
+        grid-template-columns: 1fr;
+        max-width: 100%;
+        border-radius: 0px;
+    }
+
+    #sidebar{
+        display: none;
+        position: fixed;
+        top:100px;
+        border: 1px solid #000;
+        height: calc(100% - 200px);
+        overflow-y: scroll;
+        width: calc(100% - 80px);
+    }
+    .sidebarButton{
+        display: block;
+    }
+
+}
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape){
     #main{
         display: none;
     }
+}
+
+@media screen and (max-width:280px){
+  *{
+    font-size: 12px;
   }
+  h1{
+    font-size: 20px;
+  }
+
+}

@@ -215,6 +215,41 @@ dl dd h2 {
 .displayView{
 	display: none;
 }
+
+
+@media screen and (min-width:600px) and (max-width:1280px) {
+	.left{
+		overflow-y: scroll;
+	}
+	.wheelFlag1 > .rightContentwheelFlag1 {
+		margin-left: 0vw;
+		width: 100vw;
+	}
+
+	.gridChildren {
+		width: 240px !important;
+		height: 240px !important;
+	}
+	.gridChildren img{
+		width: 160px;
+		height: 160px;
+	}
+	.p{
+		font-size: 30px;
+		height: 60px;
+	}
+	.stalker{
+		display: none;
+	}
+	.TransitionContent{
+		font-size: 30px;
+	}
+	.leftH1Title{
+		display: none;
+	 }
+}
+
+
 @media screen and (max-width:600px) {
 	.days dt{
 		width: 100%;
@@ -239,13 +274,14 @@ dl dd h2 {
 	}
 	.leftH1Title{
 		display: none;
-		/* width: 100%;
-		margin-left:0px;
-		margin-top:0px;
-		margin-bottom:10px;
-		padding:0px; */
-
-
 	}
 
+}
+@media screen and (max-width:768px){
+ .left{
+	overflow-y: scroll;
+ }
+ .leftH1Title{
+	display: none;
+ }
 }

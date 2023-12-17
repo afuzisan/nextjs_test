@@ -158,6 +158,10 @@
 .displayView{
     display: none;
 }
+
+
+
+
 @media screen and (max-width:600px){
     .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
         grid-template-columns: repeat(2, 1fr);
@@ -183,4 +187,125 @@
     }
 
 }
+@media screen and (min-width:600px) and (max-width:1280px) {
+	.right{
+		overflow-y: scroll;
+	}
+    .headerContent{
+        font-size: 16px;
+    }
+}
+
+/* ipad */
+@media screen and (max-width:768px) and (min-width:768px) 
+              and (max-height:1024px) and (min-height:1024px){
+    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .wheelFlag1 > .rightContentwheelFlag1 > .right{
+        width: 100vw;
+        overflow-y: scroll;
+    }
+
+    .wheelFlag1 > .rightContentwheelFlag1 {
+        width: 100vw;
+        z-index: 6;
+        margin: 0px;    
+    }
+    .stalker{
+        display: none;
+    }
+    .displayView{
+		display: block;
+	}
+    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid{
+        padding-top:0px;
+        gap:8px;
+        padding:15px;
+    }
+    .displayView{
+        font-size: 30px;
+        display: none;
+    }
+    .right{
+        margin-top:5px;
+    }
+
+}
+
+/* surfaceDuo */
+@media screen and (max-width:540px) and (min-width:540px) 
+              and (max-height:720px) and (min-height:720px){
+
+    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid{
+        padding-top:0px;
+        gap:8px;
+        padding:100px;
+    }
+}
+
+/* Galaxy Fold */
+@media screen and (max-width:280px) and (min-width:280px) 
+              and (max-height:653px) and (min-height:653px){
+
+    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .displayView{
+        display: none;
+    }
+    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid{
+        padding-top:20px;
+    }
+    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .gridChildren {
+        border-radius: 3%;
+        height: 200px;
+        text-align: center;
+        width: 200px;
+    }
+    .gridChildren img{
+        height: 150px;
+        width: 150px;
+    }
+}
+
+/* Galaxy A51/71 */
+@media screen and (max-width:412px) and (min-width:412px) 
+              and (max-height:914px) and (min-height:914px){
+
+    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid{
+        padding-top:0px;
+        padding:100px;
+    }
+}
+
+/* NextHubMAX */
+@media screen and (max-width:1280px) and (min-width:1280px) 
+              and (max-height:800px) and (min-height:800px){
+
+    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid{
+        padding-top:0px;
+        padding:100px;
+    }
+    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
+        align-items: center;
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(4, 1fr);
+        justify-content: center;
+        padding: 50px;
+    }
+    .gridChildren {
+        height: 270px !important;
+        width: 270px !important; 
+    }
+    .gridChildren img{
+        height: 190px;
+        width: 190px;
+    }
+}
+
 
