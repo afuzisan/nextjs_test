@@ -69,7 +69,7 @@ const Content_1Right = () => {
             element.addEventListener('click',(e)=>{
                 const rightIconGrid = document.querySelector('.rightIconGrid') as HTMLElement;
                 const right = document.querySelector('.right') as HTMLElement;
-                rightIconGrid ? (rightIconGrid.style.padding = '50px 60px 60px 60px', rightIconGrid.style.margin = '0') : null;
+                rightIconGrid ? (rightIconGrid.style.padding = '10px 10px 10px 10px', rightIconGrid.style.marginBottom = '70px') : null;
                 right ? (right.style.backgroundColor = '#fff') : null;
                 // document.startViewTransition(() => {
                 firstNone.forEach(element=>{
