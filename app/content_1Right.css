@@ -81,7 +81,7 @@
 
 .wheelFlag1 > .rightContentwheelFlag1 > .right{
     
-    height: calc(100vh - 100px);
+    height: calc(100vh);
     position: relative;
 }
 
@@ -94,7 +94,8 @@
     justify-content: center;
     align-items: center;
     justify-items: center;
-    height: 100%;
+    /* height: 100vh; */
+    margin-bottom: 50px;
 }
 
 .p{
@@ -116,10 +117,11 @@
 .gridChildren img {
     height: calc(75%);
     max-height: 110px;
-    max-width: 110px;
-    min-height: 110px;
+    max-width: 140px;
+    min-height: 140px;
     min-width: 100px;
     width: calc(75%);
+    margin-top:5px;
 }
 .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .html{
     background-color: #F2F2F2;
@@ -197,7 +199,10 @@
 	}
     .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid{
         padding-top:0px;
+        /* margin-bottom: -100px; */
+        /* height: 1450px; */
     }
+
 
 }
 @media screen and (min-width:1024px) and (max-width:1300px){
@@ -217,15 +222,16 @@
     .gridChildren img{
         width: calc(75%);
         height: calc(75%);
-        min-width: 100px;
-        min-height: 100px;
-        max-height: 100px;
-        max-width: 100px;
+        min-width: 120px;
+        min-height: 120px;
+        max-height: 120px;
+        max-width: 120px;
+     
     }
 }
 @media screen and (min-width:600px) and (max-width:1024px) {
 	.right{
-		overflow-y: scroll;
+		/* overflow-y: scroll; */
 	}
     .headerContent{
         font-size: 16px;
@@ -258,8 +264,8 @@
     .gridChildren img{
         width: calc(75%);
         height: calc(75%);
-        min-width: 130px;
-        min-height: 130px;
+        min-width: 120px;
+        min-height: 120px;
         max-height: 100px;
         max-width: 100px;
     }
@@ -283,13 +289,18 @@
         max-height: 100px;
         max-width: 100px;
     }
+
 }
 
-/* ipad */
+
+
+/* ipad AND ipad MINI*/
 @media screen and (max-width:768px) and (min-width:768px) 
               and (max-height:1024px) and (min-height:1024px){
     .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
         grid-template-columns: repeat(3, 1fr);
+        height: 100%;
+        margin-bottom: 0px;
     }
     .wheelFlag1 > .rightContentwheelFlag1 > .right{
         width: 100vw;
@@ -318,6 +329,20 @@
     }
     .right{
         margin-top:5px;
+    }
+    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .gridChildren {
+        border-radius: 3%;
+        height: calc(100%);
+        max-height: 180px;
+        max-width: 180px;
+        min-height: 150px;
+        min-width: 150px;
+        text-align: center;
+        width: calc(100%);
+    }
+    .p {
+        font-size: 20px;
+        height: 40px;
     }
 
 }
@@ -329,7 +354,7 @@
     }
     .wheelFlag1 > .rightContentwheelFlag1 > .right{
         width: 100vw;
-        overflow-y: scroll;
+        /* overflow-y: scroll; */
     }
 
     .wheelFlag1 > .rightContentwheelFlag1 {
@@ -347,6 +372,8 @@
         padding-top:0px;
         gap:8px;
         padding:15px;
+        height: 100%;
+        margin:0px;
     }
     .displayView{
         font-size: 30px;
@@ -354,6 +381,20 @@
     }
     .right{
         margin-top:5px;
+    }
+    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .gridChildren {
+        border-radius: 3%;
+        height: calc(100%);
+        max-height: 180px;
+        max-width: 180px;
+        min-height: 150px;
+        min-width: 150px;
+        text-align: center;
+        width: calc(100%);
+    }
+    .p {
+        font-size: 20px;
+        height: 40px;
     }
 
 }
@@ -363,10 +404,11 @@
               and (max-height:1366px) and (min-height:1366px){
     .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
         grid-template-columns: repeat(3, 1fr);
+        height: 100%;
     }
     .wheelFlag1 > .rightContentwheelFlag1 > .right{
         width: 100vw;
-        overflow-y: scroll;
+        /* overflow-y: scroll; */
     }
 
     .wheelFlag1 > .rightContentwheelFlag1 {
@@ -384,6 +426,7 @@
         padding-top:0px;
         gap:8px;
         padding:15px;
+        margin:0px;
     }
     .displayView{
         font-size: 30px;
@@ -397,8 +440,26 @@
         width: 320px !important;
     }
     .gridChildren img {
-        height: 230px;
-        width: 230px;
+        height: calc(75%);
+        max-height: 100px;
+        max-width: 100px;
+        min-height: 140px;
+        min-width: 140px;
+        width: calc(75%);
+    }
+    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .gridChildren {
+        border-radius: 3%;
+        height: calc(100%);
+        max-height: 230px;
+        max-width: 230px;
+        min-height: 150px;
+        min-width: 150px;
+        text-align: center;
+        width: calc(100%);
+    }
+    .p {
+        font-size: 26px;
+        height: 55px;
     }
 }
 
@@ -408,11 +469,38 @@
 
     .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
         grid-template-columns: repeat(3, 1fr);
-    }
-    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid{
         padding-top:10px;
         gap:8px;
         padding:100px;
+        margin-bottom: 145px;
+        height: 0%;
+    }
+    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .gridChildren {
+        border-radius: 3%;
+        height: calc(100%);
+        max-height: 200px;
+        max-width: 200px;
+        min-height: 120px;
+        min-width: 120px;
+        text-align: center;
+        width: calc(100%);
+    }
+    .p {
+        border-bottom: 1px solid gray;
+        color: gray;
+        margin-bottom: 5px;
+        padding: 5px;
+        font-size: 12px;
+    }
+    .gridChildren img {
+        margin-top: 0px;
+        height: calc(75%);
+        max-height: 80px;
+        max-width: 80px;
+        min-height: 80px;
+        min-width: 80px;
+        width: calc(75%);
+
     }
 
 }
@@ -424,11 +512,17 @@
     .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
         grid-template-columns: repeat(1, 1fr);
     }
+    .wheelFlag1 > .rightContentwheelFlag1 > .right {
+        height: calc(97vh);
+        position: relative;
+        /* margin-bottom: 100px; */
+    }
     .displayView{
         display: none;
     }
     .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid{
         padding-top:20px;
+        padding:0px;
     }
     .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .gridChildren {
         border-radius: 3%;
@@ -437,8 +531,15 @@
         width: 200px;
     }
     .gridChildren img{
-        height: 150px;
-        width: 150px;
+        height: calc(75%);
+        max-height: 100px;
+        max-width: 100px;
+        min-height: 140px;
+        min-width: 140px;
+        width: calc(75%);
+    }
+    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
+
     }
 }
 
@@ -448,7 +549,17 @@
 
     .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid{
         padding-top:0px;
-        padding:100px;
+        /* padding:100px; */
+    }
+    .wheelFlag1 > .rightContentwheelFlag1 > .right {
+        height: calc(90vh);
+        position: relative;
+    }
+    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
+
+        /* height: 100vh; */
+        margin-bottom: 0px;
+        padding: 0px 70px;
     }
 }
 
@@ -467,6 +578,7 @@
         grid-template-columns: repeat(3, 1fr);
         justify-content: center;
         padding: 50px;
+        height: 1100px;
     }
     .gridChildren {
         height: 180px !important;
@@ -483,5 +595,27 @@
         overflow-y: scroll;
     }
 }
+
+/* surface Pro7 */
+@media screen and (max-width:912px) and (min-width:912px) 
+              and (max-height:1368px) and (min-height:1368px){
+.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
+    align-items: center;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    justify-items: center;
+    height: 100vh;
+    margin-bottom: 50px;
+    padding: 70px;
+}
+.p {
+    font-size: 24px;
+    height: 50px;
+}
+
+}
+
 
 

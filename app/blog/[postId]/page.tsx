@@ -27,7 +27,7 @@ export async function generateMetadata(url: { params: { postId: string } } ): Pr
   })
 }
 
-export const revalidate = 5;
+// export const revalidate = 5;
 
 export default async function StaticDetailPage({params: { postId }}: {params: { postId: string };}) 
 {
