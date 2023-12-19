@@ -543,13 +543,13 @@
         /* padding:100px; */
     }
     .wheelFlag1 > .rightContentwheelFlag1 > .right {
-        height: calc(90vh);
+        height: calc(100vh);
         position: relative;
     }
     .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
 
         /* height: 100vh; */
-        margin-bottom: 0px;
+        margin-bottom: 70px;
         padding: 0px 70px;
     }
 }
