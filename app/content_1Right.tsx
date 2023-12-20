@@ -61,6 +61,28 @@ const Content_1Right = () => {
 				})
 			})
 		})
+		gridChildren.forEach((element) => {
+			element?.addEventListener('touchstart', (e) => {
+				const targetElement = e.target as HTMLElement
+				document.startViewTransition(() => {
+					let elementName = element.className.split(' ')
+					const viewIndex = document.querySelector(`.${elementName[0]}-details`)
+					const right = document.querySelector('.right') as HTMLElement
+					const rightIconGrid = document.querySelector('.rightIconGrid') as HTMLElement
+					rightIconGrid ? ((rightIconGrid.style.padding = '0px'), (rightIconGrid.style.margin = '0 auto')) : null
+					right ? (right.style.backgroundColor = '#131212') : null
+					gridChildren.forEach((element: any) => {
+						let htmlElement = element as HTMLElement
+						htmlElement ? (htmlElement.style.display = 'none') : null
+					})
+					if (viewIndex) {
+						const elementNameChildren = document.querySelector(`.${elementName[0]}-detailsChildren`)
+						;(viewIndex as HTMLElement).style.display = 'block'
+						;(elementNameChildren as HTMLElement).style.display = 'block'
+					}
+				})
+			})
+		})
 	}
 
 	function detailsNone() {
