@@ -1,596 +1,594 @@
 .cssImage {
-    view-transition-name: css;
-    contain: paint;
+  view-transition-name: css;
+  contain: paint;
 }
 .htmlImage {
-    view-transition-name: html;
-    contain: paint;
+  view-transition-name: html;
+  contain: paint;
 }
 .jsImage {
-    view-transition-name: js;
-    contain: paint;
+  view-transition-name: js;
+  contain: paint;
 }
 .tsImage {
-    view-transition-name: ts;
-    contain: paint;
+  view-transition-name: ts;
+  contain: paint;
 }
 .nextImage {
-    view-transition-name: next;
-    contain: paint;
+  view-transition-name: next;
+  contain: paint;
 }
 .reactImage {
-    view-transition-name: react;
-    contain: paint;
+  view-transition-name: react;
+  contain: paint;
 }
 .nodeImage {
-    view-transition-name: node;
-    contain: paint;
+  view-transition-name: node;
+  contain: paint;
 }
 .jqueryImage {
-    view-transition-name: jquery;
-    contain: paint;
+  view-transition-name: jquery;
+  contain: paint;
 }
 .linuxImage {
-    view-transition-name: linux;
-    contain: paint;
+  view-transition-name: linux;
+  contain: paint;
 }
 .playCanvasImage {
-    view-transition-name: playCanvas;
-    contain: paint;
+  view-transition-name: playCanvas;
+  contain: paint;
 }
 .wordpressImage {
-    view-transition-name: wordpress;
-    contain: paint;
+  view-transition-name: wordpress;
+  contain: paint;
 }
 .gasImage {
-    view-transition-name: gas;
-    contain: paint;
+  view-transition-name: gas;
+  contain: paint;
 }
 .dockerImage {
-    view-transition-name: docker;
-    contain: paint;
+  view-transition-name: docker;
+  contain: paint;
 }
 .postgresqlImage {
-    view-transition-name: postgresql;
-    contain: paint;
+  view-transition-name: postgresql;
+  contain: paint;
 }
 .githubImage {
-    view-transition-name: github;
-    contain: paint;
+  view-transition-name: github;
+  contain: paint;
 }
-
-
-
 
 .wheelFlag1 > .leftContentwheelFlag1 > .left {
-    position: relative;
+  position: relative;
 }
-.wheelFlag1 > .leftContentwheelFlag1 > .left > .photo{
-    border: 1px solid #000;
+.wheelFlag1 > .leftContentwheelFlag1 > .left > .photo {
+  border: 1px solid #000;
+  height: 100vh;
+  width: 50vw;
+}
+.wheelFlag1 > .leftContentwheelFlag1 > .left > .photoDiscribe {
+  border: 1px solid #000;
+  height: 300px;
+  width: 500px;
+  z-index: 2;
+}
+
+.wheelFlag1 > .rightContentwheelFlag1 > .right {
+  height: calc(100vh);
+  position: relative;
+}
+
+.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  /* height: 100vh; */
+  margin-bottom: 70px;
+  /* height: 100%; */
+}
+
+.p {
+  border-bottom: 1px solid gray;
+  color: gray;
+  margin-bottom: 5px;
+  padding: 5px;
+}
+.wheelFlag1
+  > .rightContentwheelFlag1
+  > .right
+  > .rightIconGrid
+  > .gridChildren {
+  border-radius: 3%;
+  height: calc(100%);
+  text-align: center;
+  width: calc(100%);
+  max-height: 200px;
+  max-width: 200px;
+  min-width: 150px;
+  min-height: 150px;
+}
+.gridChildren img {
+  height: calc(75%);
+  max-height: 110px;
+  max-width: 140px;
+  min-height: 140px;
+  min-width: 100px;
+  width: calc(75%);
+  margin-top: 5px;
+}
+.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .html {
+  background-color: #f2f2f2;
+}
+.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .css {
+  background-color: #f2f2f2;
+}
+.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .js {
+  background-color: #f2f2f2;
+}
+.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .ts {
+  background-color: #f2f2f2;
+}
+.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .next {
+  background-color: #f2f2f2;
+}
+.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .react {
+  background-color: #f2f2f2;
+}
+.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .node {
+  background-color: #f2f2f2;
+}
+.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .jquery {
+  background-color: #f2f2f2;
+}
+.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .linux {
+  background-color: #f2f2f2;
+}
+.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .playCanvas {
+  background-color: #f2f2f2;
+}
+.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .wordpress {
+  background-color: #f2f2f2;
+}
+.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .gas {
+  background-color: #f2f2f2;
+}
+.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .docker {
+  background-color: #f2f2f2;
+}
+.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .postgresql {
+  background-color: #f2f2f2;
+}
+.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .github {
+  background-color: #f2f2f2;
+}
+
+.displayView {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .wheelFlag1 > .rightContentwheelFlag1 > .right {
+    width: 100vw;
+    overflow-y: scroll;
+  }
+
+  .wheelFlag1 > .rightContentwheelFlag1 {
+    width: 100vw;
+    z-index: 6;
+    margin: 0px;
+  }
+  .stalker {
+    display: none;
+  }
+  .displayView {
+    display: block;
+  }
+  .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
+    padding-top: 0px;
+    /* margin-bottom: -100px; */
+    /* height: 1450px; */
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1300px) {
+  .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
+    grid-template-columns: repeat(3, 1fr);
     height: 100vh;
-    width:50vw;
-}
-.wheelFlag1 > .leftContentwheelFlag1 > .left > .photoDiscribe{
-    border: 1px solid #000;
-    height: 300px;
-    width:500px;
-    z-index:2;
-}
-
-
-
-.wheelFlag1 > .rightContentwheelFlag1 > .right{
-    
-    height: calc(100vh);
-    position: relative;
-}
-
-
-.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    padding: 10px ;
-    justify-content: center;
-    align-items: center;
-    justify-items: center;
-    /* height: 100vh; */
-    margin-bottom: 70px;
-    /* height: 100%; */
-}
-
-.p{
-    border-bottom: 1px solid gray;
-    color: gray; 
-    margin-bottom:5px;
-    padding:5px;
-}
-.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .gridChildren{
+  }
+  .wheelFlag1
+    > .rightContentwheelFlag1
+    > .right
+    > .rightIconGrid
+    > .gridChildren {
     border-radius: 3%;
     height: calc(100%);
-    text-align:center;
+    text-align: center;
+    width: calc(100%);
+    max-height: 145px;
+    max-width: 145px;
+    min-width: 100px;
+    min-height: 100px;
+  }
+  .gridChildren img {
+    height: calc(75%);
+    max-height: 91px;
+    max-width: 90px;
+    min-height: 90px;
+    min-width: 90px;
+    width: calc(75%);
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+  .right {
+    /* overflow-y: scroll; */
+  }
+  .headerContent {
+    font-size: 16px;
+  }
+  .wheelFlag1 > .leftContentwheelFlag1 {
+    display: none;
+  }
+  .left {
+    width: 100vw;
+    background-color: #fff;
+    font-size: 30px;
+  }
+  .left h2 {
+    font-size: 40px;
+  }
+
+  .gridChildren img {
+    width: calc(75%);
+    height: calc(75%);
+    min-width: 120px;
+    min-height: 120px;
+    max-height: 100px;
+    max-width: 100px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .wheelFlag1
+    > .rightContentwheelFlag1
+    > .right
+    > .rightIconGrid
+    > .gridChildren {
+    border-radius: 3%;
+    height: calc(100%);
+    text-align: center;
     width: calc(100%);
     max-height: 200px;
     max-width: 200px;
     min-width: 150px;
     min-height: 150px;
-}
-.gridChildren img {
-    height: calc(75%);
-    max-height: 110px;
-    max-width: 140px;
-    min-height: 140px;
-    min-width: 100px;
+  }
+  .gridChildren img {
     width: calc(75%);
-    margin-top:5px;
+    height: calc(75%);
+    min-width: 100px;
+    min-height: 100px;
+    max-height: 100px;
+    max-width: 100px;
+  }
 }
-.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .html{
-    background-color: #F2F2F2;
-
-}
-.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .css{
-    background-color: #F2F2F2;
-}
-.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .js{
-    background-color: #F2F2F2;
-}
-.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .ts{
-    background-color: #F2F2F2;
-}
-.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .next{
-    background-color: #F2F2F2;
-}
-.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .react{
-    background-color: #F2F2F2;
-}
-.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .node{
-    background-color: #F2F2F2;
-}
-.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .jquery{
-    background-color: #F2F2F2;
-}
-.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .linux{
-    background-color: #F2F2F2;
-}
-.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .playCanvas{
-    background-color: #F2F2F2;
-}
-.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .wordpress{
-    background-color: #F2F2F2;
-}
-.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .gas{
-    background-color: #F2F2F2;
-}
-.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .docker{
-    background-color: #F2F2F2;
-}
-.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .postgresql{
-    background-color: #F2F2F2;
-}
-.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .github{
-    background-color: #F2F2F2;
-}
-
-.displayView{
-    display: none;
-}
-
-
-
-
-@media screen and (max-width:600px){
-    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .wheelFlag1 > .rightContentwheelFlag1 > .right{
-        width: 100vw;
-        overflow-y: scroll;
-    }
-
-    .wheelFlag1 > .rightContentwheelFlag1 {
-        width: 100vw;
-        z-index: 6;
-        margin: 0px;    
-    }
-    .stalker{
-        display: none;
-    }
-    .displayView{
-		display: block;
-	}
-    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid{
-        padding-top:0px;
-        /* margin-bottom: -100px; */
-        /* height: 1450px; */
-    }
-
-
-}
-@media screen and (min-width:1024px) and (max-width:1300px){
-    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
-        grid-template-columns: repeat(3, 1fr);
-        height: 100vh;
-    }
-    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .gridChildren{
-        border-radius: 3%;
-        height: calc(100%);
-        text-align:center;
-        width: calc(100%);
-        max-height: 145px;
-        max-width: 145px;
-        min-width: 100px;
-        min-height: 100px;
-        
-    }
-    .gridChildren img {
-        height: calc(75%);
-        max-height: 91px;
-        max-width: 90px;
-        min-height: 90px;
-        min-width: 90px;
-        width: calc(75%);
-    }
-}
-@media screen and (min-width:600px) and (max-width:1024px) {
-	.right{
-		/* overflow-y: scroll; */
-	}
-    .headerContent{
-        font-size: 16px;
-    }
-    .wheelFlag1 > .leftContentwheelFlag1 {
-        display: none;
-    }
-    .left{
-        width: 100vw;
-        background-color: #fff;
-        font-size: 30px;
-    }
-    .left h2{
-        font-size: 40px;
-    }
-
-    .gridChildren img{
-        width: calc(75%);
-        height: calc(75%);
-        min-width: 120px;
-        min-height: 120px;
-        max-height: 100px;
-        max-width: 100px;
-    }
-}
-@media screen and (max-width:600px) {
-        .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .gridChildren{
-        border-radius: 3%;
-        height: calc(100%);
-        text-align:center;
-        width: calc(100%);
-        max-height: 200px;
-        max-width: 200px;
-        min-width: 150px;
-        min-height: 150px;
-    }
-    .gridChildren img{
-        width: calc(75%);
-        height: calc(75%);
-        min-width: 100px;
-        min-height: 100px;
-        max-height: 100px;
-        max-width: 100px;
-    }
-
-}
-
-
 
 /* ipad AND ipad MINI*/
-@media screen and (max-width:768px) and (min-width:768px) 
-              and (max-height:1024px) and (min-height:1024px){
-    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
-        grid-template-columns: repeat(3, 1fr);
-        /* height: 100%; */
-        margin-bottom: 0px;
-    }
-    .wheelFlag1 > .rightContentwheelFlag1 > .right{
-        width: 100vw;
-        overflow-y: scroll;
-    }
+@media screen and (max-width: 768px) and (min-width: 768px) and (max-height: 1024px) and (min-height: 1024px) {
+  .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
+    grid-template-columns: repeat(3, 1fr);
+    /* height: 100%; */
+    margin-bottom: 0px;
+  }
+  .wheelFlag1 > .rightContentwheelFlag1 > .right {
+    width: 100vw;
+    overflow-y: scroll;
+  }
 
-    .wheelFlag1 > .rightContentwheelFlag1 {
-        width: 100vw;
-        z-index: 6;
-        margin: 0px;    
-    }
-    .stalker{
-        display: none;
-    }
-    .displayView{
-		display: block;
-	}
-    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid{
-        padding-top:0px;
-        gap:8px;
-        padding:15px;
-    }
-    .displayView{
-        font-size: 30px;
-        display: none;
-    }
-    .right{
-        margin-top:5px;
-    }
-    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .gridChildren {
-        border-radius: 3%;
-        height: calc(100%);
-        max-height: 180px;
-        max-width: 180px;
-        min-height: 150px;
-        min-width: 150px;
-        text-align: center;
-        width: calc(100%);
-    }
-    .p {
-        font-size: 20px;
-        height: 40px;
-    }
-
+  .wheelFlag1 > .rightContentwheelFlag1 {
+    width: 100vw;
+    z-index: 6;
+    margin: 0px;
+  }
+  .stalker {
+    display: none;
+  }
+  .displayView {
+    display: block;
+  }
+  .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
+    padding-top: 0px;
+    gap: 8px;
+    padding: 15px;
+  }
+  .displayView {
+    font-size: 30px;
+    display: none;
+  }
+  .right {
+    margin-top: 5px;
+  }
+  .wheelFlag1
+    > .rightContentwheelFlag1
+    > .right
+    > .rightIconGrid
+    > .gridChildren {
+    border-radius: 3%;
+    height: calc(100%);
+    max-height: 180px;
+    max-width: 180px;
+    min-height: 150px;
+    min-width: 150px;
+    text-align: center;
+    width: calc(100%);
+  }
+  .p {
+    font-size: 20px;
+    height: 40px;
+  }
 }
 /* ipad Air*/
-@media screen and (max-width:820px) and (min-width:820px) 
-              and (max-height:1180px) and (min-height:1180px){
-                .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
-                    grid-template-columns: repeat(3, 1fr);
-                    /* height: 100%; */
-                    margin-bottom: 0px;
-                }
-                .wheelFlag1 > .rightContentwheelFlag1 > .right{
-                    width: 100vw;
-                    /* overflow-y: scroll; */
-                }
-            
-                .wheelFlag1 > .rightContentwheelFlag1 {
-                    width: 100vw;
-                    z-index: 6;
-                    margin: 0px;    
-                }
-                .stalker{
-                    display: none;
-                }
-                .displayView{
-                    display: block;
-                }
-                .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid{
-                    padding-top:0px;
-                    gap:8px;
-                    padding:15px;
-                }
-                .displayView{
-                    font-size: 30px;
-                    display: none;
-                }
-                .right{
-                    margin-top:5px;
-                }
-                .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .gridChildren {
-                    border-radius: 3%;
-                    height: calc(100%);
-                    max-height: 225px;
-                    max-width: 225px;
-                    min-height: 150px;
-                    min-width: 150px;
-                    text-align: center;
-                    width: calc(100%);
-                }
-                .p {
-                    font-size: 20px;
-                    height: 40px;
-                }
-                .gridChildren img {
-                    height: calc(75%);
-                    max-height: 160px;
-                    max-width: 160px;
-                    min-height: 120px;
-                    min-width: 120px;
-                    width: calc(75%);
-                }
+@media screen and (max-width: 820px) and (min-width: 820px) and (max-height: 1180px) and (min-height: 1180px) {
+  .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
+    grid-template-columns: repeat(3, 1fr);
+    /* height: 100%; */
+    margin-bottom: 0px;
+  }
+  .wheelFlag1 > .rightContentwheelFlag1 > .right {
+    width: 100vw;
+    /* overflow-y: scroll; */
+  }
 
+  .wheelFlag1 > .rightContentwheelFlag1 {
+    width: 100vw;
+    z-index: 6;
+    margin: 0px;
+  }
+  .stalker {
+    display: none;
+  }
+  .displayView {
+    display: block;
+  }
+  .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
+    padding-top: 0px;
+    gap: 8px;
+    padding: 15px;
+  }
+  .displayView {
+    font-size: 30px;
+    display: none;
+  }
+  .right {
+    margin-top: 5px;
+  }
+  .wheelFlag1
+    > .rightContentwheelFlag1
+    > .right
+    > .rightIconGrid
+    > .gridChildren {
+    border-radius: 3%;
+    height: calc(100%);
+    max-height: 225px;
+    max-width: 225px;
+    min-height: 150px;
+    min-width: 150px;
+    text-align: center;
+    width: calc(100%);
+  }
+  .p {
+    font-size: 20px;
+    height: 40px;
+  }
+  .gridChildren img {
+    height: calc(75%);
+    max-height: 160px;
+    max-width: 160px;
+    min-height: 120px;
+    min-width: 120px;
+    width: calc(75%);
+  }
 }
 
 /* ipad Pro*/
-@media screen and (max-width:1024px) and (min-width:1024px) 
-              and (max-height:1366px) and (min-height:1366px){
-                .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
-                    grid-template-columns: repeat(3, 1fr);
-                    height: 0vh;
-                    margin-bottom: 0px;
-                }
-                .wheelFlag1 > .rightContentwheelFlag1 > .right{
-                    width: 100vw;
-                    
-                    /* overflow-y: scroll; */
-                }
-            
-                .wheelFlag1 > .rightContentwheelFlag1 {
-                    width: 100vw;
-                    z-index: 6;
-                    margin: 0px;    
-                }
-                .stalker{
-                    display: none;
-                }
-                .displayView{
-                    display: block;
-                }
-                .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid{
-                    padding-top:0px;
-                    gap:8px;
-                    padding:15px;
-                }
-                .displayView{
-                    font-size: 30px;
-                    display: none;
-                }
-                .right{
-                    margin-top:5px;
-                }
-                .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .gridChildren {
-                    border-radius: 3%;
-                    height: calc(100%);
-                    max-height: 302px;
-                    max-width: 262px;
-                    min-height: 262px;
-                    min-width: 302px;
-                    text-align: center;
-                    width: calc(100%);
-                }
-                .p {
-                    font-size: 30px;
-                    height:60px;
-                }
-                .gridChildren img {
-                    height: calc(75%);
-                    max-height: 180px;
-                    max-width: 180px;
-                    min-height: 130px;
-                    min-width: 130px;
-                    width: calc(75%);
-                }
+@media screen and (max-width: 1024px) and (min-width: 1024px) and (max-height: 1366px) and (min-height: 1366px) {
+  .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
+    grid-template-columns: repeat(3, 1fr);
+    height: 0vh;
+    margin-bottom: 0px;
+  }
+  .wheelFlag1 > .rightContentwheelFlag1 > .right {
+    width: 100vw;
+
+    /* overflow-y: scroll; */
+  }
+
+  .wheelFlag1 > .rightContentwheelFlag1 {
+    width: 100vw;
+    z-index: 6;
+    margin: 0px;
+  }
+  .stalker {
+    display: none;
+  }
+  .displayView {
+    display: block;
+  }
+  .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
+    padding-top: 0px;
+    gap: 8px;
+    padding: 15px;
+  }
+  .displayView {
+    font-size: 30px;
+    display: none;
+  }
+  .right {
+    margin-top: 5px;
+  }
+  .wheelFlag1
+    > .rightContentwheelFlag1
+    > .right
+    > .rightIconGrid
+    > .gridChildren {
+    border-radius: 3%;
+    height: calc(100%);
+    max-height: 302px;
+    max-width: 262px;
+    min-height: 262px;
+    min-width: 302px;
+    text-align: center;
+    width: calc(100%);
+  }
+  .p {
+    font-size: 30px;
+    height: 60px;
+  }
+  .gridChildren img {
+    height: calc(75%);
+    max-height: 180px;
+    max-width: 180px;
+    min-height: 130px;
+    min-width: 130px;
+    width: calc(75%);
+  }
 }
 
 /* surfaceDuo */
-@media screen and (max-width:540px) and (min-width:540px) 
-              and (max-height:720px) and (min-height:720px){
-
-    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
-        grid-template-columns: repeat(3, 1fr);
-        padding-top:10px;
-        gap:8px;
-        padding:100px;
-        margin-bottom: 145px;
-        height: 0%;
-    }
-    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .gridChildren {
-        border-radius: 3%;
-        height: calc(100%);
-        max-height: 200px;
-        max-width: 200px;
-        min-height: 120px;
-        min-width: 120px;
-        text-align: center;
-        width: calc(100%);
-    }
-    .p {
-        border-bottom: 1px solid gray;
-        color: gray;
-        margin-bottom: 5px;
-        padding: 5px;
-        font-size: 12px;
-    }
-    .gridChildren img {
-        margin-top: 0px;
-        height: calc(75%);
-        max-height: 80px;
-        max-width: 80px;
-        min-height: 80px;
-        min-width: 80px;
-        width: calc(75%);
-
-    }
-
+@media screen and (max-width: 540px) and (min-width: 540px) and (max-height: 720px) and (min-height: 720px) {
+  .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
+    grid-template-columns: repeat(3, 1fr);
+    padding-top: 10px;
+    gap: 8px;
+    padding: 100px;
+    margin-bottom: 145px;
+    height: 0%;
+  }
+  .wheelFlag1
+    > .rightContentwheelFlag1
+    > .right
+    > .rightIconGrid
+    > .gridChildren {
+    border-radius: 3%;
+    height: calc(100%);
+    max-height: 200px;
+    max-width: 200px;
+    min-height: 120px;
+    min-width: 120px;
+    text-align: center;
+    width: calc(100%);
+  }
+  .p {
+    border-bottom: 1px solid gray;
+    color: gray;
+    margin-bottom: 5px;
+    padding: 5px;
+    font-size: 12px;
+  }
+  .gridChildren img {
+    margin-top: 0px;
+    height: calc(75%);
+    max-height: 80px;
+    max-width: 80px;
+    min-height: 80px;
+    min-width: 80px;
+    width: calc(75%);
+  }
 }
 
 /* Galaxy Fold */
-@media screen and (max-width:280px) and (min-width:280px) 
-              and (max-height:653px) and (min-height:653px){
-
-    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
-        grid-template-columns: repeat(1, 1fr);
-    }
-    .wheelFlag1 > .rightContentwheelFlag1 > .right {
-        height: calc(100vh);
-        position: relative;
-        /* margin-bottom: 100px; */
-    }
-    .displayView{
-        display: none;
-    }
-    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid{
-        padding-top:20px;
-        padding:0px;
-    }
-    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .gridChildren {
-        border-radius: 3%;
-        height: 200px;
-        text-align: center;
-        width: 200px;
-    }
-    .gridChildren img{
-        height: calc(75%);
-        max-height: 100px;
-        max-width: 100px;
-        min-height: 140px;
-        min-width: 140px;
-        width: calc(75%);
-    }
+@media screen and (max-width: 280px) and (min-width: 280px) and (max-height: 653px) and (min-height: 653px) {
+  .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .wheelFlag1 > .rightContentwheelFlag1 > .right {
+    height: calc(100vh);
+    position: relative;
+    /* margin-bottom: 100px; */
+  }
+  .displayView {
+    display: none;
+  }
+  .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
+    padding-top: 20px;
+    padding: 0px;
+  }
+  .wheelFlag1
+    > .rightContentwheelFlag1
+    > .right
+    > .rightIconGrid
+    > .gridChildren {
+    border-radius: 3%;
+    height: 200px;
+    text-align: center;
+    width: 200px;
+  }
+  .gridChildren img {
+    height: calc(75%);
+    max-height: 100px;
+    max-width: 100px;
+    min-height: 140px;
+    min-width: 140px;
+    width: calc(75%);
+  }
 }
 
 /* Galaxy A51/71 */
-@media screen and (max-width:412px) and (min-width:412px) 
-              and (max-height:914px) and (min-height:914px){
-
-    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid{
-        padding-top:0px;
-        /* padding:100px; */
-    }
-    .wheelFlag1 > .rightContentwheelFlag1 > .right {
-        height: calc(100vh);
-        position: relative;
-    }
-    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
-
-        /* height: 100vh; */
-        margin-bottom: 70px;
-        padding: 0px 70px;
-    }
+@media screen and (max-width: 412px) and (min-width: 412px) and (max-height: 914px) and (min-height: 914px) {
+  .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
+    padding-top: 0px;
+    /* padding:100px; */
+  }
+  .wheelFlag1 > .rightContentwheelFlag1 > .right {
+    height: calc(100vh);
+    position: relative;
+  }
+  .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
+    /* height: 100vh; */
+    margin-bottom: 70px;
+    padding: 0px 70px;
+  }
 }
 
 /* NextHubMAX */
-@media screen and (max-width:1280px) and (min-width:1280px) 
-              and (max-height:800px) and (min-height:800px){
-
-    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid{
-        padding-top:0px;
-        padding:100px;
-    }
-    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
-        align-items: center;
-        display: grid;
-        gap: 20px;
-        grid-template-columns: repeat(3, 1fr);
-        justify-content: center;
-        padding: 50px;
-        height: 1100px;
-    }
-    .gridChildren {
-        height: 180px !important;
-        width: 180px !important; 
-    }
-    .gridChildren img{
-        height: 130px;
-        width: 130px;
-    }
-    .rightToolTip{
-        display: none;
-    }
-    .right{
-        overflow-y: scroll;
-    }
+@media screen and (max-width: 1280px) and (min-width: 1280px) and (max-height: 800px) and (min-height: 800px) {
+  .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
+    padding-top: 0px;
+    padding: 100px;
+  }
+  .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
+    align-items: center;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    padding: 50px;
+    height: 1100px;
+  }
+  .gridChildren {
+    height: 180px !important;
+    width: 180px !important;
+  }
+  .gridChildren img {
+    height: 130px;
+    width: 130px;
+  }
+  .rightToolTip {
+    display: none;
+  }
+  .right {
+    overflow-y: scroll;
+  }
 }
 
 /* surface Pro7 */
-@media screen and (max-width:912px) and (min-width:912px) 
-              and (max-height:1368px) and (min-height:1368px){
-.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
+@media screen and (max-width: 912px) and (min-width: 912px) and (max-height: 1368px) and (min-height: 1368px) {
+  .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
     align-items: center;
     display: grid;
     gap: 20px;
@@ -600,13 +598,9 @@
     height: 100vh;
     margin-bottom: 50px;
     padding: 70px;
-}
-.p {
+  }
+  .p {
     font-size: 24px;
     height: 50px;
+  }
 }
-
-}
-
-
-

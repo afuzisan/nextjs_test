@@ -1,118 +1,108 @@
-#twoSliderParent{
-    align-items: center;
-    display: grid;
-    grid-template-columns: 300px;
-    grid-template-rows: 30px;
-    justify-content: center;
-    
-    
+#twoSliderParent {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 300px;
+  grid-template-rows: 30px;
+  justify-content: center;
 }
 
-#twoCards{
-    align-items: stretch;
-    display: grid;
-    gap:20px; 
-    grid-template-columns: 1fr 1fr 1fr 1fr ; 
-    grid-template-rows: 67px 1fr 69px; 
-    justify-content: center;
-    padding:10px;
+#twoCards {
+  align-items: stretch;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 67px 1fr 69px;
+  justify-content: center;
+  padding: 10px;
 }
 
-#twoCards a{
-    text-decoration: none;
-    color: #000;
-} 
-
-#twoCards .twoCard:hover a{
-    text-decoration:dotted;
-    color: #bd1919;
-    opacity: 0.9;
-    transition-duration: .5s;
-} 
-
-.twoCard{
-    align-items: end;
-    border-radius: 3px;
-    background-color: #f2f2f2;
-    display: grid;
-    grid-row: span 3;
-    grid-template-rows: subgrid;
-    justify-content: center;
-    justify-items: center
-  
-}
-.twoCard:hover{
-    box-shadow: 0 8px 4px #787a75;
-    transition-duration: .5s;
-
-}
-.twoCardTitle{
-    padding:22px;
-    width: 300px;
-    height: 65px;
-    border-bottom: 1px solid #000;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-.discribeEl{
-    padding:0px 22px;
-    height: 68px;
-    width: 300px;
-    display: flex;
-    justify-content: space-around;
-    align-items: stretch;
-}
-.imageEl{
-    height: 200px;
-    width: 300px;
-    
-}
-.twoSliderTitle{
-    text-align: center;
-    height: 35px;
+#twoCards a {
+  text-decoration: none;
+  color: #000;
 }
 
+#twoCards .twoCard:hover a {
+  text-decoration: dotted;
+  color: #bd1919;
+  opacity: 0.9;
+  transition-duration: 0.5s;
+}
 
-@media screen and (max-width:1280px) {
-    #twoCards{
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-    .rightContentwheelFlag2{
-        overflow-y: scroll;
-        
-    }
-    .wheelFlag2 > .rightContentwheelFlag2 {
-        align-items: flex-start
-    }
+.twoCard {
+  align-items: end;
+  border-radius: 3px;
+  background-color: #f2f2f2;
+  display: grid;
+  grid-row: span 3;
+  grid-template-rows: subgrid;
+  justify-content: center;
+  justify-items: center;
 }
-@media screen and (max-width:912px) {
-    #twoCards{
-        grid-template-columns: 1fr 1fr;
-    }
-    .rightContentwheelFlag2{
-        overflow-y: scroll;
-        
-    }
-    .wheelFlag2 > .rightContentwheelFlag2 {
-        align-items: flex-start
-    }
+.twoCard:hover {
+  box-shadow: 0 8px 4px #787a75;
+  transition-duration: 0.5s;
 }
-@media screen and (max-width:768px) {
-    #twoCards{
-        grid-template-columns: 1fr 1fr;
-    }
-    .rightContentwheelFlag2{
-        overflow-y: scroll;
-        
-    }
-    .wheelFlag2 > .rightContentwheelFlag2 {
-        align-items: flex-start
-    }
+.twoCardTitle {
+  padding: 22px;
+  width: 300px;
+  height: 65px;
+  border-bottom: 1px solid #000;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
-@media screen and (max-width:600px) {
-    #twoCards{
-        grid-template-columns: 1fr; 
+.discribeEl {
+  padding: 0px 22px;
+  height: 68px;
+  width: 300px;
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+}
+.imageEl {
+  height: 200px;
+  width: 300px;
+}
+.twoSliderTitle {
+  text-align: center;
+  height: 35px;
+}
 
-    }
+@media screen and (max-width: 1280px) {
+  #twoCards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .rightContentwheelFlag2 {
+    overflow-y: scroll;
+  }
+  .wheelFlag2 > .rightContentwheelFlag2 {
+    align-items: flex-start;
+  }
+}
+@media screen and (max-width: 912px) {
+  #twoCards {
+    grid-template-columns: 1fr 1fr;
+  }
+  .rightContentwheelFlag2 {
+    overflow-y: scroll;
+  }
+  .wheelFlag2 > .rightContentwheelFlag2 {
+    align-items: flex-start;
+  }
+}
+@media screen and (max-width: 768px) {
+  #twoCards {
+    grid-template-columns: 1fr 1fr;
+  }
+  .rightContentwheelFlag2 {
+    overflow-y: scroll;
+  }
+  .wheelFlag2 > .rightContentwheelFlag2 {
+    align-items: flex-start;
+  }
+}
+@media screen and (max-width: 600px) {
+  #twoCards {
+    grid-template-columns: 1fr;
+  }
 }

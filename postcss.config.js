@@ -1,17 +1,17 @@
 module.exports = {
-	plugins: {
-		'postcss-sorting': {
-			order: [
-				'custom-properties',
-				'dollar-variables',
-				'declarations',
-				'at-rules',
-				'rules',
-			],
+  plugins: {
+    "postcss-sorting": {
+      order: [
+        "custom-properties",
+        "dollar-variables",
+        "declarations",
+        "at-rules",
+        "rules",
+      ],
 
-			'properties-order': 'alphabetical',
+      "properties-order": "alphabetical",
 
-			'unspecified-properties-position': 'bottom',
-		},
-	},
+      "unspecified-properties-position": "bottom",
+    },
+  },
 };

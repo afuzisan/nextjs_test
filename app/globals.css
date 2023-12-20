@@ -1,51 +1,46 @@
-    /* コーディング規約に従ってコメントを入れる */
-    /* 共通のスタイル */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      backface-visibility: hidden;/* animation時のにじみ防止 */
-      -webkit-backface-visibility: hidden;/* animation時のにじみ防止 */
-      -webkit-font-smoothing: antialiased;/* animation時の文字にじみ防止 */
-      
+/* コーディング規約に従ってコメントを入れる */
+/* 共通のスタイル */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  backface-visibility: hidden; /* animation時のにじみ防止 */
+  -webkit-backface-visibility: hidden; /* animation時のにじみ防止 */
+  -webkit-font-smoothing: antialiased; /* animation時の文字にじみ防止 */
+}
+@font-face {
+  font-family: Meiryo;
+  src: url(../font/NotoSansJP-Medium.ttf);
+}
+body {
+  font-family: Meiryo;
+  margin: auto;
+}
 
+main {
+  height: 100vh;
+  width: 100vw;
+}
 
-      
-    }
-    @font-face{
-      font-family: Meiryo;
-      src:url(../font/NotoSansJP-Medium.ttf)
-    }
-    body{
-      font-family: Meiryo;
-      margin: auto;
-    }
+.top {
+  font-size: 25rem;
+  height: 100vh;
+  line-height: 25rem;
+  text-align: center;
+  width: 100vw;
+}
 
-
-    main {
-      height:100vh;
-      width: 100vw;
-    }
-    
-    .top{
-      font-size:25rem;
-      height:100vh;
-      line-height : 25rem;  
-      text-align: center;
-      width: 100vw;
-    }
-  
-    .stalker{
-      z-index: 10000;
-      position: fixed;
-    }
-    .dt:hover{
-      background-color: #fff;
-    }
-  .day202312kara .dd:hover{
+.stalker {
+  z-index: 10000;
+  position: fixed;
+}
+.dt:hover {
   background-color: #fff;
 }
-#mainTOP{
+.day202312kara .dd:hover {
+  background-color: #fff;
+}
+#mainTOP {
   /* width:fit-content; */
   width: 100vw;
   height: 100vh;
@@ -54,13 +49,13 @@
   position: relative;
   z-index: 0;
 }
-#mainTOP .iframeCanvasTreeD{
+#mainTOP .iframeCanvasTreeD {
   width: 100vw;
   height: calc(100vh + 50px);
   border: none;
 }
 
-#mainCover{
+#mainCover {
   width: 100vw;
   height: 100vh;
   z-index: 1;
@@ -69,27 +64,27 @@
   position: absolute;
 }
 
-#container > #footer{
+#container > #footer {
   display: none;
 }
-.landscape{
+.landscape {
   display: none;
 }
 
-@media screen and (min-width:600px){
-  #swipeGuide{
+@media screen and (min-width: 600px) {
+  #swipeGuide {
     display: none;
     z-index: 1000;
   }
 }
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape){
-  #mainCover{
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  #mainCover {
     position: fixed;
     width: 100vw;
     height: 100vh;
     background-color: #fff;
   }
-  .landscape{
+  .landscape {
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -98,9 +93,8 @@
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    
   }
-  body{
+  body {
     overflow: hidden;
   }
 }

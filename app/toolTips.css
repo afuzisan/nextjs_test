@@ -1,12 +1,9 @@
-.wheelFlag1>.rightContentwheelFlag1.toolTipsRight{
-    background-color: #fff;
+.wheelFlag1 > .rightContentwheelFlag1.toolTipsRight {
+  background-color: #fff;
 }
 
-
-.gridChildren:hover{
-    cursor: pointer;
-    box-shadow: 0 8px 4px #787a75;
-    transition-duration: .5s;
+.gridChildren:hover {
+  cursor: pointer;
+  box-shadow: 0 8px 4px #787a75;
+  transition-duration: 0.5s;
 }
-
-

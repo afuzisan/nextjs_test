@@ -1,10 +1,7 @@
-
 import Link from "next/link";
 import { getList } from "../../libs/microcms";
-import { Metadata } from 'next'
-import SeoComponent from '../../libs/metadata'
-
-
+import { Metadata } from "next";
+import SeoComponent from "../../libs/metadata";
 
 export const revalidate = 5;
 
@@ -20,14 +17,18 @@ export default async function StaticPage() {
       <ul>
         {contents.map((post) => {
           return (
-            <li key={post.id} >
+            <li key={post.id}>
               <img
-                src={post.eyecatch !== undefined ? post.eyecatch.url : '../../logoPacks/css-3.svg'}
+                src={
+                  post.eyecatch !== undefined
+                    ? post.eyecatch.url
+                    : "../../logoPacks/css-3.svg"
+                }
                 sizes="100vw"
                 style={{
-                  width: '150px',
-                  maxWidth: '150px',
-                  height: 'auto',
+                  width: "150px",
+                  maxWidth: "150px",
+                  height: "auto",
                 }}
                 alt="ブログアイキャッチ画像"
               />

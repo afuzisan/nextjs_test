@@ -1,15 +1,14 @@
-.days{
-	/* height: 150px; */
-	justify-content:center;
-	width: 100%;
-	position: relative;
+.days {
+  /* height: 150px; */
+  justify-content: center;
+  width: 100%;
+  position: relative;
 }
 
-.days:hover{
-	
-	background-color: #fff;
-	cursor: pointer;
-   /* transition-duration: .5s; */
+.days:hover {
+  background-color: #fff;
+  cursor: pointer;
+  /* transition-duration: .5s; */
 }
 .day201211:hover:after,
 .day201212:hover:after,
@@ -41,17 +40,17 @@
 .day202310:hover:after,
 .day202311:hover:after,
 .day202312:hover:after,
-.day202312kara:hover:after{
-	content: '';
-	position: absolute;
-    width:30px;
-	height:30px;
-	top:150px;
-	right: 0px;
-	z-index: 1000;
-	border-radius: 50%;
-	box-shadow: 15px -15px 0 #fff;
-	transition-duration: .5s;
+.day202312kara:hover:after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 150px;
+  right: 0px;
+  z-index: 1000;
+  border-radius: 50%;
+  box-shadow: 15px -15px 0 #fff;
+  transition-duration: 0.5s;
 }
 .day201211:hover:before,
 .day201212:hover:before,
@@ -83,99 +82,97 @@
 .day202310:hover:before,
 .day202311:hover:before,
 .day202312:hover:before,
-.day202312kara:hover:before{
-	content: '';
-	position: absolute;
-    width:30px;
-	height:30px;
-	top:-30px;
-	right: 0px;
-	z-index: 1000;
-	border-radius: 50%;
-	box-shadow: 15px 15px 0 #fff;
-	transition-duration: .5s;
+.day202312kara:hover:before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: -30px;
+  right: 0px;
+  z-index: 1000;
+  border-radius: 50%;
+  box-shadow: 15px 15px 0 #fff;
+  transition-duration: 0.5s;
 }
 
-
-.days dt{
-	font-weight: 600;
+.days dt {
+  font-weight: 600;
 }
-.left{
-	height: 100%;
-	overflow: hidden;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
+.left {
+  height: 100%;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
-.leftH1Title{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 200px;
-	font-size: 20px;
-	margin-left:30px;
-	margin-top:10px;
-	margin-bottom:10px;
-	padding:5px;
-	background-color: #fff;
+.leftH1Title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  font-size: 20px;
+  margin-left: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+  background-color: #fff;
 }
 dl {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 dl dt {
-	
-	text-align: right;
-	width: 8.5em;
-	padding: 0.5em 1.0em 0.5em 0.5em;
-	position: relative;
+  text-align: right;
+  width: 8.5em;
+  padding: 0.5em 1em 0.5em 0.5em;
+  position: relative;
 }
 
 dl dt::after {
-	content: '●';
-	position: absolute;
-	right: -0.55em;
-	top: 5px;
-	font-size: 22px;
-	color: green;
+  content: "●";
+  position: absolute;
+  right: -0.55em;
+  top: 5px;
+  font-size: 22px;
+  color: green;
 }
 
 dl dd {
-	width: calc(100% - 8.5em);
-	padding: 0.5em 2.0em 3.0em;
-	border-left: 2px solid #ccc;
+  width: calc(100% - 8.5em);
+  padding: 0.5em 2em 3em;
+  border-left: 2px solid #ccc;
 }
 dl dd h2 {
-	font-size: 22px;
-	font-weight: bold;
-	margin: 0 0 5px;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0 0 5px;
 }
-.day202312kara dd{
-	height: 100%;
+.day202312kara dd {
+  height: 100%;
 }
-.timeline{
-	position: absolute;
-	top:0px;
-	width:100%;
-	height: calc(0% - 100px);
-	animation-name: fadeInAnime;
-	animation-timing-function:ease;
-	animation-delay: 0.5s;
-	animation-duration:1s;
+.timeline {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: calc(0% - 100px);
+  animation-name: fadeInAnime;
+  animation-timing-function: ease;
+  animation-delay: 0.5s;
+  animation-duration: 1s;
 }
-@keyframes fadeInAnime{
-	0% {
-	  opacity: 0;
-	}
-  
-	100% {
-	  opacity: 1;
-	}
+@keyframes fadeInAnime {
+  0% {
+    opacity: 0;
   }
-.dli-chevron-up{
-	display: inline-block;
+
+  100% {
+    opacity: 1;
+  }
+}
+.dli-chevron-up {
+  display: inline-block;
   vertical-align: middle;
   color: #333;
   line-height: 1;
@@ -187,125 +184,120 @@ dl dd h2 {
   box-sizing: border-box;
   transform: translateY(25%) rotate(-45deg);
 }
-.upArrow{
-	width: 100%;
-	height: 20px;
-	display: flex;
-	justify-content: center;
+.upArrow {
+  width: 100%;
+  height: 20px;
+  display: flex;
+  justify-content: center;
 }
-.dli-chevron-down{
-	display: inline-block;
-	vertical-align: middle;
-	color: #333;
-	line-height: 1;
-	width: 1rem;
-	height: 1rem;
-	border: 0.1rem solid currentColor;
-	border-left: 0;
-	border-bottom: 0;
-	box-sizing: border-box;
-	transform: translateY(-25%) rotate(135deg);
+.dli-chevron-down {
+  display: inline-block;
+  vertical-align: middle;
+  color: #333;
+  line-height: 1;
+  width: 1rem;
+  height: 1rem;
+  border: 0.1rem solid currentColor;
+  border-left: 0;
+  border-bottom: 0;
+  box-sizing: border-box;
+  transform: translateY(-25%) rotate(135deg);
 }
-.downArrow{
-	width: 100%;
-	height: 20px;
-	display: flex;
-	justify-content: center;
+.downArrow {
+  width: 100%;
+  height: 20px;
+  display: flex;
+  justify-content: center;
 }
-.displayView{
-	display: none;
-}
-
-
-@media screen and (min-width:600px) and (max-width:1024px) {
-	.left{
-		overflow-y: scroll;
-	}
-	.wheelFlag1 > .rightContentwheelFlag1 {
-		margin-left: 0vw;
-		width: 100vw;
-	}
-
-	.gridChildren {
-		width: 240px !important;
-		height: 240px !important;
-	}
-	.gridChildren img{
-		width: 160px;
-		height: 160px;
-	}
-	.p{
-		font-size: 30px;
-		height: 60px;
-	}
-	.stalker{
-		display: none;
-	}
-	.TransitionContent{
-		font-size: 30px;
-	}
-	.leftH1Title{
-		display: none;
-	 }
-	 dl dt {
-        padding: 25px 1em 0.5em 0.5em;
-        position: relative;
-        text-align: right;
-        width: 8.5em;
-    }
-    dl dt::after {
-        color: green;
-        content: '●';
-        font-size: 30px;
-        position: absolute;
-        right: -0.55em;
-        top: 25px;
-    }
+.displayView {
+  display: none;
 }
 
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+  .left {
+    overflow-y: scroll;
+  }
+  .wheelFlag1 > .rightContentwheelFlag1 {
+    margin-left: 0vw;
+    width: 100vw;
+  }
 
-@media screen and (max-width:600px) {
-	.days dt{
-		width: 100%;
-		text-align: left;
-	}
-	dl dt::after{
-		content:'';
-	}
-	dl dd{
-		width: 100%;
-	}
-	.wheelFlag1 > .leftContentwheelFlag1{
-		background-color: #fff;
-		display: none;
-		width: 100%;
-	}
-	.left{
-		overflow-y: scroll;
-	}
-	.displayView{
-		display: block;
-	}
-	.leftH1Title{
-		display: none;
-	}
-
+  .gridChildren {
+    width: 240px !important;
+    height: 240px !important;
+  }
+  .gridChildren img {
+    width: 160px;
+    height: 160px;
+  }
+  .p {
+    font-size: 30px;
+    height: 60px;
+  }
+  .stalker {
+    display: none;
+  }
+  .TransitionContent {
+    font-size: 30px;
+  }
+  .leftH1Title {
+    display: none;
+  }
+  dl dt {
+    padding: 25px 1em 0.5em 0.5em;
+    position: relative;
+    text-align: right;
+    width: 8.5em;
+  }
+  dl dt::after {
+    color: green;
+    content: "●";
+    font-size: 30px;
+    position: absolute;
+    right: -0.55em;
+    top: 25px;
+  }
 }
-@media screen and (max-width:768px){
- .left{
-	overflow-y: scroll;
- }
- .leftH1Title{
-	display: none;
- }
+
+@media screen and (max-width: 600px) {
+  .days dt {
+    width: 100%;
+    text-align: left;
+  }
+  dl dt::after {
+    content: "";
+  }
+  dl dd {
+    width: 100%;
+  }
+  .wheelFlag1 > .leftContentwheelFlag1 {
+    background-color: #fff;
+    display: none;
+    width: 100%;
+  }
+  .left {
+    overflow-y: scroll;
+  }
+  .displayView {
+    display: block;
+  }
+  .leftH1Title {
+    display: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  .left {
+    overflow-y: scroll;
+  }
+  .leftH1Title {
+    display: none;
+  }
 }
 
 /* NextHubMAX */
-@media screen and (max-width:1280px) and (min-width:1280px) 
-              and (max-height:800px) and (min-height:800px){
-
-		.left {
-			height: 100%;
-			overflow: scroll;
-		}
+@media screen and (max-width: 1280px) and (min-width: 1280px) and (max-height: 800px) and (min-height: 800px) {
+  .left {
+    height: 100%;
+    overflow: scroll;
+  }
 }

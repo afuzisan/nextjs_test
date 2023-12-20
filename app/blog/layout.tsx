@@ -1,17 +1,17 @@
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode } from "react";
 
 type Props = {
   children?: ReactNode;
-}
+};
 
 const HomeLayout: FC<Props> = ({ children }) => {
   return (
-    <div className="tt"
+    <div
+      className="tt"
       style={{
-        background: '#ddd',
+        background: "#ddd",
       }}
     >
-
       {children}
     </div>
   );

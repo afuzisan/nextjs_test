@@ -1,10 +1,9 @@
-.headerContent a{
-    text-decoration: none;
-    color:black;
+.headerContent a {
+  text-decoration: none;
+  color: black;
 }
-.headerContent a:hover{
-    text-decoration: underline;
-    animation: underlineAnimation 1s ease-in-out infinite;
-    font-weight: bold;
+.headerContent a:hover {
+  text-decoration: underline;
+  animation: underlineAnimation 1s ease-in-out infinite;
+  font-weight: bold;
 }
-
