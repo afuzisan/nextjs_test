@@ -107,7 +107,8 @@ const timelineData = [
 					'フォームに文字を入れて、ボタンを押すとフォームに入れた文字で検索出来るというサイトでした。',
 					'制作期間7日'
 				],
-				link: 'https://www.dropbox.com/home/%E3%82%AB%E3%83%A1%E3%83%A9%E3%80%81%E7%94%BB%E5%83%8F/img?preview=urligainomozi.png',
+				link:
+					'https://www.dropbox.com/home/%E3%82%AB%E3%83%A1%E3%83%A9%E3%80%81%E7%94%BB%E5%83%8F/img?preview=urligainomozi.png',
 				linkDescription: '',
 				image: '',
 				imageDescription: ''
