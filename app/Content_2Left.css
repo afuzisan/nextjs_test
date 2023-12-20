@@ -1,6 +1,7 @@
 .headerContent a{
     text-decoration: none;
     color:black;
+    font-size: 22px;
 }
 .headerContent a:hover{
     text-decoration: underline;
