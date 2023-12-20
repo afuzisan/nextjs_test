@@ -1,20 +1,20 @@
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode } from 'react'
 
 type Props = {
-  children?: ReactNode;
+	children?: ReactNode
 }
 
 const HomeLayout: FC<Props> = ({ children }) => {
-  return (
-    <div className="tt"
-      style={{
-        background: '#ddd',
-      }}
-    >
+	return (
+		<div
+			className='tt'
+			style={{
+				background: '#ddd'
+			}}
+		>
+			{children}
+		</div>
+	)
+}
 
-      {children}
-    </div>
-  );
-};
-
-export default HomeLayout;
+export default HomeLayout
