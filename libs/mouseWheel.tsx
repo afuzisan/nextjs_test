@@ -216,15 +216,15 @@ function rightANDleftContentCreate(flagEl: string, RightContent: () => JSX.Eleme
 		wheelFlagElement.appendChild(leftContentParent)
 		if (RightContent !== null && RightContent !== undefined) {
 			let rightParent = document.querySelector('.rightContent' + flagEl)
-			if (rightParent !== null) {
-				const root = createRoot(rightParent)
+			if (rightParent instanceof HTMLElement) {
+				const root = createRoot(rightParent as HTMLElement)
 				root.render(<RightContent />)
 			}
 		}
 		if (LeftContent !== null && RightContent !== undefined) {
 			let leftParent = document.querySelector('.leftContent' + flagEl)
-			if (leftParent !== null) {
-				const root = createRoot(leftParent)
+			if (leftParent instanceof HTMLElement) {
+				const root = createRoot(leftParent as HTMLElement)
 				root.render(<LeftContent />)
 			}
 		}
