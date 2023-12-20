@@ -74,14 +74,14 @@ const Content_1Right = () => {
 					? ((rightIconGrid.style.padding = '40px 40px 40px 40px'), (rightIconGrid.style.marginBottom = '70px'))
 					: null
 				right ? (right.style.backgroundColor = '#fff') : null
-				document.startViewTransition(() => {
-					firstNone.forEach((element) => {
-						;(element as HTMLElement).style.display = 'none'
-					})
-					gridChildren.forEach((element) => {
-						;(element as HTMLElement).style.display = 'block'
-					})
+				// document.startViewTransition(() => {
+				firstNone.forEach((element) => {
+					;(element as HTMLElement).style.display = 'none'
 				})
+				gridChildren.forEach((element) => {
+					;(element as HTMLElement).style.display = 'block'
+				})
+				// })
 			})
 		})
 	}
