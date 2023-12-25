@@ -1,6 +1,11 @@
-import React from 'react'
+'use client'
+import React, { useEffect } from 'react'
 
 const CodeStyle = () => {
+	function codePrettify() {}
+	useEffect(() => {
+		codePrettify()
+	}, [])
 	return (
 		<>
 			<div>codeStyle</div>
