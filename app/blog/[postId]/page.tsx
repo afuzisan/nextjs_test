@@ -9,6 +9,7 @@ import './style.css'
 import SidebarButton from './sidebarButton.client'
 import { Metadata } from 'next'
 import SeoComponent from './metadata'
+import CodeStyle from './codeStyle.client'
 
 type KeywordItem = {
 	keyword: string
@@ -43,10 +44,13 @@ export default async function StaticDetailPage({ params: { postId } }: { params:
 				<h1>{post.title}</h1>
 			</div>
 			<SidebarButton />
+
 			<div id='main'>
 				<div>
 					<div id='contents'>{typeof post.content === 'string' ? parse(post.content) : ''}</div>
+					<CodeStyle />
 				</div>
+
 				<Sidebar />
 			</div>
 			<div id='footer'></div>
