@@ -7,7 +7,7 @@
       backface-visibility: hidden;/* animation時のにじみ防止 */
       -webkit-backface-visibility: hidden;/* animation時のにじみ防止 */
       -webkit-font-smoothing: antialiased;/* animation時の文字にじみ防止 */
-      
+      font-feature-settings: "palt";
 
 
       
