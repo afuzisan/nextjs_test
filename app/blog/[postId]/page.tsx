@@ -48,10 +48,8 @@ export default async function StaticDetailPage({ params: { postId } }: { params:
 			<SidebarButton />
 
 			<div id='main'>
-				<div>
-					<div id='contents'>{typeof post.content === 'string' ? parse(post.content) : ''}</div>
-					<CodeStyle />
-				</div>
+				<div id='contents'>{typeof post.content === 'string' ? parse(post.content) : ''}</div>
+				<CodeStyle />
 
 				<Sidebar />
 			</div>
