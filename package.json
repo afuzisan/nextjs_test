@@ -6,7 +6,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "buildAndStart":"npm run build && npm run start",
+    "buildAndStart": "npm run build && npm run start",
     "lint": "next lint"
   },
   "dependencies": {
@@ -15,6 +15,7 @@
     "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.15",
     "axios": "^1.5.1",
+    "code-prettify-google": "^1.0.1",
     "eslint": "8.47.0",
     "eslint-config-next": "13.4.19",
     "gsap": "^3.12.2",
