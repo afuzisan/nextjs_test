@@ -1,15 +1,20 @@
 'use client'
 import React, { useEffect } from 'react'
+import Script from 'next/script'
 
 const CodeStyle = () => {
-	function codePrettify() {}
+	function codePrettify() {
+		const preElement = document.querySelector('pre')
+		if (preElement) {
+			preElement.classList.add('prettyprint')
+		}
+	}
 	useEffect(() => {
 		codePrettify()
 	}, [])
 	return (
 		<>
-			<div>codeStyle</div>
-			<script src='https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js'></script>
+			<Script src='https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js' />
 		</>
 	)
 }

@@ -10,6 +10,8 @@ import SidebarButton from './sidebarButton.client'
 import { Metadata } from 'next'
 import SeoComponent from './metadata'
 import CodeStyle from './codeStyle.client'
+import { Highlight, themes } from 'prism-react-renderer'
+import styles from 'styles.module.css'
 
 type KeywordItem = {
 	keyword: string

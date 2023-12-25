@@ -6,14 +6,15 @@ type Props = {
 
 const HomeLayout: FC<Props> = ({ children }) => {
 	return (
-		<div
-			className='tt'
-			style={{
-				background: '#ddd'
-			}}
-		>
-			{children}
-		</div>
+		<>
+			<div
+				className='tt'
+				style={{
+					background: '#ddd'
+				}}>
+				{children}
+			</div>
+		</>
 	)
 }
 

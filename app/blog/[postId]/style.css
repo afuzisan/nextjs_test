@@ -110,7 +110,7 @@ html {
 #contents pre {
     padding: 1em;
     margin: 0 0 1.5em;
-    background-color: rgb(24, 23, 23);
+    background-color: #fff;
     overflow: scroll;
     }
 #footer {
