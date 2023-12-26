@@ -48,7 +48,7 @@ export default async function StaticDetailPage({ params: { postId } }: { params:
 			<SidebarButton />
 
 			<div id='main'>
-				<div id='contents2'>{typeof post.content === 'string' ? parse(post.content) : ''}</div>
+				<div id='contents2' dangerouslySetInnerHTML={{ __html: post.content || '' }}></div>
 				<CodeStyle />
 
 				<Sidebar />
