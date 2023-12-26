@@ -92,13 +92,14 @@ html {
     display: block;
     margin-block-start: 1em;
     margin-block-end: 1em;
-    margin-inline-start: 0px;
+    margin-inline-start: 10px;
     margin-inline-end: 0px;
     font-size: 16px;
     margin-top:1.5em;
 }
 #contents li{
     margin: 0.4rem 0;
+    margin-inline-start: 10px;
 }
 #contents code{
     padding: 0.2em 0.3em;
