@@ -172,7 +172,9 @@ html {
 .sidebarButton:hover{
     background-color: #ddd;
 }
-
+code {
+    white-space: pre-wrap;
+}
 
 @media screen and (max-width:600px){
     #main{
