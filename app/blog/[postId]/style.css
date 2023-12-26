@@ -172,7 +172,7 @@ html {
 .sidebarButton:hover{
     background-color: #ddd;
 }
-code .kwd{
+code .pln{
     white-space: pre-wrap;
 }
 code .typ{
