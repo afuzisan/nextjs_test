@@ -111,7 +111,7 @@ html {
     padding: 1em;
     margin: 0 0 1.5em;
     background-color: #fff;
-    overflow: scroll;
+    /* overflow: scroll; */
     }
 #main ol {
     padding-left: 1em;
@@ -172,11 +172,10 @@ html {
 .sidebarButton:hover{
     background-color: #ddd;
 }
-code .pln{
+code{
     white-space: pre-wrap;
-}
-code .typ{
-    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow: auto;
 }
 
 
