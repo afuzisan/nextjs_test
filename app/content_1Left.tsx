@@ -94,7 +94,6 @@ const Content_1Left = () => {
 				element.classList.add(addClassName)
 			})
 			let leftEl = document.querySelector('.left')
-			// console.log(leftEl)
 			if (leftEl !== null) {
 				leftEl.addEventListener('mouseout', () => {
 					element.classList.remove(addClassName)

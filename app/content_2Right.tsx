@@ -12,7 +12,6 @@ const SliderContentWcontent_2_right = () => {
 	const [discribe, setdiscribe] = useState<string[] | any[]>([])
 	const [title, setTitle] = useState<string[] | any[]>([])
 	useEffect(() => {
-		// const hostname = window.location.hostname === 'localhost' ? 'http://localhost:3000' : 'https://nextjs-test-afuzisan.vercel.app';
 		axios.get(`${window.location.href}/api/route`).then((res: AxiosResponse<any[]>) => {
 			console.log(res)
 			const contentsAf = res.data.map(
@@ -83,14 +82,12 @@ const SliderContentWcontent_2_right = () => {
 			setTitle(titleAf)
 		})
 	}, [])
-	// console.log(Content, Images, Categorys)
 	return (
 		<>
 			<div id='twoSliderParent'>
 				<div className='twoSliderTitle'>私が作ったツールやサービス</div>
 				<div id='twoCards'>
 					{Content.map((element, index) => {
-						// console.log(element, index, Categorys[index])
 						return Categorys[index] === '作品集' ? (
 							<div className='twoCard' key={index}>
 								<Link href={`/blog/${Ids[index]}`}>
