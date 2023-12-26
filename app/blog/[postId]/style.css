@@ -81,6 +81,7 @@ html {
 }
 #contents{
     line-height:1.9;
+    width: calc(100%);
 }
 #contents h2{
  
@@ -116,6 +117,10 @@ html {
     }
 #contents ol {
     padding-left: 1em;
+}
+#contents .ytp-cued-thumbnail-overlay-image{
+    width: 640px;
+    height: 300px;
 }
 #footer {
     width: 100%;
@@ -193,7 +198,7 @@ html {
     }
     #contents {
         line-height: 1.9;
-        width: 70%;
+        width: 100%;
     }
 
 }
