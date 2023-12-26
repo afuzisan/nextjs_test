@@ -79,17 +79,17 @@ html {
     word-break: break-all;
     width: 100%;
 }
-#contents{
+#main{
     line-height:1.9;
     width: calc(100%);
 }
-#contents h2{
+#main h2{
  
     line-height:35px;
     font-size: 24px;
     padding-top:10px;
 }
-#contents p{
+#main p{
     display: block;
     margin-block-start: 1em;
     margin-block-end: 1em;
@@ -98,27 +98,27 @@ html {
     font-size: 16px;
     margin-top:1.5em;
 }
-#contents li{
+#main li{
     margin: 0.4rem 0;
     margin-inline-start: 10px;
 }
-#contents code{
+#main code{
     padding: 0.2em 0.3em;
     margin: 0 0.2em;
     border-radius: 5px;
     font-size: 0.9em;
     color:#fff;
 }
-#contents pre {
+#main pre {
     padding: 1em;
     margin: 0 0 1.5em;
     background-color: #fff;
     overflow: scroll;
     }
-#contents ol {
+#main ol {
     padding-left: 1em;
 }
-#contents .ytp-cued-thumbnail-overlay-image{
+#main .ytp-cued-thumbnail-overlay-image{
     width: 640px;
     height: 300px;
 }
@@ -196,7 +196,7 @@ html {
     .sidebarButton{
         display: block;
     }
-    #contents {
+    #main {
         line-height: 1.9;
         width: 100%;
     }
