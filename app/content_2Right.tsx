@@ -150,6 +150,7 @@ const SliderContentWcontent_2_right = () => {
 									...title.slice(title.length - ViewNumber, title.length),
 									...title.slice(0, title.length - ViewNumber)
 								]
+
 								setContent(newContent)
 								setImage(newImages)
 								setcategory(newCategorys)
@@ -183,17 +184,17 @@ const SliderContentWcontent_2_right = () => {
 										]
 										const newCategorys = [
 											...originalCategorysDupe.slice(start, end),
-											...originalImagesDupe.slice(end),
+											...originalCategorysDupe.slice(end),
 											...originalCategorysDupe.slice(0, start)
 										]
 										const newIds = [
 											...originalIdsDupe.slice(start, end),
-											...originalImagesDupe.slice(end),
+											...originalIdsDupe.slice(end),
 											...originalIdsDupe.slice(0, start)
 										]
 										const newDiscribe = [
 											...originalDiscribeDupe.slice(start, end),
-											...originalImagesDupe.slice(end),
+											...originalDiscribeDupe.slice(end),
 											...originalDiscribeDupe.slice(0, start)
 										]
 										const newTitle = [
@@ -201,6 +202,7 @@ const SliderContentWcontent_2_right = () => {
 											...originalTitleDupe.slice(end),
 											...originalTitleDupe.slice(0, start)
 										]
+
 										setContent(newContent)
 										setImage(newImages)
 										setcategory(newCategorys)
