@@ -150,9 +150,9 @@ const SliderContentWcontent_2_right = () => {
 									...title.slice(title.length - ViewNumber, title.length),
 									...title.slice(0, title.length - ViewNumber)
 								]
-								setContent(newContent.flat())
-								setImage(newImages.flat())
-								setcategory(newCategorys.flat())
+								setContent(newContent)
+								setImage(newImages)
+								setcategory(newCategorys)
 								setid(newIds)
 								setdiscribe(newDiscribe)
 								setTitle(newTitle)
@@ -201,7 +201,6 @@ const SliderContentWcontent_2_right = () => {
 											...originalTitleDupe.slice(end),
 											...originalTitleDupe.slice(0, start)
 										]
-										console.log(newTitle, '', originalTitleDupe.slice(start, end), '', originalTitleDupe)
 										setContent(newContent)
 										setImage(newImages)
 										setcategory(newCategorys)
@@ -215,7 +214,6 @@ const SliderContentWcontent_2_right = () => {
 						</div>
 						<button
 							onClick={() => {
-								console.log(Content)
 								const newContent = [...Content.slice(ViewNumber), ...Content.slice(0, ViewNumber)]
 								const newImages = [...Images.slice(ViewNumber), ...Images.slice(0, ViewNumber)]
 								const newCategorys = [...Categorys.slice(ViewNumber), ...Categorys.slice(0, ViewNumber)]
@@ -223,9 +221,9 @@ const SliderContentWcontent_2_right = () => {
 								const newDiscribe = [...discribe.slice(ViewNumber), ...discribe.slice(0, ViewNumber)]
 								const newTitle = [...title.slice(ViewNumber), ...title.slice(0, ViewNumber)]
 
-								setContent(newContent.flat())
-								setImage(newImages.flat())
-								setcategory(newCategorys.flat())
+								setContent(newContent)
+								setImage(newImages)
+								setcategory(newCategorys)
 								setid(newIds)
 								setdiscribe(newDiscribe)
 								setTitle(newTitle)
