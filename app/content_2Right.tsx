@@ -11,6 +11,14 @@ const SliderContentWcontent_2_right = () => {
 	const [Ids, setid] = useState<string[] | any[]>([])
 	const [discribe, setdiscribe] = useState<string[] | any[]>([])
 	const [title, setTitle] = useState<string[] | any[]>([])
+
+	const [originalContent, setOriginalContent] = useState<string[] | any[]>([])
+	const [originalImages, setOriginalImage] = useState<string[] | any[]>([])
+	const [originalCategorys, setOriginalCategory] = useState<string[] | any[]>([])
+	const [originalIds, setOriginalId] = useState<string[] | any[]>([])
+	const [originalDiscribe, setOriginalDiscribe] = useState<string[] | any[]>([])
+	const [originalTitle, setOriginalTitle] = useState<string[] | any[]>([])
+
 	let ViewNumber = 2
 	useEffect(() => {
 		axios.get(`${window.location.href}/api/route`).then((res: AxiosResponse<any[]>) => {
@@ -80,6 +88,13 @@ const SliderContentWcontent_2_right = () => {
 			setid(IdAf)
 			setdiscribe(discribeAf)
 			setTitle(titleAf)
+
+			setOriginalContent(contentsAf)
+			setOriginalImage(ImagesAf)
+			setOriginalCategory(categoryAf)
+			setOriginalId(IdAf)
+			setOriginalDiscribe(discribeAf)
+			setOriginalTitle(titleAf)
 		})
 	}, [])
 	return (
@@ -135,17 +150,72 @@ const SliderContentWcontent_2_right = () => {
 									...title.slice(title.length - ViewNumber, title.length),
 									...title.slice(0, title.length - ViewNumber)
 								]
-								setContent(newContent)
-								setImage(newImages)
-								setcategory(newCategorys)
+								setContent(newContent.flat())
+								setImage(newImages.flat())
+								setcategory(newCategorys.flat())
 								setid(newIds)
 								setdiscribe(newDiscribe)
 								setTitle(newTitle)
 							}}>
 							前へ
 						</button>
+						<div>
+							{Array.from({ length: Math.ceil(Content.length / ViewNumber) }, (_, i) => i + 1).map((pageNum) => (
+								<button
+									onClick={() => {
+										let originalContentDupe = [...originalContent]
+										let originalImagesDupe = [...originalImages]
+										let originalCategorysDupe = [...originalCategorys]
+										let originalIdsDupe = [...originalIds]
+										let originalDiscribeDupe = [...originalDiscribe]
+										let originalTitleDupe = [...originalTitle]
+										const start = (pageNum - 1) * ViewNumber
+										const end = (pageNum - 1) * ViewNumber + ViewNumber
+										const newContent = [
+											...originalContentDupe.slice(start, end),
+											...originalContentDupe.slice(end),
+											...originalContentDupe.slice(0, start)
+										]
+										const newImages = [
+											...originalImagesDupe.slice(start, end),
+											...originalImagesDupe.slice(end),
+											...originalImagesDupe.slice(0, start)
+										]
+										const newCategorys = [
+											...originalCategorysDupe.slice(start, end),
+											...originalImagesDupe.slice(end),
+											...originalCategorysDupe.slice(0, start)
+										]
+										const newIds = [
+											...originalIdsDupe.slice(start, end),
+											...originalImagesDupe.slice(end),
+											...originalIdsDupe.slice(0, start)
+										]
+										const newDiscribe = [
+											...originalDiscribeDupe.slice(start, end),
+											...originalImagesDupe.slice(end),
+											...originalDiscribeDupe.slice(0, start)
+										]
+										const newTitle = [
+											...originalTitleDupe.slice(start, end),
+											...originalTitleDupe.slice(end),
+											...originalTitleDupe.slice(0, start)
+										]
+										console.log(newTitle, '', originalTitleDupe.slice(start, end), '', originalTitleDupe)
+										setContent(newContent)
+										setImage(newImages)
+										setcategory(newCategorys)
+										setid(newIds)
+										setdiscribe(newDiscribe)
+										setTitle(newTitle)
+									}}>
+									{pageNum}
+								</button>
+							))}
+						</div>
 						<button
 							onClick={() => {
+								console.log(Content)
 								const newContent = [...Content.slice(ViewNumber), ...Content.slice(0, ViewNumber)]
 								const newImages = [...Images.slice(ViewNumber), ...Images.slice(0, ViewNumber)]
 								const newCategorys = [...Categorys.slice(ViewNumber), ...Categorys.slice(0, ViewNumber)]
@@ -153,9 +223,9 @@ const SliderContentWcontent_2_right = () => {
 								const newDiscribe = [...discribe.slice(ViewNumber), ...discribe.slice(0, ViewNumber)]
 								const newTitle = [...title.slice(ViewNumber), ...title.slice(0, ViewNumber)]
 
-								setContent(newContent)
-								setImage(newImages)
-								setcategory(newCategorys)
+								setContent(newContent.flat())
+								setImage(newImages.flat())
+								setcategory(newCategorys.flat())
 								setid(newIds)
 								setdiscribe(newDiscribe)
 								setTitle(newTitle)
