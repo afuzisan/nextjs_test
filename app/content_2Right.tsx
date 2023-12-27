@@ -19,6 +19,8 @@ const SliderContentWcontent_2_right = () => {
 	const [originalDiscribe, setOriginalDiscribe] = useState<string[] | any[]>([])
 	const [originalTitle, setOriginalTitle] = useState<string[] | any[]>([])
 
+	const [currentPage, setCurrentPage] = useState<number>(1)
+
 	let ViewNumber = 2
 	useEffect(() => {
 		axios.get(`${window.location.href}/api/route`).then((res: AxiosResponse<any[]>) => {
@@ -163,7 +165,9 @@ const SliderContentWcontent_2_right = () => {
 						<div>
 							{Array.from({ length: Math.ceil(Content.length / ViewNumber) }, (_, i) => i + 1).map((pageNum) => (
 								<button
+									style={currentPage === pageNum ? { color: 'red' } : {}}
 									onClick={() => {
+										setCurrentPage(pageNum)
 										let originalContentDupe = [...originalContent]
 										let originalImagesDupe = [...originalImages]
 										let originalCategorysDupe = [...originalCategorys]
