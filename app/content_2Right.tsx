@@ -11,9 +11,9 @@ const SliderContentWcontent_2_right = () => {
 	const [Ids, setid] = useState<string[] | any[]>([])
 	const [discribe, setdiscribe] = useState<string[] | any[]>([])
 	const [title, setTitle] = useState<string[] | any[]>([])
+	let ViewNumber = 2
 	useEffect(() => {
 		axios.get(`${window.location.href}/api/route`).then((res: AxiosResponse<any[]>) => {
-			console.log(res)
 			const contentsAf = res.data.map(
 				(element: {
 					content: string
@@ -87,7 +87,7 @@ const SliderContentWcontent_2_right = () => {
 			<div id='twoSliderParent'>
 				<div className='twoSliderTitle'>私が作ったツールやサービス</div>
 				<div id='twoCards'>
-					{Content.map((element, index) => {
+					{Content.slice(0, ViewNumber).map((element, index) => {
 						return Categorys[index] === '作品集' ? (
 							<div className='twoCard' key={index}>
 								<Link href={`/blog/${Ids[index]}`}>
@@ -111,6 +111,58 @@ const SliderContentWcontent_2_right = () => {
 							</div>
 						) : null
 					})}
+					<div className='pagination'>
+						<button
+							onClick={() => {
+								const newContent = [
+									...Content.slice(Content.length - ViewNumber, Content.length),
+									...Content.slice(0, Content.length - ViewNumber)
+								]
+								const newImages = [
+									...Images.slice(Images.length - ViewNumber, Images.length),
+									...Images.slice(0, Images.length - ViewNumber)
+								]
+								const newCategorys = [
+									...Categorys.slice(Categorys.length - ViewNumber, Categorys.length),
+									...Categorys.slice(0, Categorys.length - ViewNumber)
+								]
+								const newIds = [...Ids.slice(Ids.length - ViewNumber, Ids.length), ...Ids.slice(0, Ids.length - ViewNumber)]
+								const newDiscribe = [
+									...discribe.slice(discribe.length - ViewNumber, discribe.length),
+									...discribe.slice(0, discribe.length - ViewNumber)
+								]
+								const newTitle = [
+									...title.slice(title.length - ViewNumber, title.length),
+									...title.slice(0, title.length - ViewNumber)
+								]
+								setContent(newContent)
+								setImage(newImages)
+								setcategory(newCategorys)
+								setid(newIds)
+								setdiscribe(newDiscribe)
+								setTitle(newTitle)
+							}}>
+							前へ
+						</button>
+						<button
+							onClick={() => {
+								const newContent = [...Content.slice(ViewNumber), ...Content.slice(0, ViewNumber)]
+								const newImages = [...Images.slice(ViewNumber), ...Images.slice(0, ViewNumber)]
+								const newCategorys = [...Categorys.slice(ViewNumber), ...Categorys.slice(0, ViewNumber)]
+								const newIds = [...Ids.slice(ViewNumber), ...Ids.slice(0, ViewNumber)]
+								const newDiscribe = [...discribe.slice(ViewNumber), ...discribe.slice(0, ViewNumber)]
+								const newTitle = [...title.slice(ViewNumber), ...title.slice(0, ViewNumber)]
+
+								setContent(newContent)
+								setImage(newImages)
+								setcategory(newCategorys)
+								setid(newIds)
+								setdiscribe(newDiscribe)
+								setTitle(newTitle)
+							}}>
+							次へ
+						</button>
+					</div>
 				</div>
 			</div>
 		</>
