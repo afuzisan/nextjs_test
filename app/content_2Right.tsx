@@ -21,7 +21,7 @@ const SliderContentWcontent_2_right = () => {
 
 	const [currentPage, setCurrentPage] = useState<number>(1)
 
-	let ViewNumber = 2
+	let ViewNumber = 3
 	useEffect(() => {
 		axios.get(`${window.location.href}/api/route`).then((res: AxiosResponse<any[]>) => {
 			const contentsAf = res.data.map(
@@ -131,34 +131,82 @@ const SliderContentWcontent_2_right = () => {
 					<div className='pagination'>
 						<button
 							onClick={() => {
-								const newContent = [
-									...Content.slice(Content.length - ViewNumber, Content.length),
-									...Content.slice(0, Content.length - ViewNumber)
-								]
-								const newImages = [
-									...Images.slice(Images.length - ViewNumber, Images.length),
-									...Images.slice(0, Images.length - ViewNumber)
-								]
-								const newCategorys = [
-									...Categorys.slice(Categorys.length - ViewNumber, Categorys.length),
-									...Categorys.slice(0, Categorys.length - ViewNumber)
-								]
-								const newIds = [...Ids.slice(Ids.length - ViewNumber, Ids.length), ...Ids.slice(0, Ids.length - ViewNumber)]
-								const newDiscribe = [
-									...discribe.slice(discribe.length - ViewNumber, discribe.length),
-									...discribe.slice(0, discribe.length - ViewNumber)
-								]
-								const newTitle = [
-									...title.slice(title.length - ViewNumber, title.length),
-									...title.slice(0, title.length - ViewNumber)
-								]
+								setCurrentPage(currentPage - 1)
+								if (currentPage <= 1) {
+									console.log('最後に戻る')
+									setCurrentPage(3)
+									const newContent = [
+										...Content.slice(Content.length - (Content.length % ViewNumber), Content.length),
+										...Content.slice(0, ViewNumber - (Content.length % ViewNumber)),
+										...Content.slice(ViewNumber - (Content.length % ViewNumber), ViewNumber),
+										...Content.slice(ViewNumber, Content.length - (Content.length % ViewNumber))
+									]
+									const newImages = [
+										...Images.slice(Images.length - (Images.length % ViewNumber), Images.length),
+										...Images.slice(0, ViewNumber - (Images.length % ViewNumber)),
+										...Images.slice(ViewNumber - (Images.length % ViewNumber), ViewNumber),
+										...Images.slice(ViewNumber, Images.length - (Images.length % ViewNumber))
+									]
+									const newCategorys = [
+										...Categorys.slice(Categorys.length - (Categorys.length % ViewNumber), Categorys.length),
+										...Categorys.slice(0, ViewNumber - (Categorys.length % ViewNumber)),
+										...Categorys.slice(ViewNumber - (Categorys.length % ViewNumber), ViewNumber),
+										...Categorys.slice(ViewNumber, Categorys.length - (Categorys.length % ViewNumber))
+									]
+									const newIds = [
+										...Ids.slice(Ids.length - (Ids.length % ViewNumber), Ids.length),
+										...Ids.slice(0, ViewNumber - (Ids.length % ViewNumber)),
+										...Ids.slice(ViewNumber - (Ids.length % ViewNumber), ViewNumber),
+										...Ids.slice(ViewNumber, Ids.length - (Ids.length % ViewNumber))
+									]
+									const newDiscribe = [
+										...discribe.slice(discribe.length - (discribe.length % ViewNumber), discribe.length),
+										...discribe.slice(0, ViewNumber - (discribe.length % ViewNumber)),
+										...discribe.slice(ViewNumber - (discribe.length % ViewNumber), ViewNumber),
+										...discribe.slice(ViewNumber, discribe.length - (discribe.length % ViewNumber))
+									]
+									const newTitle = [
+										...title.slice(title.length - (title.length % ViewNumber), title.length),
+										...title.slice(0, ViewNumber - (title.length % ViewNumber)),
+										...title.slice(ViewNumber - (title.length % ViewNumber), ViewNumber),
+										...title.slice(ViewNumber, title.length - (title.length % ViewNumber))
+									]
+									setContent(newContent)
+									setImage(newImages)
+									setcategory(newCategorys)
+									setid(newIds)
+									setdiscribe(newDiscribe)
+									setTitle(newTitle)
+								} else {
+									const newContent = [
+										...Content.slice(Content.length - ViewNumber, Content.length),
+										...Content.slice(0, Content.length - ViewNumber)
+									]
+									const newImages = [
+										...Images.slice(Images.length - ViewNumber, Images.length),
+										...Images.slice(0, Images.length - ViewNumber)
+									]
+									const newCategorys = [
+										...Categorys.slice(Categorys.length - ViewNumber, Categorys.length),
+										...Categorys.slice(0, Categorys.length - ViewNumber)
+									]
+									const newIds = [...Ids.slice(Ids.length - ViewNumber, Ids.length), ...Ids.slice(0, Ids.length - ViewNumber)]
+									const newDiscribe = [
+										...discribe.slice(discribe.length - ViewNumber, discribe.length),
+										...discribe.slice(0, discribe.length - ViewNumber)
+									]
+									const newTitle = [
+										...title.slice(title.length - ViewNumber, title.length),
+										...title.slice(0, title.length - ViewNumber)
+									]
 
-								setContent(newContent)
-								setImage(newImages)
-								setcategory(newCategorys)
-								setid(newIds)
-								setdiscribe(newDiscribe)
-								setTitle(newTitle)
+									setContent(newContent)
+									setImage(newImages)
+									setcategory(newCategorys)
+									setid(newIds)
+									setdiscribe(newDiscribe)
+									setTitle(newTitle)
+								}
 							}}>
 							前へ
 						</button>
@@ -213,6 +261,7 @@ const SliderContentWcontent_2_right = () => {
 										setid(newIds)
 										setdiscribe(newDiscribe)
 										setTitle(newTitle)
+										console.log(newTitle)
 									}}>
 									{pageNum}
 								</button>
@@ -220,19 +269,30 @@ const SliderContentWcontent_2_right = () => {
 						</div>
 						<button
 							onClick={() => {
-								const newContent = [...Content.slice(ViewNumber), ...Content.slice(0, ViewNumber)]
-								const newImages = [...Images.slice(ViewNumber), ...Images.slice(0, ViewNumber)]
-								const newCategorys = [...Categorys.slice(ViewNumber), ...Categorys.slice(0, ViewNumber)]
-								const newIds = [...Ids.slice(ViewNumber), ...Ids.slice(0, ViewNumber)]
-								const newDiscribe = [...discribe.slice(ViewNumber), ...discribe.slice(0, ViewNumber)]
-								const newTitle = [...title.slice(ViewNumber), ...title.slice(0, ViewNumber)]
+								setCurrentPage(currentPage + 1)
+								if (currentPage >= Math.ceil(Content.length / ViewNumber)) {
+									console.log('syokika')
+									setCurrentPage(1)
+									setImage(originalImages)
+									setcategory(originalCategorys)
+									setid(originalIds)
+									setdiscribe(originalDiscribe)
+									setTitle(originalTitle)
+								} else {
+									const newContent = [...Content.slice(ViewNumber), ...Content.slice(0, ViewNumber)]
+									const newImages = [...Images.slice(ViewNumber), ...Images.slice(0, ViewNumber)]
+									const newCategorys = [...Categorys.slice(ViewNumber), ...Categorys.slice(0, ViewNumber)]
+									const newIds = [...Ids.slice(ViewNumber), ...Ids.slice(0, ViewNumber)]
+									const newDiscribe = [...discribe.slice(ViewNumber), ...discribe.slice(0, ViewNumber)]
+									const newTitle = [...title.slice(ViewNumber), ...title.slice(0, ViewNumber)]
 
-								setContent(newContent)
-								setImage(newImages)
-								setcategory(newCategorys)
-								setid(newIds)
-								setdiscribe(newDiscribe)
-								setTitle(newTitle)
+									setContent(newContent)
+									setImage(newImages)
+									setcategory(newCategorys)
+									setid(newIds)
+									setdiscribe(newDiscribe)
+									setTitle(newTitle)
+								}
 							}}>
 							次へ
 						</button>
