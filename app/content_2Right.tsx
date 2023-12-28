@@ -21,7 +21,7 @@ const SliderContentWcontent_2_right = () => {
 
 	const [currentPage, setCurrentPage] = useState<number>(1)
 
-	let ViewNumber = 2
+	let ViewNumber = 3
 	useEffect(() => {
 		axios.get(`${window.location.href}/api/route`).then((res: AxiosResponse<any[]>) => {
 			const contentsAf = res.data.map(
@@ -106,6 +106,8 @@ const SliderContentWcontent_2_right = () => {
 				<div id='twoCards'>
 					{Content.slice(0, ViewNumber).map((element, index) => {
 						if (Math.ceil(Content.length / ViewNumber) === currentPage) {
+							//最後のページを表示する時、余分な配列を消して表示する処理
+
 							if (Content.length % ViewNumber > index || Content.length % ViewNumber == 0) {
 								return Categorys[index] === '作品集' ? (
 									<div className='twoCard' key={index}>
@@ -199,7 +201,6 @@ const SliderContentWcontent_2_right = () => {
 										...title.slice(ViewNumber - (title.length % ViewNumber), ViewNumber),
 										...title.slice(ViewNumber, title.length - (title.length % ViewNumber))
 									]
-									console.log(newTitle)
 									setContent(newContent)
 									setImage(newImages)
 									setcategory(newCategorys)
@@ -207,7 +208,7 @@ const SliderContentWcontent_2_right = () => {
 									setdiscribe(newDiscribe)
 									setTitle(newTitle)
 								} else {
-									if (currentPage - 1 == 0) {
+									if (currentPage === 1) {
 										setCurrentPage(Math.ceil(Content.length / ViewNumber))
 									}
 									const newContent = [
@@ -302,7 +303,6 @@ const SliderContentWcontent_2_right = () => {
 							onClick={() => {
 								setCurrentPage(currentPage + 1)
 								if (currentPage >= Math.ceil(Content.length / ViewNumber)) {
-									console.log('syokika')
 									setCurrentPage(1)
 									setImage(originalImages)
 									setcategory(originalCategorys)
