@@ -21,7 +21,7 @@ const SliderContentWcontent_2_right = () => {
 
 	const [currentPage, setCurrentPage] = useState<number>(1)
 
-	let ViewNumber = 3
+	let ViewNumber = 5
 	useEffect(() => {
 		axios.get(`${window.location.href}/api/route`).then((res: AxiosResponse<any[]>) => {
 			const contentsAf = res.data.map(
@@ -108,30 +108,28 @@ const SliderContentWcontent_2_right = () => {
 						if (Math.ceil(Content.length / ViewNumber) === currentPage) {
 							// ここに別の処理を書く
 							console.log('別処理')
-							if (index < Content.length % ViewNumber) {
-								return Categorys[index] === '作品集' ? (
-									<div className='twoCard' key={index}>
-										<Link href={`/blog/${Ids[index]}`}>
-											<div className='twoCardTitle'>{title[index]}</div>
-										</Link>
-										<Link href={`/blog/${Ids[index]}`}>
-											<div className='imageEl'>
-												<Image
-													src={Images[index] !== undefined ? Images[index].url : '/logoPacks/typescript.svg'}
-													alt='Image'
-													width={300}
-													height={200}
-													objectFit='cover'
-													objectPosition='top right'
-												/>
-											</div>
-										</Link>
-										<Link href={`/blog/${Ids[index]}`}>
-											<div className='discribeEl'>{discribe[index]}</div>
-										</Link>
-									</div>
-								) : null
-							}
+							return Categorys[index] === '作品集' ? (
+								<div className='twoCard' key={index}>
+									<Link href={`/blog/${Ids[index]}`}>
+										<div className='twoCardTitle'>{title[index]}</div>
+									</Link>
+									<Link href={`/blog/${Ids[index]}`}>
+										<div className='imageEl'>
+											<Image
+												src={Images[index] !== undefined ? Images[index].url : '/logoPacks/typescript.svg'}
+												alt='Image'
+												width={300}
+												height={200}
+												objectFit='cover'
+												objectPosition='top right'
+											/>
+										</div>
+									</Link>
+									<Link href={`/blog/${Ids[index]}`}>
+										<div className='discribeEl'>{discribe[index]}</div>
+									</Link>
+								</div>
+							) : null
 						} else {
 							return Categorys[index] === '作品集' ? (
 								<div className='twoCard' key={index}>
@@ -162,7 +160,7 @@ const SliderContentWcontent_2_right = () => {
 							onClick={() => {
 								setCurrentPage(currentPage - 1)
 								if (currentPage <= 1) {
-									setCurrentPage(3)
+									setCurrentPage(Math.ceil(Content.length / ViewNumber))
 									const newContent = [
 										...Content.slice(Content.length - (Content.length % ViewNumber), Content.length),
 										...Content.slice(0, ViewNumber - (Content.length % ViewNumber)),
