@@ -159,7 +159,9 @@ const SliderContentWcontent_2_right = () => {
 						<button
 							onClick={() => {
 								setCurrentPage(currentPage - 1)
-								if (currentPage <= 1) {
+								if (currentPage <= 1 && Content.length % ViewNumber !== 0) {
+									//合計の要素数と表示する数を割り算した結果、あまりが出た場合の処理
+									console.log(Content.length % ViewNumber)
 									setCurrentPage(Math.ceil(Content.length / ViewNumber))
 									const newContent = [
 										...Content.slice(Content.length - (Content.length % ViewNumber), Content.length),
@@ -197,6 +199,7 @@ const SliderContentWcontent_2_right = () => {
 										...title.slice(ViewNumber - (title.length % ViewNumber), ViewNumber),
 										...title.slice(ViewNumber, title.length - (title.length % ViewNumber))
 									]
+									console.log(newTitle)
 									setContent(newContent)
 									setImage(newImages)
 									setcategory(newCategorys)
@@ -204,6 +207,9 @@ const SliderContentWcontent_2_right = () => {
 									setdiscribe(newDiscribe)
 									setTitle(newTitle)
 								} else {
+									if (currentPage - 1 == 0) {
+										setCurrentPage(Math.ceil(Content.length / ViewNumber))
+									}
 									const newContent = [
 										...Content.slice(Content.length - ViewNumber, Content.length),
 										...Content.slice(0, Content.length - ViewNumber)
