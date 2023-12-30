@@ -10,14 +10,16 @@
       font-feature-settings: "palt";
 
 
+
       
     }
+
     @font-face{
       font-family: Meiryo;
       src:url(../font/NotoSansJP-Medium.ttf)
     }
     body{
-      font-family: Meiryo;
+      /* font-family: Meiryo; */
       margin: auto;
     }
 

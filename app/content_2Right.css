@@ -1,21 +1,37 @@
 #twoSliderParent{
     align-items: center;
     display: grid;
-    grid-template-columns: 300px;
+    grid-template-columns: 940px;
     grid-template-rows: 30px;
     justify-content: center;
     
     
 }
+.pagination{
+    display: flex;
+    justify-content: center;
+    gap:20px;
+}
+.pagination button{
+    border: 1px solid transparent;
+    padding:20px;
+    margin:10px;
+    cursor: pointer;
+}
 
+.pagination button:hover{
+ border: 1px solid #000;
+}
 #twoCards{
     align-items: stretch;
     display: grid;
-    gap:20px; 
-    grid-template-columns: 1fr 1fr 1fr 1fr ; 
+    gap:0px 20px ;; 
+    grid-template-columns: 1fr 1fr 1fr ; 
     grid-template-rows: 67px 1fr 69px; 
     justify-content: center;
     padding:10px;
+    justify-items:stretch;
+   
 }
 
 #twoCards a{
@@ -38,7 +54,8 @@
     grid-row: span 3;
     grid-template-rows: subgrid;
     justify-content: center;
-    justify-items: center
+    justify-items: center;
+    border: 1px solid #787a75;
   
 }
 .twoCard:hover{
@@ -48,9 +65,9 @@
 }
 .twoCardTitle{
     padding:22px;
-    width: 300px;
+    width: 505px;
     height: 65px;
-    border-bottom: 1px solid #000;
+    /* border-bottom: 1px solid #000; */
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -58,14 +75,16 @@
 .discribeEl{
     padding:0px 22px;
     height: 68px;
-    width: 300px;
+    width: 505px;
     display: flex;
     justify-content: space-around;
-    align-items: stretch;
+    align-items: center;
+    /* border-top:1px solid #000 ; */
 }
 .imageEl{
-    height: 200px;
-    width: 300px;
+    height: 300px;
+    width: 505px;
+    position: relative;
     
 }
 .twoSliderTitle{
@@ -151,7 +170,12 @@
                     font-size: 24px;
                 }
                 #twoSliderParent {
-                    grid-template-columns: 600px;
+                    grid-template-columns: 100vw;
+                }
+                #twoSliderParent.pagination{
+                    display: flex;
+                    gap:20px;
+                    justify-content: center;
                 }
                 .twoSliderTitle {
                     height: 50px;
