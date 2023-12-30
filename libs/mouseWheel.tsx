@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { createRoot } from 'react-dom/client'
 import './mouseWheel.css'
 import { WContent_1_right, WContent_1_left, WContent_2_right, WContent_2_left } from '../app/sliderMainContent'
+import localStorageOrigin from '../libs/localStorage'
 let wheelFlag = 1
 let deltaTotal: number = 0
 const MouseWheel = () => {
@@ -70,10 +71,14 @@ const MouseWheel = () => {
 }
 
 function setSlider(deltaTotalNumber: number, wheelFlagNumber: number) {
-	localStorage.setItem('scrollData', JSON.stringify({ wheelFlag: wheelFlagNumber, deltaTotal: deltaTotalNumber }))
+	localStorageOrigin('setItem', {
+		wheelFlagNumber: wheelFlagNumber,
+		deltaTotalNumber: deltaTotalNumber
+	})
 }
 const initSlider = () => {
-	const scrollData = JSON.parse(localStorage.getItem('scrollData') || '{"wheelFlag":1,"deltaTotal":0}')
+	const scrollData = JSON.parse(localStorage.getItem('localStorageData') || '{"wheelFlag":1,"deltaTotal":0}')
+	console.log(scrollData)
 	deltaTotal = scrollData.deltaTotal
 	wheelFlag = scrollData.wheelFlag
 	if (wheelFlag == 2) {
