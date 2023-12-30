@@ -1,46 +1,11 @@
 const localStorage = (
 	setting: string,
-	{
-		wheelFlagNumber,
-		deltaTotalNumber,
-		overFlowScrollNumber,
-		PageNationNumber
-	}: { wheelFlagNumber?: number; deltaTotalNumber?: number; overFlowScrollNumber?: number; PageNationNumber?: number }
+	{ wheelFlagNumber, deltaTotalNumber, overFlowScrollNumber, PageNationNumber }: { wheelFlagNumber?: number; deltaTotalNumber?: number; overFlowScrollNumber?: number; PageNationNumber?: number }
 ) => {
 	if ('setItem' === setting) {
-		const localStorageItem = window.localStorage.getItem('localStorageData')
-		const localStorageData = localStorageItem
-			? JSON.parse(localStorageItem)
-			: //初めてサイトに訪れた時に設定される初期値
-			  {
-					wheelFlag: 1,
-					deltaTotal: 0,
-					overFlowScroll: 0,
-					PageNation: 1
-			  }
-		window.localStorage.setItem(
-			'localStorageData',
-			JSON.stringify({
-				wheelFlag: wheelFlagNumber !== undefined ? wheelFlagNumber ?? 1 : localStorageData.wheelFlag ?? 1,
-				deltaTotal: deltaTotalNumber !== undefined ? deltaTotalNumber ?? 0 : localStorageData.deltaTotal ?? 0,
-				overFlowScroll:
-					overFlowScrollNumber !== undefined ? overFlowScrollNumber ?? 0 : localStorageData.overFlowScroll ?? 0,
-				PageNation: PageNationNumber !== undefined ? PageNationNumber ?? 1 : localStorageData.PageNation ?? 1
-			})
-		)
-		console.log(
-			JSON.stringify({
-				wheelFlag: wheelFlagNumber !== undefined ? wheelFlagNumber : localStorageData.wheelFlag ?? 1,
-				deltaTotal: deltaTotalNumber !== undefined ? deltaTotalNumber : localStorageData.deltaTotal ?? 0,
-				overFlowScroll: overFlowScrollNumber !== undefined ? overFlowScrollNumber : localStorageData.overFlowScroll ?? 0,
-				PageNation: PageNationNumber !== undefined ? PageNationNumber : localStorageData.PageNation ?? 1
-			})
-		)
+		setItems(wheelFlagNumber, deltaTotalNumber, overFlowScrollNumber, PageNationNumber)
 	} else if ('getItem' === setting) {
-		const localStorageData = JSON.parse(
-			window.localStorage.getItem('localStorageData') ||
-				'{"wheelFlag":1,"deltaTotal":0,"overFlowScrollNumber":1,"PageNationNumber":1}'
-		)
+		const localStorageData = JSON.parse(window.localStorage.getItem('localStorageData') || '{"wheelFlag":1,"deltaTotal":0,"overFlowScrollNumber":1,"PageNationNumber":1}')
 		return {
 			wheelFlag: localStorageData.wheelFlag || wheelFlagNumber,
 			deltaTotal: localStorageData.deltaTotal || deltaTotalNumber,
@@ -50,6 +15,31 @@ const localStorage = (
 	} else {
 		return null
 	}
+}
+function setItems(wheelFlagNumber?: number, deltaTotalNumber?: number, overFlowScrollNumber?: number, PageNationNumber?: number) {
+	const wheelFlagInit = 1
+	const deltaTotalInit = 0
+	const overFlowScrollInit = 0
+	const PageNationInit = 1
+	const localStorageItem = window.localStorage.getItem('localStorageData')
+	const localStorageData = localStorageItem
+		? JSON.parse(localStorageItem)
+		: //初めてサイトに訪れた時に設定される初期値
+		  {
+				wheelFlag: wheelFlagInit,
+				deltaTotal: deltaTotalInit,
+				overFlowScroll: overFlowScrollInit,
+				PageNation: PageNationInit
+		  }
+	window.localStorage.setItem(
+		'localStorageData',
+		JSON.stringify({
+			wheelFlag: wheelFlagNumber !== undefined ? wheelFlagNumber ?? wheelFlagInit : localStorageData.wheelFlag ?? wheelFlagInit,
+			deltaTotal: deltaTotalNumber !== undefined ? deltaTotalNumber ?? deltaTotalInit : localStorageData.deltaTotal ?? deltaTotalInit,
+			overFlowScroll: overFlowScrollNumber !== undefined ? overFlowScrollNumber ?? overFlowScrollInit : localStorageData.overFlowScroll ?? overFlowScrollInit,
+			PageNation: PageNationNumber !== undefined ? PageNationNumber ?? PageNationInit : localStorageData.PageNation ?? PageNationInit
+		})
+	)
 }
 
 export default localStorage
