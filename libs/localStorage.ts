@@ -1,11 +1,11 @@
 const localStorage = (
 	setting: string,
-	{ wheelFlagNumber, deltaTotalNumber, overFlowScrollNumber, PageNationNumber }: { wheelFlagNumber?: number; deltaTotalNumber?: number; overFlowScrollNumber?: number; PageNationNumber?: number }
+	{ wheelFlagNumber, deltaTotalNumber, overFlowScrollNumber, PageNationNumber }: { wheelFlagNumber?: number; deltaTotalNumber?: number; overFlowScrollNumber?: number; PageNationNumber?: number } = {}
 ) => {
 	if ('setItem' === setting) {
 		setItems(wheelFlagNumber, deltaTotalNumber, overFlowScrollNumber, PageNationNumber)
 	} else if ('getItem' === setting) {
-		const localStorageData = JSON.parse(window.localStorage.getItem('localStorageData') || '{"wheelFlag":1,"deltaTotal":0,"overFlowScrollNumber":1,"PageNationNumber":1}')
+		const localStorageData = JSON.parse(window.localStorage.getItem('localStorageData') || '{"wheelFlag":1,"deltaTotal":0,"overFlowScrollNumber":0,"PageNationNumber":1}')
 		return {
 			wheelFlag: localStorageData.wheelFlag || wheelFlagNumber,
 			deltaTotal: localStorageData.deltaTotal || deltaTotalNumber,
@@ -24,7 +24,7 @@ function setItems(wheelFlagNumber?: number, deltaTotalNumber?: number, overFlowS
 	const localStorageItem = window.localStorage.getItem('localStorageData')
 	const localStorageData = localStorageItem
 		? JSON.parse(localStorageItem)
-		: //初めてサイトに訪れた時に設定される初期値
+		: //初めてサイトに訪れた時の設定
 		  {
 				wheelFlag: wheelFlagInit,
 				deltaTotal: deltaTotalInit,

@@ -77,10 +77,9 @@ function setSlider(deltaTotalNumber: number, wheelFlagNumber: number) {
 	})
 }
 const initSlider = () => {
-	const scrollData = JSON.parse(localStorage.getItem('localStorageData') || '{"wheelFlag":1,"deltaTotal":0}')
-	console.log(scrollData)
-	deltaTotal = scrollData.deltaTotal
-	wheelFlag = scrollData.wheelFlag
+	const scrollData = localStorageOrigin('getItem')
+	deltaTotal = scrollData?.deltaTotal
+	wheelFlag = scrollData?.wheelFlag
 	if (wheelFlag == 2) {
 		wheelFlagloop('wheelFlag3', 'wheelFlag1')
 		rightANDleftContentCreate('wheelFlag1', WContent_1_right, WContent_1_left)
