@@ -21,7 +21,7 @@ const SliderContentWcontent_2_right = () => {
 	const [originalTitle, setOriginalTitle] = useState<string[] | any[]>([])
 	const localStorageGet = localStorageOrigin('getItem')
 	const [currentPage, setCurrentPage] = useState(localStorageGet?.PageNation)
-	let ViewNumber = 4
+	let ViewNumber = 3
 	useEffect(() => {
 		axios.get(`${window.location.href}/api/route`).then((res: AxiosResponse<any[]>) => {
 			const contentsAf = res.data.map((element: { content: string; eyecatch: string; category: { name: string }; id: string; discribe: string; title: string }) => element.content)
