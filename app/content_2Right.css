@@ -131,8 +131,31 @@
 }
 @media screen and (max-width:600px) {
     #twoCards{
-        grid-template-columns: 1fr; 
-
+        grid-template-columns: 350px; 
+        row-gap: 10px;
+    }
+    .twoCard {
+        width: 350px;
+    }
+    #twoCards .twoCardTitle {
+        width: 350px;
+    }
+    .discribeEl{
+        width: 350px;
+        font-size: 15px;
+    }
+    .imageEl{
+        width: 348px;
+    }
+    .twoCardTitle{
+        width: 350px;
+        font-size: 15px;
+    }
+    .pagination{
+        width: 100%;
+    }
+    .pagination button{
+        padding: 15px;
     }
 }
 
