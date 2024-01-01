@@ -20,10 +20,6 @@ const Home = () => {
 	MouseWheel()
 
 	useEffect(() => {
-		mousemove()
-	}, [mousemove])
-
-	useEffect(() => {
 		SwipeComponent()
 		mousemove()
 	}, [])
