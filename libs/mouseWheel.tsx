@@ -41,15 +41,23 @@ const MouseWheel = () => {
 			} else if (deltaTotal === 600 && wheelFlag == 2) {
 				wheelFlagloop('wheelFlag1', 'wheelFlag2')
 				rightANDleftContentCreate('wheelFlag2', WContent_2_right, WContent_2_left)
-				setTimeout(() => {
-					document.querySelectorAll(`.pagination button`).forEach((element) => {
-						let htmlElement = element as HTMLElement
-						console.log(htmlElement.outerText)
-						if (htmlElement.outerText == localStorageGet?.PageNation) {
-							htmlElement.click()
+
+				let observer = new MutationObserver((mutations) => {
+					mutations.forEach((mutation) => {
+						if (mutation.type === 'childList') {
+							document.querySelectorAll(`.pagination button`).forEach((element) => {
+								let htmlElement = element as HTMLElement
+								if (htmlElement.outerText == localStorageGet?.PageNation) {
+									htmlElement.click()
+									observer.disconnect()
+								}
+							})
 						}
 					})
-				}, 500)
+				})
+
+				let config = { childList: true, subtree: true }
+				observer.observe(document.body, config)
 
 				deltaTotal = 0
 				wheelFlag = 3
@@ -62,11 +70,23 @@ const MouseWheel = () => {
 			} else if (deltaTotal === -600 && wheelFlag == 1) {
 				wheelFlagloop('wheelFlag1', 'wheelFlag2')
 				rightANDleftContentCreate('wheelFlag2', WContent_2_right, WContent_2_left)
-				setTimeout(() => {
-					console.log(document.querySelector(`.pagination button[name="${localStorageGet?.PageNation}"]`), localStorageGet?.PageNation)
-					let button = document.querySelector(`.pagination button[name="${localStorageGet?.PageNation}"]`) as HTMLElement
-					button?.click()
-				}, 1000)
+
+				let observer = new MutationObserver((mutations) => {
+					mutations.forEach((mutation) => {
+						if (mutation.type === 'childList') {
+							document.querySelectorAll(`.pagination button`).forEach((element) => {
+								let htmlElement = element as HTMLElement
+								if (htmlElement.outerText == localStorageGet?.PageNation) {
+									htmlElement.click()
+									observer.disconnect()
+								}
+							})
+						}
+					})
+				})
+				let config = { childList: true, subtree: true }
+				observer.observe(document.body, config)
+
 				deltaTotal = 0
 				wheelFlag = 3
 				setSlider(deltaTotal, wheelFlag)
