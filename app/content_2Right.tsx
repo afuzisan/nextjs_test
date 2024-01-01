@@ -48,7 +48,6 @@ const SliderContentWcontent_2_right = () => {
 			setOriginalTitle(titleAf)
 		})
 		window.addEventListener('load', () => {
-			console.log(buttonRefs.current[localStorageGet?.PageNation])
 			buttonRefs.current[localStorageGet?.PageNation]?.click()
 		})
 	}, [])

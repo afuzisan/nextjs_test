@@ -17,6 +17,7 @@ const MouseWheel = () => {
 		window.addEventListener('wheel', updateScroll, { passive: false })
 		function updateScroll(e: any) {
 			e.preventDefault()
+			let localStorageGet = localStorageOrigin('getItem')
 			if (deltaTotal <= 600 || deltaTotal >= -600) {
 				deltaTotalBefore = deltaTotal
 				deltaTotal += e.deltaY
@@ -40,6 +41,16 @@ const MouseWheel = () => {
 			} else if (deltaTotal === 600 && wheelFlag == 2) {
 				wheelFlagloop('wheelFlag1', 'wheelFlag2')
 				rightANDleftContentCreate('wheelFlag2', WContent_2_right, WContent_2_left)
+				setTimeout(() => {
+					document.querySelectorAll(`.pagination button`).forEach((element) => {
+						let htmlElement = element as HTMLElement
+						console.log(htmlElement.outerText)
+						if (htmlElement.outerText == localStorageGet?.PageNation) {
+							htmlElement.click()
+						}
+					})
+				}, 500)
+
 				deltaTotal = 0
 				wheelFlag = 3
 				setSlider(deltaTotal, wheelFlag)
@@ -51,6 +62,11 @@ const MouseWheel = () => {
 			} else if (deltaTotal === -600 && wheelFlag == 1) {
 				wheelFlagloop('wheelFlag1', 'wheelFlag2')
 				rightANDleftContentCreate('wheelFlag2', WContent_2_right, WContent_2_left)
+				setTimeout(() => {
+					console.log(document.querySelector(`.pagination button[name="${localStorageGet?.PageNation}"]`), localStorageGet?.PageNation)
+					let button = document.querySelector(`.pagination button[name="${localStorageGet?.PageNation}"]`) as HTMLElement
+					button?.click()
+				}, 1000)
 				deltaTotal = 0
 				wheelFlag = 3
 				setSlider(deltaTotal, wheelFlag)
