@@ -48,7 +48,7 @@ const SliderContentWcontent_2_right = () => {
 			setOriginalTitle(titleAf)
 		})
 
-		let observer = new MutationObserver((mutations) => {
+		const observer = new MutationObserver((mutations) => {
 			mutations.forEach((mutation) => {
 				if (mutation.type === 'childList') {
 					buttonRefs.current[localStorageGet?.PageNation]?.click()
@@ -56,8 +56,8 @@ const SliderContentWcontent_2_right = () => {
 				}
 			})
 		})
-		let config = { childList: true, subtree: true }
-		let pageNa = document.querySelector('.pagination')
+		const config = { childList: true, subtree: true }
+		const pageNa = document.querySelector('.pagination')
 		if (pageNa) {
 			observer.observe(pageNa, config)
 		} else {
