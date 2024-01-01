@@ -174,23 +174,28 @@
               and (max-height:1024px) and (min-height:1024px){
 
                 #twoCards {
-                    grid-template-columns: 1fr;
+                    grid-template-columns: 700px;
                     font-size: 26px;
                     height: 100px;
-                    margin-top: 30px;
+                    grid-template-rows: 100px 1fr 120px;
+                    /* margin-top: 30px; */
                 }
-                #twoCards {
-                    grid-template-rows: 100px 1fr 100px;
-               
+
+                .imageEl{
+                    width: 698px;
+                }
+                .twoCard{
+                    margin-bottom: 20px;
                 }
                 .twoCardTitle {
                     height: 100px;
-                    width: 600px;
+                    width: 700px;
                 }
                 .discribeEl {
-                    width: 500px;
+                    width: 700px;
                     height: 100px;
                     font-size: 24px;
+                    padding:0px;
                 }
                 #twoSliderParent {
                     grid-template-columns: 100vw;
@@ -208,6 +213,14 @@
                 .headerContent a {
                     font-size: 24px;
                 }
+                .pagination {
+                    padding-top:50px;
+                    
+                } 
+                .pagination button{
+                    font-size: 26px;
+                    
+                } 
     
 }
 /* ipad Air*/
