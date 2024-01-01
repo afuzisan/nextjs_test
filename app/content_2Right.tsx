@@ -147,6 +147,7 @@ const SliderContentWcontent_2_right = () => {
 						{Array.from({ length: Math.ceil(Content.length / ViewNumber) }, (_, i) => i + 1).map((pageNum) => (
 							<button
 								ref={(el) => (buttonRefs.current[pageNum] = el)}
+								key={pageNum}
 								style={currentPage === pageNum ? { color: 'red' } : {}}
 								onClick={() => {
 									setCurrentPage(pageNum)
