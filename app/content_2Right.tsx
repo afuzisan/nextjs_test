@@ -47,9 +47,22 @@ const SliderContentWcontent_2_right = () => {
 			setOriginalDiscribe(discribeAf)
 			setOriginalTitle(titleAf)
 		})
-		window.addEventListener('load', () => {
-			buttonRefs.current[localStorageGet?.PageNation]?.click()
+
+		let observer = new MutationObserver((mutations) => {
+			mutations.forEach((mutation) => {
+				if (mutation.type === 'childList') {
+					buttonRefs.current[localStorageGet?.PageNation]?.click()
+					observer.disconnect()
+				}
+			})
 		})
+		let config = { childList: true, subtree: true }
+		let pageNa = document.querySelector('.pagination')
+		if (pageNa) {
+			observer.observe(pageNa, config)
+		} else {
+			console.error("Element with class 'pagination' not found")
+		}
 	}, [])
 
 	return (
