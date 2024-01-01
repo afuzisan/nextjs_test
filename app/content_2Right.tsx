@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import axios, { AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios'
@@ -22,6 +22,9 @@ const SliderContentWcontent_2_right = () => {
 	const localStorageGet = localStorageOrigin('getItem')
 	const [currentPage, setCurrentPage] = useState(localStorageGet?.PageNation)
 	let ViewNumber = 3
+
+	const buttonRefs = useRef<(HTMLButtonElement | null)[]>([])
+
 	useEffect(() => {
 		axios.get(`${window.location.href}/api/route`).then((res: AxiosResponse<any[]>) => {
 			const contentsAf = res.data.map((element: { content: string; eyecatch: string; category: { name: string }; id: string; discribe: string; title: string }) => element.content)
@@ -44,7 +47,12 @@ const SliderContentWcontent_2_right = () => {
 			setOriginalDiscribe(discribeAf)
 			setOriginalTitle(titleAf)
 		})
+		window.addEventListener('load', () => {
+			console.log(buttonRefs.current[localStorageGet?.PageNation])
+			buttonRefs.current[localStorageGet?.PageNation]?.click()
+		})
 	}, [])
+
 	return (
 		<>
 			<div id='twoSliderParent'>
@@ -126,6 +134,7 @@ const SliderContentWcontent_2_right = () => {
 					<div>
 						{Array.from({ length: Math.ceil(Content.length / ViewNumber) }, (_, i) => i + 1).map((pageNum) => (
 							<button
+								ref={(el) => (buttonRefs.current[pageNum] = el)}
 								style={currentPage === pageNum ? { color: 'red' } : {}}
 								onClick={() => {
 									setCurrentPage(pageNum)
