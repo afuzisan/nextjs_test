@@ -81,19 +81,21 @@ const Content_1Right = () => {
 				gridChildren.forEach((element) => {
 					;(element as HTMLElement).style.display = 'block'
 				})
-				setTimeout(() => {
-					setLocalStorage()
-				}, 10)
+
+				setLocalStorage(10)
+
 				// })
 			})
 		})
 	}
-	function setLocalStorage() {
-		let right = document.querySelector('.right')
-		const localStorageGet = localStorageOrigin('getItem')
-		if (right && localStorageGet?.overFlowScroll) {
-			right.scrollTop = localStorageGet?.overFlowScroll
-		}
+	function setLocalStorage(time: number) {
+		setTimeout(() => {
+			let right = document.querySelector('.right')
+			const localStorageGet = localStorageOrigin('getItem')
+			if (right && localStorageGet?.overFlowScroll) {
+				right.scrollTop = localStorageGet?.overFlowScroll
+			}
+		}, time)
 	}
 
 	function addScrollEventListener() {
@@ -107,6 +109,7 @@ const Content_1Right = () => {
 	}
 	useEffect(() => {
 		addScrollEventListener()
+		setLocalStorage(10)
 		detailsView()
 		detailsNone()
 	}, [])
