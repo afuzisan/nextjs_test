@@ -21,7 +21,7 @@ const SliderContentWcontent_2_right = () => {
 	const [originalTitle, setOriginalTitle] = useState<string[] | any[]>([])
 	const localStorageGet = localStorageOrigin('getItem')
 	const [currentPage, setCurrentPage] = useState(localStorageGet?.PageNation)
-	let ViewNumber = 3
+	let ViewNumber = 2
 
 	const buttonRefs = useRef<(HTMLButtonElement | null)[]>([])
 
