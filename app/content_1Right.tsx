@@ -3,6 +3,7 @@ import './content_1Right.css'
 import { useEffect } from 'react'
 import { items } from './content_1Right_data'
 import HeaderLink from '../components/app/HeaderLink'
+import localStorageOrigin from '../libs/localStorage'
 declare global {
 	interface Document {
 		startViewTransition(callback: () => void): void
@@ -70,9 +71,7 @@ const Content_1Right = () => {
 			element.addEventListener('click', (e) => {
 				const rightIconGrid = document.querySelector('.rightIconGrid') as HTMLElement
 				const right = document.querySelector('.right') as HTMLElement
-				rightIconGrid
-					? ((rightIconGrid.style.padding = '40px 40px 40px 40px'), (rightIconGrid.style.marginBottom = '70px'))
-					: null
+				rightIconGrid ? ((rightIconGrid.style.padding = '40px 40px 40px 40px'), (rightIconGrid.style.marginBottom = '70px')) : null
 				right ? (right.style.backgroundColor = '#fff') : null
 				// document.startViewTransition(() => {
 				firstNone.forEach((element) => {
@@ -85,8 +84,23 @@ const Content_1Right = () => {
 			})
 		})
 	}
+	function overLocalStorage() {
+		window.onload = function () {
+			let right = document.querySelector('.right')
+			const localStorageGet = localStorageOrigin('getItem')
+			if (right && localStorageGet?.overFlowScroll) {
+				right.scrollTop = localStorageGet?.overFlowScroll
+			}
 
+			right?.addEventListener('scroll', function (e) {
+				let b = document.querySelector('.right')
+				console.log('スクロール量: ' + right?.scrollTop)
+				localStorageOrigin('setItem', { overFlowScrollNumber: right?.scrollTop })
+			})
+		}
+	}
 	useEffect(() => {
+		overLocalStorage()
 		detailsView()
 		detailsNone()
 	}, [])
@@ -101,15 +115,7 @@ const Content_1Right = () => {
 					{items.map((item, index) => (
 						<div key={index} className={`${item.name} gridChildren`}>
 							<p className='p'>{item.title}</p>
-							<Image
-								className={`${item.name}Image`}
-								src={item.image}
-								alt='Image'
-								width={100}
-								height={100}
-								objectFit='cover'
-								objectPosition='top right'
-							/>
+							<Image className={`${item.name}Image`} src={item.image} alt='Image' width={100} height={100} objectFit='cover' objectPosition='top right' />
 						</div>
 					))}
 				</div>
