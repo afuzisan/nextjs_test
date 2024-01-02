@@ -156,7 +156,7 @@
     .pagination {
         gap: 0px;
     }
-    .imageEl{
+        .imageEl{
         height: 200px;
     }
     
@@ -187,6 +187,33 @@
     }
 }
 
+@media screen and (min-width:770px) and (max-height:880px) {
+    #twoCards{
+        align-items: stretch;
+        display: grid;
+        gap:0px 20px ;; 
+        grid-template-columns: 400px 400px ; 
+        grid-template-rows: 67px 1fr 69px; 
+        justify-content: center;
+        padding:10px;
+        justify-items:stretch;
+        margin-top:0px;
+       
+    }
+    .imageEl{
+        height: 130px;
+        width: 398px;
+    }
+    .pagination button{
+       font-size: 14px;
+       padding: 10px;
+    }
+    .pagination {
+        margin-top: 0px;
+    }
+
+}
+
 /* iPhoneSE*/
 @media screen and (max-width:375px) and (min-width:375px) 
               and (max-height:667px) and (min-height:667px){
@@ -194,6 +221,7 @@
                 .pagination {
                     gap: 0px;
                 }
+
     
 }
 
@@ -243,13 +271,16 @@
                     font-size: 24px;
                 }
                 .pagination {
-                    padding-top:50px;
+                    padding-top:10px;
                     
                 } 
                 .pagination button{
                     font-size: 26px;
                     
                 } 
+                .imageEl{
+                    height: 503px;
+                }
     
 }
 /* ipad Air*/
@@ -299,7 +330,7 @@
                     font-size: 24px;
                 }
                 .pagination {
-                    padding-top:50px;
+                    padding-top:10px;
                     
                 } 
                 .pagination button{
@@ -309,6 +340,9 @@
                 #twoSliderParent{
                     grid-template-columns: 820px;
                 }
+                .imageEl{
+                    height: 503px;
+                }
 
 }
 
@@ -316,65 +350,54 @@
 @media screen and (max-width:1024px) and (min-width:1024px) 
               and (max-height:1366px) and (min-height:1366px){
 
-                #twoCards {
-                    grid-template-columns: 700px;
-                    font-size: 26px;
-                    height: 100px;
-                    grid-template-rows: 100px 1fr 120px;
-                 
-                }
-                body{
-                    overflow-x: hidden;
-                }
 
-                .imageEl{
-                    width: 698px;
+                .pagination {
+                    padding-top: 850px;
                 }
-                .twoCard{
-                    margin-bottom: 20px;
+                .pagination button{
+                    font-size: 30px;
+                    padding: 15px;
+                } 
+                .imageEl{
+                    width: 880px;
+                    height: 503px;
+                }
+                #twoCards {
+                    grid-template-columns: 880px;
+                    margin-top: 550px;
+                    grid-template-rows: 140px 1fr 140px;
                     
+                }
+                .rightContentwheelFlag2{
+                    overflow-y: scroll;
+                    
+                }
+                .wheelFlag2{
+                    font-size: 24px;
                 }
                 .twoCardTitle {
-                    height: 100px;
-                    width: 700px;
+                    align-items: center;
+                    display: flex;
+                    height: 65px;
+                    justify-content: space-around;
+                    padding: 22px;
+                    width: 880px;
+                    font-size: 30px;
                 }
                 .discribeEl {
-                    width: 700px;
-                    height: 100px;
-                    font-size: 24px;
-                    padding:0px;
-                }
-                #twoSliderParent {
-                    grid-template-columns: 100vw;
-                }
-                #twoSliderParent.pagination{
-                    display: flex;
-                    gap:20px;
-                    justify-content: center;
-                }
-                .twoSliderTitle {
-                    height: 50px;
+         
+                    height: 140px;
+                    width: 880px;
                     font-size: 30px;
-                    margin-top: 40px
+                    /* border-top: 1px solid #000; */
                 }
-                .headerContent a {
-                    font-size: 24px;
+                .twoCardTitle{
+                    height: 140px;
                 }
-                .pagination {
-                    padding-top:50px;
-                    
-                } 
-                .pagination button{
-                    font-size: 26px;
-                    
-                } 
-
-                /* .wheelFlag2 > .rightContentwheelFlag2 {
-                    width: 100%;
-                    
-                } */
-        
-      
+                .headerContent{
+                    font-size: 30px !important;
+                }
+     
 }
 /* surface Pro7 */
 @media screen and (max-width:912px) and (min-width:912px) 
@@ -386,6 +409,7 @@
                     font-size: 26px;
                     height: 100px;
                     grid-template-rows: 100px 1fr 120px;
+                    margin-top: 140px 
                  
                 }
 
@@ -427,6 +451,10 @@
                     font-size: 26px;
                     
                 } 
+                .imageEl {
+                    width: 698px;
+                    height: 330px;
+                }
 }
 
 /* surfaceDuo */
