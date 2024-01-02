@@ -156,16 +156,21 @@
     .pagination {
         gap: 0px;
     }
+    .imageEl{
+        height: 200px;
+    }
     
 }
 
 @media screen and (min-width:1024px) and (max-width:1300px){
 
 }
+@media screen and (min-height:600px) and (max-height:1024px) {
+
+}
 @media screen and (min-width:600px) and (max-width:1024px) {
     #twoCards{
         grid-template-columns: 505px ; 
-        overflow-y: scroll;
         margin-top: 100px;
     }
     .pagination {
@@ -176,6 +181,9 @@
     }
     .twoSliderTitle{
         display: none;
+    }
+    .imageEl{
+        height: 200px;
     }
 }
 
