@@ -67,6 +67,7 @@ const Content_1Right = () => {
 	function detailsNone() {
 		const firstNone = document.querySelectorAll('.firstNone')
 		const gridChildren = document.querySelectorAll('.gridChildren')
+
 		firstNone.forEach((element) => {
 			element.addEventListener('click', (e) => {
 				const rightIconGrid = document.querySelector('.rightIconGrid') as HTMLElement
@@ -80,27 +81,32 @@ const Content_1Right = () => {
 				gridChildren.forEach((element) => {
 					;(element as HTMLElement).style.display = 'block'
 				})
+				setTimeout(() => {
+					setLocalStorage()
+				}, 10)
 				// })
 			})
 		})
 	}
-	function overLocalStorage() {
-		window.onload = function () {
-			let right = document.querySelector('.right')
-			const localStorageGet = localStorageOrigin('getItem')
-			if (right && localStorageGet?.overFlowScroll) {
-				right.scrollTop = localStorageGet?.overFlowScroll
-			}
-
-			right?.addEventListener('scroll', function (e) {
-				let b = document.querySelector('.right')
-				console.log('スクロール量: ' + right?.scrollTop)
-				localStorageOrigin('setItem', { overFlowScrollNumber: right?.scrollTop })
-			})
+	function setLocalStorage() {
+		let right = document.querySelector('.right')
+		const localStorageGet = localStorageOrigin('getItem')
+		if (right && localStorageGet?.overFlowScroll) {
+			right.scrollTop = localStorageGet?.overFlowScroll
 		}
 	}
+
+	function addScrollEventListener() {
+		const rightIconGrid = document.querySelector('.rightIconGrid')
+		let right = document.querySelector('.right')
+		right?.addEventListener('scroll', function (e) {
+			if (rightIconGrid && rightIconGrid.firstElementChild && window.getComputedStyle(rightIconGrid.firstElementChild).display === 'block') {
+				localStorageOrigin('setItem', { overFlowScrollNumber: right?.scrollTop })
+			}
+		})
+	}
 	useEffect(() => {
-		overLocalStorage()
+		addScrollEventListener()
 		detailsView()
 		detailsNone()
 	}, [])
