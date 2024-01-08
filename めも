@@ -1,0 +1,37 @@
+const readline = require('readline').createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+const commands = [
+  {
+    question: 'PowerShellでスクリプトの実行を無制限にするコマンドは何ですか？',
+    answer: 'Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser'
+  },
+  {
+    question: 'PowerShellでスクリプトの実行を制限に戻すコマンドは何ですか？',
+    answer: 'Set-ExecutionPolicy -ExecutionPolicy Restricted -Scope CurrentUser'
+  }
+];
+
+let currentQuestion = 0;
+
+function askQuestion() {
+  if (currentQuestion >= commands.length) {
+    readline.close();
+    console.log('お疲れ様でした！');
+    return;
+  }
+
+  readline.question(`${commands[currentQuestion].question}\n`, (input) => {
+    if (input === commands[currentQuestion].answer) {
+      console.log('正解です！');
+    } else {
+      console.log(`残念、不正解です。正解は「${commands[currentQuestion].answer}」です。`);
+    }
+    currentQuestion++;
+    askQuestion();
+  });
+}
+
+askQuestion();
