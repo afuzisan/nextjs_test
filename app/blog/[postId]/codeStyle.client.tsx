@@ -4,10 +4,10 @@ import Script from 'next/script'
 
 const CodeStyle = () => {
 	function codePrettify() {
-		const preElement = document.querySelector('pre')
-		if (preElement) {
+		const preElements = document.querySelectorAll('pre')
+		preElements.forEach((preElement) => {
 			preElement.classList.add('prettyprint')
-		}
+		})
 	}
 	useEffect(() => {
 		codePrettify()
