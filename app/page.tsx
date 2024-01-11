@@ -1,6 +1,5 @@
 'use client'
 import { MouseWheel } from '../libs/mouseWheel'
-import dynamic from 'next/dynamic'
 import { useEffect } from 'react'
 import './toolTips.css'
 import mousemove from '../libs/mouseMove'
