@@ -32,13 +32,13 @@ const MouseWheel = () => {
 			first_flag = true
 			wheelNumber(deltaTotal)
 
-			if (deltaTotal === 600 && wheelFlag == 1) {
+			if (deltaTotal >= 600 && wheelFlag == 1) {
 				wheelFlagloop('wheelFlag3', 'wheelFlag1')
 				rightANDleftContentCreate('wheelFlag1', WContent_1_right, WContent_1_left)
 				deltaTotal = 0
 				wheelFlag = 2
 				setSlider(deltaTotal, wheelFlag)
-			} else if (deltaTotal === 600 && wheelFlag == 2) {
+			} else if (deltaTotal >= 600 && wheelFlag == 2) {
 				wheelFlagloop('wheelFlag1', 'wheelFlag2')
 				rightANDleftContentCreate('wheelFlag2', WContent_2_right, WContent_2_left)
 
@@ -62,12 +62,12 @@ const MouseWheel = () => {
 				deltaTotal = 0
 				wheelFlag = 3
 				setSlider(deltaTotal, wheelFlag)
-			} else if (deltaTotal === 600 && wheelFlag == 3) {
+			} else if (deltaTotal >= 600 && wheelFlag == 3) {
 				wheelFlagloopEND('wheelFlag2')
 				deltaTotal = 0
 				wheelFlag = 1
 				setSlider(deltaTotal, wheelFlag)
-			} else if (deltaTotal === -600 && wheelFlag == 1) {
+			} else if (deltaTotal <= -600 && wheelFlag == 1) {
 				wheelFlagloop('wheelFlag1', 'wheelFlag2')
 				rightANDleftContentCreate('wheelFlag2', WContent_2_right, WContent_2_left)
 
@@ -90,13 +90,13 @@ const MouseWheel = () => {
 				deltaTotal = 0
 				wheelFlag = 3
 				setSlider(deltaTotal, wheelFlag)
-			} else if (deltaTotal === -600 && wheelFlag == 3) {
+			} else if (deltaTotal <= -600 && wheelFlag == 3) {
 				wheelFlagloop('wheelFlag2', 'wheelFlag1')
 				rightANDleftContentCreate('wheelFlag1', WContent_1_right, WContent_1_left)
 				deltaTotal = 0
 				wheelFlag = 2
 				setSlider(deltaTotal, wheelFlag)
-			} else if (deltaTotal === -600 && wheelFlag == 2) {
+			} else if (deltaTotal <= -600 && wheelFlag == 2) {
 				wheelFlagloopEND('wheelFlag1')
 				deltaTotal = 0
 				wheelFlag = 1
@@ -159,7 +159,7 @@ function wheelNumber(deltaTotal: number) {
 		let backColor = Math.trunc(deltaTotal / 6 / 2)
 		let rgb = `rgb(${backColor}%,${backColor}%,${backColor}%)`
 		// console.log(rgb)
-		deltaTotalborder === 600 ? (deltaTotalborder = 0) : deltaTotalborder
+		deltaTotalborder >= 600 ? (deltaTotalborder = 0) : deltaTotalborder
 		if (wheelAfter !== null) wheelAfterElement.style.height = deltaTotalborder + 'px'
 		if (wheelAfter !== null) wheelAfterElement.style.background = rgb
 
@@ -171,7 +171,7 @@ function wheelNumber(deltaTotal: number) {
 		let backColor = Math.trunc((deltaTotal / 6 / 2) * -1)
 		let rgb = `rgb(${backColor}%,${backColor}%,${backColor}%)`
 
-		deltaTotalborder === 600 ? (deltaTotalborder = 0) : deltaTotalborder
+		deltaTotalborder >= 600 ? (deltaTotalborder = 0) : deltaTotalborder
 		if (wheelAfterRotate !== null) wheelAfterRotateElement.style.height = deltaTotalborder + 'px'
 		if (wheelAfterRotate !== null) wheelAfterRotateElement.style.background = rgb
 	}
