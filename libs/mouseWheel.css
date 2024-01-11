@@ -40,6 +40,18 @@
     /* opacity: 0.5; */
 }
 
+#mainTOP .wheelMap .wheelAfter{
+  content: '';
+  width: 10px;
+  height:0px;
+  z-index:10000;
+  /* background-color:  #000; */
+  position: fixed;
+  top: 0px;
+  right: 20px;
+  transition: height 0.2s linear;
+}
+
 
 .wheelFlag2{
     width:100vw;
@@ -99,7 +111,7 @@
 #mainTOP .wheelMap{
   width: 10px;
   height:200px;
-  z-index:1000;
+  z-index:10000;
   /* border: 1px solid #000; */
   position: fixed;
   top: 100px;
@@ -109,7 +121,7 @@
   content: '';
   width: 10px;
   height:0px;
-  z-index:1000;
+  z-index:10000;
   /* background-color:  #000; */
   position: fixed;
   top: 0px;
@@ -120,7 +132,7 @@
 #mainTOP .wheelMapRotate{
   width: 10px;
   /* height:200px; */
-  z-index:100;
+  z-index:10000;
   /* border: 1px solid #000; */
   position: fixed;
   top: 100vh;

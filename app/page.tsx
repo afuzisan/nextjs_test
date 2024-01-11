@@ -1,8 +1,6 @@
 'use client'
 import { MouseWheel } from '../libs/mouseWheel'
-import { setup, draw } from '../libs/p5'
 import dynamic from 'next/dynamic'
-import LoadingEl from './loadingEl'
 import { useEffect } from 'react'
 import './toolTips.css'
 import mousemove from '../libs/mouseMove'
@@ -13,12 +11,7 @@ import SwipeGuide from './swipeGuide'
 import IframeInPlaycanvas from './iframe'
 
 const Home = () => {
-	const Sketch = dynamic(() => import('react-p5').then((mod) => mod.default), {
-		ssr: false
-	})
-
 	MouseWheel()
-
 	useEffect(() => {
 		SwipeComponent()
 		mousemove()

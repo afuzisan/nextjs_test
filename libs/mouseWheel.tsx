@@ -160,8 +160,11 @@ function wheelNumber(deltaTotal: number) {
 		let rgb = `rgb(${backColor}%,${backColor}%,${backColor}%)`
 		// console.log(rgb)
 		deltaTotalborder >= 600 ? (deltaTotalborder = 0) : deltaTotalborder
-		if (wheelAfter !== null) wheelAfterElement.style.height = deltaTotalborder + 'px'
-		if (wheelAfter !== null) wheelAfterElement.style.background = rgb
+		if (wheelAfter !== null) {
+			wheelAfterElement.style.height = deltaTotalborder + 'px'
+			wheelAfterElement.style.background = rgb
+			wheelAfterElement.style.zIndex = '10000'
+		}
 
 		// console.log(deltaTotal)
 	} else if (deltaTotal <= 0) {
@@ -172,8 +175,11 @@ function wheelNumber(deltaTotal: number) {
 		let rgb = `rgb(${backColor}%,${backColor}%,${backColor}%)`
 
 		deltaTotalborder >= 600 ? (deltaTotalborder = 0) : deltaTotalborder
-		if (wheelAfterRotate !== null) wheelAfterRotateElement.style.height = deltaTotalborder + 'px'
-		if (wheelAfterRotate !== null) wheelAfterRotateElement.style.background = rgb
+		if (wheelAfterRotate !== null) {
+			wheelAfterRotateElement.style.height = deltaTotalborder + 'px'
+			wheelAfterRotateElement.style.background = rgb
+			wheelAfterRotateElement.style.zIndex = '10000'
+		}
 	}
 }
 
@@ -192,7 +198,6 @@ function removeEl() {
 		let wheelMapRotate = document.querySelector('.wheelMapRotate')
 		if (wheelMapRotate !== null) wheelMapRotate.appendChild(wheelMapElementSpan)
 	} else if (wheelMapRotate) {
-		// wheelAfterRotate.remove()
 		wheelMapRotate.remove()
 		let main = document.querySelector('#mainTOP')
 		let wheelMapElement = document.createElement('div')
