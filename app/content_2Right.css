@@ -216,6 +216,9 @@
     .pagination {
         margin-top: 0px;
     }
+    .discribeEl{
+        width: 400px;
+    }
 
 }
 
@@ -540,5 +543,100 @@
 
 
 }
+/* 5K　 */
+@media screen and (min-width:1920px) 
+              and (min-height:1080px){
+       
+                .twoSliderTitle {
+                    height: clamp(50px, 4vw, 250px);
+                    font-size: clamp(10px, 2vw, 80px);;
+                    margin-bottom: clamp(10px, 2vw, 50px);
+                }
+                .pagination button {
+                    padding: clamp(10px, 2vw, 100px);
+                    font-size:clamp(10px, 2vw, 100px);
+                }
+                .imageEl {
+                    height: clamp(200px, 15vw, 1000px);
+                    width: clamp(300px, 40vw, 1700px);
+                }
+                #twoCards {
+                    gap: 0px 50px;
+                    grid-template-columns: clamp(300px, 40vw, 1700px) clamp(300px, 40vw, 1700px);
+                    grid-template-rows: clamp(50px, 4vw, 250px) 1fr clamp(50px, 4vw, 250px);
+                    font-size: clamp(14px, 1vw, 70px);
+                }
+                .twoCardTitle {
+                    height: clamp(50px, 4vw, 250px);
+                    padding: clamp(10px, 2vw, 50px);
+                    width: clamp(300px, 40vw, 1700px);
+                }
+                .discribeEl {
+                    height: clamp(50px, 4vw, 250px);
+                    padding: clamp(10px, 2vw, 50px) clamp(10px, 2vw, 50px);
+                    width: clamp(300px, 40vw, 1700px);
+                }
+                #twoSliderParent {
+                    grid-template-rows: clamp(50px, 5vw, 250px);
+                }
+                .pagination {
+                    gap: 50px;
+                    margin-bottom: 30px;
+                }
+}
+/* iMac　24インチ　 */
+@media screen and (max-width:4480   ) and (min-width:4480   ) 
+              and (max-height:2520) and (min-height:2520){
+ 
+
+}
+/* 4K */
+@media screen and (max-width:3840px) and (min-width:3840px) 
+              and (max-height:2160px) and (min-height:2160px){
+ 
+
+}
+/* MacBook Pro　16.2インチ */
+@media screen and (max-width:3456  ) and (min-width:3456  ) 
+              and (max-height:2234) and (min-height:2234){
+
+
+}
+
+/* MacBook Pro　14.2インチ */
+@media screen and (max-width:3024 ) and (min-width:3024 ) 
+              and (max-height:1964) and (min-height:1964){
+
+
+}
+
+/* 15インチMacBook Pro */
+@media screen and (max-width:2880) and (min-width:2880) 
+              and (max-height:1800) and (min-height:1800){
+
+
+}
+/* 13インチMacBook Pro */
+@media screen and (max-width:2560) and (min-width:2560) 
+              and (max-height:1600) and (min-height:1600){
+
+
+}
+
+/* MacBook */
+@media screen and (max-width:2304) and (min-width:2304) 
+              and (max-height:1440) and (min-height:1440){
+
+
+}
+
+
+
+
+
+
+
+
+
 
 
