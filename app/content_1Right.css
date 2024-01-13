@@ -175,8 +175,8 @@
     display: none;
 }
 /* 1024以上　 */
-@media screen and (min-width:1024px) 
-              and (min-height:800px){
+@media screen and (min-width:1920px) 
+              and (min-height:1080px){
                 .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
                     grid-template-columns: repeat(3, 1fr);
                     grid-template-rows: repeat(4, 1fr);
@@ -237,27 +237,29 @@
 }
 @media screen and (min-width:1024px) and (max-width:1300px){
     .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
-        grid-template-columns: repeat(3, 1fr);
-        height: 100vh;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        margin-bottom: 0px;
+        gap: 10px;
+        padding: 10px ;         
     }
-    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .gridChildren{
+    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .gridChildren {
         border-radius: 3%;
         height: calc(100%);
-        text-align:center;
+        min-height: calc((100vh / 4) - 30px );
+        min-width: calc(((100vw / 4) / 2 - 40px));
+        text-align: center;
         width: calc(100%);
-        max-height: 145px;
-        max-width: 145px;
-        min-width: 100px;
-        min-height: 100px;
-        
     }
     .gridChildren img {
-        height: calc(75%);
-        max-height: 80px;
-        max-width: 80px;
-        min-height: 80px;
-        min-width: 80px;
-        width: calc(75%);
+        margin-top: clamp(0.313rem, 0.139rem + 0.35vw, 1.25rem);
+        object-fit: contain;
+        min-height: 98px; 
+    }
+    .p {
+        margin-bottom: 5px;
+        padding: 5px;
+        font-size: clamp(1rem, 0.536rem + 0.72vw, 1.125rem);
     }
 }
 @media screen and (min-width:600px) and (max-width:1024px) {

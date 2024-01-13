@@ -18,7 +18,8 @@ const Content_1Right = () => {
 		background: 'rgba(0, 0, 0, 0.5)',
 		padding: '50px',
 		width: '100%',
-		lineHeight: '1.6'
+		lineHeight: '1.6',
+		fontSize: 'clamp(1rem, 0.606rem + 0.79vw, 3.125rem)'
 	}
 	const iTitleStyle: React.CSSProperties = {
 		position: 'absolute',
