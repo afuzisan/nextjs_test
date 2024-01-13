@@ -7,4 +7,10 @@
     animation: underlineAnimation 1s ease-in-out infinite;
     font-weight: bold;
 }
-
+/* 1024以上　 */
+@media screen and (min-width:1024px) 
+              and (min-height:800px){
+                .headerContent{
+                    font-size: clamp(1rem, 0.313rem + 1.07vw, 3.75rem);
+                }
+              }

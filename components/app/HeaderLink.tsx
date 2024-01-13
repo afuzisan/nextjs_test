@@ -8,13 +8,13 @@ interface HeaderLinkProps {
 
 const headerStyle = {
 	width: '100%',
-	height: '62px',
+	height: 'clamp(3.875rem, 3.193rem + 2.91vw, 12.5rem)',
 	backgroundColor: 'white'
 }
 
 const headerStylePage = {
 	width: '100%',
-	height: '62px'
+	height: 'clamp(3.875rem, 3.193rem + 2.91vw, 12.5rem)'
 }
 
 const rightHeader = {
@@ -27,12 +27,12 @@ const headerContent = {
 	height: '100%',
 	alignItems: 'center',
 	margin: 'auto',
-	maxWidth: '1120px',
+	maxWidth: '100%',
 	flexWrap: 'nowrap' as const,
-	gap: '20px',
+	gap: 'clamp(1.25rem, 1.151rem + 0.42vw, 2.5rem)',
 	textDecoration: 'none',
-	paddingLeft: '20px',
-	paddingRight: '20px'
+	paddingLeft: 'clamp(1.25rem, 0.361rem + 3.79vw, 12.5rem)',
+	paddingRight: 'clamp(1.25rem, 0.361rem + 3.79vw, 12.5rem)'
 }
 
 const HeaderLink: FC<HeaderLinkProps> = (props) => {
