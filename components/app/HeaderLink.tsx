@@ -8,13 +8,13 @@ interface HeaderLinkProps {
 
 const headerStyle = {
 	width: '100%',
-	height: 'clamp(3.875rem, 3.193rem + 2.91vw, 12.5rem)',
+	height: 'clamp(3.875rem, -0.775rem + 3.88vw, 11.625rem)',
 	backgroundColor: 'white'
 }
 
 const headerStylePage = {
 	width: '100%',
-	height: 'clamp(3.875rem, 3.193rem + 2.91vw, 12.5rem)'
+	height: 'clamp(3.875rem, -0.775rem + 3.88vw, 11.625rem)'
 }
 
 const rightHeader = {
