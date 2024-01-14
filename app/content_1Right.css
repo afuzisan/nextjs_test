@@ -174,7 +174,7 @@
 .displayView{
     display: none;
 }
-/* 100以上　 */
+/* 1920以上　 */
 @media screen and (min-width:1920px) 
               and (min-height:1080px){
                 .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {

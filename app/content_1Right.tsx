@@ -30,7 +30,7 @@ const Content_1Right = () => {
 		padding: '10px',
 		width: '150px',
 		textAlign: 'center',
-		fontSize: '20px'
+		fontSize: 'clamp(1rem, -0.275rem + 1.06vw, 3.125rem)'
 	}
 
 	function detailsView() {
