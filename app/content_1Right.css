@@ -174,7 +174,7 @@
 .displayView{
     display: none;
 }
-/* 1024以上　 */
+/* 1920以上　 */
 @media screen and (min-width:1920px) 
               and (min-height:1080px){
                 .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
@@ -193,8 +193,9 @@
                     width: calc(100%);
                 }
                 .gridChildren img {
-                    margin-top: clamp(0.313rem, 0.139rem + 0.35vw, 1.25rem);
-                    min-height: 75%;
+                    margin-top: max(0.2vw,0.2vh);
+                    /* min-height: calc(100% - 75px); */
+                    min-height: calc(100% - min(100px,100px));
                     min-width: 60%;
                     object-fit: contain;
                 }

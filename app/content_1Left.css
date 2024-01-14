@@ -215,7 +215,24 @@ dl dd h2 {
 .displayView{
 	display: none;
 }
-
+/* 1024以上　 */
+@media screen and (min-width:1920px) 
+              and (min-height:1080px){
+				dl dt {
+					font-size: clamp(1rem, -0.275rem + 1.06vw, 3.125rem);
+				}
+				dl dd {
+					font-size: clamp(1rem, -0.275rem + 1.06vw, 3.125rem);
+				}
+				dl dd h2 {
+					font-size: clamp(1rem, -0.275rem + 1.06vw, 3.125rem);
+				}
+				dl dt::after {
+					font-size: clamp(1rem, -0.275rem + 1.06vw, 3.125rem);
+					top:clamp(0.313rem, -0.438rem + 0.63vw, 1.563rem)
+				}
+			
+			}
 
 @media screen and (min-width:600px) and (max-width:1024px) {
 	.left{
