@@ -32,7 +32,8 @@ const headerContent = {
 	gap: 'clamp(1.25rem, 1.151rem + 0.42vw, 2.5rem)',
 	textDecoration: 'none',
 	paddingLeft: 'clamp(1.25rem, 0.361rem + 3.79vw, 12.5rem)',
-	paddingRight: 'clamp(1.25rem, 0.361rem + 3.79vw, 12.5rem)'
+	paddingRight: 'clamp(1.25rem, 0.361rem + 3.79vw, 12.5rem)',
+	fontSize: 'clamp(1rem, -0.2rem + 1vw, 3rem)',
 }
 
 const HeaderLink: FC<HeaderLinkProps> = (props) => {
