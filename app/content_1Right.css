@@ -301,7 +301,7 @@
         height: calc(75%);
         min-width: 100px;
         min-height: 100px;
-        max-height: 100px;
+        max-height: 120px;
         max-width: 100px;
     }
     .p {
@@ -315,11 +315,13 @@
         display: none;
     }
     .gridChildren img{
+        margin-top: 0px;
         max-height: 100px;
+        min-height: 100px
     }
     .p {
-        font-size: 16px;
-        height: 40px;
+        font-size: 14px;
+        height: 30px;
     }
     .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .gridChildren {
         max-height: 150px;
