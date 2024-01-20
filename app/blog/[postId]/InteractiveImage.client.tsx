@@ -17,8 +17,8 @@ const InteractiveImage: React.FC<InteractiveImageProps> = ({ src, alt }) => {
 
   return (
     <>
-        <img src={src} alt={alt} onClick={imgClick} />;
-        {isModalVisible  && <ModalView src={src} alt={alt} />} 
+        <img src={src} alt={alt} onClick={imgClick} />
+        {isModalVisible  && <ModalView src={src} alt={alt} onClose={() => setModalView(false)} />} 
     </>
   )
 };
