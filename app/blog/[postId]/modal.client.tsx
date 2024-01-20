@@ -1,9 +1,13 @@
+import './modal.client.css'
+
 type ModalView = {
     src: string;
     alt?: string;
   };
 
-const modalView: React.FC<ModalView> = () => {
+const modalView: React.FC<ModalView> = ({src,alt}) => {
+    console.log(src,alt);
+    
     return (
         <div id="overlay">
           <div id="content">
