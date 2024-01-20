@@ -504,7 +504,22 @@ const timelineData = [
 			}
 		]
 	},
-	,
+	,	{
+		date: '2024年1月から',
+		class: 'day202301',
+		events: [
+			{
+				title: 'PHPの勉強を始める',
+				description: [
+					'フレームワークは使わず、素のPHPでMVCアーキテクチャを意識して作成できるように勉強を開始しました。'
+				],
+				link: '',
+				linkDescription: '',
+				image: '',
+				imageDescription: ''
+			}
+		]
+	},
 	{
 		date: '2023年12月から',
 		class: 'day202312kara',

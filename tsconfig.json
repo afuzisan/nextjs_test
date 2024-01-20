@@ -24,7 +24,7 @@
       "react": ["./node_modules/@types/react"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "libs/jquery.timelinr-0.9.7.js", "libs/jquery.min.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "libs/jquery.timelinr-0.9.7.js", "libs/jquery.min.js", "app/blog/[postId]/imageZoom.txs"],
   "exclude": ["node_modules"],
   "paths": {
     "react": ["./nod_modules/ @types /react"]

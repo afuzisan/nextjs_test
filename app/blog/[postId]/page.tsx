@@ -1,6 +1,6 @@
 // app/blog/[postId]/page.tsx
 import { notFound } from 'next/navigation'
-import parse from 'html-react-parser'
+import ContentComponent from './ContentComponent';
 import { getDetail, getList } from '../../../libs/microcms'
 import { relative } from 'path'
 import Sidebar from './Sidebar.client'
@@ -48,7 +48,7 @@ export default async function StaticDetailPage({ params: { postId } }: { params:
 			<SidebarButton />
 
 			<div id='main'>
-				<div id='contents2' dangerouslySetInnerHTML={{ __html: post.content || '' }}></div>
+			<ContentComponent content={post.content} />
 				<CodeStyle />
 
 				<Sidebar />

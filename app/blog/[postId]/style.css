@@ -122,6 +122,10 @@ html {
     width: 640px;
     height: 300px;
 }
+#main img{
+    width: clamp(32.813rem, -6.563rem + 32.81vw, 98.438rem);
+    height: clamp(18.75rem, -3.75rem + 18.75vw, 56.25rem);
+}
 #footer {
     width: 100%;
     height: 62px;
