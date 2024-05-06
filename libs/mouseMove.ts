@@ -72,6 +72,12 @@ const mousemove = () => {
 				} else if (element?.matches('div.github')) {
 					matche(stalker, toolTipTexts, 'div.github')
 					return true
+				} else if (element?.matches('div.mysql')) {
+					matche(stalker, toolTipTexts, 'div.mysql')
+					return true
+				} else if (element?.matches('div.php')) {
+					matche(stalker, toolTipTexts, 'div.php')
+					return true
 				} else {
 					initBorder()
 					stalker.innerHTML = ''

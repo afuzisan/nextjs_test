@@ -2,119 +2,134 @@
     view-transition-name: css;
     contain: paint;
 }
+
 .htmlImage {
     view-transition-name: html;
     contain: paint;
 }
+
 .jsImage {
     view-transition-name: js;
     contain: paint;
 }
+
 .tsImage {
     view-transition-name: ts;
     contain: paint;
 }
+
 .nextImage {
     view-transition-name: next;
     contain: paint;
 }
+
 .reactImage {
     view-transition-name: react;
     contain: paint;
 }
+
 .nodeImage {
     view-transition-name: node;
     contain: paint;
 }
+
 .jqueryImage {
     view-transition-name: jquery;
     contain: paint;
 }
+
 .linuxImage {
     view-transition-name: linux;
     contain: paint;
 }
+
 .playCanvasImage {
     view-transition-name: playCanvas;
     contain: paint;
 }
+
 .wordpressImage {
     view-transition-name: wordpress;
     contain: paint;
 }
+
 .gasImage {
     view-transition-name: gas;
     contain: paint;
 }
+
 .dockerImage {
     view-transition-name: docker;
     contain: paint;
 }
+
 .postgresqlImage {
     view-transition-name: postgresql;
     contain: paint;
 }
+
 .githubImage {
     view-transition-name: github;
     contain: paint;
 }
 
+.mysql {
+    view-transition-name: github;
+    contain: paint;
+}
 
-
-
-.wheelFlag1 > .leftContentwheelFlag1 > .left {
+.wheelFlag1>.leftContentwheelFlag1>.left {
     position: relative;
 }
-.wheelFlag1 > .leftContentwheelFlag1 > .left > .photo{
+
+.wheelFlag1>.leftContentwheelFlag1>.left>.photo {
     border: 1px solid #000;
     height: 100vh;
-    width:50vw;
+    width: 50vw;
 }
-.wheelFlag1 > .leftContentwheelFlag1 > .left > .photoDiscribe{
+
+.wheelFlag1>.leftContentwheelFlag1>.left>.photoDiscribe {
     border: 1px solid #000;
     height: 300px;
-    width:500px;
-    z-index:2;
+    width: 500px;
+    z-index: 2;
 }
 
+.wheelFlag1>.rightContentwheelFlag1>.right {
 
-
-.wheelFlag1 > .rightContentwheelFlag1 > .right{
-    
     height: calc(100vh);
     position: relative;
 }
 
-
-.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid{
+.wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    padding: 40px ;
+    padding: 40px;
     justify-content: center;
     align-items: center;
     justify-items: center;
-    /* height: 100vh; */
     margin-bottom: 70px;
-    /* height: 100%; */
 }
 
-.p{
+.p {
     border-bottom: 1px solid gray;
-    color: gray; 
-    margin-bottom:5px;
-    padding:5px;
+    color: gray;
+    margin-bottom: 5px;
+    padding: 5px;
 }
-.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .gridChildren{
+
+.wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid>.gridChildren {
     border-radius: 3%;
     height: calc(100%);
-    text-align:center;
+    text-align: center;
     width: calc(100%);
     max-height: 180px;
     max-width: 180px;
     min-width: 150px;
     min-height: 150px;
 }
+
 .gridChildren img {
     height: calc(75%);
     max-height: 110px;
@@ -122,62 +137,38 @@
     min-height: 120px;
     min-width: 100px;
     width: calc(75%);
-    margin-top:5px;
+    margin-top: 5px;
 }
-.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .html{
-    background-color: #F2F2F2;
 
-}
-.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .css{
-    background-color: #F2F2F2;
-}
-.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .js{
-    background-color: #F2F2F2;
-}
-.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .ts{
-    background-color: #F2F2F2;
-}
-.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .next{
-    background-color: #F2F2F2;
-}
-.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .react{
-    background-color: #F2F2F2;
-}
-.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .node{
-    background-color: #F2F2F2;
-}
-.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .jquery{
-    background-color: #F2F2F2;
-}
-.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .linux{
-    background-color: #F2F2F2;
-}
-.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .playCanvas{
-    background-color: #F2F2F2;
-}
-.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .wordpress{
-    background-color: #F2F2F2;
-}
-.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .gas{
-    background-color: #F2F2F2;
-}
-.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .docker{
-    background-color: #F2F2F2;
-}
-.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .postgresql{
-    background-color: #F2F2F2;
-}
-.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .github{
+.wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid>.html,
+.wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid>.css,
+.wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid>.js,
+.wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid>.ts,
+.wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid>.next,
+.wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid>.react,
+.wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid>.node,
+.wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid>.jquery,
+.wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid>.linux,
+.wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid>.playCanvas,
+.wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid>.wordpress,
+.wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid>.gas,
+.wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid>.docker,
+.wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid>.postgresql,
+.wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid>.github,
+.wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid>.mysql,
+.wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid>.php {
     background-color: #F2F2F2;
 }
 
-.displayView{
+.displayView {
     display: none;
 }
+
 @media screen and (max-height:865px) {
-    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .gridChildren {
-        max-height:clamp(0rem, -28.409rem + 75.76vw, 12.5rem);
+    .wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid>.gridChildren {
+        max-height: clamp(0rem, -28.409rem + 75.76vw, 12.5rem);
     }
+
     .gridChildren img {
 
         max-width: 0px;
@@ -187,116 +178,130 @@
 
 
     }
-    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
-        gap:10px;
+
+    .wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid {
+        gap: 10px;
     }
-            
-            }
+
+}
+
 /* 1920以上　 */
-@media screen and (min-width:1920px) 
-              and (min-height:1080px){
-                .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
-                    grid-template-columns: repeat(3, 1fr);
-                    grid-template-rows: repeat(4, 1fr);
-                    margin-bottom: 0px;
-                    gap: 20px;
-                    padding: 40px ;         
-                }
-                .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .gridChildren {
-                    border-radius: 3%;
-                    height: calc(100%);
-                    min-height: calc((100vh / 5) - 30px );
-                    min-width: calc(((100vw / 3) / 2 - 40px));
-                    text-align: center;
-                    width: calc(100%);
-                }
-                .gridChildren img {
-                    margin-top: max(0.5vw,0.5vh);
-                    min-height: calc(100% - min(140px,6.5vh));
-                    min-width: 60%;
-                    object-fit: contain;
-                }
-                .p {
-                    margin-bottom: 5px;
-                    padding: 5px;
-                    font-size: clamp(1rem, 0.832rem + 0.72vw, 3.125rem);
-                }
-              }
+@media screen and (min-width:1920px) and (min-height:1080px) {
+    .wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        margin-bottom: 0px;
+        gap: 20px;
+        padding: 40px;
+    }
+
+    .wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid>.gridChildren {
+        border-radius: 3%;
+        height: calc(100%);
+        min-height: calc((100vh / 5) - 30px);
+        min-width: calc(((100vw / 3) / 2 - 40px));
+        text-align: center;
+        width: calc(100%);
+    }
+
+    .gridChildren img {
+        margin-top: max(0.5vw, 0.5vh);
+        min-height: calc(100% - min(140px, 6.5vh));
+        min-width: 60%;
+        object-fit: contain;
+    }
+
+    .p {
+        margin-bottom: 5px;
+        padding: 5px;
+        font-size: clamp(1rem, 0.832rem + 0.72vw, 3.125rem);
+    }
+}
 
 
 
-@media screen and (max-width:600px){
-    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
+@media screen and (max-width:600px) {
+    .wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid {
         grid-template-columns: repeat(2, 1fr);
     }
-    .wheelFlag1 > .rightContentwheelFlag1 > .right{
+
+    .wheelFlag1>.rightContentwheelFlag1>.right {
         width: 100vw;
         overflow-y: scroll;
     }
 
-    .wheelFlag1 > .rightContentwheelFlag1 {
+    .wheelFlag1>.rightContentwheelFlag1 {
         width: 100vw;
         z-index: 6;
-        margin: 0px;    
+        margin: 0px;
     }
-    .stalker{
+
+    .stalker {
         display: none;
     }
-    .displayView{
-		display: block;
-	}
-    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid{
-        padding-top:0px;
-        /* margin-bottom: -100px; */
-        /* height: 1450px; */
+
+    .displayView {
+        display: block;
+    }
+
+    .wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid {
+        padding-top: 0px;
     }
 
 
 }
-@media screen and (min-width:1024px) and (max-width:1300px){
-    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
+
+@media screen and (min-width:1024px) and (max-width:1300px) {
+    .wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid {
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(4, 1fr);
         margin-bottom: 0px;
         gap: 10px;
-        padding: 10px ;         
+        padding: 10px;
     }
-    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .gridChildren {
+
+    .wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid>.gridChildren {
         border-radius: 3%;
         height: calc(100%);
-        min-height: calc((100vh / 4) - 30px );
+        min-height: calc((100vh / 4) - 30px);
         min-width: calc(((100vw / 4) / 2 - 40px));
         text-align: center;
         width: calc(100%);
     }
+
     .gridChildren img {
         margin-top: clamp(0.313rem, 0.139rem + 0.35vw, 1.25rem);
         object-fit: contain;
-        min-height: 98px; 
+        min-height: 98px;
     }
+
     .p {
         margin-bottom: 5px;
         padding: 5px;
         font-size: clamp(1rem, 0.536rem + 0.72vw, 1.125rem);
     }
 }
+
 @media screen and (min-width:765px) and (max-width:1024px) {
-    .headerContent{
+    .headerContent {
         font-size: 16px;
     }
-    .wheelFlag1 > .leftContentwheelFlag1 {
+
+    .wheelFlag1>.leftContentwheelFlag1 {
         display: none;
     }
-    .left{
+
+    .left {
         width: 100vw;
         background-color: #fff;
         font-size: 30px;
     }
-    .left h2{
+
+    .left h2 {
         font-size: 40px;
     }
 
-    .gridChildren img{
+    .gridChildren img {
         width: calc(75%);
         height: calc(75%);
         min-width: 100px;
@@ -304,44 +309,51 @@
         max-height: 120px;
         max-width: 100px;
     }
+
     .p {
         font-size: 20px;
         height: 40px;
     }
 }
+
 @media screen and (min-width:600px) and (max-width:765px) {
 
-    .wheelFlag1 > .leftContentwheelFlag1 {
+    .wheelFlag1>.leftContentwheelFlag1 {
         display: none;
     }
-    .gridChildren img{
+
+    .gridChildren img {
         margin-top: 0px;
         max-height: 100px;
         min-height: 100px
     }
+
     .p {
         font-size: 14px;
         height: 30px;
     }
-    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .gridChildren {
+
+    .wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid>.gridChildren {
         max-height: 150px;
         max-width: 72px;
         min-height: 130px;
         min-width: 130px;
     }
 }
+
 @media screen and (max-width:600px) {
-        .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .gridChildren{
+    .wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid>.gridChildren {
         border-radius: 3%;
         height: calc(100%);
-        text-align:center;
+        text-align: center;
         width: calc(100%);
         max-height: 200px;
         max-width: 200px;
         min-width: 150px;
         min-height: 150px;
     }
-    .gridChildren img{
+
+    .gridChildren img {
         width: calc(75%);
         height: calc(75%);
         min-width: 100px;
@@ -355,42 +367,47 @@
 
 
 /* ipad AND ipad MINI*/
-@media screen and (max-width:768px) and (min-width:768px) 
-              and (max-height:1024px) and (min-height:1024px){
-    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
+@media screen and (max-width:768px) and (min-width:768px) and (max-height:1024px) and (min-height:1024px) {
+    .wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid {
         grid-template-columns: repeat(3, 1fr);
-        /* height: 100%; */
         margin-bottom: 0px;
     }
-    .wheelFlag1 > .rightContentwheelFlag1 > .right{
+
+    .wheelFlag1>.rightContentwheelFlag1>.right {
         width: 100vw;
         overflow-y: scroll;
     }
 
-    .wheelFlag1 > .rightContentwheelFlag1 {
+    .wheelFlag1>.rightContentwheelFlag1 {
         width: 100vw;
         z-index: 6;
-        margin: 0px;    
+        margin: 0px;
     }
-    .stalker{
+
+    .stalker {
         display: none;
     }
-    .displayView{
-		display: block;
-	}
-    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid{
-        padding-top:0px;
-        gap:8px;
-        padding:15px;
+
+    .displayView {
+        display: block;
     }
-    .displayView{
+
+    .wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid {
+        padding-top: 0px;
+        gap: 8px;
+        padding: 15px;
+    }
+
+    .displayView {
         font-size: 30px;
         display: none;
     }
-    .right{
-        margin-top:5px;
+
+    .right {
+        margin-top: 5px;
     }
-    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .gridChildren {
+
+    .wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid>.gridChildren {
         border-radius: 3%;
         height: calc(100%);
         max-height: 195px;
@@ -400,6 +417,7 @@
         text-align: center;
         width: calc(100%);
     }
+
     .p {
         font-size: 20px;
         height: 40px;
@@ -407,141 +425,158 @@
 
 
 }
+
 /* ipad Air*/
-@media screen and (max-width:820px) and (min-width:820px) 
-              and (max-height:1180px) and (min-height:1180px){
-                .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
-                    grid-template-columns: repeat(3, 1fr);
-                    /* height: 100%; */
-                    margin-bottom: 0px;
-                }
-                .wheelFlag1 > .rightContentwheelFlag1 > .right{
-                    width: 100vw;
-                    /* overflow-y: scroll; */
-                }
-            
-                .wheelFlag1 > .rightContentwheelFlag1 {
-                    width: 100vw;
-                    z-index: 6;
-                    margin: 0px;    
-                }
-                .stalker{
-                    display: none;
-                }
-                .displayView{
-                    display: block;
-                }
-                .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid{
-                    padding-top:0px;
-                    gap:8px;
-                    padding:15px;
-                }
-                .displayView{
-                    font-size: 30px;
-                    display: none;
-                }
-                .right{
-                    margin-top:5px;
-                }
-                .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .gridChildren {
-                    border-radius: 3%;
-                    height: calc(100%);
-                    max-height: 225px;
-                    max-width: 225px;
-                    min-height: 150px;
-                    min-width: 150px;
-                    text-align: center;
-                    width: calc(100%);
-                }
-                .p {
-                    font-size: 20px;
-                    height: 40px;
-                }
-                .gridChildren img {
-                    height: calc(75%);
-                    max-height: 160px;
-                    max-width: 160px;
-                    min-height: 120px;
-                    min-width: 120px;
-                    width: calc(75%);
-                }
+@media screen and (max-width:820px) and (min-width:820px) and (max-height:1180px) and (min-height:1180px) {
+    .wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid {
+        grid-template-columns: repeat(3, 1fr);
+        /* height: 100%; */
+        margin-bottom: 0px;
+    }
+
+    .wheelFlag1>.rightContentwheelFlag1>.right {
+        width: 100vw;
+        /* overflow-y: scroll; */
+    }
+
+    .wheelFlag1>.rightContentwheelFlag1 {
+        width: 100vw;
+        z-index: 6;
+        margin: 0px;
+    }
+
+    .stalker {
+        display: none;
+    }
+
+    .displayView {
+        display: block;
+    }
+
+    .wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid {
+        padding-top: 0px;
+        gap: 8px;
+        padding: 15px;
+    }
+
+    .displayView {
+        font-size: 30px;
+        display: none;
+    }
+
+    .right {
+        margin-top: 5px;
+    }
+
+    .wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid>.gridChildren {
+        border-radius: 3%;
+        height: calc(100%);
+        max-height: 225px;
+        max-width: 225px;
+        min-height: 150px;
+        min-width: 150px;
+        text-align: center;
+        width: calc(100%);
+    }
+
+    .p {
+        font-size: 20px;
+        height: 40px;
+    }
+
+    .gridChildren img {
+        height: calc(75%);
+        max-height: 160px;
+        max-width: 160px;
+        min-height: 120px;
+        min-width: 120px;
+        width: calc(75%);
+    }
 
 }
 
 /* ipad Pro*/
-@media screen and (max-width:1024px) and (min-width:1024px) 
-              and (max-height:1366px) and (min-height:1366px){
-                .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
-                    grid-template-columns: repeat(3, 1fr);
-                    height: 0vh;
-                    margin-bottom: 0px;
-                }
-                .wheelFlag1 > .rightContentwheelFlag1 > .right{
-                    width: 100vw;
-                    
-                    /* overflow-y: scroll; */
-                }
-            
-                .wheelFlag1 > .rightContentwheelFlag1 {
-                    width: 100vw;
-                    z-index: 6;
-                    margin: 0px;    
-                }
-                .stalker{
-                    display: none;
-                }
-                .displayView{
-                    display: block;
-                }
-                .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid{
-                    padding-top:0px;
-                    gap:8px;
-                    padding:15px;
-                }
-                .displayView{
-                    font-size: 30px;
-                    display: none;
-                }
-                .right{
-                    margin-top:5px;
-                }
-                .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .gridChildren {
-                    border-radius: 3%;
-                    height: calc(100%);
-                    max-height: 302px;
-                    max-width: 262px;
-                    min-height: 262px;
-                    min-width: 302px;
-                    text-align: center;
-                    width: calc(100%);
-                }
-                .p {
-                    font-size: 30px;
-                    height:60px;
-                }
-                .gridChildren img {
-                    height: calc(75%);
-                    max-height: 180px;
-                    max-width: 180px;
-                    min-height: 130px;
-                    min-width: 130px;
-                    width: calc(75%);
-                }
+@media screen and (max-width:1024px) and (min-width:1024px) and (max-height:1366px) and (min-height:1366px) {
+    .wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid {
+        grid-template-columns: repeat(3, 1fr);
+        height: 0vh;
+        margin-bottom: 0px;
+    }
+
+    .wheelFlag1>.rightContentwheelFlag1>.right {
+        width: 100vw;
+
+        /* overflow-y: scroll; */
+    }
+
+    .wheelFlag1>.rightContentwheelFlag1 {
+        width: 100vw;
+        z-index: 6;
+        margin: 0px;
+    }
+
+    .stalker {
+        display: none;
+    }
+
+    .displayView {
+        display: block;
+    }
+
+    .wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid {
+        padding-top: 0px;
+        gap: 8px;
+        padding: 15px;
+    }
+
+    .displayView {
+        font-size: 30px;
+        display: none;
+    }
+
+    .right {
+        margin-top: 5px;
+    }
+
+    .wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid>.gridChildren {
+        border-radius: 3%;
+        height: calc(100%);
+        max-height: 302px;
+        max-width: 262px;
+        min-height: 262px;
+        min-width: 302px;
+        text-align: center;
+        width: calc(100%);
+    }
+
+    .p {
+        font-size: 30px;
+        height: 60px;
+    }
+
+    .gridChildren img {
+        height: calc(75%);
+        max-height: 180px;
+        max-width: 180px;
+        min-height: 130px;
+        min-width: 130px;
+        width: calc(75%);
+    }
 }
 
 /* surfaceDuo */
-@media screen and (max-width:540px) and (min-width:540px) 
-              and (max-height:720px) and (min-height:720px){
+@media screen and (max-width:540px) and (min-width:540px) and (max-height:720px) and (min-height:720px) {
 
-    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
+    .wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid {
         grid-template-columns: repeat(3, 1fr);
-        padding-top:10px;
-        gap:8px;
-        padding:100px;
+        padding-top: 10px;
+        gap: 8px;
+        padding: 100px;
         margin-bottom: 145px;
         height: 0%;
     }
-    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .gridChildren {
+
+    .wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid>.gridChildren {
         border-radius: 3%;
         height: calc(100%);
         max-height: 200px;
@@ -551,6 +586,7 @@
         text-align: center;
         width: calc(100%);
     }
+
     .p {
         border-bottom: 1px solid gray;
         color: gray;
@@ -558,6 +594,7 @@
         padding: 5px;
         font-size: 12px;
     }
+
     .gridChildren img {
         margin-top: 0px;
         height: calc(75%);
@@ -572,31 +609,35 @@
 }
 
 /* Galaxy Fold */
-@media screen and (max-width:280px) and (min-width:280px) 
-              and (max-height:653px) and (min-height:653px){
+@media screen and (max-width:280px) and (min-width:280px) and (max-height:653px) and (min-height:653px) {
 
-    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
+    .wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid {
         grid-template-columns: repeat(1, 1fr);
     }
-    .wheelFlag1 > .rightContentwheelFlag1 > .right {
+
+    .wheelFlag1>.rightContentwheelFlag1>.right {
         height: calc(100vh);
         position: relative;
         /* margin-bottom: 100px; */
     }
-    .displayView{
+
+    .displayView {
         display: none;
     }
-    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid{
-        padding-top:20px;
-        padding:0px;
+
+    .wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid {
+        padding-top: 20px;
+        padding: 0px;
     }
-    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .gridChildren {
+
+    .wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid>.gridChildren {
         border-radius: 3%;
         height: 200px;
         text-align: center;
         width: 200px;
     }
-    .gridChildren img{
+
+    .gridChildren img {
         height: calc(75%);
         max-height: 100px;
         max-width: 100px;
@@ -607,18 +648,19 @@
 }
 
 /* Galaxy A51/71 */
-@media screen and (max-width:412px) and (min-width:412px) 
-              and (max-height:914px) and (min-height:914px){
+@media screen and (max-width:412px) and (min-width:412px) and (max-height:914px) and (min-height:914px) {
 
-    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid{
-        padding-top:0px;
+    .wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid {
+        padding-top: 0px;
         /* padding:100px; */
     }
-    .wheelFlag1 > .rightContentwheelFlag1 > .right {
+
+    .wheelFlag1>.rightContentwheelFlag1>.right {
         height: calc(100vh);
         position: relative;
     }
-    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
+
+    .wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid {
 
         /* height: 100vh; */
         margin-bottom: 70px;
@@ -627,14 +669,14 @@
 }
 
 /* NextHubMAX */
-@media screen and (max-width:1280px) and (min-width:1280px) 
-              and (max-height:800px) and (min-height:800px){
+@media screen and (max-width:1280px) and (min-width:1280px) and (max-height:800px) and (min-height:800px) {
 
-    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid{
-        padding-top:0px;
-        padding:100px;
+    .wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid {
+        padding-top: 0px;
+        padding: 100px;
     }
-    .wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
+
+    .wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid {
         align-items: center;
         display: grid;
         gap: 20px;
@@ -643,60 +685,63 @@
         padding: 50px;
         height: 1100px;
     }
+
     .gridChildren {
         height: 180px !important;
-        width: 180px !important; 
+        width: 180px !important;
     }
-    .gridChildren img{
+
+    .gridChildren img {
         height: 130px;
         width: 130px;
     }
-    .rightToolTip{
+
+    .rightToolTip {
         display: none;
     }
-    .right{
+
+    .right {
         overflow-y: scroll;
     }
 }
 
 /* surface Pro7 */
-@media screen and (max-width:912px) and (min-width:912px) 
-              and (max-height:1368px) and (min-height:1368px){
-.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid {
-    align-items: center;
-    display: grid;
-    gap: 20px;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: center;
-    justify-items: center;
-    height: 100vh;
-    margin-bottom: 50px;
-    padding: 50px;
-}
-.p {
-    font-size: 24px;
-    height: 50px;
-}
-.gridChildren img {
-    height: calc(75%);
-    max-height: 100px;
-    max-width: 100px;
-    min-height: 160px;
-    min-width: 160px;
-    width: calc(75%);
-}
-.wheelFlag1 > .rightContentwheelFlag1 > .right > .rightIconGrid > .gridChildren {
-    border-radius: 3%;
-    height: calc(100%);
-    max-height: 240px;
-    max-width: 240px;
-    min-height: 150px;
-    min-width: 150px;
-    text-align: center;
-    width: calc(100%);
-}
+@media screen and (max-width:912px) and (min-width:912px) and (max-height:1368px) and (min-height:1368px) {
+    .wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid {
+        align-items: center;
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+        justify-items: center;
+        height: 100vh;
+        margin-bottom: 50px;
+        padding: 50px;
+    }
+
+    .p {
+        font-size: 24px;
+        height: 50px;
+    }
+
+    .gridChildren img {
+        height: calc(75%);
+        max-height: 100px;
+        max-width: 100px;
+        min-height: 160px;
+        min-width: 160px;
+        width: calc(75%);
+    }
+
+    .wheelFlag1>.rightContentwheelFlag1>.right>.rightIconGrid>.gridChildren {
+        border-radius: 3%;
+        height: calc(100%);
+        max-height: 240px;
+        max-width: 240px;
+        min-height: 150px;
+        min-width: 150px;
+        text-align: center;
+        width: calc(100%);
+    }
 
 }
-
-
-

@@ -16,7 +16,9 @@ const toolTipTexts = {
 	'div.gas': `<div id="GasToolTip"><p>GoogleAppScriptは2020年から始めました。</p></div>`,
 	'div.docker': `<div id="dockerToolTip"><p>dockerは2023年から始めました。</p></div>`,
 	'div.postgresql': `<div id="postgresqlToolTip"><p>PostgreSQLは2022年から始めました。</p></div>`,
-	'div.github': `<div id="GitToolTip"><p>Gitは2021年から始めました。</p></div>`
+	'div.github': `<div id="GitToolTip"><p>Gitは2021年から始めました。</p></div>`,
+	'div.mysql': `<div id="MysqlToolTip"><p>MYSQLは2022年から始めました。</p></div>`,
+	'div.php': `<div id="MysqlToolTip"><p>PHPは2024年から始めました。</p></div>`
 }
 
 export default toolTipTexts

@@ -6,8 +6,8 @@ const items = [
 		imagePath: '/logoPacks/css-3.svg',
 		text: [
 			'CSSは2012年から始めました。',
-			'レイアウト、レスポンシブ等の要素の大きさを操作する技術、アニメーション技術などは出来ます。',
-			'transfrome3dの知識が甘く要勉強が必要な所だと感じてます。'
+			'レイアウト、レスポンシブデザイン、アニメーション技術などは出来ます。',
+			'transfrome3dの知識が甘く狙った動きを完璧な挙動で制御する事は出来ません。'
 		]
 	},
 	{
@@ -17,8 +17,7 @@ const items = [
 		imagePath: '/logoPacks/html-1.svg',
 		text: [
 			'HTMLは2012年から始めました。',
-			'基本的には問題なく使う事は出来ます。',
-			'適切なタグを完璧に扱うことは難しいと感じています。'
+			'基本的には問題ないと思います。',
 		]
 	},
 	{
@@ -31,13 +30,13 @@ const items = [
 			'JavaScriptは基本的なことは全般出来ます。',
 			'ライブラリで提供されてるようなアニメーションを伴った',
 			'DOM操作は出来ます。',
-			'フォーム操作やバリデーションなど',
-			'APIの操作可能です。',
-			'Canvasは勉強中で、p5.jsを使った２Dゲームの作成はした事ありますが',
+			'フォーム操作やバリデーションなど出来ます。',
+			'APIの取得は出来ます。',
+			'Canvasは勉強中で、p5.jsを使った2Dゲームの作成はした事ありますが',
 			'背景で使われるような、幾何学模様をイメージ通りに実現する事は、',
 			'まだ難しいです。',
 			'WEBGL出来ません。今、JSでマスターしたい技術です。',
-			'React,NEXT.jsは動かすことは出来ます。深い知識はありません。',
+			'React,NEXT.jsは動かすことは出来ます。深い知識はありませんが自分でサイトを作成することは出来ます。',
 			'VueやNuxt.jsは出来ません。'
 		]
 	},
@@ -64,7 +63,6 @@ const items = [
 			'基本的な事はできる状態ですが、NEXT14のServerActionは',
 			'まだ触ってません。',
 			'今、表示してるポートフォリオはAppRouterで作成しました。',
-			''
 		]
 	},
 	{
@@ -75,8 +73,7 @@ const items = [
 		text: [
 			'Reactは2022年から始めました。',
 			'動かすことは出来ますが、Hooksやキャッシュやレンダリング',
-			'ライブラリなど、勉強しなければいけない所が多々ある状態です。',
-			'何が適切なのか、わからないでいるので、情報収集しながら試行錯誤している途中です。'
+			'ライブラリやサイトのパフォーマンス改善など、勉強しなければいけない所が多々あると感じてます。'
 		]
 	},
 	{
@@ -90,11 +87,11 @@ const items = [
 		]
 	},
 	{
-		name: 'jquery',
-		title: 'jQuery',
-		image: '/logoPacks/jquery.svg',
-		imagePath: '/logoPacks/jquery.svg',
-		text: ['jQueryは2014から勉強を始めました。', '知識レベルは、一つだけ、jQueryでchrome拡張機能を作った程度です。']
+		name: 'php',
+		title: 'PHP',
+		image: '/logoPacks/php.svg',
+		imagePath: '/logoPacks/php.svg',
+		text: ['PHPは2024から勉強を始めました。', 'LAMP環境で認証機能とCRUD操作を用いたTODOアプリを作れる程度です。','MVCアーキテクチャは理解してます。','フレームワークはLaravelを勉強中です。']
 	},
 	{
 		name: 'linux',
@@ -110,8 +107,8 @@ const items = [
 		imagePath: '/logoPacks/playcanvas-icon.png',
 		text: [
 			'PlayCanvasは2023年から始めました。',
-			'一応３Dゲームの基本システムは作れるようになりました。',
-			'３DWEBサイトも簡易的なものなら出来ます。'
+			'一応3Dゲームの基本システムは作れるようになりました。',
+			'3DWEBサイトも簡易的なものなら出来ます。'
 		]
 	},
 	{
@@ -144,21 +141,20 @@ const items = [
 		image: '/logoPacks/docker-4.svg',
 		imagePath: '/logoPacks/docker-4.svg',
 		text: [
-			'Dockerファイルの作成とDockerCoposeは一応出来ます。',
-			'GitHunActionsやAWSのECRなどを使って、CICDパイプラインなどは実装した事ありません。',
-			'Kubernetesは座学も受けてません。'
+			'Dockerファイルの作成とDockerCoposeの作成は出来ます。',
+			'GitHunActionsやAWSのECR、Kubernetesなどを使って、CICDパイプラインなどは実装した事ありません。',
 		]
 	},
 	{
-		name: 'postgresql',
-		title: 'PostgreSQL',
-		image: '/logoPacks/postgresql.svg',
-		imagePath: '/logoPacks/postgresql.svg',
+		name: 'mysql',
+		title: 'MYSQL',
+		image: '/logoPacks/MYSQL.svg',
+		imagePath: '/logoPacks/MYSQL.svg',
 		text: [
-			'SQLは基本的なCRUD操作なら出来る状態です。',
-			'論理設計は第３正規化まで勉強しましたが、テスト的に何か作ったわけではないので、知識は、定着出来てないと思います。',
+			'MYSQLは基本的なCRUD操作なら出来る状態です。',
+			'設計は第３正規化まで勉強しました。',
 			'ER図などは理解は出来てます。',
-			'物理設計は出来ません。'
+			'パフォーマンス改善、チューニングは出来ません。',
 		]
 	},
 	{
@@ -169,8 +165,7 @@ const items = [
 		text: [
 			'GitHubは2021年から始めました。',
 			'基本的な意味やコマンドの操作は出来ます。',
-			'GitHubFlowはシンプルで使いやすい為、よく使います。',
-			'git-flowは流れは理解していますが、大きな開発をしていない為、git-flowに沿って開発をした事は、まだありません。'
+			'git-flowは流れは理解していますが、git-flowに沿って開発をした事は、まだありません。'
 		]
 	}
 ]

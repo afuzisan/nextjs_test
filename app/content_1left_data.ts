@@ -463,7 +463,7 @@ const timelineData = [
 				title: 'playCanvasでゲームを作りました。',
 				description: [
 					'テスト的に作ったものが、残っていたのでリンクを貼っておきます。',
-					'非常にしょぼいですが。基本システムは網羅して作りました。'
+					'基本システム（アニメーション、物理演算、シーン切り替え、数値計算処理、タイム処理）は網羅して作りました。'
 				],
 				link: '',
 				linkDescription: '',
@@ -495,7 +495,7 @@ const timelineData = [
 				title: 'Next,React,playCanvasでポートフォリオサイトを作る',
 				description: [
 					'NextやReactはテスト的に作る事はしていたのですが、サービスやサイトを作りたいものがなく',
-					'作っていませんでしたが、転職するに当たり、NEXTとReactとPlayCanvasでポートフォリオを作りました。'
+					'作っていませんでしたが、転職するに当たり、NEXTとReactとPlayCanvasでポートフォリオサイトを作りました。'
 				],
 				link: '',
 				linkDescription: '',
@@ -504,14 +504,14 @@ const timelineData = [
 			}
 		]
 	},
-	,	{
-		date: '2024年1月から',
-		class: 'day202301',
+	, {
+		date: '2024年1月',
+		class: 'day202401',
 		events: [
 			{
-				title: 'PHPの勉強を始める',
+				title: 'PHPとApatchの勉強を始める',
 				description: [
-					'フレームワークは使わず、素のPHPでMVCアーキテクチャを意識して作成できるように勉強を開始しました。'
+					'フレームワークを使用せず、純粋なPHPでMVCアーキテクチャを意識した開発ができるように勉強を始めました。'
 				],
 				link: '',
 				linkDescription: '',
@@ -519,23 +519,29 @@ const timelineData = [
 				imageDescription: ''
 			}
 		]
-	},
-	{
-		date: '2023年12月から',
-		class: 'day202312kara',
+	}, {
+		date: '2024年3月',
+		class: 'day202403',
 		events: [
 			{
-				title: 'これから勉強したい事',
+				title: 'LAMP環境+DockerでTODOアプリを作る',
 				description: [
-					'大きく分けてデザインとモダン技術の習得とバックエンドの3種類に分けてそれぞれ強化したいと考えてます。',
-					'具体的には、デザインはフォトショップやイラストレーター、Blenderを勉強します。',
-					'デザインツール以外では、クリエイティブコーディングやシェーダー言語のGLSLを使いカスタムシェーダーを作りたいです。',
-					'WebGLの習得は必ず達成したいと考えてます。',
-					'モダン技術は、引き続きReact,Nextの深掘りが必要だと感じています。',
-					'レンダリング周りやキャッシュ周りやHooksの使い所など多数課題を感じてるので克服したいです。',
-					'バックエンドは、何かバックエンドを使った個人開発のサービスをリリースしたいです。',
-					'あとはnode.js以外のバックエンド技術の学習をしたいです。PHP及びLaravelが一応候補で考えてます。',
-					'これらの課題は２年以内でクリアするつもりで勉強を続けていきます。'
+					'MVCアーキテクチャを意識してフルスクラッチでTODOアプリを作りました。'
+				],
+				link: '',
+				linkDescription: '',
+				image: '',
+				imageDescription: ''
+			}
+		]
+	}, {
+		date: '2024年4月',
+		class: 'day202404',
+		events: [
+			{
+				title: 'Laravelの勉強を始める',
+				description: [
+					'PHPの基本的な部分を理解したので、フレームワークへの移行を始めました。'
 				],
 				link: '',
 				linkDescription: '',
