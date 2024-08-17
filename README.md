@@ -1,34 +1,62 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# プロジェクト README
 
-## Getting Started
+## 概要
+このプロジェクトは、岡田明也のポートフォリオサイトです。Next.jsを使用して構築されており、さまざまな技術スタックやプロジェクトの詳細を紹介しています。
 
-First, run the development server:
+## ディレクトリ構造
+以下は、主要なディレクトリとその内容の概要です。
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+### `app`
+- `page.tsx`: ホームページのコンポーネント。マウスホバーやスワイプ機能を含む。
+- `works/page.tsx`: "works" ページのコンポーネント。シンプルなページ構成。
+- `blog/page.tsx`: ブログ一覧ページのコンポーネント。MicroCMSからデータを取得して表示。
+- `blog/[postId]/Sidebar.client.tsx`: ブログ詳細ページのサイドバーコンポーネント。IntersectionObserverを使用してナビゲーションを提供。
+- `layout.tsx`: 全体のレイアウトを定義するコンポーネント。メタデータや共通のスタイルを含む。
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### `libs`
+- `mouseMove.ts`: マウスの動きに応じてツールチップを表示するスクリプト。
+- `microcms.ts`: MicroCMSからデータを取得するためのクライアントと関数を定義。
+- `toolTipTextdata.ts`: ツールチップに表示するテキストデータを定義。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### `styles`
+- `globals.css`: 全体のスタイルを定義するCSSファイル。
+- `content_2Right.css`: 特定のコンテンツのスタイルを定義するCSSファイル。
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## セットアップ
+プロジェクトをローカル環境でセットアップする手順は以下の通りです。
 
-## Learn More
+1. リポジトリをクローンします。
+    ```bash
+    git clone https://github.com/your-repo/portfolio.git
+    cd portfolio
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+2. 必要なパッケージをインストールします。
+    ```bash
+    npm install
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. 環境変数を設定します。`.env` ファイルを作成し、以下の内容を追加します。
+    ```
+    MICROCMS_SERVICE_DOMAIN=your_service_domain
+    MICROCMS_API_KEY=your_api_key
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+4. 開発サーバーを起動します。
+    ```bash
+    npm run dev
+    ```
 
-## Deploy on Vercel
+5. ブラウザで `http://localhost:3000` にアクセスしてサイトを確認します。
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 使用技術
+- **Next.js**: Reactフレームワーク。サーバーサイドレンダリングや静的サイト生成をサポート。
+- **TypeScript**: 型安全なJavaScriptのスーパーセット。
+- **MicroCMS**: ヘッドレスCMS。ブログデータの管理に使用。
+- **CSS**: スタイルシート。レスポンシブデザインやアニメーションを含む。
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 主な機能
+- **マウスホバーエフェクト**: マウスの動きに応じてツールチップを表示。
+- **ブログ機能**: MicroCMSからデータを取得し、ブログ一覧と詳細を表示。
+- **スワイプナビゲーション**: モバイルデバイスでのスワイプ操作をサポート。
+
