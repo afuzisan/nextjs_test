@@ -541,7 +541,22 @@ const timelineData = [
 			{
 				title: 'Laravelの勉強を始める',
 				description: [
-					'PHPの基本的な部分を理解したので、フレームワークへの移行を始めました。'
+					'PHPの基本的な部分を理解したので、フレームワークの勉強をはじめました。'
+				],
+				link: '',
+				linkDescription: '',
+				image: '',
+				imageDescription: ''
+			}
+		]
+	}, {
+		date: '2024年8月',
+		class: 'day202408',
+		events: [
+			{
+				title: 'LaravelとNEXT.jsでサービスを作る',
+				description: [
+					'NEXT.jsとLaravelで投資家向け銘柄メモサイト作りました。'
 				],
 				link: '',
 				linkDescription: '',

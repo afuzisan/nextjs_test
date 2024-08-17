@@ -123,9 +123,10 @@ function classSwitch(element: Element) {
 	let docker = document.querySelector('.docker') as HTMLElement
 	let postgresql = document.querySelector('.postgresql') as HTMLElement
 	let github = document.querySelector('.github') as HTMLElement
+	let php = document.querySelector('.php') as HTMLElement
+	let mysql = document.querySelector('.mysql ') as HTMLElement
 
-	const boxShadowStyle =
-		'0.2em -0.2em lightcoral, -0.2em 0.2em lightcoral, 0.2em 0.2em lightcoral, -0.2em -0.2em lightcoral'
+	const boxShadowStyle = '0.2em -0.2em lightcoral, -0.2em 0.2em lightcoral, 0.2em 0.2em lightcoral, -0.2em -0.2em lightcoral'
 	const boxShadowDuration = '0.5s'
 	function applyBoxShadow(element: HTMLElement | null) {
 		if (element) {
@@ -281,8 +282,47 @@ function classSwitch(element: Element) {
 			applyBoxShadow(github)
 			applyBoxShadow(ts)
 			break
-		case hasClassNames(element, 'day202312kara'):
-			// 'day202312kara' クラスを持つ要素に対する操作
+		case hasClassNames(element, 'day202401'):
+			applyBoxShadow(html)
+			applyBoxShadow(css)
+			applyBoxShadow(js)
+			applyBoxShadow(docker)
+			applyBoxShadow(github)
+			applyBoxShadow(php)
+			applyBoxShadow(mysql)
+			applyBoxShadow(linux)
+			break
+		case hasClassNames(element, 'day202403'):
+			applyBoxShadow(html)
+			applyBoxShadow(css)
+			applyBoxShadow(js)
+			applyBoxShadow(docker)
+			applyBoxShadow(github)
+			applyBoxShadow(php)
+			applyBoxShadow(mysql)
+			applyBoxShadow(linux)
+			break
+		case hasClassNames(element, 'day202404'):
+			applyBoxShadow(html)
+			applyBoxShadow(css)
+			applyBoxShadow(js)
+			applyBoxShadow(docker)
+			applyBoxShadow(github)
+			applyBoxShadow(php)
+			applyBoxShadow(mysql)
+			applyBoxShadow(linux)
+			break
+		case hasClassNames(element, 'day202408'):
+			applyBoxShadow(html)
+			applyBoxShadow(css)
+			applyBoxShadow(js)
+			applyBoxShadow(docker)
+			applyBoxShadow(github)
+			applyBoxShadow(php)
+			applyBoxShadow(mysql)
+			applyBoxShadow(next)
+			applyBoxShadow(react)
+			applyBoxShadow(linux)
 			break
 		default:
 			// どのクラス名も一致しない場合の操作
