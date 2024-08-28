@@ -1,6 +1,6 @@
 ## 概要
 このプロジェクトは、岡田明也のポートフォリオサイトです。
-サイトは[https://nextjs-test-sigma-ebon.vercel.app/](こちら)から
+サイトは[こちら](https://nextjs-test-sigma-ebon.vercel.app/)から
 
 Next.jsを使用して構築されており、さまざまな技術スタックやプロジェクトの詳細を紹介しています。
 
